@@ -1,0 +1,51 @@
+@import "settings";
+/**
+ * Typography Styles
+ */
+
+* {
+	font-family: $font-stack-standard;
+	font-size: inherit;
+}
+*::selection {
+	background-color: rgba($blue-standard, 0.9);
+	color: $white-standard;
+}
+body {
+	font-size: $font-size-standard;
+}
+%typography {
+	color: $dark-standard;
+}
+%heading {
+	@extend %typography;
+	font-weight: bold;
+	margin-top: $spacing-unit;
+	margin-bottom: $spacing-unit;
+	line-height: 1em;
+}
+h1 {
+	@extend %heading;
+	font-size: 4em;
+	font-weight: 500;
+}
+h2 {
+	@extend %heading;
+	font-size: 2.25em;
+}
+h3 {
+	@extend %heading;
+	font-size: 2em;
+}
+h4 {
+	@extend %heading;
+	font-size: 1.75em;
+}
+h5 {
+	@extend %heading;
+	font-size: 1.4em;
+}
+h6 {
+	@extend %heading;
+	font-size: 1.25em;
+}
