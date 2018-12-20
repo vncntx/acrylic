@@ -6,3 +6,5 @@
 node_modules
 dist
 demo/dist
+junit.xml
+coverage

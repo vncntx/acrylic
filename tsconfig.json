@@ -1,17 +1,12 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "jsx": "react",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "noImplicitAny": true
-  },
-  "include": [
-    "./lib/**/*.ts",
-    "./lib/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"jsx": "react",
+		"sourceMap": true,
+		"outDir": "./dist",
+		"noImplicitAny": true
+	},
+	"include": ["./lib/**/*.ts", "./lib/**/*.tsx"],
+	"exclude": ["node_modules"]
 }

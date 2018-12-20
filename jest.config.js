@@ -3,8 +3,9 @@
 
 module.exports = {
 	preset: "ts-jest",
-  // Stop running tests after the first failure
-  bail: true,
-  // Automatically clear mock calls and instances between every test
-  clearMocks: true
+	// Stop running tests after the first failure
+	bail: true,
+	// Automatically clear mock calls and instances between every test
+	clearMocks: true,
+	coverageReporters: ["text", "cobertura"]
 };

@@ -1,6 +1,6 @@
 # Acrylic Components
 
-[![](https://travis-ci.org/vincentfiestada/acrylic.svg?branch=master)](https://travis-ci.org/vincentfiestada/acrylic)
+[![Build Status](https://vincentofearth.visualstudio.com/Acrylic/_apis/build/status/Acrylic-CI?branchName=master)](https://vincentofearth.visualstudio.com/Acrylic/_build/latest?definitionId=1?branchName=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://prettier.io/)
 [![conventional commits: 1.0](https://img.shields.io/badge/conventional%20commits-1.0-yellow.svg)](https://conventionalcommits.org)
 
