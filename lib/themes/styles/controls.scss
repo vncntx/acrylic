@@ -1,19 +1,21 @@
-@import "settings";
+/**
+ * Form and Control styles
+ */
 @import "animation";
 
 %control {
 	margin: 0 $spacing-unit;
 	padding: 0.4em 1em;
-	color: $dark-standard;
+	color: $color-foreground;
 	border-style: solid;
 	border-width: 0.5px;
-	border-color: rgba($dark-standard, 0.5);
-	background-color: darken($white-standard, 5);
+	border-color: rgba($color-foreground, 0.5);
+	background-color: darken($color-background, 5);
 	transition-duration: 150ms;
 }
 %control:focus,
 %control:hover {
-	border-color: rgba($dark-standard, 0.8);
+	border-color: rgba($color-foreground, 0.8);
 }
 %control:first-child {
 	margin-left: 0;
@@ -33,15 +35,15 @@
 button {
 	@extend %control;
 	@extend %subtle-transition;
-	box-shadow: 0px $shadow-width (2 * $shadow-width) rgba($dark-standard, 0.8);
+	box-shadow: 0px $shadow-width (2 * $shadow-width) rgba($color-foreground, 0.8);
 }
 button:hover,
 button:focus {
 	@extend %subtle-transition;
-	background-color: darken($white-standard, 10);
+	background-color: darken($color-background, 10);
 }
 button:active {
 	@extend %subtle-transition;
 	box-shadow: 0px (0.75 * $shadow-width) (2 * $shadow-width)
-		rgba($dark-standard, 0.8);
+		rgba($color-foreground, 0.8);
 }

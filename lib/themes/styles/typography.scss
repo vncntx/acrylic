@@ -1,4 +1,3 @@
-@import "settings";
 /**
  * Typography Styles
  */
@@ -6,16 +5,17 @@
 * {
 	font-family: $font-stack-standard;
 	font-size: inherit;
+	color: $color-foreground;
 }
 *::selection {
-	background-color: rgba($blue-standard, 0.9);
-	color: $white-standard;
+	background-color: rgba($color-accent, 0.8);
+	color: $color-background;
 }
 body {
 	font-size: $font-size-standard;
 }
 %typography {
-	color: $dark-standard;
+	color: $color-foreground;
 }
 %heading {
 	@extend %typography;

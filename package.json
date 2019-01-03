@@ -12,8 +12,8 @@
 	"private": false,
 	"scripts": {
 		"format": "prettier --write --use-tabs lib/**/*.tsx lib/**/*.ts lib/**/*.scss demo/src/***.tsx *.js *.yml *.json",
-		"build:dev": "parcel --out-dir=demo/dist demo/index.html",
-		"build": "ENV=production parcel build --out-dir=dist lib/acrylic.tsx",
+		"build:dev": "parcel --out-dir=demo/dist/ demo/index.html",
+		"build": "ENV=production parcel build --out-dir=dist lib/acrylic.tsx lib/themes/*.scss",
 		"test": "jest --config jest.config.js --coverage",
 		"test:junit": "yarn test --reporters=default --reporters=jest-junit"
 	},
@@ -41,6 +41,10 @@
 		"jest": "23.6.0",
 		"jest-junit": "^5.2.0",
 		"prettier": "1.15.3",
+		"react-markdown": "^4.0.4",
 		"ts-jest": "23.10.5"
+	},
+	"marked": {
+		"breaks": true
 	}
 }
