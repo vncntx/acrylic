@@ -11,8 +11,8 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"format": "prettier --write --use-tabs lib/**/*.tsx lib/**/*.ts lib/**/*.scss demo/src/***.tsx *.js *.yml *.json",
-		"build:dev": "parcel --out-dir=demo/dist/ demo/index.html",
+		"format": "prettier --write --use-tabs lib/**/*.tsx lib/**/*.ts lib/**/*.scss docs/src/***.tsx docs/src/***.mdx *.js *.yml *.json",
+		"build:dev": "parcel -d docs/dist docs/index.html",
 		"build": "ENV=production parcel build --out-dir=dist lib/acrylic.tsx lib/themes/*.scss",
 		"test": "jest --config jest.config.js --coverage",
 		"test:junit": "yarn test --reporters=default --reporters=jest-junit"
@@ -26,13 +26,15 @@
 		"classnames": "^2.2.6",
 		"normalize.css": "8.0",
 		"parcel-bundler": "1.10.3",
-		"react": "16.6.3",
-		"react-dom": "16.6.3",
+		"react": "^16.7.0-alpha.2",
+		"react-dom": "16.7.0-alpha.2",
 		"react-router-dom": "4.3.1",
 		"sass": "1.15.2",
 		"typescript": "3.2.2"
 	},
 	"devDependencies": {
+		"@mdx-js/parcel-plugin-mdx": "0.16.6",
+		"@mdx-js/tag": "^0.13.1-1",
 		"@types/jest": "^23.3.10",
 		"@types/react": "^16.7.17",
 		"@types/react-dom": "^16.0.11",
@@ -41,7 +43,6 @@
 		"jest": "23.6.0",
 		"jest-junit": "^5.2.0",
 		"prettier": "1.15.3",
-		"react-markdown": "^4.0.4",
 		"ts-jest": "23.10.5"
 	},
 	"marked": {

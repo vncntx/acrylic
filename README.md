@@ -2,7 +2,8 @@
 
 [![Build Status](https://vincentofearth.visualstudio.com/Acrylic/_apis/build/status/Acrylic-CI?branchName=master)](https://vincentofearth.visualstudio.com/Acrylic/_build/latest?definitionId=1?branchName=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://prettier.io/)
-[![conventional commits: 1.0](https://img.shields.io/badge/conventional%20commits-1.0-yellow.svg)](https://conventionalcommits.org)
+[![conventional commits: 1.0](https://img.shields.io/badge/conventional%20commits-1.0-green.svg)](https://conventionalcommits.org)
+[![](https://img.shields.io/github/license/vincentfiestada/acrylic.svg)](https://github.com/vincentfiestada/acrylic/blob/master/LICENSE)
 
 A React Component Library
 
