@@ -12,7 +12,7 @@ export default interface IProps {
 declare type ClassValue = string | ClassDictionary | ClassArray | null | false;
 
 interface ClassDictionary {
-	[id: string]: boolean | null;
+	[name: string]: boolean | null;
 }
 
 interface ClassArray extends Array<ClassValue> {}

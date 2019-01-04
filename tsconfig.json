@@ -3,7 +3,7 @@
 		"module": "commonjs",
 		"target": "es5",
 		"jsx": "react",
-		"typeRoots": ["./typings"],
+		"typeRoots": ["typings", "node_modules/@types"],
 		"sourceMap": true,
 		"outDir": "./dist",
 		"noImplicitAny": true
