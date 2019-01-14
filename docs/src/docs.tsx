@@ -5,9 +5,10 @@ import Overview from "../../README.md";
 import NotFound from "./pages/NotFound.mdx";
 import Button from "./pages/Button.mdx";
 import Column from "./pages/Column.mdx";
+import Row from "./pages/Row.mdx";
 
-const pages = [[Button, "Button"], [Column, "Column"]].map((x: [any, string]) =>
-	toPageInfo(...x)
+const pages = [[Button, "Button"], [Column, "Column"], [Row, "Row"]].map(
+	(x: [any, string]) => toPageInfo(...x)
 );
 
 function Docs() {

@@ -2,10 +2,17 @@
 	background-color: $color-background;
 }
 
-.acr-col {
+%flexbox {
 	display: flex;
+}
+.acr-col {
+	@extend %flexbox;
 	flex-direction: column;
 }
-.acr-col > * {
+.acr-row {
+	@extend %flexbox;
+	flex-direction: row;
+}
+.acr-col > * , .acr-row > * {
 	flex: 1;
 }
