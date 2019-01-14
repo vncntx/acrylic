@@ -1,0 +1,78 @@
+$background: #1C1E26;
+$foreground: white;
+
+%code {
+  background-color: $background;
+  color: $foreground;
+  font-family: "Consolas", "Menlo", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  font-size: 1em;
+  line-height: 1.25em;
+  tab-size: 2;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  @extend %code;
+}
+
+pre[class*="language-"] {
+	width: fit-content;
+	padding: 1.5em;
+	margin: 5px;
+}
+
+.token {
+	background: inherit;
+	color: inherit;
+	font-style: normal;
+}
+
+.token.punctuation {
+	color: #21BFC2;
+}
+
+.token.operator {
+	color: #56C2EA;
+}
+
+.token.comment {
+	color: #959595;
+	font-style: italic;
+}
+
+%token-entity {
+	color: #14D386;
+}
+
+.token.tag {
+	@extend %token-entity;
+}
+
+%token-property {
+	color: #30AAD7;
+}
+
+.token.attr-name {
+	@extend %token-property;
+}
+
+.token.string,
+.token.attr-value,
+.token.attr-value > .token.punctuation:not(:first-child) {
+	color: #f9ca99;
+}
+
+.token.number, .token.constant {
+	color: #F09483;
+}
+
+.jsx-parser {
+	border: solid 2px $background;
+	width: fit-content;
+	padding: 1.5em;
+	margin: 5px;
+}

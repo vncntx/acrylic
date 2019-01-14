@@ -2,8 +2,15 @@
 	background-color: $color-background;
 }
 
+%container {
+	width: fit-content;
+}
+
 %flexbox {
+	@extend %container;
 	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
 }
 .acr-col {
 	@extend %flexbox;
@@ -12,6 +19,7 @@
 .acr-row {
 	@extend %flexbox;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 .acr-col > * , .acr-row > * {
 	flex: 1;

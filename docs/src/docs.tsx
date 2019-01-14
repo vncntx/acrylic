@@ -1,63 +1,63 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
-import Overview from "../../README.md";
-import NotFound from "./pages/NotFound.mdx";
-import Button from "./pages/Button.mdx";
-import Column from "./pages/Column.mdx";
-import Row from "./pages/Row.mdx";
+import { Row } from "../../lib/acrylic";
+import { render } from "./markdown";
 
-const pages = [[Button, "Button"], [Column, "Column"], [Row, "Row"]].map(
-	(x: [any, string]) => toPageInfo(...x)
-);
+const { useState, useEffect } = React;
 
-function Docs() {
+interface IDocProps {
+	pages: string[];
+}
+
+function Doc(props: IDocProps) {
+	const [contentUrl, setContentUrl] = useState(
+		window.location.hash.replace("#", "") || ""
+	);
+	const [contents, setContents] = useState("");
+
+	useEffect(
+		() => {
+			if (contentUrl.length > 0) {
+				fetch(contentUrl).then(res => {
+					res.text().then(setContents);
+				});
+			}
+		},
+		[contentUrl]
+	);
+
 	return (
-		<BrowserRouter>
-			<React.Fragment>
-				<h1>Acrylic</h1>
+		<React.Fragment>
+			<h1>Acrylic</h1>
+			<p>A React Component Library</p>
+			<Row>
 				<ul>
-					<li>
-						<Link to="/">Overview</Link>
-					</li>
-					{pages.map(page => {
-						return (
-							<li key={page.name}>
-								<Link to={page.path}>{page.name}</Link>
-							</li>
-						);
-					})}
+					{props.pages.map(page => (
+						<li key={page}>
+							<a href={`#/${page}`} onClick={() => setContentUrl(page)}>
+								{pageTitle(page)}
+							</a>
+						</li>
+					))}
 				</ul>
-				<Switch>
-					<Route exact path="/" component={Overview} />
-					{pages.map(page => {
-						return (
-							<Route
-								key={page.name}
-								path={page.path}
-								component={page.component}
-							/>
-						);
-					})}
-					<Route component={NotFound} />
-				</Switch>
-			</React.Fragment>
-		</BrowserRouter>
+				<section>{render(contents)}</section>
+			</Row>
+		</React.Fragment>
 	);
 }
 
-interface IPageInfo {
-	name: string;
-	path: string;
-	component: any;
+/**
+ * Extract a title from a document path
+ * @param path
+ */
+function pageTitle(path: string): string {
+	return path
+		.split("/")
+		.pop()
+		.split(".")[0];
 }
 
-function toPageInfo(component: any, name: string): IPageInfo {
-	return {
-		name: name,
-		path: `/${name.toLowerCase()}`,
-		component: component
-	};
-}
-
-ReactDOM.render(<Docs />, document.getElementById("app"));
+ReactDOM.render(
+	<Doc pages={["Column", "Row", "Col2"].map(page => `src/pages/${page}.md`)} />,
+	document.getElementById("app")
+);
