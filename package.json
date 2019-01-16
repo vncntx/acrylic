@@ -11,8 +11,8 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"format": "prettier --write --use-tabs lib/**/*.tsx lib/**/*.ts lib/**/*.scss docs/src/***.tsx docs/src/***.mdx *.js *.yml *.json",
-		"build:dev": "parcel -d docs/dist docs/index.html docs/src/pages/*",
+		"format": "prettier --write --use-tabs 'lib/**/*.tsx' 'lib/**/*.ts' 'lib/**/*.scss' 'test/**/*.tsx' 'test/**/*.ts' 'docs/src/**/*.tsx' 'docs/src/**/*.ts' '*.ts' '*.js' '*.yml' '*.json'",
+		"build:dev": "parcel -d docs/dist docs/index.html docs/src/pages/* docs/src/img/*",
 		"build": "ENV=production parcel build --out-dir=dist lib/acrylic.tsx lib/themes/*.scss",
 		"test": "jest --config jest.config.js --coverage",
 		"test:junit": "yarn test --reporters=default --reporters=jest-junit"

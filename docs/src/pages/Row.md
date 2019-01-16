@@ -4,8 +4,8 @@ A Row lays out its children in a single row.
 
 ```jsx
 <Row>
-	<div>Item 1</div>
-	<div>Item 2</div>
-	<div>Item 3</div>
+	<div><img src="/src/img/d8.png" /></div>
+	<div><img src="/src/img/d10.png" /></div>
+	<div><img src="/src/img/d20.png" /></div>
 </Row>
 ```

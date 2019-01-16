@@ -1,11 +1,10 @@
 /**
  * Typography Styles
  */
-
 * {
-	font-family: $font-stack-standard;
+	font-family: inherit;
 	font-size: inherit;
-	color: $color-foreground;
+	color: inherit;
 }
 *::selection {
 	background-color: rgba($color-accent, 0.8);
@@ -13,6 +12,8 @@
 }
 body {
 	font-size: $font-size-standard;
+	font-family: $font-stack-standard;
+	color: $color-foreground;
 }
 %typography {
 	color: $color-foreground;
@@ -48,4 +49,25 @@ h5 {
 h6 {
 	@extend %heading;
 	font-size: 1.25em;
+}
+%code {
+	font-family: $font-stack-monospace;
+	background: $color-foreground;
+	color: $color-background;
+	font-size: 1em;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	font-size: 1em;
+	line-height: 1.25em;
+	tab-size: 2;
+}
+code {
+	@extend %code;
+}
+pre {
+	@extend %code;
+	padding: 1.5em;
+	margin: 5px;
+	text-align: left;
 }

@@ -1,47 +1,50 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Row } from "../../lib/acrylic";
-import { render } from "./markdown";
-
-const { useState, useEffect } = React;
+import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
+import { Row, Column } from "../../lib/acrylic";
+import Page from "./components/Page";
+import ErrorPage from "./components/ErrorPage";
+import HomePage from "./components/HomePage";
+import PageLink from "./components/PageLink";
 
 interface IDocProps {
 	pages: string[];
 }
 
 function Doc(props: IDocProps) {
-	const [contentUrl, setContentUrl] = useState(
-		window.location.hash.replace("#", "") || ""
-	);
-	const [contents, setContents] = useState("");
-
-	useEffect(
-		() => {
-			if (contentUrl.length > 0) {
-				fetch(contentUrl).then(res => {
-					res.text().then(setContents);
-				});
-			}
-		},
-		[contentUrl]
-	);
-
 	return (
 		<React.Fragment>
-			<h1>Acrylic</h1>
-			<p>A React Component Library</p>
-			<Row>
-				<ul>
-					{props.pages.map(page => (
-						<li key={page}>
-							<a href={`#/${page}`} onClick={() => setContentUrl(page)}>
-								{pageTitle(page)}
-							</a>
-						</li>
-					))}
-				</ul>
-				<section>{render(contents)}</section>
-			</Row>
+			<Column>
+				<h1 className="title">Acrylic</h1>
+				<p>A React Component Library</p>
+			</Column>
+			<Column>
+				<BrowserRouter>
+					<Row>
+						<nav>
+							<ul>
+								<li>
+									<NavLink exact to="/" activeClassName="selected">
+										Overview
+									</NavLink>
+								</li>
+								<li>
+									<PageLink>Column</PageLink>
+								</li>
+								<li>
+									<PageLink>Row</PageLink>
+								</li>
+							</ul>
+						</nav>
+						<Switch>
+							<Route exact path="/" component={HomePage} />
+							<Route path="/component/:name" component={Page} />
+							<Route path="/error/:message" component={ErrorPage} />
+							<Route component={ErrorPage} />
+						</Switch>
+					</Row>
+				</BrowserRouter>
+			</Column>
 		</React.Fragment>
 	);
 }
@@ -58,6 +61,12 @@ function pageTitle(path: string): string {
 }
 
 ReactDOM.render(
-	<Doc pages={["Column", "Row", "Col2"].map(page => `src/pages/${page}.md`)} />,
+	<Doc
+		pages={["Column", "Row"]
+			.map(page => `src/pages/${page}.md`)
+			.concat(
+				"https://raw.githubusercontent.com/vincentfiestada/acrylic/master/README.md"
+			)}
+	/>,
 	document.getElementById("app")
 );

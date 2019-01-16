@@ -1,16 +1,23 @@
 * {
+	background-color: inherit;
+}
+
+body {
 	background-color: $color-background;
 }
 
 %container {
-	width: fit-content;
+	padding: 0px;
+	margin: 0px;
 }
 
 %flexbox {
 	@extend %container;
 	display: flex;
-	justify-content: flex-start;
+	flex-wrap: nowrap;
+	justify-content: stretch;
 	align-items: stretch;
+	align-content: stretch;
 }
 .acr-col {
 	@extend %flexbox;
@@ -21,6 +28,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 }
-.acr-col > * , .acr-row > * {
+.acr-col > *,
+.acr-row > * {
 	flex: 1;
 }

@@ -1,0 +1,79 @@
+$color-accent: rgb(31, 108, 180);
+// Syntax Highlighting Settings
+$token-color-punctuation: #21BFC2;
+$token-color-keyword: #56C2EA;
+$token-color-entity: #14D386;
+$token-color-property: #30AAD7;
+$token-color-string: #f9ca99;
+$token-color-constant: #F09483;
+$token-color-comment: #959595;
+
+.title, .title+p {
+	text-align: center;
+}
+.title {
+	font-size: 6em;
+}
+
+nav {
+	max-width: fit-content;
+	margin-right: 20px;
+	font-size: 1.25em;
+	text-align: right;
+}
+nav li {
+	list-style: none;
+	padding: 0.25em;
+}
+nav ul {
+	padding: 0.25em 0.25em 0.25em 1em;
+}
+nav a:any-link {
+	text-decoration: none;
+}
+nav a:hover, nav a:focus, nav a.selected {
+	color: $color-accent;
+}
+
+.token {
+	background: inherit;
+	color: inherit;
+	font-style: normal;
+}
+
+.token.punctuation {
+	color: $token-color-punctuation;
+}
+
+.token.operator {
+	color: $token-color-keyword;
+}
+
+.token.comment {
+	color: $token-color-comment;
+	font-style: italic;
+}
+
+.token.tag {
+	color: $token-color-entity;
+}
+
+.token.attr-name {
+	color: $token-color-property;
+}
+
+.token.string,
+.token.attr-value,
+.token.attr-value > .token.punctuation:not(:first-child) {
+	color: $token-color-string;
+}
+
+.token.number, .token.constant {
+	color: $token-color-constant;
+}
+
+.jsx-parser {
+	border: solid 1px black;
+	margin: 5px;
+	padding: 1em;
+}
