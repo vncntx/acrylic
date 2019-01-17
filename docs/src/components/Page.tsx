@@ -1,6 +1,7 @@
 import * as React from "react";
 import { match as IMatch } from "react-router-dom";
 import Markdown from "./Markdown";
+import TypeDoc from "./TypeDoc";
 
 interface IPageParams {
 	name?: string;
@@ -12,6 +13,11 @@ export interface IPageProps {
 
 export default function Page(props: IPageProps) {
 	const { match } = props;
+	const { name } = match.params;
 
-	return <Markdown src={`/src/pages/${match.params.name}.md`} />;
+	return (
+		<section>
+			<Markdown classes="article" src={`/src/pages/${name}.md`} />
+		</section>
+	);
 }

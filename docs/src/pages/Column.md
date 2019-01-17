@@ -1,5 +1,7 @@
 ## Column
 
+[wiki]: /wiki/modules/_components_layout_column_.html
+
 A Column lays out its children in a single column.
 
 ```jsx

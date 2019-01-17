@@ -5,6 +5,10 @@ pool:
   vmImage: "ubuntu-16.04"
 
 steps:
+  - checkout: self
+    persistCredentials: true
+    clean: true
+
   - task: NodeTool@0
     displayName: Install Node
     inputs:
@@ -19,6 +23,7 @@ steps:
   - task: PublishTestResults@2
     displayName: Publish Test Results
     inputs:
+      testResultsFormat: JUnit
       testResultsFiles: "junit.xml"
       testRunTitle: "Results for Unit Tests"
     condition: succeededOrFailed()
@@ -28,3 +33,21 @@ steps:
     inputs:
       codeCoverageTool: "Cobertura"
       summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/coverage/cobertura-coverage.xml"
+
+  - script: yarn typedoc
+    displayName: Generate TypeDoc Wiki
+
+  - script: yarn build:docs
+    displayName: Build Docs
+
+  - script: cd docs/dist && git init . && git remote add origin git@github.com:vincentfiestada/acrylic.git && git add -A
+    displayName: Staging Commit
+
+  - script: cd docs/dist && git config user.name 'Azure Pipelines' && git config user.email 'vincentfiestada@hotmail.com'
+    displayName: Configure Git
+
+  - script: cd docs/dist && git commit -m 'build docs'
+    displayName: Commit
+
+  - script: cd docs/dist && git push -u origin master:gh-pages --force
+    displayName: Push to GitHub

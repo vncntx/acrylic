@@ -35,15 +35,17 @@
 button {
 	@extend %control;
 	@extend %subtle-transition;
-	box-shadow: 0px $shadow-width (2 * $shadow-width) rgba($color-foreground, 0.8);
+	background: darken($color-background, 5);
+	color: $color-foreground;
+	font-weight: 600;
 }
 button:hover,
 button:focus {
 	@extend %subtle-transition;
-	background-color: darken($color-background, 10);
+	outline: none;
+	border-color: rgba($color-foreground, 0.9);
 }
 button:active {
 	@extend %subtle-transition;
-	box-shadow: 0px (0.75 * $shadow-width) (2 * $shadow-width)
-		rgba($color-foreground, 0.8);
+	outline: none;
 }

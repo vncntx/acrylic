@@ -1,6 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
+import {
+	BrowserRouter,
+	Switch,
+	NavLink,
+	Route,
+	Redirect,
+	generatePath
+} from "react-router-dom";
 import { Row, Column } from "../../lib/acrylic";
 import Page from "./components/Page";
 import ErrorPage from "./components/ErrorPage";
@@ -14,33 +21,48 @@ interface IDocProps {
 function Doc(props: IDocProps) {
 	return (
 		<React.Fragment>
-			<Column>
-				<BrowserRouter>
-					<Row>
-						<nav>
-							<ul>
-								<li>
-									<NavLink exact to="/" activeClassName="selected">
-										Overview
-									</NavLink>
-								</li>
-								<li>
-									<PageLink>Column</PageLink>
-								</li>
-								<li>
-									<PageLink>Row</PageLink>
-								</li>
-							</ul>
-						</nav>
-						<Switch>
-							<Route exact path="/" component={HomePage} />
-							<Route path="/component/:name" component={Page} />
-							<Route path="/error/:message" component={ErrorPage} />
-							<Route component={ErrorPage} />
-						</Switch>
-					</Row>
-				</BrowserRouter>
-			</Column>
+			<BrowserRouter>
+				<Row>
+					<nav>
+						<ul>
+							<li>
+								<img src="/src/img/icon.png" className="logo" />
+							</li>
+							<li>
+								<NavLink exact to="/" activeClassName="selected">
+									Overview
+								</NavLink>
+							</li>
+							<li>
+								<PageLink>Column</PageLink>
+							</li>
+							<li>
+								<PageLink>Row</PageLink>
+							</li>
+						</ul>
+					</nav>
+					<Switch>
+						<Route exact path="/" component={HomePage} />
+						<Route path="/component/:name" component={Page} />
+						<Route path="/error/:message/:details?" component={ErrorPage} />
+						<Route
+							render={props => (
+								<ErrorPage
+									match={{
+										...props.match,
+										params: {
+											message: "Not Found",
+											details: `The page "${
+												window.location.pathname
+											}" does not exist`
+										}
+									}}
+								/>
+							)}
+						/>
+					</Switch>
+				</Row>
+			</BrowserRouter>
 		</React.Fragment>
 	);
 }

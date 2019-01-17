@@ -10,5 +10,3 @@ export { default as IEventProps } from "./components/IEventProps";
 export { default as ILayoutProps } from "./components/layout/ILayoutProps";
 export { default as Column } from "./components/layout/Column";
 export { default as Row } from "./components/layout/Row";
-
-export { default as Button } from "./components/controls/Button";

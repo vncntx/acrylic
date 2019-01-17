@@ -8,6 +8,10 @@ $token-color-string: #f9ca99;
 $token-color-constant: #F09483;
 $token-color-comment: #959595;
 
+html, body, #app, #app > * {
+	height: 100%;
+}
+
 .title, .title+p {
 	text-align: center;
 }
@@ -15,11 +19,18 @@ $token-color-comment: #959595;
 	font-size: 6em;
 }
 
+a:any-link {
+	text-decoration: none;
+}
+a:hover, a:focus, a.selected {
+	color: $color-accent;
+}
+
 nav {
 	max-width: fit-content;
-	margin-right: 20px;
+	margin-right: 30px;
 	font-size: 1.25em;
-	text-align: right;
+	text-align: center;
 }
 nav li {
 	list-style: none;
@@ -28,11 +39,44 @@ nav li {
 nav ul {
 	padding: 0.25em 0.25em 0.25em 1em;
 }
-nav a:any-link {
-	text-decoration: none;
+nav img.logo {
+	height: 64px;
+	width: auto;
 }
-nav a:hover, nav a:focus, nav a.selected {
-	color: $color-accent;
+
+%row-center {
+	display: flex;
+  align-items: center;
+	justify-content: center;
+}
+
+.alert {
+	margin: 20px;
+	padding: 40px;
+}
+.alert > .alert-title {
+	@extend %row-center;
+}
+.icon {
+	max-width: fit-content;
+	max-height: fit-content;
+	padding: 0;
+	margin: 0;
+	margin-right: 0.5ch;
+}
+.icon-small {
+	@extend .icon;
+	max-width: 24px;
+	max-height: 24px;
+}
+.error-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.error-page .alert {
+	background-color: lighten(rgb(226, 164, 30), 20);
+	border: solid 2px rgb(194, 51, 51);
 }
 
 .token {
@@ -76,4 +120,19 @@ nav a:hover, nav a:focus, nav a.selected {
 	border: solid 1px black;
 	margin: 5px;
 	padding: 1em;
+}
+
+.api-link {
+	padding-top: 20px;
+}
+.api-link button {
+	@extend %row-center;
+}
+
+.article {
+	margin-top: 40px;
+	padding: 20px 5vw;
+}
+.home-page.article {
+	margin-top: 0px;
 }

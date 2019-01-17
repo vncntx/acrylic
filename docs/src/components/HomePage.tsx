@@ -6,6 +6,9 @@ import Markdown from "./Markdown";
  */
 export default function HomePage() {
 	return (
-		<Markdown src="https://raw.githubusercontent.com/vincentfiestada/acrylic/master/README.md" />
+		<Markdown
+			classes="home-page article"
+			src="https://raw.githubusercontent.com/vincentfiestada/acrylic/master/README.md"
+		/>
 	);
 }

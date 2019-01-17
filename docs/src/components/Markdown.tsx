@@ -57,9 +57,10 @@ export default function Markdown(props: IMarkdownProps) {
 	}
 
 	const tokens = marked.lexer(contents);
+	const wikiLink = findWikiLink(contents);
 	let lastKey = 1;
 	return (
-		<section className={classNames(props.classes)}>
+		<div className={classNames(props.classes)}>
 			{tokens.map((token: any) => {
 				const key = lastKey++;
 				switch (token.type) {
@@ -93,7 +94,17 @@ export default function Markdown(props: IMarkdownProps) {
 						);
 				}
 			})}
-		</section>
+			{wikiLink ? (
+				<p className="api-link">
+					<a href={wikiLink}>
+						<button>
+							<img className="icon-small" src="/src/img/book.png" />
+							Wiki
+						</button>
+					</a>
+				</p>
+			) : null}
+		</div>
 	);
 }
 
@@ -112,4 +123,11 @@ function renderHeading(level: number, text: string, props?: object) {
 		default:
 			return <h6 {...props}>{text}</h6>;
 	}
+}
+
+function findWikiLink(contents: string): string | null {
+	const linkLine = contents
+		.split("\n")
+		.find(line => line.search(/\[wiki\]: .+/gi) > -1);
+	return linkLine ? linkLine.split(": ")[1] || null : null;
 }

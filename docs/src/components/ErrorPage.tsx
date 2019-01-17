@@ -3,6 +3,7 @@ import { match as IMatch } from "react-router-dom";
 
 interface IErrorParams {
 	message?: string;
+	details?: string;
 }
 
 export interface IErrorPageProps {
@@ -16,10 +17,17 @@ export interface IErrorPageProps {
 export default function ErrorPage(props: IErrorPageProps) {
 	const { match } = props;
 
+	console.log(match);
+
 	return (
-		<section>
-			<img src="/src/img/error.png" />
-			<h2>Error: {match.params.message || "Not Found"}</h2>
-		</section>
+		<div className="error-page">
+			<div className="alert">
+				<section className="alert-title">
+					<img src="/src/img/error.png" className="icon" />
+					<h2>{match.params.message || "Unknown Error"}</h2>
+				</section>
+				<p>{match.params.details}</p>
+			</div>
+		</div>
 	);
 }
