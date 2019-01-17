@@ -15,10 +15,6 @@ function Doc(props: IDocProps) {
 	return (
 		<React.Fragment>
 			<Column>
-				<h1 className="title">Acrylic</h1>
-				<p>A React Component Library</p>
-			</Column>
-			<Column>
 				<BrowserRouter>
 					<Row>
 						<nav>

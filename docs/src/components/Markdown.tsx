@@ -20,31 +20,37 @@ export default function Markdown(props: IMarkdownProps) {
 	const [contents, setContents] = useState("");
 	const [hasError, setError] = useState(false);
 
-	useEffect(() => {
-		const abortController = new AbortController();
-		if (contentUrl.length > 0) {
-			fetch(contentUrl, {
-				signal: abortController.signal
-			})
-				.then(res => {
-					if (res.status < 200 || res.status > 299) {
-						setError(true);
-					} else {
-						res.text().then(contents => {
-							setContents(contents);
-						});
-					}
+	useEffect(
+		() => {
+			const abortController = new AbortController();
+			if (contentUrl.length > 0) {
+				fetch(contentUrl, {
+					signal: abortController.signal
 				})
-				.catch((err: Error) => {
-					if (
-						!(err instanceof DOMException && err.code == DOMException.ABORT_ERR)
-					) {
-						setError(true);
-					}
-				});
-			return () => abortController.abort();
-		}
-	});
+					.then(res => {
+						if (res.status < 200 || res.status > 299) {
+							setError(true);
+						} else {
+							res.text().then(contents => {
+								setContents(contents);
+							});
+						}
+					})
+					.catch((err: Error) => {
+						if (
+							!(
+								err instanceof DOMException &&
+								err.code == DOMException.ABORT_ERR
+							)
+						) {
+							setError(true);
+						}
+					});
+				return () => abortController.abort();
+			}
+		},
+		[contentUrl]
+	);
 
 	if (hasError) {
 		return <Redirect to="/error" />;
