@@ -1,13 +1,18 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 
+export interface IPageLinkProps {
+	children: string;
+	path: string;
+}
+
 /**
  * A navigation link to a component documentation page
  * @param props component props
  */
-export default function PageLink(props: React.Props<{}>) {
+export default function PageLink(props: IPageLinkProps) {
 	return (
-		<NavLink to={`/component/${props.children}`} activeClassName="selected">
+		<NavLink to={`/components/${props.path}`} activeClassName="selected">
 			{props.children}
 		</NavLink>
 	);

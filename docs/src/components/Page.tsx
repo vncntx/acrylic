@@ -1,7 +1,6 @@
 import * as React from "react";
 import { match as IMatch } from "react-router-dom";
 import Markdown from "./Markdown";
-import TypeDoc from "./TypeDoc";
 
 interface IPageParams {
 	name?: string;

@@ -14,11 +14,7 @@ import ErrorPage from "./components/ErrorPage";
 import HomePage from "./components/HomePage";
 import PageLink from "./components/PageLink";
 
-interface IDocProps {
-	pages: string[];
-}
-
-function Doc(props: IDocProps) {
+function Doc() {
 	return (
 		<React.Fragment>
 			<BrowserRouter>
@@ -34,16 +30,16 @@ function Doc(props: IDocProps) {
 								</NavLink>
 							</li>
 							<li>
-								<PageLink>Column</PageLink>
+								<PageLink path="layout/Column">Column</PageLink>
 							</li>
 							<li>
-								<PageLink>Row</PageLink>
+								<PageLink path="layout/Row">Row</PageLink>
 							</li>
 						</ul>
 					</nav>
 					<Switch>
 						<Route exact path="/" component={HomePage} />
-						<Route path="/component/:name" component={Page} />
+						<Route path="/components/:name+" component={Page} />
 						<Route path="/error/:message/:details?" component={ErrorPage} />
 						<Route
 							render={props => (
@@ -72,19 +68,7 @@ function Doc(props: IDocProps) {
  * @param path
  */
 function pageTitle(path: string): string {
-	return path
-		.split("/")
-		.pop()
-		.split(".")[0];
+	return path.split("/").pop();
 }
 
-ReactDOM.render(
-	<Doc
-		pages={["Column", "Row"]
-			.map(page => `src/pages/${page}.md`)
-			.concat(
-				"https://raw.githubusercontent.com/vincentfiestada/acrylic/master/README.md"
-			)}
-	/>,
-	document.getElementById("app")
-);
+ReactDOM.render(<Doc />, document.getElementById("app"));
