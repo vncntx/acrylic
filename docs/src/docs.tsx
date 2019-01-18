@@ -17,58 +17,75 @@ import PageLink from "./components/PageLink";
 function Doc() {
 	return (
 		<React.Fragment>
-			<BrowserRouter>
-				<Row>
-					<nav>
-						<ul>
-							<li>
-								<img src="/src/img/icon.png" className="logo" />
-							</li>
-							<li>
-								<NavLink exact to="/" activeClassName="selected">
-									Overview
-								</NavLink>
-							</li>
-							<li>
-								<PageLink path="layout/Column">Column</PageLink>
-							</li>
-							<li>
-								<PageLink path="layout/Row">Row</PageLink>
-							</li>
-						</ul>
-					</nav>
-					<Switch>
-						<Route exact path="/" component={HomePage} />
-						<Route path="/components/:name+" component={Page} />
-						<Route path="/error/:message/:details?" component={ErrorPage} />
-						<Route
-							render={props => (
-								<ErrorPage
-									match={{
-										...props.match,
-										params: {
-											message: "Not Found",
-											details: `The page "${
-												window.location.pathname
-											}" does not exist`
-										}
-									}}
-								/>
-							)}
-						/>
-					</Switch>
-				</Row>
-			</BrowserRouter>
+			<main>
+				<BrowserRouter>
+					<Row>
+						<nav>
+							<ul>
+								<li>
+									<img src="/src/img/icon.png" className="logo" />
+								</li>
+								<li>
+									<NavLink exact to="/" activeClassName="selected">
+										Overview
+									</NavLink>
+								</li>
+								<li>
+									<PageLink path="layout/Column">Column</PageLink>
+								</li>
+								<li>
+									<PageLink path="layout/Row">Row</PageLink>
+								</li>
+							</ul>
+						</nav>
+						<Switch>
+							<Route exact path="/" component={HomePage} />
+							<Route path="/components/:name+" component={Page} />
+							<Route path="/error/:message/:details?" component={ErrorPage} />
+							<Route
+								render={props => (
+									<ErrorPage
+										match={{
+											...props.match,
+											params: {
+												message: "Not Found",
+												details: `The page "${
+													window.location.pathname
+												}" does not exist`
+											}
+										}}
+									/>
+								)}
+							/>
+						</Switch>
+					</Row>
+				</BrowserRouter>
+			</main>
+			<footer>
+				<section>
+					<img className="icon-small" src="/src/img/fork.png" />
+					<a
+						href="https://github.com/vincentfiestada/acrylic/"
+						title="View Repository"
+					>
+						Contribute
+					</a>
+				</section>
+				<section>
+					<img className="icon-small" src="/src/img/osi.png" />
+					<p>
+						<a
+							href="https://github.com/vincentfiestada/acrylic/blob/master/LICENSE"
+							title="View License"
+						>
+							Open Source
+						</a>{" "}
+						&copy; 2019
+					</p>
+				</section>
+			</footer>
 		</React.Fragment>
 	);
-}
-
-/**
- * Extract a title from a document path
- * @param path
- */
-function pageTitle(path: string): string {
-	return path.split("/").pop();
 }
 
 ReactDOM.render(<Doc />, document.getElementById("app"));

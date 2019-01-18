@@ -8,8 +8,20 @@ $token-color-string: #f9ca99;
 $token-color-constant: #F09483;
 $token-color-comment: #959595;
 
-html, body, #app, #app > * {
+html, body {
 	height: 100%;
+}
+#app {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+}
+#app > main {
+	flex: 1 0 auto;
+	padding: 0;
+	margin: 0;
 }
 
 .title, .title+p {
@@ -28,7 +40,7 @@ a:hover, a:focus, a.selected {
 
 nav {
 	max-width: fit-content;
-	margin-right: 30px;
+	padding-right: 30px;
 	font-size: 1.25em;
 	text-align: center;
 }
@@ -54,7 +66,7 @@ nav img.logo {
 	margin: 20px;
 	padding: 40px;
 }
-.alert > .alert-title {
+.alert-title {
 	@extend %row-center;
 }
 .icon {
@@ -66,8 +78,8 @@ nav img.logo {
 }
 .icon-small {
 	@extend .icon;
-	max-width: 24px;
-	max-height: 24px;
+	max-width: 32px;
+	max-height: 32px;
 }
 .error-page {
 	display: flex;
@@ -124,6 +136,7 @@ nav img.logo {
 
 .api-link {
 	padding-top: 20px;
+	width: fit-content;
 }
 .api-link button {
 	@extend %row-center;
@@ -135,4 +148,38 @@ nav img.logo {
 }
 .home-page.article {
 	margin-top: 0px;
+}
+.home-page.article section:first-of-type {
+	flex-wrap: wrap;
+}
+
+footer {
+	flex: 0 0 auto;
+	padding: 12px;
+	margin: 5px 0 0 0;
+	text-align: right;
+	display: flex;
+	align-items: center;
+	justify-items: space-evenly;
+	box-shadow: 0px -1px 3px rgba(32, 32, 32, 0.4);
+	height: fit-content;
+}
+footer p {
+	padding: 0;
+	margin: 0;
+}
+
+footer > * {
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: row;
+  align-items: center;
+	padding: 0 10px;
+	margin: 0;
+}
+footer > *:first-of-type {
+	justify-content: flex-start;
+}
+footer > *:last-of-type {
+	justify-content: flex-end;
 }

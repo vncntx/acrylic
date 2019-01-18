@@ -1,7 +1,7 @@
 import * as React from "react";
 import classNames from "classnames";
 import marked from "marked";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { Row, IProps } from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
@@ -95,14 +95,14 @@ export default function Markdown(props: IMarkdownProps) {
 				}
 			})}
 			{wikiLink ? (
-				<p className="api-link">
-					<a href={wikiLink}>
+				<section className="api-link">
+					<Link to={wikiLink}>
 						<button>
 							<img className="icon-small" src="/src/img/book.png" />
 							Wiki
 						</button>
-					</a>
-				</p>
+					</Link>
+				</section>
 			) : null}
 		</div>
 	);
