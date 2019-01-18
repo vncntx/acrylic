@@ -1,6 +1,9 @@
 /**
  * Typography Styles
  */
+
+@import "utils";
+
 * {
 	font-family: inherit;
 	font-size: inherit;
@@ -17,38 +20,45 @@ body {
 }
 %typography {
 	color: $color-foreground;
+	padding: 0;
+	margin: 0;
+	line-height: 1em;
 }
 %heading {
 	@extend %typography;
 	font-weight: bold;
-	margin-top: $spacing-unit;
-	margin-bottom: $spacing-unit;
-	line-height: 1em;
+	line-height: inherit;
+	padding: $spacing-unit 0;
 }
-h1 {
+.acr-title {
 	@extend %heading;
-	font-size: 4em;
-	font-weight: 500;
+}
+
+@mixin title($level) {
+	@extend %heading;
+	font-size: $font-size-title * power($scaling-factor-title, $level - 1);
+	font-weight: 600;
+}
+
+h1 {
+	@include title(1);
 }
 h2 {
-	@extend %heading;
-	font-size: 2.25em;
+	@include title(2);
 }
 h3 {
-	@extend %heading;
-	font-size: 2em;
+	@include title(3);
 }
 h4 {
-	@extend %heading;
-	font-size: 1.75em;
+	@include title(4);
 }
 h5 {
-	@extend %heading;
-	font-size: 1.4em;
+	@include title(5);
+	font-size: 800;
 }
 h6 {
-	@extend %heading;
-	font-size: 1.25em;
+	@include title(6);
+	font-size: 800;
 }
 %code {
 	font-family: $font-stack-monospace;
@@ -70,4 +80,26 @@ pre {
 	padding: 1.5em;
 	margin: 5px;
 	text-align: left;
+}
+
+%bold {
+	font-weight: 600;
+}
+%italic {
+	font-style: italic;
+}
+%underlined {
+	text-decoration: underline;
+}
+.acr-bold {
+	@extend %bold;
+}
+.acr-italic {
+	@extend %italic;
+}
+.acr-underlined {
+	@extend %underlined;
+}
+.acr-inline {
+	display: inline;
 }

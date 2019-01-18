@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> Should match the latest snapshots 1`] = `
+<React.Fragment>
+  <Title
+    level={1}
+  >
+    Chapter
+  </Title>
+  <Title
+    level={2}
+  >
+    Chapter
+  </Title>
+  <Title
+    level={3}
+  >
+    Chapter
+  </Title>
+  <Title
+    level={4}
+  >
+    Chapter
+  </Title>
+  <Title
+    level={5}
+  >
+    Chapter
+  </Title>
+  <Title
+    level={6}
+  >
+    Chapter
+  </Title>
+</React.Fragment>
+`;

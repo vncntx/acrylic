@@ -30,11 +30,16 @@ function Doc() {
 										Overview
 									</NavLink>
 								</li>
+								<hr />
 								<li>
 									<PageLink path="layout/Column">Column</PageLink>
 								</li>
 								<li>
 									<PageLink path="layout/Row">Row</PageLink>
+								</li>
+								<hr />
+								<li>
+									<PageLink path="typography/Title">Title</PageLink>
 								</li>
 							</ul>
 						</nav>

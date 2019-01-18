@@ -56,6 +56,13 @@ nav img.logo {
 	width: auto;
 }
 
+hr {
+	text-align: center;
+	padding: 0;
+	margin: 5px;
+	border: solid 1px black;
+}
+
 %row-center {
 	display: flex;
   align-items: center;
@@ -151,6 +158,12 @@ nav img.logo {
 }
 .home-page.article section:first-of-type {
 	flex-wrap: wrap;
+}
+.article > .code-preview {
+	margin: 20px 0;
+}
+.code-preview > *, .code-preview pre {
+	border-radius: 8px;
 }
 
 footer {

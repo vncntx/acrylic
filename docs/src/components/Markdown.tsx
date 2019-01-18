@@ -2,7 +2,7 @@ import * as React from "react";
 import classNames from "classnames";
 import marked from "marked";
 import { Redirect, Link } from "react-router-dom";
-import { Row, IProps } from "../../../lib/acrylic";
+import { Row, IProps, Title } from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
 const { useState, useEffect } = React;
@@ -65,17 +65,17 @@ export default function Markdown(props: IMarkdownProps) {
 				const key = lastKey++;
 				switch (token.type) {
 					case "heading":
-						return renderHeading(token.depth, token.text, { key: key });
+						return (
+							<Title key={key} level={token.depth}>
+								{token.text}
+							</Title>
+						);
 					case "space":
 						return null;
 					case "code":
 						switch (token.lang) {
 							case "jsx":
-								return (
-									<Row key={key}>
-										<CodePreview>{token.text}</CodePreview>
-									</Row>
-								);
+								return <CodePreview>{token.text}</CodePreview>;
 							default:
 								return (
 									<pre key={key}>
@@ -85,7 +85,7 @@ export default function Markdown(props: IMarkdownProps) {
 						}
 					default:
 						return (
-							<p
+							<span
 								key={key}
 								dangerouslySetInnerHTML={{
 									__html: marked.inlineLexer(token.text, [])
@@ -106,23 +106,6 @@ export default function Markdown(props: IMarkdownProps) {
 			) : null}
 		</div>
 	);
-}
-
-function renderHeading(level: number, text: string, props?: object) {
-	switch (level) {
-		case 1:
-			return <h1 {...props}>{text}</h1>;
-		case 2:
-			return <h2 {...props}>{text}</h2>;
-		case 3:
-			return <h3 {...props}>{text}</h3>;
-		case 4:
-			return <h4 {...props}>{text}</h4>;
-		case 5:
-			return <h5 {...props}>{text}</h5>;
-		default:
-			return <h6 {...props}>{text}</h6>;
-	}
 }
 
 function findWikiLink(contents: string): string | null {
