@@ -35,19 +35,24 @@ steps:
       summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/coverage/cobertura-coverage.xml"
 
   - script: yarn typedoc
-    displayName: Generate TypeDoc Wiki
+    displayName: Generate Wiki
 
-  - script: yarn build:docs
+  - script: yarn build:docs && cp web.config docs/dist/
     displayName: Build Docs
 
-  - script: cd docs/dist && git init . && git remote add origin git@github.com:vincentfiestada/acrylic.git && git add -A
-    displayName: Staging Commit
-
-  - script: cd docs/dist && git config user.name 'Azure Pipelines' && git config user.email 'vincentfiestada@hotmail.com'
-    displayName: Configure Git
-
-  - script: cd docs/dist && git commit -m 'build docs'
-    displayName: Commit
-
-  - script: cd docs/dist && git push -u origin master:gh-pages --force
-    displayName: Push to GitHub
+  - task: FtpUpload@1
+    displayName: Upload to Azure
+    inputs:
+      credentialsOption: inputs
+      serverEndpoint:
+      serverUrl: ftps://waws-prod-sg1-029.ftp.azurewebsites.windows.net/site/wwwroot
+      username: 'acrylic\$acrylic'
+      password: $(ftp.password)
+      rootDirectory: docs/dist
+      filePatterns: "**"
+      overwrite: true
+      preservePaths: true
+      remoteDirectory: /site/wwwroot
+      clean: false
+      cleanContents: true
+      trustSSL: false
