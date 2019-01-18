@@ -83,7 +83,7 @@ pre {
 }
 
 %bold {
-	font-weight: 600;
+	font-weight: bold;
 }
 %italic {
 	font-style: italic;
@@ -93,6 +93,10 @@ pre {
 }
 .acr-bold {
 	@extend %bold;
+}
+.acr-title.acr-bold {
+	text-shadow: 1px 0px 0px $color-foreground, 0px 1px 0px $color-foreground,
+		-1px 0px 0px $color-foreground, 0px -1px 0px $color-foreground;
 }
 .acr-italic {
 	@extend %italic;
