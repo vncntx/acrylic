@@ -32,5 +32,25 @@ exports[`<Title /> Should match the latest snapshots 1`] = `
   >
     Chapter
   </Title>
+  <Title
+    inline={true}
+  >
+    Chapter
+  </Title>
+  <Title
+    bold={true}
+  >
+    Chapter
+  </Title>
+  <Title
+    italic={true}
+  >
+    Chapter
+  </Title>
+  <Title
+    underlined={true}
+  >
+    Chapter
+  </Title>
 </React.Fragment>
 `;

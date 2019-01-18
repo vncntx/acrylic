@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Should match the latest snapshots 1`] = `
+<React.Fragment>
+  <Button>
+    Button
+  </Button>
+  <Button
+    variant="primary"
+  >
+    Primary
+  </Button>
+  <Button
+    variant="success"
+  >
+    Success
+  </Button>
+  <Button
+    variant="info"
+  >
+    Info
+  </Button>
+  <Button
+    variant="warning"
+  >
+    Warning
+  </Button>
+  <Button
+    variant="danger"
+  >
+    Danger
+  </Button>
+  <Button
+    disabled={true}
+  >
+    Disabled
+  </Button>
+</React.Fragment>
+`;

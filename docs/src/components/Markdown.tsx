@@ -2,7 +2,7 @@ import * as React from "react";
 import classNames from "classnames";
 import marked from "marked";
 import { Redirect, Link } from "react-router-dom";
-import { Row, IProps, Title } from "../../../lib/acrylic";
+import { Button, IProps, Title } from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
 const { useState, useEffect } = React;
@@ -75,7 +75,7 @@ export default function Markdown(props: IMarkdownProps) {
 					case "code":
 						switch (token.lang) {
 							case "jsx":
-								return <CodePreview>{token.text}</CodePreview>;
+								return <CodePreview key={key}>{token.text}</CodePreview>;
 							default:
 								return (
 									<pre key={key}>
@@ -97,10 +97,10 @@ export default function Markdown(props: IMarkdownProps) {
 			{wikiLink ? (
 				<section className="api-link">
 					<Link to={wikiLink}>
-						<button>
+						<Button>
 							<img className="icon-small" src="/src/img/book.png" />
 							Wiki
-						</button>
+						</Button>
 					</Link>
 				</section>
 			) : null}

@@ -3,50 +3,130 @@
  */
 @import "animation";
 
-%control {
-	margin: 0 $spacing-unit;
-	padding: 0.4em 1em;
-	color: $color-foreground;
-	border-style: solid;
-	border-width: 0.5px;
-	border-color: rgba($color-foreground, 0.5);
-	transition-duration: 150ms;
-}
-%control:focus,
-%control:hover {
-	border-color: rgba($color-foreground, 0.8);
-}
-%control:first-child {
-	margin-left: 0;
-}
-%control:last-child {
-	margin-right: 0;
-}
-@media only screen and (max-width: $width-tablet) {
-	.acr-row > %control {
-		margin: 0 0 2 * $spacing-unit 0;
-	}
-}
-
 /**
  * Buttons
  */
-button {
-	@extend %control;
+@mixin button($background, $foreground) {
 	@extend %subtle-transition;
-	color: $color-foreground;
-	font-weight: bold;
-	padding: $spacing-unit;
+	outline: none;
+	color: $foreground;
+	padding: $spacing-unit $spacing-unit * 2;
+	margin: $spacing-unit;
 	min-width: 8ch;
-	box-shadow: 0px 1px 2px rgba($color-foreground, 0.5);
+	font-weight: bold;
+	background-color: $background;
+	border: solid $border-width rgba($foreground, 0.5);
+	border-radius: $spacing-unit;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 }
-button:hover,
-button:focus {
+@mixin button-focus($background, $foreground) {
 	@extend %subtle-transition;
 	outline: none;
-	border-color: rgba($color-foreground, 0.9);
+	background-color: darken($background, 5);
+	border-color: rgba($foreground, 1);
+	box-shadow: 0 $shadow-width $shadow-width * 2 rgba($color-shadow, 0.8);
+	cursor: initial;
 }
-button:active {
-	@extend %subtle-transition;
-	outline: none;
+@mixin button-active($background, $foreground) {
+	@include button-focus($background, $foreground);
+	background-color: darken($background, 10);
+	box-shadow: 0 $shadow-width $shadow-width rgba($color-shadow, 0.8);
+}
+
+$btn-background: $color-background;
+.acr-btn {
+	@include button($btn-background, $color-foreground);
+}
+.acr-btn:focus,
+.acr-btn:hover {
+	@include button-focus($btn-background, $color-foreground);
+}
+.acr-btn:active {
+	@include button-active($btn-background, $color-foreground);
+}
+.acr-btn[disabled],
+.acr-btn[disabled]:focus,
+.acr-btn[disabled]:hover,
+.acr-btn[disabled]:active {
+	background: darken($btn-background, 10);
+	border-color: darken($btn-background, 20);
+	color: lighten($color-foreground, 20);
+	box-shadow: none;
+	cursor: not-allowed;
+}
+a:any-link > .acr-btn {
+	@extend .acr-btn;
+	text-decoration: none;
+}
+// Button Variant: Primary
+.acr-btn.acr-variant-primary {
+	@include button($color-accent, $color-background);
+	border-color: darken($color-accent, 5);
+}
+.acr-btn.acr-variant-primary:focus,
+.acr-btn.acr-variant-primary:hover {
+	@include button-focus($color-accent, $color-background);
+	border-color: darken($color-accent, 10);
+}
+.acr-btn.acr-variant-primary:active {
+	@include button-active($color-accent, $color-background);
+	border-color: darken($color-accent, 10);
+}
+// Button Variant: Success
+.acr-btn.acr-variant-success {
+	@include button($color-success, $color-background);
+	border-color: darken($color-success, 5);
+}
+.acr-btn.acr-variant-success:focus,
+.acr-btn.acr-variant-success:hover {
+	@include button-focus($color-success, $color-background);
+	border-color: darken($color-success, 10);
+}
+.acr-btn.acr-variant-success:active {
+	@include button-active($color-success, $color-background);
+	border-color: darken($color-success, 10);
+}
+// Button Variant: Info
+.acr-btn.acr-variant-info {
+	@include button($color-info, $color-background);
+	border-color: darken($color-info, 5);
+}
+.acr-btn.acr-variant-info:focus,
+.acr-btn.acr-variant-info:hover {
+	@include button-focus($color-info, $color-background);
+	border-color: darken($color-info, 10);
+}
+.acr-btn.acr-variant-info:active {
+	@include button-active($color-info, $color-background);
+	border-color: darken($color-info, 10);
+}
+// Button Variant: Warning
+.acr-btn.acr-variant-warning {
+	@include button($color-warning, $color-background);
+	border-color: darken($color-warning, 5);
+}
+.acr-btn.acr-variant-warning:focus,
+.acr-btn.acr-variant-warning:hover {
+	@include button-focus($color-warning, $color-background);
+	border-color: darken($color-warning, 10);
+}
+.acr-btn.acr-variant-warning:active {
+	@include button-active($color-warning, $color-background);
+	border-color: darken($color-warning, 10);
+}
+// Button Variant: Danger
+.acr-btn.acr-variant-danger {
+	@include button($color-danger, $color-background);
+	border-color: darken($color-danger, 5);
+}
+.acr-btn.acr-variant-danger:focus,
+.acr-btn.acr-variant-danger:hover {
+	@include button-focus($color-danger, $color-background);
+	border-color: darken($color-danger, 10);
+}
+.acr-btn.acr-variant-danger:active {
+	@include button-active($color-danger, $color-background);
+	border-color: darken($color-danger, 10);
 }

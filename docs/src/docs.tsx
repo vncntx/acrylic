@@ -1,14 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {
-	BrowserRouter,
-	Switch,
-	NavLink,
-	Route,
-	Redirect,
-	generatePath
-} from "react-router-dom";
-import { Row, Column } from "../../lib/acrylic";
+import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
+import { Row } from "../../lib/acrylic";
 import Page from "./components/Page";
 import ErrorPage from "./components/ErrorPage";
 import HomePage from "./components/HomePage";
@@ -36,6 +29,10 @@ function Doc() {
 								</li>
 								<li>
 									<PageLink path="layout/Row">Row</PageLink>
+								</li>
+								<hr />
+								<li>
+									<PageLink path="controls/Button">Button</PageLink>
 								</li>
 								<hr />
 								<li>

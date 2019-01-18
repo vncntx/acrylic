@@ -3,8 +3,11 @@ $color-accent: rgb(31, 108, 180);
 $color-foreground: rgb(32, 32, 32);
 $color-background: white;
 $color-success: rgb(13, 119, 75);
-$color-error: rgb(194, 51, 51);
-$color-warning: rgb(226, 164, 30);
+$color-info: rgb(0, 145, 212);
+$color-danger: rgb(194, 51, 51);
+$color-warning: rgb(231, 149, 26);
+
+$color-shadow: rgb(32, 32, 32);
 
 @import "base";
 @import "styles/acrylic";

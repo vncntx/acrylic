@@ -16,3 +16,8 @@ export { default as Row } from "./components/layout/Row";
  */
 export { default as ITextProps } from "./components/typography/ITextProps";
 export { default as Title } from "./components/typography/Title";
+
+/**
+ * Conrol Components
+ */
+export { default as Button } from "./components/controls/Button";
