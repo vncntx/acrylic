@@ -1,5 +1,7 @@
 ## Button
 
+[wiki]: /wiki/modules/_components_controls_button_.html
+
 A Button is a control that allows the user to interact via clicks and taps.
 
 ```jsx

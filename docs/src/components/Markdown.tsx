@@ -40,7 +40,7 @@ export default function Markdown(props: IMarkdownProps) {
 						if (
 							!(
 								err instanceof DOMException &&
-								err.code == DOMException.ABORT_ERR
+								err.code === DOMException.ABORT_ERR
 							)
 						) {
 							setError(true);
@@ -95,14 +95,14 @@ export default function Markdown(props: IMarkdownProps) {
 				}
 			})}
 			{wikiLink ? (
-				<section className="api-link">
-					<Link to={wikiLink}>
+				<article className="api-link">
+					<a href={wikiLink}>
 						<Button>
 							<img className="icon-small" src="/src/img/book.png" />
-							Wiki
+							Details
 						</Button>
-					</Link>
-				</section>
+					</a>
+				</article>
 			) : null}
 		</div>
 	);

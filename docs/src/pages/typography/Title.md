@@ -1,5 +1,7 @@
 ## Title
 
+[wiki]: /wiki/modules/_components_typography_title_.html
+
 A Title displays text as a heading with a level of importance from 1 to 6. The default level is also the lowest.
 
 ```jsx

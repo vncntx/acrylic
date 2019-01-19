@@ -8,6 +8,7 @@
 	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
+	cursor: default;
 }
 *::selection {
 	background-color: rgba($color-accent, 0.8);
@@ -17,6 +18,7 @@ body {
 	font-size: $font-size-standard;
 	font-family: $font-stack-standard;
 	color: $color-foreground;
+	cursor: pointer;
 }
 %typography {
 	color: $color-foreground;
@@ -64,11 +66,9 @@ h6 {
 	font-family: $font-stack-monospace;
 	background: $color-foreground;
 	color: $color-background;
-	font-size: 1em;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
-	font-size: 1em;
 	line-height: 1.25em;
 	tab-size: 2;
 }
@@ -106,4 +106,8 @@ pre {
 }
 .acr-inline {
 	display: inline;
+}
+
+a:any-link {
+	cursor: pointer;
 }

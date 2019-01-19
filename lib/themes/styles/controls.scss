@@ -20,6 +20,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	cursor: default;
 }
 @mixin button-focus($background, $foreground) {
 	@extend %subtle-transition;
@@ -27,7 +28,6 @@
 	background-color: darken($background, 5);
 	border-color: rgba($foreground, 1);
 	box-shadow: 0 $shadow-width $shadow-width * 2 rgba($color-shadow, 0.8);
-	cursor: initial;
 }
 @mixin button-active($background, $foreground) {
 	@include button-focus($background, $foreground);
