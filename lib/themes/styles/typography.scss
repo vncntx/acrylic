@@ -9,6 +9,8 @@
 	font-size: inherit;
 	color: inherit;
 	cursor: default;
+	word-wrap: normal;
+	overflow-wrap: normal;
 }
 *::selection {
 	background-color: rgba($color-accent, 0.8);
@@ -71,7 +73,7 @@ h6 {
 	color: $color-light-contrast;
 	white-space: pre;
 	word-spacing: normal;
-	word-break: normal;
+	word-break: break-all;
 	line-height: 1.25em;
 	tab-size: 2;
 }
@@ -98,6 +100,11 @@ pre {
 }
 %underlined {
 	text-decoration: underline;
+}
+.acr-text {
+	word-wrap: normal;
+	overflow-wrap: normal;
+	display: block;
 }
 .acr-bold {
 	@extend %bold;

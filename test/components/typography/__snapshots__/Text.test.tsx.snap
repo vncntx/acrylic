@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text /> Should match the latest snapshots 1`] = `
+<React.Fragment>
+  <Title>
+    Example
+  </Title>
+  <Title>
+    Example
+  </Title>
+  <Title>
+    Example
+  </Title>
+  <Title
+    bold={true}
+    inline={true}
+  >
+    Example
+  </Title>
+  <Title
+    inline={true}
+    italic={true}
+  >
+    Example
+  </Title>
+  <Title
+    inline={true}
+    underlined={true}
+  >
+    Example
+  </Title>
+</React.Fragment>
+`;

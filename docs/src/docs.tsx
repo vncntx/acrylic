@@ -36,6 +36,9 @@ function Doc() {
 								</li>
 								<hr />
 								<li>
+									<PageLink path="typography/Text">Text</PageLink>
+								</li>
+								<li>
 									<PageLink path="typography/Title">Title</PageLink>
 								</li>
 							</ul>

@@ -1,28 +1,18 @@
 import * as React from "react";
-import classNames from "classnames";
-import ITextProps from "./ITextProps";
+import ITextProps, { IPureTextProps, getEffectiveClass } from "./ITextProps";
 
-export interface ITitleProps extends ITextProps {
+export interface ITitleProps extends IPureTitleProps, ITextProps {}
+
+export interface IPureTitleProps extends IPureTextProps {
 	level?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 export default function Title(props: ITitleProps) {
-	const {
-		classes,
-		level,
-		inline,
-		bold,
-		italic,
-		underlined,
-		children,
-		...otherProps
-	} = props;
-	const effectiveClass = classNames("acr-title", classes, {
-		"acr-inline": inline,
-		"acr-bold": bold,
-		"acr-italic": italic,
-		"acr-underlined": underlined
-	});
+	const [pureProps, effectiveClass] = getEffectiveClass(props, "acr-title") as [
+		IPureTitleProps,
+		string
+	];
+	const { level, children, ...otherProps } = pureProps;
 	switch (level) {
 		case 1:
 			return (
