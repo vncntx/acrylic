@@ -62,6 +62,12 @@ $btn-background: darken($color-background, 5);
 	&:focus,
 	&:active {
 		box-shadow: none;
+		background: {
+			color: darken($color-background, 10);
+		}
+		border: {
+			color: darken($color-background, 20);
+		}
 	}
 }
 a:any-link > .acr-btn {

@@ -25,6 +25,9 @@ function Doc() {
 								</li>
 								<hr />
 								<li>
+									<PageLink path="layout/Alert">Alert</PageLink>
+								</li>
+								<li>
 									<PageLink path="layout/Column">Column</PageLink>
 								</li>
 								<li>

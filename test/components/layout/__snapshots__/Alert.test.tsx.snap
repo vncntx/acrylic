@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert /> Should match the latest snapshot 1`] = `
+<React.Fragment>
+  <Alert>
+    Example
+  </Alert>
+  <Alert
+    variant="primary"
+  >
+    Example
+  </Alert>
+  <Alert
+    variant="success"
+  >
+    Example
+  </Alert>
+  <Alert
+    variant="info"
+  >
+    Example
+  </Alert>
+  <Alert
+    variant="warning"
+  >
+    Example
+  </Alert>
+  <Alert
+    variant="danger"
+  >
+    Example
+  </Alert>
+</React.Fragment>
+`;

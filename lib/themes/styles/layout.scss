@@ -1,9 +1,11 @@
+@import "utils";
+
 * {
-	background-color: inherit;
+	background: none;
 }
 
 body {
-	background-color: $color-background;
+	background: $color-background;
 }
 
 %container {
@@ -31,4 +33,71 @@ body {
 .acr-col > *,
 .acr-row > * {
 	flex: 1;
+}
+
+/**
+ * Alerts
+ */
+/**
+ * Buttons
+ */
+@mixin alert($bg, $border-color) {
+	$background: rgba($bg, 0.85);
+	$foreground: contrastingColor($background);
+
+	color: $foreground;
+	background: {
+		color: $background;
+	}
+	padding: $spacing-unit;
+	margin: 2 * $spacing-unit $spacing-unit;
+	border: {
+		style: solid;
+		width: $border-width $border-width $border-width 10 * $border-width;
+		color: $border-color;
+		radius: 0;
+	}
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+
+	& > *:first-child {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 0 10px;
+		margin: 0;
+	}
+}
+
+$alert-background: darken($color-background, 5);
+.acr-alert {
+	@include alert($alert-background, darken($alert-background, 35));
+}
+// Alert Variants
+// Primary
+.acr-alert.acr-variant-primary {
+	@include alert($color-accent, darken($color-accent, 10));
+}
+// Success
+.acr-alert.acr-variant-success {
+	@include alert($color-success, darken($color-success, 10));
+}
+// Info
+.acr-alert.acr-variant-info {
+	@include alert($color-info, darken($color-info, 10));
+}
+// Warning
+.acr-alert.acr-variant-warning {
+	@include alert($color-warning, darken($color-warning, 10));
+}
+// Danger
+.acr-alert.acr-variant-danger {
+	@include alert($color-danger, darken($color-danger, 10));
+}
+.acr-alert.acr-hidden {
+	display: none;
 }
