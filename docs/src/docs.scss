@@ -85,7 +85,7 @@ hr {
 }
 .icon-small {
 	@extend .icon;
-	max-width: 32px;
+	max-width: auto;
 	max-height: 32px;
 }
 .error-page {

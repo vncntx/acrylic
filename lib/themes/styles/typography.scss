@@ -28,7 +28,10 @@ body {
 }
 %heading {
 	@extend %typography;
-	font-weight: bold;
+	font: {
+		weight: bold;
+		family: $font-stack-title;
+	}
 	line-height: inherit;
 	padding: $spacing-unit 0;
 }
@@ -64,8 +67,8 @@ h6 {
 }
 %code {
 	font-family: $font-stack-monospace;
-	background: $color-foreground;
-	color: $color-background;
+	background: $color-dark-contrast;
+	color: $color-light-contrast;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
@@ -80,6 +83,11 @@ pre {
 	padding: 1.5em;
 	margin: 5px;
 	text-align: left;
+	border: {
+		color: $color-foreground;
+		style: solid;
+		width: $shadow-width;
+	}
 }
 
 %bold {

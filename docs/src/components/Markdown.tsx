@@ -98,7 +98,7 @@ export default function Markdown(props: IMarkdownProps) {
 				<article className="api-link">
 					<a href={wikiLink}>
 						<Button>
-							<img className="icon-small" src="/src/img/book.png" />
+							<img src="/src/img/book.png" />
 							Details
 						</Button>
 					</a>
