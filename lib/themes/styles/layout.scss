@@ -38,9 +38,6 @@ body {
 /**
  * Alerts
  */
-/**
- * Buttons
- */
 @mixin alert($background, $border-color) {
 	$foreground: contrastingColor($background);
 
@@ -99,4 +96,74 @@ $alert-background: darken($color-background, 5);
 }
 .acr-alert.acr-hidden {
 	display: none;
+}
+
+/**
+ * Control Groups
+ */
+.acr-toolbar {
+	@extend %flexbox;
+	flex-direction: row;
+	overflow: auto;
+	flex-wrap: nowrap;
+	padding: $spacing-unit;
+	& > .acr-btn,
+	& > .acr-btn[class*="acr-variant-"],
+	& > .acr-btn[disabled] {
+		margin: 0;
+		max-width: fit-content;
+		border: {
+			width: $border-width $border-width $border-width 0;
+			radius: 0;
+		}
+		&:first-child {
+			border: {
+				width: $border-width $border-width $border-width $border-width;
+				radius: $spacing-unit 0 0 $spacing-unit;
+			}
+		}
+		&:last-child {
+			border: {
+				width: $border-width $border-width $border-width 0;
+				radius: 0 $spacing-unit $spacing-unit 0;
+			}
+		}
+		&:only-child {
+			border: {
+				width: $border-width;
+				radius: $spacing-unit;
+			}
+		}
+	}
+}
+
+.acr-toolbar.acr-vertical {
+	flex-direction: column;
+	width: fit-content;
+	& > .acr-btn,
+	& > .acr-btn[class*="acr-variant-"],
+	& > .acr-btn[disabled] {
+		max-width: 100%;
+		border: {
+			width: 0 $border-width $border-width $border-width;
+		}
+		&:first-child {
+			border: {
+				width: $border-width $border-width $border-width $border-width;
+				radius: $spacing-unit $spacing-unit 0 0;
+			}
+		}
+		&:last-child {
+			border: {
+				width: 0 $border-width $border-width $border-width;
+				radius: 0 0 $spacing-unit $spacing-unit;
+			}
+		}
+		&:only-child {
+			border: {
+				width: $border-width;
+				radius: $spacing-unit;
+			}
+		}
+	}
 }

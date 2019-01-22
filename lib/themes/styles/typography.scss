@@ -81,8 +81,9 @@ h6 {
 	white-space: pre-wrap;
 	text-align: left;
 	word: {
+		wrap: normal;
 		spacing: normal;
-		break: normal;
+		break: break-all;
 	}
 	line-height: 1.25em;
 	tab-size: 2;

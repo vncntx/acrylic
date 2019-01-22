@@ -33,6 +33,9 @@ function Doc() {
 								<li>
 									<PageLink path="layout/Row">Row</PageLink>
 								</li>
+								<li>
+									<PageLink path="layout/Toolbar">Toolbar</PageLink>
+								</li>
 								<hr />
 								<li>
 									<PageLink path="controls/Button">Button</PageLink>

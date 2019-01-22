@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Toolbar /> Should match the latest snapshots 1`] = `
+<React.Fragment>
+  <Toolbar>
+    <Button>
+      A
+    </Button>
+    <Button>
+      B
+    </Button>
+    <Button>
+      C
+    </Button>
+  </Toolbar>
+  <Toolbar
+    vertical={true}
+  >
+    <Button>
+      A
+    </Button>
+    <Button>
+      B
+    </Button>
+    <Button>
+      C
+    </Button>
+  </Toolbar>
+</React.Fragment>
+`;
