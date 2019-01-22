@@ -83,8 +83,9 @@ h6 {
 	word: {
 		wrap: normal;
 		spacing: normal;
-		break: break-all;
+		break: normal;
 	}
+	overflow: auto;
 	line-height: 1.25em;
 	tab-size: 2;
 	padding: 4 * $spacing-unit;
@@ -105,9 +106,14 @@ pre {
 	text-decoration: underline;
 }
 .acr-text {
+	@extend %typography;
 	word-wrap: normal;
 	overflow-wrap: normal;
-	display: block;
+	display: inline-block;
+	&:not(.acr-inline) {
+		margin-bottom: $spacing-unit;
+		line-height: 1.5em;
+	}
 }
 .acr-bold {
 	@extend %bold;

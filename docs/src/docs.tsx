@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
-import { Row } from "../../lib/acrylic";
+import { Row, Text } from "../../lib/acrylic";
 import Page from "./components/Page";
 import ErrorPage from "./components/ErrorPage";
 import HomePage from "./components/HomePage";
@@ -26,6 +26,9 @@ function Doc() {
 								<hr />
 								<li>
 									<PageLink path="layout/Alert">Alert</PageLink>
+								</li>
+								<li>
+									<PageLink path="layout/Section">Section</PageLink>
 								</li>
 								<li>
 									<PageLink path="layout/Column">Column</PageLink>
@@ -84,7 +87,7 @@ function Doc() {
 				</section>
 				<section>
 					<img className="icon-small" src="/src/img/osi.png" />
-					<p>
+					<Text>
 						<a
 							href="https://github.com/vincentfiestada/acrylic/blob/master/LICENSE"
 							title="View License"
@@ -92,7 +95,7 @@ function Doc() {
 							Open Source
 						</a>{" "}
 						&copy; 2019
-					</p>
+					</Text>
 				</section>
 			</footer>
 		</React.Fragment>

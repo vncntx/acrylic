@@ -1,5 +1,7 @@
 ## Toolbar
 
+[wiki]: /wiki/modules/_components_layout_toolbar_.html
+
 A Toolbar lays out buttons in a single, tightly-packed row.
 
 ```jsx

@@ -203,3 +203,8 @@ footer > *:first-of-type {
 footer > *:last-of-type {
 	justify-content: flex-end;
 }
+
+// Special styles for demos
+.demo-acrylic-container {
+	background-image: url("/src/img/vercingetorix.jpg");
+}

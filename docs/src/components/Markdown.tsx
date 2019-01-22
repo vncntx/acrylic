@@ -1,8 +1,8 @@
 import * as React from "react";
 import classNames from "classnames";
 import marked from "marked";
-import { Redirect, Link } from "react-router-dom";
-import { Button, IProps, Title } from "../../../lib/acrylic";
+import { Redirect } from "react-router-dom";
+import { Button, IProps, Title, Text } from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
 const { useState, useEffect } = React;
@@ -77,11 +77,7 @@ export default function Markdown(props: IMarkdownProps) {
 							case "jsx":
 								return <CodePreview key={key}>{token.text}</CodePreview>;
 							default:
-								return (
-									<pre key={key}>
-										<code>{token.text}</code>
-									</pre>
-								);
+								return <Text key={key}>{token.text}</Text>;
 						}
 					default:
 						return (

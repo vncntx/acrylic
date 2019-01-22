@@ -13,6 +13,75 @@ body {
 	margin: 0px;
 }
 
+/**
+ * Section
+ */
+.acr-section {
+	@extend %container;
+	padding: 2 * $spacing-unit;
+	margin: 2 * $spacing-unit;
+	border: none;
+	background: $color-background;
+}
+@mixin elevated($height) {
+	box-shadow: 0 $height * $shadow-width / 2 $height * 2px
+		rgba($color-shadow, 0.6);
+	z-index: $height;
+}
+// Elevation Levels
+.acr-elevated-1 {
+	@include elevated(1);
+}
+.acr-elevated-2 {
+	@include elevated(2);
+}
+.acr-elevated-3 {
+	@include elevated(3);
+}
+.acr-elevated-4 {
+	@include elevated(4);
+}
+.acr-elevated-5 {
+	@include elevated(5);
+}
+.acr-elevated-6 {
+	@include elevated(6);
+}
+
+/**
+ * Acrylic Effect
+ */
+.acr-acrylic {
+	background: inherit;
+	position: relative;
+	border: {
+		style: solid;
+		color: rgba($color-shadow, 0.7);
+		width: $border-width;
+	}
+
+	&::after {
+		content: "";
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background: inherit;
+		background-size: cover;
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		filter: blur(5 * $spacing-unit);
+		overflow: hidden;
+	}
+}
+
+/**
+ * Row, Column
+ */
+
 %flexbox {
 	@extend %container;
 	display: flex;
