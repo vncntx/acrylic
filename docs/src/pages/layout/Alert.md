@@ -16,5 +16,9 @@ An Alert draws attention to a small piece of content. Several variants are avail
 The control component can also be set.
 
 ```jsx
-<Alert controlComponent={<Button>Custom</Button>}>This one has a custom control</Alert>
+<Alert controlComponent={
+	<Button>Custom</Button>
+}>
+	This one has a custom control
+</Alert>
 ```

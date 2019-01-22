@@ -1,5 +1,6 @@
 $color-accent: rgb(31, 108, 180);
 // Syntax Highlighting Settings
+$token-color-default: white;
 $token-color-punctuation: #21BFC2;
 $token-color-keyword: #56C2EA;
 $token-color-entity: #14D386;
@@ -104,6 +105,10 @@ hr {
 	font-style: normal;
 }
 
+.token.plain-text {
+	color: $token-color-default;
+}
+
 .token.punctuation {
 	color: $token-color-punctuation;
 }
@@ -159,11 +164,13 @@ hr {
 .home-page.article section:first-of-type {
 	flex-wrap: wrap;
 }
-.article > .code-preview {
+
+.code-preview {
 	margin: 20px 0;
 }
-.code-preview > *, .code-preview pre {
-	border-radius: 8px;
+.code-preview > * {
+	flex: 1 0 auto;
+	width: 50%;
 }
 
 footer {

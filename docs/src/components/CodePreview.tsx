@@ -4,7 +4,7 @@ import { highlight, loadLanguages } from "reprism";
 import jsxLanguage from "reprism/languages/jsx";
 import * as acrylic from "../../../lib/acrylic";
 
-const { Row } = acrylic;
+const { Row, Column } = acrylic;
 
 loadLanguages(jsxLanguage);
 
@@ -20,8 +20,10 @@ export default function CodePreview(props: ICodePreviewProps) {
 	const code = highlight(props.children, jsxLanguage.language);
 	return (
 		<Row classes="code-preview">
-			<section className="acr-row" dangerouslySetInnerHTML={{ __html: code }} />
-			<JSXParser components={acrylic} jsx={props.children} />
+			<div className="acr-col" dangerouslySetInnerHTML={{ __html: code }} />
+			<Column>
+				<JSXParser components={acrylic} jsx={props.children} />
+			</Column>
 		</Row>
 	);
 }

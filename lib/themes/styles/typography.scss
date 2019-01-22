@@ -9,8 +9,8 @@
 	font-size: inherit;
 	color: inherit;
 	cursor: default;
-	word-wrap: normal;
-	overflow-wrap: normal;
+	word-wrap: inherit;
+	overflow-wrap: inherit;
 }
 *::selection {
 	background-color: rgba($color-accent, 0.8);
@@ -21,6 +21,8 @@ body {
 	font-family: $font-stack-standard;
 	color: $color-foreground;
 	cursor: pointer;
+	word-wrap: normal;
+	overflow-wrap: normal;
 }
 %typography {
 	color: $color-foreground;
@@ -67,29 +69,29 @@ h6 {
 	@include title(6);
 	font-size: 800;
 }
+
+/**
+ * Code
+ */
 %code {
+	display: block;
 	font-family: $font-stack-monospace;
 	background: $color-dark-contrast;
 	color: $color-light-contrast;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: break-all;
+	white-space: pre-wrap;
+	text-align: left;
+	word: {
+		spacing: normal;
+		break: normal;
+	}
 	line-height: 1.25em;
 	tab-size: 2;
+	padding: 4 * $spacing-unit;
+	margin: $spacing-unit;
 }
-code {
-	@extend %code;
-}
+code,
 pre {
 	@extend %code;
-	padding: 1.5em;
-	margin: 5px;
-	text-align: left;
-	border: {
-		color: $color-foreground;
-		style: solid;
-		width: $shadow-width;
-	}
 }
 
 %bold {
