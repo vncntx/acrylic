@@ -41,8 +41,7 @@ body {
 /**
  * Buttons
  */
-@mixin alert($bg, $border-color) {
-	$background: rgba($bg, 0.85);
+@mixin alert($background, $border-color) {
 	$foreground: contrastingColor($background);
 
 	color: $foreground;

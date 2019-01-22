@@ -7,10 +7,12 @@ import Text from "../typography/Text";
 
 const { useState } = React;
 
-export interface IAlertProps extends ILayoutProps, IVariantProps {}
+export interface IAlertProps extends ILayoutProps, IVariantProps {
+	controlComponent?: React.ReactNode;
+}
 
 export default function Alert(props: IAlertProps) {
-	const { classes, children, variant, ...otherProps } = props;
+	const { classes, children, variant, controlComponent, ...otherProps } = props;
 
 	const [isHidden, setHidden] = useState(false);
 
@@ -20,12 +22,15 @@ export default function Alert(props: IAlertProps) {
 		classes,
 		variant ? `acr-variant-${variant}` : null
 	);
+
 	return (
 		<aside className={effectiveClasses} {...otherProps}>
 			<Text>{children}</Text>
-			<Button onClick={() => setHidden(true)} variant={variant}>
-				Dismiss
-			</Button>
+			{controlComponent || (
+				<Button onClick={() => setHidden(true)} variant={variant}>
+					Dismiss
+				</Button>
+			)}
 		</aside>
 	);
 }

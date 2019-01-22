@@ -30,5 +30,14 @@ exports[`<Alert /> Should match the latest snapshot 1`] = `
   >
     Example
   </Alert>
+  <Alert
+    controlComponent={
+      <Button>
+        Control
+      </Button>
+    }
+  >
+    Example
+  </Alert>
 </React.Fragment>
 `;
