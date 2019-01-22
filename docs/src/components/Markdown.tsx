@@ -77,7 +77,11 @@ export default function Markdown(props: IMarkdownProps) {
 							case "jsx":
 								return <CodePreview key={key}>{token.text}</CodePreview>;
 							default:
-								return <Text key={key}>{token.text}</Text>;
+								return (
+									<pre key={key}>
+										<code>{token.text}</code>
+									</pre>
+								);
 						}
 					default:
 						return (
