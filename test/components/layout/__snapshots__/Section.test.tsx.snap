@@ -1,12 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Section /> Should match the latest snapshots 1`] = `
-<Section
-  acrylic={true}
-  elevation={2}
->
-  <Title>
-    Example
-  </Title>
-</Section>
+Array [
+  <Section>
+    <section
+      className="acr-section"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+    </section>
+  </Section>,
+  <Section
+    elevation={1}
+  >
+    <section
+      className="acr-section acr-elevated-1"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+    </section>
+  </Section>,
+  <Section
+    acrylic={true}
+    elevation={2}
+  >
+    <section
+      className="acr-section acr-elevated-2 acr-acrylic"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+    </section>
+  </Section>,
+]
 `;

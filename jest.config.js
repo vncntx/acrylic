@@ -7,5 +7,7 @@ module.exports = {
 	bail: true,
 	// Automatically clear mock calls and instances between every test
 	clearMocks: true,
-	coverageReporters: ["text", "cobertura"]
+	coverageReporters: ["text", "cobertura"],
+	setupTestFrameworkScriptFile: "./test/configure.ts",
+	snapshotSerializers: ["enzyme-to-json/serializer"]
 };

@@ -1,7 +1,7 @@
 import * as React from "react";
 import ITextProps, { IPureTextProps, getEffectiveClass } from "./ITextProps";
 
-export default function Title(props: ITextProps) {
+export default function Text(props: ITextProps) {
 	const [pureProps, effectiveClass] = getEffectiveClass(props, "acr-text") as [
 		IPureTextProps,
 		string

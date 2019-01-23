@@ -1,39 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button /> Should match the latest snapshots 1`] = `
-<React.Fragment>
+Array [
   <Button>
-    Button
-  </Button>
+    <button
+      className="acr-btn"
+    >
+      Button
+    </button>
+  </Button>,
   <Button
     variant="primary"
   >
-    Primary
-  </Button>
+    <button
+      className="acr-btn acr-variant-primary"
+    >
+      Primary
+    </button>
+  </Button>,
   <Button
     variant="success"
   >
-    Success
-  </Button>
+    <button
+      className="acr-btn acr-variant-success"
+    >
+      Success
+    </button>
+  </Button>,
   <Button
     variant="info"
   >
-    Info
-  </Button>
+    <button
+      className="acr-btn acr-variant-info"
+    >
+      Info
+    </button>
+  </Button>,
   <Button
     variant="warning"
   >
-    Warning
-  </Button>
+    <button
+      className="acr-btn acr-variant-warning"
+    >
+      Warning
+    </button>
+  </Button>,
   <Button
     variant="danger"
   >
-    Danger
-  </Button>
+    <button
+      className="acr-btn acr-variant-danger"
+    >
+      Danger
+    </button>
+  </Button>,
   <Button
     disabled={true}
   >
-    Disabled
-  </Button>
-</React.Fragment>
+    <button
+      className="acr-btn"
+      disabled={true}
+    >
+      Disabled
+    </button>
+  </Button>,
+]
 `;

@@ -2,14 +2,18 @@
 
 exports[`<Row /> Should match the latest snapshots 1`] = `
 <Row>
-  <div>
-    Column 1
-  </div>
-  <div>
-    Column 2
-  </div>
-  <div>
-    Column 3
+  <div
+    className="acr-row"
+  >
+    <div>
+      Column 1
+    </div>
+    <div>
+      Column 2
+    </div>
+    <div>
+      Column 3
+    </div>
   </div>
 </Row>
 `;

@@ -1,56 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Title /> Should match the latest snapshots 1`] = `
-<React.Fragment>
+Array [
   <Title
     level={1}
   >
-    Chapter
-  </Title>
+    <h1
+      className="acr-title"
+    >
+      Chapter
+    </h1>
+  </Title>,
   <Title
     level={2}
   >
-    Chapter
-  </Title>
+    <h2
+      className="acr-title"
+    >
+      Chapter
+    </h2>
+  </Title>,
   <Title
     level={3}
   >
-    Chapter
-  </Title>
+    <h3
+      className="acr-title"
+    >
+      Chapter
+    </h3>
+  </Title>,
   <Title
     level={4}
   >
-    Chapter
-  </Title>
+    <h4
+      className="acr-title"
+    >
+      Chapter
+    </h4>
+  </Title>,
   <Title
     level={5}
   >
-    Chapter
-  </Title>
+    <h5
+      className="acr-title"
+    >
+      Chapter
+    </h5>
+  </Title>,
   <Title
     level={6}
   >
-    Chapter
-  </Title>
+    <h6
+      className="acr-title"
+    >
+      Chapter
+    </h6>
+  </Title>,
   <Title
     inline={true}
   >
-    Chapter
-  </Title>
+    <h6
+      className="acr-title acr-inline"
+    >
+      Chapter
+    </h6>
+  </Title>,
   <Title
     bold={true}
   >
-    Chapter
-  </Title>
+    <h6
+      className="acr-title acr-bold"
+    >
+      Chapter
+    </h6>
+  </Title>,
   <Title
     italic={true}
   >
-    Chapter
-  </Title>
+    <h6
+      className="acr-title acr-italic"
+    >
+      Chapter
+    </h6>
+  </Title>,
   <Title
     underlined={true}
   >
-    Chapter
-  </Title>
-</React.Fragment>
+    <h6
+      className="acr-title acr-underlined"
+    >
+      Chapter
+    </h6>
+  </Title>,
+]
 `;

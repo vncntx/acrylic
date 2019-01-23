@@ -1,33 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Text /> Should match the latest snapshots 1`] = `
-<React.Fragment>
-  <Title>
-    Example
-  </Title>
-  <Title>
-    Example
-  </Title>
-  <Title>
-    Example
-  </Title>
-  <Title
+Array [
+  <Text>
+    <p
+      className="acr-text"
+    >
+      Example
+    </p>
+  </Text>,
+  <Text>
+    <p
+      className="acr-text"
+    >
+      Example
+    </p>
+  </Text>,
+  <Text>
+    <p
+      className="acr-text"
+    >
+      Example
+    </p>
+  </Text>,
+  <Text
     bold={true}
     inline={true}
   >
-    Example
-  </Title>
-  <Title
+    <span
+      className="acr-text acr-inline acr-bold"
+    >
+      Example
+    </span>
+  </Text>,
+  <Text
     inline={true}
     italic={true}
   >
-    Example
-  </Title>
-  <Title
+    <span
+      className="acr-text acr-inline acr-italic"
+    >
+      Example
+    </span>
+  </Text>,
+  <Text
     inline={true}
     underlined={true}
   >
-    Example
-  </Title>
-</React.Fragment>
+    <span
+      className="acr-text acr-inline acr-underlined"
+    >
+      Example
+    </span>
+  </Text>,
+]
 `;

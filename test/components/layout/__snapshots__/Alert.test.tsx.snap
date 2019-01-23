@@ -1,35 +1,160 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Alert /> Should match the latest snapshot 1`] = `
-<React.Fragment>
+Array [
   <Alert>
-    Example
-  </Alert>
+    <aside
+      className="acr-alert"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+      <Button
+        onClick={[Function]}
+      >
+        <button
+          className="acr-btn"
+          onClick={[Function]}
+        >
+          Dismiss
+        </button>
+      </Button>
+    </aside>
+  </Alert>,
   <Alert
     variant="primary"
   >
-    Example
-  </Alert>
+    <aside
+      className="acr-alert acr-variant-primary"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+      <Button
+        onClick={[Function]}
+        variant="primary"
+      >
+        <button
+          className="acr-btn acr-variant-primary"
+          onClick={[Function]}
+        >
+          Dismiss
+        </button>
+      </Button>
+    </aside>
+  </Alert>,
   <Alert
     variant="success"
   >
-    Example
-  </Alert>
+    <aside
+      className="acr-alert acr-variant-success"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+      <Button
+        onClick={[Function]}
+        variant="success"
+      >
+        <button
+          className="acr-btn acr-variant-success"
+          onClick={[Function]}
+        >
+          Dismiss
+        </button>
+      </Button>
+    </aside>
+  </Alert>,
   <Alert
     variant="info"
   >
-    Example
-  </Alert>
+    <aside
+      className="acr-alert acr-variant-info"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+      <Button
+        onClick={[Function]}
+        variant="info"
+      >
+        <button
+          className="acr-btn acr-variant-info"
+          onClick={[Function]}
+        >
+          Dismiss
+        </button>
+      </Button>
+    </aside>
+  </Alert>,
   <Alert
     variant="warning"
   >
-    Example
-  </Alert>
+    <aside
+      className="acr-alert acr-variant-warning"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+      <Button
+        onClick={[Function]}
+        variant="warning"
+      >
+        <button
+          className="acr-btn acr-variant-warning"
+          onClick={[Function]}
+        >
+          Dismiss
+        </button>
+      </Button>
+    </aside>
+  </Alert>,
   <Alert
     variant="danger"
   >
-    Example
-  </Alert>
+    <aside
+      className="acr-alert acr-variant-danger"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+      <Button
+        onClick={[Function]}
+        variant="danger"
+      >
+        <button
+          className="acr-btn acr-variant-danger"
+          onClick={[Function]}
+        >
+          Dismiss
+        </button>
+      </Button>
+    </aside>
+  </Alert>,
   <Alert
     controlComponent={
       <Button>
@@ -37,7 +162,24 @@ exports[`<Alert /> Should match the latest snapshot 1`] = `
       </Button>
     }
   >
-    Example
-  </Alert>
-</React.Fragment>
+    <aside
+      className="acr-alert"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Example
+        </p>
+      </Text>
+      <Button>
+        <button
+          className="acr-btn"
+        >
+          Control
+        </button>
+      </Button>
+    </aside>
+  </Alert>,
+]
 `;
