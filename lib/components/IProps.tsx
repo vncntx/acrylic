@@ -7,6 +7,7 @@ export default interface IProps {
 	classes?: ClassValue;
 	children?: React.ReactNode;
 	id?: string;
+	key?: string | number;
 }
 
 declare type ClassValue = string | ClassDictionary | ClassArray | null | false;

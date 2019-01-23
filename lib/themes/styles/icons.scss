@@ -1,0 +1,23 @@
+.acr-icon {
+	$dimension: 32px;
+
+	font: {
+		family: $font-stack-icon;
+		size: $dimension;
+		weight: normal;
+	}
+	height: $dimension;
+	width: $dimension;
+	max-width: $dimension;
+	max-height: $dimension;
+	flex: 0 0 auto;
+	color: inherit;
+	background: none;
+	padding: 0;
+	margin: 0 $spacing-unit;
+
+	&::selection {
+		background: initial;
+		color: initial;
+	}
+}

@@ -1,10 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
-import { Row, Text } from "../../lib/acrylic";
+import { Row, Text, Icon, Emblem } from "../../lib/acrylic";
 import Page from "./components/Page";
 import ErrorPage from "./components/ErrorPage";
 import HomePage from "./components/HomePage";
+import IconPage from "./components/IconPage";
 import PageLink from "./components/PageLink";
 
 function Doc() {
@@ -50,10 +51,14 @@ function Doc() {
 								<li>
 									<PageLink path="typography/Title">Title</PageLink>
 								</li>
+								<li>
+									<PageLink path="typography/Icon">Icon</PageLink>
+								</li>
 							</ul>
 						</nav>
 						<Switch>
 							<Route exact path="/" component={HomePage} />
+							<Route path="/components/typography/Icon" component={IconPage} />
 							<Route path="/components/:name+" component={Page} />
 							<Route path="/error/:message/:details?" component={ErrorPage} />
 							<Route
@@ -77,7 +82,7 @@ function Doc() {
 			</main>
 			<footer>
 				<section>
-					<img className="icon-small" src="/src/img/fork.png" />
+					<Icon>{Emblem.Error}</Icon>
 					<a
 						href="https://github.com/vincentfiestada/acrylic/"
 						title="View Repository"
@@ -86,7 +91,7 @@ function Doc() {
 					</a>
 				</section>
 				<section>
-					<img className="icon-small" src="/src/img/osi.png" />
+					<Icon src="/src/img/osi.png" />
 					<Text>
 						<a
 							href="https://github.com/vincentfiestada/acrylic/blob/master/LICENSE"

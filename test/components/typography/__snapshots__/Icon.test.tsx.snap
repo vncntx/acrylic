@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon /> Should match the latest snapshots 1`] = `
+Array [
+  <Icon>
+    <span
+      className="acr-icon"
+    >
+      
+    </span>
+  </Icon>,
+  <Icon>
+    <span
+      className="acr-icon"
+    >
+      
+    </span>
+  </Icon>,
+  <Icon>
+    <span
+      className="acr-icon"
+    >
+      
+    </span>
+  </Icon>,
+  <Icon
+    src="image.svg"
+  >
+    <img
+      className="acr-icon"
+      src="image.svg"
+    />
+  </Icon>,
+]
+`;

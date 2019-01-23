@@ -1,3 +1,13 @@
+/**
+ * Declares Segoe UI Fonts
+ */
+
+ @font-face {
+	font-family: "Segoe";
+	src: url("/src/fonts/segoe/segoemdl2.ttf");
+	}
+
+
 $color-accent: rgb(31, 108, 180);
 // Syntax Highlighting Settings
 $token-color-default: white;
@@ -83,11 +93,6 @@ hr {
 	padding: 0;
 	margin: 0;
 	margin-right: 0.5ch;
-}
-.icon-small {
-	@extend .icon;
-	max-width: auto;
-	max-height: 32px;
 }
 .error-page {
 	display: flex;
@@ -207,4 +212,34 @@ footer > *:last-of-type {
 // Special styles for demos
 .demo-acrylic-container {
 	background-image: url("/src/img/vercingetorix.jpg");
+}
+
+// Tables
+table {
+	border: solid 1px black;
+	border-spacing: 0;
+	& td, & th {
+		min-width: 10ch;
+		border: solid 1px black;
+		padding: 5px;
+		text-align: center;
+	}
+	& th {
+		background: $color-accent;
+		color: white;
+	}
+}
+.emblem-grid a {
+	margin: 0;
+	padding: 0;
+}
+
+.emblem-grid .acr-icon {
+	margin: 10px;
+	&:hover {
+		color: $color-accent;
+	}
+	&.clicked {
+		opacity: 0;
+	}
 }
