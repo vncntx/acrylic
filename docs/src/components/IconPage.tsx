@@ -24,25 +24,25 @@ export default function IconPage() {
 			<Text>
 				Icon displays an image that scales with the current font size. To use
 				it, you can either:
-				<ol className="enumeration">
-					<li>
-						use one of the built-in{" "}
-						<a href="/wiki/enums/_components_typography_icon_.emblem.html">
-							Emblems
-						</a>{" "}
-						mapped to the{" "}
-						<a href="https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font">
-							Segoe MDL2 Assets
-						</a>{" "}
-						font;
-					</li>
-					<li>
-						provide your own image;{" "}
-						<a href="https://icons8.com/icons/windows">Icons8</a> has a nice
-						selection
-					</li>
-				</ol>
 			</Text>
+			<ol className="enumeration">
+				<li>
+					use one of the built-in{" "}
+					<a href="/wiki/enums/_components_typography_icon_.emblem.html">
+						Emblems
+					</a>{" "}
+					mapped to the{" "}
+					<a href="https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font">
+						Segoe MDL2 Assets
+					</a>{" "}
+					font;
+				</li>
+				<li>
+					provide your own image;{" "}
+					<a href="https://icons8.com/icons/windows">Icons8</a> has a nice
+					selection
+				</li>
+			</ol>
 			<Text>
 				Read more about custom web fonts&nbsp;
 				<a href="https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp">
@@ -56,7 +56,7 @@ export default function IconPage() {
 						<Icon>{Emblem.Details}</Icon>Details
 					</Button>
 				</a>
-				<a href="https://aka.ms/SegoeFonts">
+				<a href="https://1drv.ms/u/s!AhyGTJUAa-UL9x3FmuiEAvMYb3jm">
 					<Button>
 						<Icon>{Emblem.Download}</Icon>Download Font
 					</Button>

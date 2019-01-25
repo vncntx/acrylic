@@ -5,12 +5,6 @@ export interface IVariantProps {
 	variant?: Variant;
 }
 
-enum Variant {
-	Primary = "primary",
-	Success = "success",
-	Info = "info",
-	Warning = "warning",
-	Danger = "danger"
-}
+declare type Variant = "primary" | "success" | "info" | "warning" | "danger";
 
 export default Variant;

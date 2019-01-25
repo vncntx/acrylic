@@ -4,10 +4,10 @@
  * Declares Segoe UI Fonts
  */
 
- @font-face {
-	font-family: "Segoe";
-	src: url("/src/fonts/segoe/segoemdl2.ttf");
-	}
+@font-face {
+	font-family: "Segoe MDL2 Assets";
+	src: url("/src/fonts/segoe/segmdl2.ttf");
+}
 
 
 $color-accent: rgb(31, 108, 180);
@@ -169,7 +169,7 @@ hr {
 .article {
 	margin-top: 40px;
 	padding: 20px 5vw;
-	& .acr-text a {
+	& .acr-text a, & li a {
 		text-decoration: none;
 		color: $color-accent;
 		&:hover, &:active, &:focus {
@@ -268,14 +268,16 @@ table {
 .emblem-grid {
 	max-width: fit-content;
 	& > * {
+		@extend %subtle-transition;
 		flex-grow: 0;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-items: center;
 		&:hover {
-			color: $color-accent;
-			outline: dotted 2px $color-accent;
+			@extend %subtle-transition;
+			background-color: $color-accent;
+			color: contrastingColor($color-accent);
 		}
 	}
 	& .acr-icon {
