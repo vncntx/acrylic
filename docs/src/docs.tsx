@@ -17,7 +17,7 @@ function Doc() {
 						<nav>
 							<ul>
 								<li>
-									<img src="/src/img/icon.png" className="logo" />
+									<Icon classes="logo">{Emblem.Tetrahedron}</Icon>
 								</li>
 								<li>
 									<NavLink exact to="/" activeClassName="selected">
@@ -82,7 +82,7 @@ function Doc() {
 			</main>
 			<footer>
 				<section>
-					<Icon>{Emblem.Error}</Icon>
+					<Icon>{Emblem.Roadwork}</Icon>
 					<a
 						href="https://github.com/vincentfiestada/acrylic/"
 						title="View Repository"

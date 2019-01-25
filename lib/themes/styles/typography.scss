@@ -11,6 +11,7 @@
 	cursor: default;
 	word-wrap: inherit;
 	overflow-wrap: inherit;
+	text-decoration: none;
 }
 *::selection {
 	background-color: rgba($color-accent, 0.8);

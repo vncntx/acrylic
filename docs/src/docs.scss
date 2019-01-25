@@ -1,3 +1,5 @@
+@import "../../lib/themes/light.scss";
+
 /**
  * Declares Segoe UI Fonts
  */
@@ -42,14 +44,17 @@ html, body {
 	font-size: 6em;
 }
 
-a:any-link {
-	text-decoration: none;
-}
-a:hover, a:focus, a.selected {
-	color: $color-accent;
+%clean-links {
+	& a:any-link {
+		text-decoration: none;
+	}
+	& a:hover, & a:focus, & a.selected {
+		color: $color-accent;
+	}
 }
 
 nav {
+	@extend %clean-links;
 	max-width: fit-content;
 	padding-right: 30px;
 	font-size: 1.25em;
@@ -62,16 +67,15 @@ nav li {
 nav ul {
 	padding: 0.25em 0.25em 0.25em 1em;
 }
-nav img.logo {
-	height: 64px;
-	width: auto;
+nav .logo {
+	font-size: 48px;
 }
 
 hr {
 	text-align: center;
 	padding: 0;
 	margin: 5px;
-	border: solid 1px black;
+	border: solid 1px $color-foreground;
 }
 
 %row-center {
@@ -121,6 +125,9 @@ hr {
 .token.operator {
 	color: $token-color-keyword;
 }
+.token.keyword {
+	color: $token-color-keyword;
+}
 
 .token.comment {
 	color: $token-color-comment;
@@ -162,6 +169,13 @@ hr {
 .article {
 	margin-top: 40px;
 	padding: 20px 5vw;
+	& .acr-text a {
+		text-decoration: none;
+		color: $color-accent;
+		&:hover, &:active, &:focus {
+			text-decoration: underline;
+		}
+	}
 }
 .home-page.article {
 	margin-top: 0px;
@@ -179,6 +193,7 @@ hr {
 }
 
 footer {
+	@extend %clean-links;
 	flex: 0 0 auto;
 	padding: 12px;
 	margin: 5px 0 0 0;
@@ -234,12 +249,52 @@ table {
 	padding: 0;
 }
 
-.emblem-grid .acr-icon {
-	margin: 10px;
-	&:hover {
-		color: $color-accent;
+.search-box {
+	display: block;
+	padding: 10px;
+	margin: 5px;
+	outline: none;
+	border: {
+		color: $color-foreground;
+		style: solid;
+		width: 2 * $border-width;
 	}
-	&.clicked {
-		opacity: 0;
+	&:focus {
+		border: {
+			color: $color-accent;
+		}
+	}
+}
+.emblem-grid {
+	max-width: fit-content;
+	& > * {
+		flex-grow: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-items: center;
+		&:hover {
+			color: $color-accent;
+			outline: dotted 2px $color-accent;
+		}
+	}
+	& .acr-icon {
+		font-size: 32px;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+// List Types
+ol.enumeration {
+	counter-reset: list;
+	& > li {
+		list-style: none;
+		&:before {
+			content: counter(list, lower-alpha) ") ";
+			counter-increment: list;
+		}
 	}
 }

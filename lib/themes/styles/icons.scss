@@ -1,10 +1,10 @@
 .acr-icon {
-	$dimension: 32px;
+	$dimension: 1.2em;
 
 	font: {
 		family: $font-stack-icon;
 		size: $dimension;
-		weight: normal;
+		weight: inherit;
 	}
 	height: $dimension;
 	width: $dimension;
@@ -15,6 +15,7 @@
 	background: none;
 	padding: 0;
 	margin: 0 $spacing-unit;
+	overflow: hidden;
 
 	&::selection {
 		background: initial;

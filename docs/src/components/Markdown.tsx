@@ -2,7 +2,7 @@ import * as React from "react";
 import classNames from "classnames";
 import marked from "marked";
 import { Redirect } from "react-router-dom";
-import { Button, IProps, Title, Text } from "../../../lib/acrylic";
+import { Button, IProps, Title, Icon, Emblem } from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
 const { useState, useEffect } = React;
@@ -98,7 +98,7 @@ export default function Markdown(props: IMarkdownProps) {
 				<article className="api-link">
 					<a href={wikiLink}>
 						<Button>
-							<img src="/src/img/book.png" />
+							<Icon>{Emblem.Details}</Icon>
 							Details
 						</Button>
 					</a>

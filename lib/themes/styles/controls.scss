@@ -28,6 +28,10 @@
 	justify-content: center;
 	cursor: default;
 
+	& a:any-link:not(.acr-btn *) {
+		text-decoration: none;
+	}
+
 	&:focus,
 	&:hover {
 		@extend %subtle-transition;

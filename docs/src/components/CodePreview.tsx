@@ -10,6 +10,7 @@ loadLanguages(jsxLanguage);
 
 export interface ICodePreviewProps {
 	children: string;
+	noPreview?: boolean;
 }
 
 /**
@@ -17,13 +18,17 @@ export interface ICodePreviewProps {
  * @param props component properties
  */
 export default function CodePreview(props: ICodePreviewProps) {
+	const { children, noPreview } = props;
+
 	const code = highlight(props.children, jsxLanguage.language);
 	return (
 		<Row classes="code-preview">
 			<div className="acr-col" dangerouslySetInnerHTML={{ __html: code }} />
-			<Column>
-				<JSXParser components={acrylic} jsx={props.children} />
-			</Column>
+			{noPreview === true ? null : (
+				<Column>
+					<JSXParser components={acrylic} jsx={props.children} />
+				</Column>
+			)}
 		</Row>
 	);
 }

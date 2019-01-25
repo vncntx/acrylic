@@ -176,9 +176,29 @@ $alert-background: darken($color-background, 5);
 	overflow: auto;
 	flex-wrap: nowrap;
 	padding: $spacing-unit;
-	& > .acr-btn,
-	& > .acr-btn[class*="acr-variant-"],
-	& > .acr-btn[disabled] {
+
+	%first-button {
+		border: {
+			width: $border-width $border-width $border-width $border-width;
+			radius: $spacing-unit 0 0 $spacing-unit;
+		}
+	}
+	%last-button {
+		border: {
+			width: $border-width $border-width $border-width 0;
+			radius: 0 $spacing-unit $spacing-unit 0;
+		}
+	}
+	%only-button {
+		border: {
+			width: $border-width;
+			radius: $spacing-unit;
+		}
+	}
+
+	& .acr-btn,
+	& .acr-btn[class*="acr-variant-"],
+	& .acr-btn[disabled] {
 		margin: 0;
 		max-width: fit-content;
 		border: {
@@ -186,22 +206,24 @@ $alert-background: darken($color-background, 5);
 			radius: 0;
 		}
 		&:first-child {
-			border: {
-				width: $border-width $border-width $border-width $border-width;
-				radius: $spacing-unit 0 0 $spacing-unit;
-			}
+			@extend %first-button;
 		}
 		&:last-child {
-			border: {
-				width: $border-width $border-width $border-width 0;
-				radius: 0 $spacing-unit $spacing-unit 0;
-			}
+			@extend %last-button;
 		}
 		&:only-child {
-			border: {
-				width: $border-width;
-				radius: $spacing-unit;
-			}
+			@extend %only-button;
+		}
+	}
+	& > a:any-link {
+		&:first-child > .acr-btn {
+			@extend %first-button;
+		}
+		&:last-child > .acr-btn {
+			@extend %last-button;
+		}
+		&:only-child > .acr-btn {
+			@extend %only-button;
 		}
 	}
 }
