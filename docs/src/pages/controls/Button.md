@@ -17,7 +17,15 @@ A Button is a control that allows the user to interact via clicks and taps.
 Buttons can also contain icons.
 
 ```jsx
-<Button><img src="/src/img/add.png" />Add</Button>
-<Button><img src="/src/img/edit.png" />Edit</Button>
-<Button><img src="/src/img/trash.png" />Delete</Button>
+<Button><Icon>{0xe8c6}</Icon>Cut</Button>
+<Button><Icon>{0xe8c8}</Icon>Copy</Button>
+<Button><Icon>{0xe77f}</Icon>Paste</Button>
+```
+
+Use an **IconButton** if you don't need to display text.
+
+```jsx
+<IconButton><Icon>{0xe8c6}</Icon></IconButton>
+<IconButton><Icon>{0xe8c8}</Icon></IconButton>
+<IconButton><Icon>{0xe77f}</Icon></IconButton>
 ```

@@ -26,6 +26,7 @@ export { default as Icon, Emblem } from "./components/typography/Icon";
  * Conrol Components
  */
 export { default as Button } from "./components/controls/Button";
+export { default as IconButton } from "./components/controls/IconButton";
 
 /**
  * Variants

@@ -99,3 +99,14 @@ a:any-link > .acr-btn {
 .acr-btn.acr-variant-danger {
 	@include button($color-danger, darken($color-danger, 10));
 }
+
+// Icon Button
+.acr-icon-btn {
+	padding: $spacing-unit;
+	min-width: fit-content;
+	overflow: hidden;
+	& .acr-icon {
+		padding: 0;
+		margin: 0;
+	}
+}

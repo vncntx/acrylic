@@ -565,7 +565,10 @@ export enum Emblem {
 	Lockscreen = 0xee3f
 }
 
-export default function Icon(props: IImageIconProps | IEmblemIconProps) {
+export interface IconComponent
+	extends React.FC<IImageIconProps | IEmblemIconProps> {}
+
+const Icon: IconComponent = (props: IImageIconProps | IEmblemIconProps) => {
 	if (isImageIconProps(props)) {
 		const { src, classes, children, ...otherProps } = props;
 
@@ -585,7 +588,8 @@ export default function Icon(props: IImageIconProps | IEmblemIconProps) {
 			</span>
 		);
 	}
-}
+};
+export default Icon;
 
 /**
  * Type guard to check if props implement the IImageIconProps interface

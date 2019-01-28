@@ -27,7 +27,13 @@ export interface IButtonProps
 	disabled?: boolean;
 }
 
-export default function Button(props: IButtonProps) {
+export interface ButtonComponent extends React.FC<IButtonProps> {}
+
+/**
+ * Button displays a button with some content
+ * @param props component props
+ */
+const Button: ButtonComponent = (props: IButtonProps) => {
 	const { classes, children, variant, ...otherProps } = props;
 
 	const effectiveClasses = classNames(
@@ -41,4 +47,5 @@ export default function Button(props: IButtonProps) {
 			{children}
 		</button>
 	);
-}
+};
+export default Button;

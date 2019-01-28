@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IconButton /> Should match the latest snapshots 1`] = `
+Array [
+  <IconButton>
+    <button
+      className="acr-btn acr-icon-btn"
+    >
+      <Icon>
+        <span
+          className="acr-icon"
+        >
+          
+        </span>
+      </Icon>
+    </button>
+  </IconButton>,
+  <IconButton>
+    <button
+      className="acr-btn acr-icon-btn"
+    >
+      <Icon>
+        <span
+          className="acr-icon"
+        >
+          
+        </span>
+      </Icon>
+    </button>
+  </IconButton>,
+  <IconButton>
+    <button
+      className="acr-btn acr-icon-btn"
+    >
+      <Icon>
+        <span
+          className="acr-icon"
+        >
+          
+        </span>
+      </Icon>
+    </button>
+  </IconButton>,
+]
+`;
