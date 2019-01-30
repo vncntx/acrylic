@@ -5,15 +5,23 @@
 Text displays its contents as a generic block of text.
 
 ```jsx
-<Text>Wizard</Text>
-<Text>Knight</Text>
-<Text>Rogue</Text>
+render(() => (
+	<div>
+		<Text>Wizard</Text>
+		<Text>Knight</Text>
+		<Text>Rogue</Text>
+	</div>
+))
 ```
 
 It can also be inline, bold, italic, or underlined.
 
 ```jsx
-<Text inline bold>Bold</Text>
-<Text inline italic>Italic</Text>
-<Text inline underlined>Underlined</Text>
+render(() => (
+	<div>
+		<Text inline bold>Bold </Text>
+		<Text inline italic>Italic </Text>
+		<Text inline underlined>Underlined </Text>
+	</div>
+))
 ```

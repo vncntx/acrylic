@@ -156,11 +156,7 @@ Array [
     </aside>
   </Alert>,
   <Alert
-    controlComponent={
-      <Button>
-        Control
-      </Button>
-    }
+    controlComponent={[Function]}
   >
     <aside
       className="acr-alert"

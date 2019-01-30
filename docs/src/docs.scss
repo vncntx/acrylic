@@ -152,12 +152,6 @@ hr {
 	color: $token-color-constant;
 }
 
-.jsx-parser {
-	border: solid 1px black;
-	margin: 5px;
-	padding: 1em;
-}
-
 .api-link {
 	padding-top: 20px;
 	width: fit-content;
@@ -167,7 +161,7 @@ hr {
 }
 
 .article {
-	margin-top: 40px;
+	margin: 3vw;
 	padding: 20px 5vw;
 	& .acr-text a, & li a {
 		text-decoration: none;
@@ -177,26 +171,28 @@ hr {
 		}
 	}
 }
-.home-page.article {
-	margin-top: 0px;
-}
-.home-page.article section:first-of-type {
-	flex-wrap: wrap;
-}
 
 .code-preview {
-	margin: 20px 0;
-}
-.code-preview > * {
-	flex: 1 0 auto;
-	width: 50%;
+	margin: 4 * $spacing-unit 0;
+	pre {
+		font-size: 12pt;
+	}
+	& .live-render {
+		padding: 2 * $spacing-unit;
+	}
+	& > *:first-child {
+		flex: 2;
+	}
+	& > *:nth-child {
+		flex: 1;
+	}
 }
 
 footer {
 	@extend %clean-links;
 	flex: 0 0 auto;
 	padding: 12px;
-	margin: 5px 0 0 0;
+	margin: 20px 0 0 0;
 	text-align: right;
 	display: flex;
 	align-items: center;
@@ -225,7 +221,7 @@ footer > *:last-of-type {
 }
 
 // Special styles for demos
-.demo-acrylic-container {
+.demo-acrylic {
 	background-image: url("/src/img/vercingetorix.jpg");
 }
 

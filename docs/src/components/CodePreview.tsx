@@ -1,12 +1,9 @@
 import * as React from "react";
-import JSXParser from "react-jsx-parser";
-import { highlight, loadLanguages } from "reprism";
-import jsxLanguage from "reprism/languages/jsx";
+import classNames from "classnames";
+import { LiveProvider, LivePreview, LiveEditor, LiveError } from "react-live";
 import * as acrylic from "../../../lib/acrylic";
 
-const { Row, Column } = acrylic;
-
-loadLanguages(jsxLanguage);
+const { Column } = acrylic;
 
 export interface ICodePreviewProps {
 	children: string;
@@ -18,17 +15,23 @@ export interface ICodePreviewProps {
  * @param props component properties
  */
 export default function CodePreview(props: ICodePreviewProps) {
-	const { children, noPreview } = props;
+	const { children } = props;
 
-	const code = highlight(props.children, jsxLanguage.language);
 	return (
-		<Row classes="code-preview">
-			<div className="acr-col" dangerouslySetInnerHTML={{ __html: code }} />
-			{noPreview === true ? null : (
-				<Column>
-					<JSXParser components={acrylic} jsx={props.children} />
-				</Column>
-			)}
-		</Row>
+		<LiveProvider
+			mountStylesheet={false}
+			className={classNames("code-preview", "acr-row")}
+			code={children}
+			scope={acrylic}
+			noInline={true}
+		>
+			<Column>
+				<LiveEditor contentEditable={false} />
+			</Column>
+			<Column classes="live-render">
+				<LivePreview />
+			</Column>
+			<LiveError />
+		</LiveProvider>
 	);
 }

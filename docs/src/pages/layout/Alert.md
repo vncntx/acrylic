@@ -5,20 +5,29 @@
 An Alert draws attention to a small piece of content. Several variants are available to provide contextual information to the user. They can be dismissed using a button.
 
 ```jsx
-<Alert>This is a normal alert</Alert>
-<Alert variant="primary">This is a primary alert</Alert>
-<Alert variant="success">This is a success alert</Alert>
-<Alert variant="info">This is an info alert</Alert>
-<Alert variant="warning">This is a warning alert</Alert>
-<Alert variant="danger">This is a danger alert</Alert>
+render(() => (
+	<div>
+		<Alert>Alert</Alert>
+		<Alert variant="primary">Primary</Alert>
+		<Alert variant="success">Success</Alert>
+		<Alert variant="info">Info</Alert>
+		<Alert variant="warning">Warning</Alert>
+		<Alert variant="danger">Danger</Alert>
+	</div>
+))
 ```
 
 The control component can also be set.
 
 ```jsx
-<Alert controlComponent={
-	<Button>Custom</Button>
-}>
-	This one has a custom control
-</Alert>
+
+const CloseButton = (onDismiss) => (
+	<IconButton onClick={onDismiss}>
+		<Icon src="/src/img/cancel.svg" />
+	</IconButton>
+)
+
+render(() => (
+	<Alert controlComponent={CloseButton}>Custom</Alert>
+))
 ```

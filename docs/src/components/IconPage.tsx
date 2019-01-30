@@ -7,9 +7,9 @@ import {
 	Toolbar,
 	Button,
 	Icon,
-	Emblem
+	Emblem,
+	Alert
 } from "../../../lib/acrylic";
-import CodePreview from "./CodePreview";
 
 const { useState } = React;
 
@@ -25,6 +25,10 @@ export default function IconPage() {
 				Icon displays an image that scales with the current font size. To use
 				it, you can either:
 			</Text>
+			<Alert variant="warning">
+				<Icon src="/src/img/info.svg" />
+				This component will be reworked for better portability
+			</Alert>
 			<ol className="enumeration">
 				<li>
 					use one of the built-in{" "}
@@ -62,14 +66,6 @@ export default function IconPage() {
 					</Button>
 				</a>
 			</Toolbar>
-			<Row>
-				<CodePreview noPreview={true}>
-					{"<Icon>{Emblem.Smiley}</Icon>"}
-				</CodePreview>
-				<CodePreview noPreview={true}>
-					{'<Icon src="img/icon.svg" />'}
-				</CodePreview>
-			</Row>
 			<input
 				className="search-box"
 				type="text"

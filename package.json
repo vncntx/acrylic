@@ -55,12 +55,8 @@
 		"jest-junit": "^5.2.0",
 		"marked": "^0.6.0",
 		"prettier": "1.15.3",
-		"prism-react-renderer": "^0.1.5",
-		"prismjs": "^1.15.0",
-		"react-jsx-parser": "^1.13.0",
 		"react-live": "^1.12.0",
 		"refractor": "^2.6.2",
-		"reprism": "^0.0.11",
 		"ts-jest": "23.10.5",
 		"typedoc": "^0.14.2"
 	},

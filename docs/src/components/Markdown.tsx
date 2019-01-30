@@ -2,7 +2,14 @@ import * as React from "react";
 import classNames from "classnames";
 import marked from "marked";
 import { Redirect } from "react-router-dom";
-import { Button, IProps, Title, Icon, Emblem } from "../../../lib/acrylic";
+import {
+	Button,
+	IProps,
+	Title,
+	Icon,
+	Emblem,
+	Section
+} from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
 const { useState, useEffect } = React;
@@ -60,7 +67,7 @@ export default function Markdown(props: IMarkdownProps) {
 	const wikiLink = findWikiLink(contents);
 	let lastKey = 1;
 	return (
-		<div className={classNames(props.classes)}>
+		<Section elevation={2} classes={props.classes}>
 			{tokens.map((token: any) => {
 				const key = lastKey++;
 				switch (token.type) {
@@ -104,7 +111,7 @@ export default function Markdown(props: IMarkdownProps) {
 					</a>
 				</article>
 			) : null}
-		</div>
+		</Section>
 	);
 }
 

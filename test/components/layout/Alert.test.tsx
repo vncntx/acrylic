@@ -13,7 +13,9 @@ describe("<Alert />", () => {
 					<Alert variant="info">Example</Alert>
 					<Alert variant="warning">Example</Alert>
 					<Alert variant="danger">Example</Alert>
-					<Alert controlComponent={<Button>Control</Button>}>Example</Alert>
+					<Alert controlComponent={() => <Button>Control</Button>}>
+						Example
+					</Alert>
 				</React.Fragment>
 			)
 		).toMatchSnapshot();
