@@ -18,14 +18,15 @@ render(() => (
 ))
 ```
 
-Buttons can also contain icons.
+Buttons can also contain **[Icons](/components/typography/Icon)**.
 
 ```jsx
+
 render(() => (
 	<div>
-		<Button><Icon>{0xe8c6}</Icon>Cut</Button>
-		<Button><Icon>{0xe8c8}</Icon>Copy</Button>
-		<Button><Icon>{0xe77f}</Icon>Paste</Button>
+		<Button><Icon src="/src/img/ok.svg" />Okay</Button>
+		<Button><Icon src="/src/img/cancel.svg" />Cancel</Button>
+		<Button><Icon src="/src/img/trash.svg" />Delete</Button>
 	</div>
 ))
 ```
@@ -35,9 +36,9 @@ Use an **IconButton** if you don't need to display text.
 ```jsx
 render(() => (
 	<div>
-		<IconButton><Icon>{0xe8c6}</Icon></IconButton>
-		<IconButton><Icon>{0xe8c8}</Icon></IconButton>
-		<IconButton><Icon>{0xe77f}</Icon></IconButton>
+		<IconButton><Icon src="/src/img/ok.svg" /></IconButton>
+		<IconButton><Icon src="/src/img/cancel.svg" /></IconButton>
+		<IconButton><Icon src="/src/img/trash.svg" /></IconButton>
 	</div>
 ))
 ```

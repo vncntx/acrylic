@@ -7,9 +7,9 @@ A Column lays out its children in a single column.
 ```jsx
 render(() => (
 	<Column>
-		<span><img src="/src/img/d8.png" /></span>
-		<span><img src="/src/img/d10.png" /></span>
-		<span><img src="/src/img/d20.png" /></span>
+		<img src="/src/img/horn.png" />
+		<img src="/src/img/fighter.png" />
+		<img src="/src/img/soldier.png" />
 	</Column>
 ))
 ```

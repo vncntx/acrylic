@@ -1,16 +1,14 @@
 import * as React from "react";
 import { mount } from "enzyme";
-import { Icon, Emblem } from "../../../lib/acrylic";
+import { Icon } from "../../../lib/acrylic";
 
 describe("<Icon />", () => {
 	it("Should match the latest snapshots", () => {
 		expect(
 			mount(
 				<React.Fragment>
-					<Icon>{Emblem.Accept}</Icon>
-					<Icon>{Emblem.Backspace}</Icon>
-					<Icon>{Emblem.Calculator}</Icon>
-					<Icon src="image.svg" />
+					<Icon src="icon.svg" />
+					<Icon src="icon.svg" />
 				</React.Fragment>
 			)
 		).toMatchSnapshot();

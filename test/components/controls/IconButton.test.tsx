@@ -1,6 +1,6 @@
 import * as React from "react";
 import { mount } from "enzyme";
-import { IconButton, Icon, Emblem } from "../../../lib/acrylic";
+import { IconButton, Icon } from "../../../lib/acrylic";
 
 describe("<IconButton />", () => {
 	it("Should match the latest snapshots", () => {
@@ -8,13 +8,13 @@ describe("<IconButton />", () => {
 			mount(
 				<React.Fragment>
 					<IconButton>
-						<Icon>{Emblem.Previous}</Icon>
+						<Icon src="icon.svg" />
 					</IconButton>
 					<IconButton>
-						<Icon>{Emblem.Next}</Icon>
+						<Icon src="icon.svg" />
 					</IconButton>
 					<IconButton>
-						<Icon>{0xe72c}</Icon>
+						<Icon src="icon.svg" />
 					</IconButton>
 				</React.Fragment>
 			)
@@ -24,7 +24,7 @@ describe("<IconButton />", () => {
 		const spy = jest.fn();
 		const btn = mount(
 			<IconButton onClick={spy}>
-				<Icon>{0xe72c}</Icon>
+				<Icon src="icon.svg" />
 			</IconButton>
 		);
 		btn.simulate("click");

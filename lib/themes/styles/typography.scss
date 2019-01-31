@@ -9,6 +9,8 @@
 	font-size: inherit;
 	font-weight: inherit;
 	color: inherit;
+	stroke: inherit;
+	fill: inherit;
 	cursor: default;
 	word-wrap: inherit;
 	overflow-wrap: inherit;
@@ -23,6 +25,8 @@ body {
 	font-family: $font-stack-standard;
 	font-weight: 500;
 	color: $color-foreground;
+	stroke: $color-foreground;
+	fill: $color-foreground;
 	cursor: pointer;
 	word-wrap: normal;
 	overflow-wrap: normal;

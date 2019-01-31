@@ -7,9 +7,9 @@ A Row lays out its children in a single row.
 ```jsx
 render(() => (
 	<Row>
-		<div><img src="/src/img/d8.png" /></div>
-		<div><img src="/src/img/d10.png" /></div>
-		<div><img src="/src/img/d20.png" /></div>
+		<div><img src="/src/img/horn.png" /></div>
+		<div><img src="/src/img/fighter.png" /></div>
+		<div><img src="/src/img/soldier.png" /></div>
 	</Row>
 ))
 ```

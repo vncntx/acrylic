@@ -36,13 +36,13 @@
 	&:hover {
 		@extend %subtle-transition;
 		outline: none;
-		background-color: darken($background, 5);
+		background-color: darken($background, 3);
 		border-color: darken($border-color, 10);
 		box-shadow: 0 $shadow-width $shadow-width * 2 rgba($color-shadow, 0.8);
 	}
 
 	&:active {
-		background-color: darken($background, 5);
+		background-color: darken($background, 6);
 		box-shadow: 0 $shadow-width / 2 $shadow-width rgba($color-shadow, 0.8);
 	}
 
@@ -51,9 +51,9 @@
 	}
 }
 
-$btn-background: darken($color-background, 5);
+$btn-background: darken($color-background, 2);
 .acr-btn {
-	@include button($btn-background, darken($color-background, 50));
+	@include button($btn-background, darken($color-background, 40));
 }
 .acr-btn[disabled] {
 	@include button(darken($color-background, 10), darken($color-background, 20));

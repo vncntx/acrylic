@@ -2,33 +2,20 @@
 
 exports[`<Icon /> Should match the latest snapshots 1`] = `
 Array [
-  <Icon>
-    <span
-      className="acr-icon"
-    >
-      
-    </span>
-  </Icon>,
-  <Icon>
-    <span
-      className="acr-icon"
-    >
-      
-    </span>
-  </Icon>,
-  <Icon>
-    <span
-      className="acr-icon"
-    >
-      
-    </span>
-  </Icon>,
   <Icon
-    src="image.svg"
+    src="icon.svg"
   >
     <img
       className="acr-icon"
-      src="image.svg"
+      src="icon.svg"
+    />
+  </Icon>,
+  <Icon
+    src="icon.svg"
+  >
+    <img
+      className="acr-icon"
+      src="icon.svg"
     />
   </Icon>,
 ]

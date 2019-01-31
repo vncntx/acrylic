@@ -23,7 +23,6 @@ export default function ErrorPage(props: IErrorPageProps) {
 		<div className="error-page">
 			<div className="alert">
 				<section className="alert-title">
-					<img src="/src/img/error.png" className="icon" />
 					<h2>{match.params.message || "Unknown Error"}</h2>
 				</section>
 				<p>{match.params.details}</p>

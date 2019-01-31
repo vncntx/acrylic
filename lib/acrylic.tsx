@@ -20,7 +20,7 @@ export { default as Toolbar } from "./components/layout/Toolbar";
 export { default as ITextProps } from "./components/typography/ITextProps";
 export { default as Title } from "./components/typography/Title";
 export { default as Text } from "./components/typography/Text";
-export { default as Icon, Emblem } from "./components/typography/Icon";
+export { default as Icon } from "./components/typography/Icon";
 
 /**
  * Conrol Components

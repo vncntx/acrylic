@@ -1,11 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
-import { Row, Text, Icon, Emblem } from "../../lib/acrylic";
+import { Row, Text, Icon } from "../../lib/acrylic";
 import Page from "./components/Page";
 import ErrorPage from "./components/ErrorPage";
 import HomePage from "./components/HomePage";
-import IconPage from "./components/IconPage";
 import PageLink from "./components/PageLink";
 
 function Doc() {
@@ -17,7 +16,7 @@ function Doc() {
 						<nav>
 							<ul>
 								<li>
-									<Icon classes="logo">{Emblem.Tetrahedron}</Icon>
+									<Icon classes="logo" src="/src/img/icon.png" />
 								</li>
 								<li>
 									<NavLink exact to="/" activeClassName="selected">
@@ -58,7 +57,6 @@ function Doc() {
 						</nav>
 						<Switch>
 							<Route exact path="/" component={HomePage} />
-							<Route path="/components/typography/Icon" component={IconPage} />
 							<Route path="/components/:name+" component={Page} />
 							<Route path="/error/:message/:details?" component={ErrorPage} />
 							<Route
@@ -82,7 +80,7 @@ function Doc() {
 			</main>
 			<footer>
 				<section>
-					<Icon>{Emblem.Roadwork}</Icon>
+					<Icon src="/src/img/lightbulb.svg" />
 					<a
 						href="https://github.com/vincentfiestada/acrylic/"
 						title="View Repository"

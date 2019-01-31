@@ -6,12 +6,13 @@ Array [
     <button
       className="acr-btn acr-icon-btn"
     >
-      <Icon>
-        <span
+      <Icon
+        src="icon.svg"
+      >
+        <img
           className="acr-icon"
-        >
-          
-        </span>
+          src="icon.svg"
+        />
       </Icon>
     </button>
   </IconButton>,
@@ -19,12 +20,13 @@ Array [
     <button
       className="acr-btn acr-icon-btn"
     >
-      <Icon>
-        <span
+      <Icon
+        src="icon.svg"
+      >
+        <img
           className="acr-icon"
-        >
-          
-        </span>
+          src="icon.svg"
+        />
       </Icon>
     </button>
   </IconButton>,
@@ -32,12 +34,13 @@ Array [
     <button
       className="acr-btn acr-icon-btn"
     >
-      <Icon>
-        <span
+      <Icon
+        src="icon.svg"
+      >
+        <img
           className="acr-icon"
-        >
-          
-        </span>
+          src="icon.svg"
+        />
       </Icon>
     </button>
   </IconButton>,
