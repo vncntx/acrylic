@@ -47,6 +47,7 @@ html, body {
 %clean-links {
 	& a:any-link {
 		text-decoration: none;
+		color: inherit;
 	}
 	& a:hover, & a:focus, & a.selected {
 		color: $color-accent;
@@ -161,50 +162,56 @@ hr {
 }
 
 .article {
-	margin: 3vw;
-	padding: 20px 5vw;
-	& .acr-text a, & li a {
-		text-decoration: none;
-		color: $color-accent;
-		&:hover, &:active, &:focus {
-			text-decoration: underline;
+	padding: 30px;
+	& > * {
+		margin: 30px 0;
+		&:first-child {
+			margin-top: 0;
+		}
+		&.acr-toolbar, &.acr-toolbar+* {
+			margin: 0;
 		}
 	}
-	& img:not(.acr-icon) {
-		max-width: 200px;
-		height: auto;
-		margin: $spacing-unit;
-		padding: 0;
-		background: {
-			color: darken($color-background, 20);
-		}
-		border: {
-			color: $color-foreground;
-			width: $border-width;
-			style: solid;
+	& > pre {
+		align-self: stretch;
+		margin: 30px 0;
+	}
+	& .command-bar {
+		justify-content: space-evenly;
+		& > *:last-child {
+			max-width: fit-content;
 		}
 	}
 }
 
 .code-preview {
-	margin: 4 * $spacing-unit 0;
-	pre {
-		font-size: 12pt;
+	@include elevated(3);
+	& > * {
+		margin: 0;
 	}
 	& .live-render {
-		padding: 2 * $spacing-unit;
-	}
-	& > *:first-child {
-		flex: 2;
-	}
-	& > *:nth-child {
-		flex: 1;
+		padding: 4 * $spacing-unit;
+		display: block;
+		background: $color-background;
+		& img:not(.acr-icon) {
+			max-width: 30%;
+			margin: $spacing-unit;
+			padding: 0;
+			border: {
+				color: $color-foreground;
+				width: $border-width;
+				style: solid;
+			}
+			background: {
+				color: darken($color-background, 20);
+			}
+		}
 	}
 }
 
 footer {
 	@extend %clean-links;
-	@include elevated(3);
+	@include elevated(4);
 	flex: 0 0 auto;
 	padding: 12px;
 	margin: 20px 0 0 0;
@@ -254,60 +261,7 @@ table {
 		color: white;
 	}
 }
-.emblem-grid a {
-	margin: 0;
-	padding: 0;
-}
-
-.search-box {
-	display: block;
-	padding: 10px;
-	margin: 5px;
-	outline: none;
-	border: {
-		color: $color-foreground;
-		style: solid;
-		width: 2 * $border-width;
-	}
-	&:focus {
-		border: {
-			color: $color-accent;
-		}
-	}
-}
-.emblem-grid {
-	max-width: fit-content;
-	& > * {
-		@extend %subtle-transition;
-		flex-grow: 0;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-items: center;
-		&:hover {
-			@extend %subtle-transition;
-			background-color: $color-accent;
-			color: contrastingColor($color-accent);
-		}
-	}
-	& .acr-icon {
-		font-size: 32px;
-	}
-}
 
 .hidden {
 	display: none;
 }
-
-// List Types
-ol.enumeration {
-	counter-reset: list;
-	& > li {
-		list-style: none;
-		&:before {
-			content: counter(list, lower-alpha) ") ";
-			counter-increment: list;
-		}
-	}
-}
-

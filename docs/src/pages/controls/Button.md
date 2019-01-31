@@ -1,6 +1,7 @@
 ## Button
 
-[wiki]: /wiki/modules/_components_controls_button_.html
+[wiki]: /wiki/modules/_components_controls_button_.html "Button"
+[wiki]: /wiki/modules/_components_controls_iconbutton_.html "IconButton"
 
 A Button is a control that allows the user to interact via clicks and taps.
 

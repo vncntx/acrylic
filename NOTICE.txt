@@ -1,0 +1,11 @@
+This project includes work by third parties:
+
+[ArcMage ArtWork]
+https://arcmage.org/artwork/
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+[Icons8 Icons]
+https://icons8.com/
+Creative Commons Attribution-NoDerivs 3.0 Unported
+https://creativecommons.org/licenses/by-nd/3.0/legalcode

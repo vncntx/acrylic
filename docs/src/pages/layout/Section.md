@@ -1,6 +1,6 @@
 ## Section
 
-[wiki]: /wiki/modules/_components_layout_section_.html
+[wiki]: /wiki/modules/_components_layout_section_.html "Section"
 
 A Section is a container for a specific part of an app or page.
 

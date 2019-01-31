@@ -58,7 +58,6 @@ function Doc() {
 						<Switch>
 							<Route exact path="/" component={HomePage} />
 							<Route path="/components/:name+" component={Page} />
-							<Route path="/error/:message/:details?" component={ErrorPage} />
 							<Route
 								render={props => (
 									<ErrorPage
@@ -66,9 +65,7 @@ function Doc() {
 											...props.match,
 											params: {
 												message: "Not Found",
-												details: `The page "${
-													window.location.pathname
-												}" does not exist`
+												details: "That page does not exist"
 											}
 										}}
 									/>

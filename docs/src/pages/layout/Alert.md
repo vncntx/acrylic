@@ -1,26 +1,25 @@
 ## Alert
 
-[wiki]: /wiki/modules/_components_layout_alert_.html
+[wiki]: /wiki/modules/_components_layout_alert_.html "Alert"
 
-An Alert draws attention to a small piece of content. Several variants are available to provide contextual information to the user. They can be dismissed using a button.
+An **Alert** draws attention to a small piece of content. Several variants are available to provide contextual information to the user. They can be dismissed using a button.
 
 ```jsx
 render(() => (
 	<div>
-		<Alert>Alert</Alert>
-		<Alert variant="primary">Primary</Alert>
-		<Alert variant="success">Success</Alert>
-		<Alert variant="info">Info</Alert>
-		<Alert variant="warning">Warning</Alert>
-		<Alert variant="danger">Danger</Alert>
+		<Alert>This is an Alert</Alert>
+		<Alert variant="primary">This is a Primary Alert</Alert>
+		<Alert variant="success">This is a Success Alert</Alert>
+		<Alert variant="info">This is an Info Alert</Alert>
+		<Alert variant="warning">This is a Warning Alert</Alert>
+		<Alert variant="danger">This is a Danger Alert</Alert>
 	</div>
 ))
 ```
 
-The control component can also be set.
+You can also customize the control button at the end
 
 ```jsx
-
 const CloseButton = (onDismiss) => (
 	<IconButton onClick={onDismiss}>
 		<Icon src="/src/img/cancel.svg" />
@@ -28,6 +27,6 @@ const CloseButton = (onDismiss) => (
 )
 
 render(() => (
-	<Alert controlComponent={CloseButton}>Custom</Alert>
+	<Alert controlComponent={CloseButton}>This one has a custom Button</Alert>
 ))
 ```

@@ -19,12 +19,12 @@ body {
 .acr-section {
 	@extend %container;
 	padding: 2 * $spacing-unit;
-	margin: 2 * $spacing-unit;
+	margin: 4 * $spacing-unit;
 	border: none;
 	background: $color-background;
 }
 @mixin elevated($height) {
-	box-shadow: 0 $height * $shadow-width / 2 $height * 2px
+	box-shadow: 0 2 * $height * $shadow-width / 2 $height * 6px
 		rgba($color-shadow, 0.6);
 	z-index: $height;
 }
@@ -86,9 +86,8 @@ body {
 	@extend %container;
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: stretch;
-	align-items: stretch;
-	align-content: stretch;
+	justify-items: flex-start;
+	align-items: flex-start;
 }
 .acr-col {
 	@extend %flexbox;
@@ -115,6 +114,8 @@ body {
 		color: $background;
 	}
 	padding: $spacing-unit;
+	display: inline-flex;
+	flex: 1 0 auto;
 	margin: 2 * $spacing-unit $spacing-unit;
 	border: {
 		style: solid;
@@ -138,7 +139,7 @@ body {
 	}
 }
 
-$alert-background: darken($color-background, 5);
+$alert-background: darken($color-background, 2);
 .acr-alert {
 	@include alert($alert-background, darken($alert-background, 35));
 }
