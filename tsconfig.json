@@ -3,15 +3,14 @@
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"newLine": "LF",
-		"target": "es5",
+		"target": "es2016",
 		"jsx": "react",
 		"lib": ["es2017", "dom"],
 		"typeRoots": ["typings", "node_modules/@types"],
 		"sourceMap": true,
 		"outDir": "./dist",
-		"noImplicitAny": true,
-		"resolveJsonModule": true
+		"noImplicitAny": true
 	},
-	"include": ["./lib/**/*.ts", "./lib/**/*.tsx", "docs/typedoc.json"],
+	"include": ["./lib/**/*.ts", "./lib/**/*.tsx"],
 	"exclude": ["node_modules"]
 }
