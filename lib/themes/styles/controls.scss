@@ -53,7 +53,7 @@
 
 $btn-background: darken($color-background, 5);
 .acr-btn {
-	@include button($btn-background, darken($color-background, 40));
+	@include button($btn-background, darken($color-background, 50));
 }
 .acr-btn[disabled] {
 	@include button(darken($color-background, 10), darken($color-background, 20));

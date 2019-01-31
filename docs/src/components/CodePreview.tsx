@@ -29,7 +29,9 @@ export default function CodePreview(props: ICodePreviewProps) {
 				<LiveEditor contentEditable={false} />
 			</Column>
 			<Column classes="live-render">
-				<LivePreview />
+				<div>
+					<LivePreview />
+				</div>
 			</Column>
 			<LiveError />
 		</LiveProvider>

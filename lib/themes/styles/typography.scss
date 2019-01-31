@@ -7,6 +7,7 @@
 * {
 	font-family: inherit;
 	font-size: inherit;
+	font-weight: inherit;
 	color: inherit;
 	cursor: default;
 	word-wrap: inherit;
@@ -20,6 +21,7 @@
 body {
 	font-size: $font-size-standard;
 	font-family: $font-stack-standard;
+	font-weight: 500;
 	color: $color-foreground;
 	cursor: pointer;
 	word-wrap: normal;
@@ -39,6 +41,10 @@ body {
 	}
 	line-height: inherit;
 	padding: $spacing-unit 0;
+	&.acr-bold {
+		text-shadow: 1px 0px 0px $color-foreground, 0px 1px 0px $color-foreground,
+			-1px 0px 0px $color-foreground, 0px -1px 0px $color-foreground;
+	}
 }
 .acr-title {
 	@extend %heading;
@@ -105,18 +111,13 @@ pre {
 	@extend %typography;
 	word-wrap: normal;
 	overflow-wrap: normal;
-	display: inline-block;
+	display: block;
 	&:not(.acr-inline) {
-		margin-bottom: $spacing-unit;
 		line-height: 1.5em;
 	}
 }
 .acr-bold {
 	@extend %bold;
-}
-.acr-title.acr-bold {
-	text-shadow: 1px 0px 0px $color-foreground, 0px 1px 0px $color-foreground,
-		-1px 0px 0px $color-foreground, 0px -1px 0px $color-foreground;
 }
 .acr-italic {
 	@extend %italic;
