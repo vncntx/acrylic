@@ -1,7 +1,5 @@
 ## Button
 
-[wiki]: /wiki/modules/_components_controls_button_.html
-
 A Button is a control that allows the user to interact via clicks and taps.
 
 ```jsx
@@ -21,7 +19,6 @@ render(() => (
 Buttons can also contain **[Icons](/components/typography/Icon)**.
 
 ```jsx
-
 render(() => (
 	<div>
 		<Button><Icon src="/src/img/ok.svg" />Okay</Button>
@@ -42,3 +39,10 @@ render(() => (
 	</div>
 ))
 ```
+
+###### Documentation
+<ul class="toc">
+	<li><code><a href="/wiki/modules/_components_controls_button_.html">Button</a></code></li>
+	<li><code><a href="/wiki/modules/_components_controls_iconbutton_.html">IconButton</a></code></li>
+	<li><code><a href="/wiki/modules/_components_variant_.html">Variant</a></code></li>
+</ul>

@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { LiveProvider, LivePreview, LiveEditor, LiveError } from "react-live";
 import * as acrylic from "../../../lib/acrylic";
 
-const { Column } = acrylic;
+const { Row } = acrylic;
 
 export interface ICodePreviewProps {
 	children: string;
@@ -20,19 +20,15 @@ export default function CodePreview(props: ICodePreviewProps) {
 	return (
 		<LiveProvider
 			mountStylesheet={false}
-			className={classNames("code-preview", "acr-row")}
+			className={classNames("code-preview")}
 			code={children}
 			scope={acrylic}
 			noInline={true}
 		>
-			<Column>
-				<LiveEditor contentEditable={false} />
-			</Column>
-			<Column classes="live-render">
-				<div>
-					<LivePreview />
-				</div>
-			</Column>
+			<div className="live-render">
+				<LivePreview />
+			</div>
+			<LiveEditor contentEditable={false} />
 			<LiveError />
 		</LiveProvider>
 	);

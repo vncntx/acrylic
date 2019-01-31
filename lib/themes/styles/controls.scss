@@ -14,14 +14,14 @@
 	outline: none;
 	color: $btn-foreground;
 	background-color: $background;
-	padding: $spacing-unit $spacing-unit * 2;
-	margin: $spacing-unit;
+	padding: $spacing-unit / 2 $spacing-unit;
+	margin: $spacing-unit / 2;
 	min-width: 7ch;
 	border: {
 		style: solid;
 		width: $border-width;
 		color: $border-color;
-		radius: $spacing-unit;
+		radius: $border-radius;
 	}
 	display: inline-flex;
 	align-items: center;
@@ -38,22 +38,24 @@
 		outline: none;
 		background-color: darken($background, 3);
 		border-color: darken($border-color, 10);
-		box-shadow: 0 $shadow-width $shadow-width * 2 rgba($color-shadow, 0.8);
+		box-shadow: 0 2px 4px rgba($color-shadow, 0.6);
 	}
 
 	&:active {
-		background-color: darken($background, 6);
-		box-shadow: 0 $shadow-width / 2 $shadow-width rgba($color-shadow, 0.8);
+		@extend %subtle-transition;
+		background-color: darken($background, 8);
+		border-color: darken($border-color, 20);
+		box-shadow: 0 1px 2px rgba($color-shadow, 0.6);
 	}
 
-	& > img {
+	& > .acr-icon {
 		margin-right: 0.25ch;
 	}
 }
 
 $btn-background: darken($color-background, 2);
 .acr-btn {
-	@include button($btn-background, darken($color-background, 40));
+	@include button($btn-background, $color-border);
 }
 .acr-btn[disabled] {
 	@include button(darken($color-background, 10), darken($color-background, 20));
@@ -102,7 +104,7 @@ a:any-link > .acr-btn {
 
 // Icon Button
 .acr-icon-btn {
-	padding: $spacing-unit;
+	padding: $spacing-unit / 2;
 	min-width: fit-content;
 	overflow: hidden;
 	& .acr-icon {

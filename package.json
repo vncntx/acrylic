@@ -59,8 +59,5 @@
 		"refractor": "^2.6.2",
 		"ts-jest": "23.10.5",
 		"typedoc": "^0.14.2"
-	},
-	"marked": {
-		"breaks": true
 	}
 }

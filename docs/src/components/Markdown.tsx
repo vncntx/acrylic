@@ -1,14 +1,14 @@
 import * as React from "react";
-import classNames from "classnames";
 import marked from "marked";
 import { Redirect } from "react-router-dom";
-import { Button, IProps, Title, Icon, Section } from "../../../lib/acrylic";
+import { IProps, Title, Section, Toolbar, Text } from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
 const { useState, useEffect } = React;
 
 export interface IMarkdownProps extends IProps {
 	src: string;
+	title?: string;
 }
 
 /**
@@ -16,51 +16,50 @@ export interface IMarkdownProps extends IProps {
  * @param source Markdown content to render
  */
 export default function Markdown(props: IMarkdownProps) {
-	const contentUrl = props.src;
+	const { src, title } = props;
+
 	const [contents, setContents] = useState("");
 	const [hasError, setError] = useState(false);
 
-	useEffect(
-		() => {
-			const abortController = new AbortController();
-			if (contentUrl.length > 0) {
-				fetch(contentUrl, {
-					signal: abortController.signal
+	const loadContent = () => {
+		const abortController = new AbortController();
+		if (src.length > 0) {
+			fetch(src, {
+				signal: abortController.signal
+			})
+				.then(res => {
+					if (res.status < 200 || res.status > 299) {
+						setError(true);
+					} else {
+						res.text().then(contents => {
+							setContents(contents);
+						});
+					}
 				})
-					.then(res => {
-						if (res.status < 200 || res.status > 299) {
-							setError(true);
-						} else {
-							res.text().then(contents => {
-								setContents(contents);
-							});
-						}
-					})
-					.catch((err: Error) => {
-						if (
-							!(
-								err instanceof DOMException &&
-								err.code === DOMException.ABORT_ERR
-							)
-						) {
-							setError(true);
-						}
-					});
-				return () => abortController.abort();
-			}
-		},
-		[contentUrl]
-	);
+				.catch((err: Error) => {
+					if (
+						!(
+							err instanceof DOMException && err.code === DOMException.ABORT_ERR
+						)
+					) {
+						setError(true);
+					}
+				});
+			return () => abortController.abort();
+		}
+	};
+
+	useEffect(loadContent, [src]);
 
 	if (hasError) {
 		return <Redirect to="/error" />;
 	}
 
 	const tokens = marked.lexer(contents);
-	const wikiLink = findWikiLink(contents);
 	let lastKey = 1;
+
 	return (
-		<Section elevation={2} classes={props.classes}>
+		<Section classes={props.classes}>
 			{tokens.map((token: any) => {
 				const key = lastKey++;
 				switch (token.type) {
@@ -94,23 +93,6 @@ export default function Markdown(props: IMarkdownProps) {
 						);
 				}
 			})}
-			{wikiLink ? (
-				<article className="api-link">
-					<a href={wikiLink}>
-						<Button>
-							<Icon src="/src/img/info.svg" />
-							Details
-						</Button>
-					</a>
-				</article>
-			) : null}
 		</Section>
 	);
-}
-
-function findWikiLink(contents: string): string | null {
-	const linkLine = contents
-		.split("\n")
-		.find(line => line.search(/\[wiki\]: .+/gi) > -1);
-	return linkLine ? linkLine.split(": ")[1] || null : null;
 }

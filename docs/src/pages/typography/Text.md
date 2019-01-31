@@ -1,8 +1,6 @@
 ## Text
 
-[wiki]: /wiki/modules/_components_typography_text_.html
-
-Text displays its contents as a generic block of text.
+`Text` displays its contents as a generic block of text.
 
 ```jsx
 render(() => (
@@ -25,3 +23,8 @@ render(() => (
 	</div>
 ))
 ```
+
+###### Documentation
+<ul class="toc">
+	<li><code><a href="/wiki/modules/_components_typography_text_.html">Text</a></code></li>
+</ul>

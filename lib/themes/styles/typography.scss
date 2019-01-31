@@ -36,6 +36,7 @@ body {
 	padding: 0;
 	margin: 0;
 	line-height: 1em;
+	text-decoration: inherit;
 }
 %heading {
 	@extend %typography;
@@ -85,21 +86,31 @@ h6 {
  * Code
  */
 %code {
-	display: block;
+	@extend %typography;
 	font-family: $font-stack-monospace;
-	background: $color-dark-contrast;
-	color: $color-light-contrast;
 	white-space: pre-wrap;
-	text-align: left;
-	overflow: auto;
+	overflow: hidden;
 	line-height: 1.25em;
 	tab-size: 2;
-	padding: 4 * $spacing-unit;
-	margin: $spacing-unit;
+	padding: 2 * $spacing-unit;
+	margin: 4 * $spacing-unit;
 }
-code,
 pre {
 	@extend %code;
+	background: darken($color-background, 5);
+	& > code {
+		padding: 0;
+		width: fit-content;
+		background: inherit;
+		color: inherit;
+	}
+}
+code {
+	@extend %code;
+	padding: $spacing-unit / 2 $spacing-unit;
+	background: darken($color-background, 5);
+	color: inherit;
+	margin: 0;
 }
 
 %bold {
@@ -113,8 +124,6 @@ pre {
 }
 .acr-text {
 	@extend %typography;
-	word-wrap: normal;
-	overflow-wrap: normal;
 	display: block;
 	&:not(.acr-inline) {
 		line-height: 1.5em;
@@ -135,4 +144,6 @@ pre {
 
 a:any-link {
 	cursor: pointer;
+	color: $color-accent;
+	text-decoration: none;
 }

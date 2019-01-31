@@ -1,7 +1,5 @@
 ## Icon
 
-[wiki]: /wiki/modules/_components_typography_icon_.html
-
 An **Icon** displays an image that scales with the current font size.
 
 ```jsx
@@ -22,3 +20,8 @@ render(() => (
 	</div>
 ))
 ```
+
+###### Documentation
+<ul class="toc">
+	<li><code><a href="/wiki/modules/_components_typography_icon_.html">Icon</a></code></li>
+</ul>

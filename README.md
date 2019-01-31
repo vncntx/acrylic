@@ -1,6 +1,6 @@
-<div align="center" style="margin: auto; width: fit-content; text-align: center;">
+<div align="center" style="width: fit-content; text-align: center;">
 	<img src="https://raw.githubusercontent.com/vincentfiestada/acrylic/master/logo.png" />
-	<h1 style="color: #1f6cb4">Acrylic Components</h1>
+	<h2 style="color: #1f6cb4">Acrylic</h2>
 	<p>A React Component Library</p>
 	<section style="display: flex; flex-direction: row; align-items: center;">
 		<a href="https://vincentofearth.visualstudio.com/Acrylic/_build/latest?definitionId=1?branchName=master" style="padding: 0 5px"><img src="https://vincentofearth.visualstudio.com/Acrylic/_apis/build/status/Acrylic-CI?branchName=master" alt="Build Status" /></a>
@@ -12,7 +12,7 @@
 	</section>
 </div>
 
-## Development
+### Development
 
 The library and the docs can be built using the [Parcel](https://parceljs.org/) bundler.
 
@@ -27,3 +27,10 @@ Tests are written using [Jest](https://jestjs.io/) and can be run like so:
 ```sh
 yarn test
 ```
+
+### License
+
+This project is available under the [MIT License](https://github.com/vincentfiestada/acrylic/blob/master/LICENSE)
+
+- [Icons8 Icons](https://icons8.com/) are licensed under [CC BY-ND 3.0](https://creativecommons.org/licenses/by-nd/3.0/legalcode)
+- [ArcMage ArtWork](https://arcmage.org/artwork/) are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)

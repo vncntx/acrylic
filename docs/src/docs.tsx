@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
-import { Row, Text, Icon } from "../../lib/acrylic";
+import { Text, Icon } from "../../lib/acrylic";
 import Page from "./components/Page";
 import ErrorPage from "./components/ErrorPage";
 import HomePage from "./components/HomePage";
@@ -12,7 +12,7 @@ function Doc() {
 		<React.Fragment>
 			<main>
 				<BrowserRouter>
-					<Row>
+					<div id="content-wrapper">
 						<nav>
 							<ul>
 								<li>
@@ -58,7 +58,6 @@ function Doc() {
 						<Switch>
 							<Route exact path="/" component={HomePage} />
 							<Route path="/components/:name+" component={Page} />
-							<Route path="/error/:message/:details?" component={ErrorPage} />
 							<Route
 								render={props => (
 									<ErrorPage
@@ -66,41 +65,16 @@ function Doc() {
 											...props.match,
 											params: {
 												message: "Not Found",
-												details: `The page "${
-													window.location.pathname
-												}" does not exist`
+												details: "That page does not exist"
 											}
 										}}
 									/>
 								)}
 							/>
 						</Switch>
-					</Row>
+					</div>
 				</BrowserRouter>
 			</main>
-			<footer>
-				<section>
-					<Icon src="/src/img/lightbulb.svg" />
-					<a
-						href="https://github.com/vincentfiestada/acrylic/"
-						title="View Repository"
-					>
-						Contribute
-					</a>
-				</section>
-				<section>
-					<Icon src="/src/img/osi.png" />
-					<Text>
-						<a
-							href="https://github.com/vincentfiestada/acrylic/blob/master/LICENSE"
-							title="View License"
-						>
-							Open Source
-						</a>{" "}
-						&copy; 2019
-					</Text>
-				</section>
-			</footer>
 		</React.Fragment>
 	);
 }
