@@ -1,16 +1,5 @@
 @import "../../lib/themes/light.scss";
 
-/**
- * Declares Segoe UI Fonts
- */
-
-@font-face {
-	font-family: "Segoe MDL2 Assets";
-	src: url("/src/fonts/segoe/segmdl2.ttf");
-}
-
-
-$color-accent: rgb(31, 108, 180);
 // Syntax Highlighting Settings
 $token-color-default: white;
 $token-color-punctuation: #21BFC2;
@@ -54,19 +43,28 @@ html, body {
 	}
 }
 
+#content-wrapper {
+	display: flex;
+	& > * {
+		flex: 1;
+	}
+}
 nav {
 	@extend %clean-links;
+	@include elevated(4);
+	display: flex;
 	max-width: fit-content;
-	padding-right: 30px;
-	font-size: 1.25em;
+	margin: 0;
+	padding: 0 40px;
 	text-align: center;
+	font-family: $font-stack-title;
 }
 nav li {
 	list-style: none;
-	padding: 0.25em;
+	padding: 0.25em 0;
 }
 nav ul {
-	padding: 0.25em 0.25em 0.25em 1em;
+	padding: 0;
 }
 nav .logo {
 	font-size: 48px;
@@ -76,7 +74,11 @@ hr {
 	text-align: center;
 	padding: 0;
 	margin: 5px;
-	border: solid 1px $color-foreground;
+	border: {
+		style: solid;
+		color: $color-foreground;
+		width: $border-width;
+	}
 }
 
 %row-center {
@@ -111,7 +113,7 @@ hr {
 
 .token {
 	background: inherit;
-	color: inherit;
+	color: $token-color-default;
 	font-style: normal;
 }
 
@@ -162,35 +164,36 @@ hr {
 }
 
 .article {
-	padding: 30px;
+	padding: 4vw;
+	margin: 0;
 	& > * {
 		margin: 30px 0;
 		&:first-child {
 			margin-top: 0;
 		}
-		&.acr-toolbar, &.acr-toolbar+* {
-			margin: 0;
-		}
 	}
 	& > pre {
 		align-self: stretch;
-		margin: 30px 0;
 	}
-	& .command-bar {
-		justify-content: space-evenly;
-		& > *:last-child {
-			max-width: fit-content;
-		}
+}
+.home-page {
+	& > *:nth-child(2) {
+		display: block;
 	}
 }
 
 .code-preview {
 	@include elevated(3);
+	border: solid $border-width $color-border;
 	& > * {
 		margin: 0;
 	}
+	& > pre {
+		background: $color-foreground;
+		color: white;
+	}
 	& .live-render {
-		padding: 4 * $spacing-unit;
+		padding: $spacing-unit;
 		display: block;
 		background: $color-background;
 		& img:not(.acr-icon) {
@@ -206,38 +209,13 @@ hr {
 				color: darken($color-background, 20);
 			}
 		}
-	}
-}
-
-footer {
-	@extend %clean-links;
-	@include elevated(4);
-	flex: 0 0 auto;
-	padding: 12px;
-	margin: 20px 0 0 0;
-	text-align: right;
-	display: flex;
-	align-items: center;
-	justify-items: space-evenly;
-	height: fit-content;
-	& p {
-		padding: 0;
-		margin: 0;
-	}
-	& .acr-icon {
-		margin-right: $spacing-unit;
-	}
-	& > * {
-		flex: 1 0 auto;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-	}
-	& > *:first-of-type {
-		justify-content: flex-start;
-	}
-	& > *:last-of-type {
-		justify-content: flex-end;
+		& .demo-squares > .acr-section {
+			flex: 1 0 auto;
+			max-width: 50px;
+			min-width: 50px;
+			height: 50px;
+			margin: 30px 20px;
+		}
 	}
 }
 
@@ -264,4 +242,10 @@ table {
 
 .hidden {
 	display: none;
+}
+
+.toc {
+	& code {
+		background: none;
+	}
 }

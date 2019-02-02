@@ -1,8 +1,7 @@
 // Fonts
-$font-stack-standard: "Work Sans", sans-serif;
-$font-stack-title: "Work Sans", sans-serif;
-$font-stack-monospace: "Source Code Pro", monospace;
-$font-stack-icon: "Segoe MDL2 Assets";
+$font-stack-standard: "Roboto", "Helvetica", "Arial", sans-serif;
+$font-stack-title: $font-stack-standard;
+$font-stack-monospace: "Consolas", "Droid Sans Mono", "Menlo", monospace;
 $font-size-standard: 14pt;
 $font-size-title: 4.25em;
 $scaling-factor-title: 0.82;
@@ -12,14 +11,15 @@ $color-light-contrast: white;
 $color-dark-contrast: black;
 
 // Spacing & Layout
-$spacing-unit: 5px;
+$spacing-unit: 7.5px;
 
 // Media Query Boundaries
 $width-tablet: 1.2 * $spacing-unit;
 
 // Borders & Shadows
 $border-width: 1px;
-$shadow-width: 1.5px;
+$border-radius: 4px;
+$shadow-width: 4px;
 
 // Animation
 $animation-duration-unit: 150ms;

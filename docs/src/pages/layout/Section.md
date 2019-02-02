@@ -1,7 +1,5 @@
 ## Section
 
-[wiki]: /wiki/modules/_components_layout_section_.html "Section"
-
 A Section is a container for a specific part of an app or page.
 
 ```jsx
@@ -17,7 +15,7 @@ Sections can have an elevation of up to 6. Use elevation to convey information h
 
 ```jsx
 render(() => (
-	<div>
+	<Row classes="demo-squares">
 		<Section elevation={0} />
 		<Section elevation={1} />
 		<Section elevation={2} />
@@ -25,7 +23,7 @@ render(() => (
 		<Section elevation={4} />
 		<Section elevation={5} />
 		<Section elevation={6} />
-	</div>
+	</Row>
 ))
 ```
 
@@ -41,3 +39,8 @@ render(() => (
 	</Section>
 ))
 ```
+
+###### Documentation
+<ul class="toc">
+	<li><code><a href="/wiki/modules/_components_layout_section_.html">Section</a></code></li>
+</ul>
