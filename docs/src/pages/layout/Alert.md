@@ -1,7 +1,5 @@
 ## Alert
 
-[wiki]: /wiki/modules/_components_layout_alert_.html "Alert"
-
 An **Alert** draws attention to a small piece of content. Several variants are available to provide contextual information to the user. They can be dismissed using a button.
 
 ```jsx
@@ -30,3 +28,9 @@ render(() => (
 	<Alert controlComponent={CloseButton}>This one has a custom Button</Alert>
 ))
 ```
+
+###### Documentation
+<ul class="toc">
+	<li><code><a href="/wiki/modules/_components_layout_alert_.html">Alert</a></code></li>
+	<li><code><a href="/wiki/modules/_components_variant_.html">Variant</a></code></li>
+</ul>

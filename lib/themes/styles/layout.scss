@@ -9,8 +9,8 @@ body {
 }
 
 %container {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 }
 
 /**
@@ -18,13 +18,13 @@ body {
  */
 .acr-section {
 	@extend %container;
-	padding: 2 * $spacing-unit;
-	margin: 4 * $spacing-unit;
+	padding: $spacing-unit;
+	margin: $spacing-unit;
 	border: none;
 	background: $color-background;
 }
 @mixin elevated($height) {
-	box-shadow: 0 2 * $height * $shadow-width / 2 $height * 6px
+	box-shadow: 0 $height * $shadow-width / 2 $height * 6px
 		rgba($color-shadow, 0.6);
 	z-index: $height;
 }
@@ -56,7 +56,7 @@ body {
 	position: relative;
 	border: {
 		style: solid;
-		color: rgba($color-shadow, 0.7);
+		color: rgba($color-border, 0.7);
 		width: $border-width;
 	}
 
@@ -174,26 +174,27 @@ $alert-background: darken($color-background, 2);
 .acr-toolbar {
 	@extend %flexbox;
 	flex-direction: row;
-	overflow: auto;
+	overflow: visible;
 	flex-wrap: nowrap;
 	padding: $spacing-unit;
+	align-items: stretch;
 
 	%first-button {
 		border: {
 			width: $border-width $border-width $border-width $border-width;
-			radius: $spacing-unit 0 0 $spacing-unit;
+			radius: $border-radius 0 0 $border-radius;
 		}
 	}
 	%last-button {
 		border: {
 			width: $border-width $border-width $border-width 0;
-			radius: 0 $spacing-unit $spacing-unit 0;
+			radius: 0 $border-radius $border-radius 0;
 		}
 	}
 	%only-button {
 		border: {
 			width: $border-width;
-			radius: $spacing-unit;
+			radius: $border-radius;
 		}
 	}
 
@@ -242,19 +243,19 @@ $alert-background: darken($color-background, 2);
 		&:first-child {
 			border: {
 				width: $border-width $border-width $border-width $border-width;
-				radius: $spacing-unit $spacing-unit 0 0;
+				radius: $border-radius $border-radius 0 0;
 			}
 		}
 		&:last-child {
 			border: {
 				width: 0 $border-width $border-width $border-width;
-				radius: 0 0 $spacing-unit $spacing-unit;
+				radius: 0 0 $border-radius $border-radius;
 			}
 		}
 		&:only-child {
 			border: {
 				width: $border-width;
-				radius: $spacing-unit;
+				radius: $border-radius;
 			}
 		}
 	}

@@ -1,16 +1,7 @@
 import * as React from "react";
-import classNames from "classnames";
 import marked from "marked";
 import { Redirect } from "react-router-dom";
-import {
-	Button,
-	IProps,
-	Title,
-	Icon,
-	Section,
-	Toolbar,
-	Row
-} from "../../../lib/acrylic";
+import { IProps, Title, Section, Toolbar, Text } from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
 const { useState, useEffect } = React;
@@ -65,28 +56,10 @@ export default function Markdown(props: IMarkdownProps) {
 	}
 
 	const tokens = marked.lexer(contents);
-	const wikiLinks = findWikiLinks(contents);
 	let lastKey = 1;
 
 	return (
-		<Section elevation={1} classes={props.classes}>
-			<Row classes="command-bar">
-				<Title level={2}>{title}</Title>
-				<Toolbar classes="api-link">
-					<Button onClick={() => loadContent()}>
-						<Icon src="/src/img/refresh.svg" />
-						Reload
-					</Button>
-					{wikiLinks.map(wikiLink => (
-						<a key={wikiLink.href} href={wikiLink.href}>
-							<Button>
-								<Icon src="/src/img/info.svg" />
-								{wikiLink.name}
-							</Button>
-						</a>
-					))}
-				</Toolbar>
-			</Row>
+		<Section classes={props.classes}>
 			{tokens.map((token: any) => {
 				const key = lastKey++;
 				switch (token.type) {
@@ -117,22 +90,4 @@ export default function Markdown(props: IMarkdownProps) {
 			})}
 		</Section>
 	);
-}
-
-interface IWikiLink {
-	href: string;
-	name: string;
-}
-
-function findWikiLinks(contents: string): IWikiLink[] {
-	const linkLines = contents
-		.split("\n")
-		.filter(line => line.search(/\[wiki\]: .+/i) > -1);
-	return linkLines.map(line => {
-		const info = line.split(": ")[1].split(" ");
-		return {
-			href: info[0],
-			name: (info[1] || "Link").replace(/"/g, "")
-		};
-	});
 }
