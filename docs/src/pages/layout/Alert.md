@@ -20,7 +20,7 @@ You can also customize the control button at the end
 ```jsx
 const CloseButton = (onDismiss) => (
 	<IconButton onClick={onDismiss}>
-		<Icon src="/src/img/cancel.svg" />
+		<Icon src="/img/cancel.svg" />
 	</IconButton>
 )
 
@@ -31,5 +31,5 @@ render(() => (
 
 ###### Documentation
 
-- [Alert](/wiki/modules/_components_layout_alert_.html)
-- [Variant](/wiki/modules/_components_variant_.html)
+- [`Alert`](/wiki/modules/_components_layout_alert_.html)
+- [`Variant`](/wiki/modules/_components_variant_.html)

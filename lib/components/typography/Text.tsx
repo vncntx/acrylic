@@ -1,6 +1,10 @@
 import * as React from "react";
 import ITextProps, { IPureTextProps, getEffectiveClass } from "./ITextProps";
 
+/**
+ * Displays text either as a paragraph or inline
+ * @param props
+ */
 export default function Text(props: ITextProps) {
 	const [pureProps, effectiveClass] = getEffectiveClass(props, "acr-text") as [
 		IPureTextProps,

@@ -1,80 +1,19 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter, Switch, NavLink, Route } from "react-router-dom";
-import { Text, Icon } from "../../lib/acrylic";
-import Page from "./components/Page";
-import ErrorPage from "./components/ErrorPage";
-import HomePage from "./components/HomePage";
-import PageLink from "./components/PageLink";
+import { BrowserRouter } from "react-router-dom";
+import { Row } from "../../lib/acrylic";
+import Routing from "./components/Routing";
+import Navigation from "./components/Navigation";
 
 function Doc() {
 	return (
 		<React.Fragment>
-			<main>
-				<BrowserRouter>
-					<div id="content-wrapper">
-						<nav>
-							<ul>
-								<li>
-									<Icon classes="logo" src="/src/img/icon.png" />
-								</li>
-								<li>
-									<NavLink exact to="/" activeClassName="selected">
-										Overview
-									</NavLink>
-								</li>
-								<hr />
-								<li>
-									<PageLink path="layout/Alert">Alert</PageLink>
-								</li>
-								<li>
-									<PageLink path="layout/Section">Section</PageLink>
-								</li>
-								<li>
-									<PageLink path="layout/Column">Column</PageLink>
-								</li>
-								<li>
-									<PageLink path="layout/Row">Row</PageLink>
-								</li>
-								<li>
-									<PageLink path="layout/Toolbar">Toolbar</PageLink>
-								</li>
-								<hr />
-								<li>
-									<PageLink path="controls/Button">Button</PageLink>
-								</li>
-								<hr />
-								<li>
-									<PageLink path="typography/Text">Text</PageLink>
-								</li>
-								<li>
-									<PageLink path="typography/Title">Title</PageLink>
-								</li>
-								<li>
-									<PageLink path="typography/Icon">Icon</PageLink>
-								</li>
-							</ul>
-						</nav>
-						<Switch>
-							<Route exact path="/" component={HomePage} />
-							<Route path="/components/:name+" component={Page} />
-							<Route
-								render={props => (
-									<ErrorPage
-										match={{
-											...props.match,
-											params: {
-												message: "Not Found",
-												details: "That page does not exist"
-											}
-										}}
-									/>
-								)}
-							/>
-						</Switch>
-					</div>
-				</BrowserRouter>
-			</main>
+			<BrowserRouter>
+				<Row classes="main">
+					<Navigation />
+					<Routing />
+				</Row>
+			</BrowserRouter>
 		</React.Fragment>
 	);
 }

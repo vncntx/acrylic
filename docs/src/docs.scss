@@ -43,31 +43,42 @@ html, body {
 	}
 }
 
-#content-wrapper {
-	display: flex;
-	& > * {
-		flex: 1;
-	}
+.main {
+	@extend %container;
+	align-items: stretch;
+	height: 100vh;
 }
+
 nav {
 	@extend %clean-links;
-	@include elevated(4);
-	display: flex;
-	max-width: fit-content;
+	@include elevated(6);
 	margin: 0;
 	padding: 0 40px;
-	text-align: center;
+	max-width: 100px;
+	text-align: left;
 	font-family: $font-stack-title;
+	& ul {
+		padding: 20px 0;
+		margin: 0;
+		& li {
+			list-style: none;
+			padding: 1vh 0;
+		}
+	}
+	& .logo {
+		& .acr-icon {
+			$size: 48px;
+			width: $size;
+			height: $size;
+		}
+	}
 }
-nav li {
-	list-style: none;
-	padding: 0.25em 0;
-}
-nav ul {
-	padding: 0;
-}
-nav .logo {
-	font-size: 48px;
+
+@media (min-height: 400px) {
+	nav ul {
+		position: sticky;
+		top: 0;
+	}
 }
 
 hr {
@@ -93,13 +104,6 @@ hr {
 }
 .alert-title {
 	@extend %row-center;
-}
-.icon {
-	max-width: fit-content;
-	max-height: fit-content;
-	padding: 0;
-	margin: 0;
-	margin-right: 0.5ch;
 }
 .error-page {
 	display: flex;
@@ -221,31 +225,10 @@ hr {
 
 // Special styles for demos
 .demo-acrylic {
-	background-image: url("/src/img/vercingetorix.jpg");
-}
-
-// Tables
-table {
-	border: solid 1px black;
-	border-spacing: 0;
-	& td, & th {
-		min-width: 10ch;
-		border: solid 1px black;
-		padding: 5px;
-		text-align: center;
-	}
-	& th {
-		background: $color-accent;
-		color: white;
-	}
+	background-image: url("/img/vercingetorix.jpg");
+	background-position-y: -150px;
 }
 
 .hidden {
 	display: none;
-}
-
-.toc {
-	& code {
-		background: none;
-	}
 }

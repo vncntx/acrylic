@@ -15,6 +15,10 @@ export interface IAlertProps extends ILayoutProps, IVariantProps {
 	controlComponent?: IControlFunc;
 }
 
+/**
+ * An container for content that requires immediate attention
+ * @param props
+ */
 export default function Alert(props: IAlertProps) {
 	const { classes, children, variant, controlComponent, ...otherProps } = props;
 

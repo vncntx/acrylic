@@ -14,5 +14,5 @@ export default function Page(props: IPageProps) {
 	const { match } = props;
 	const { name } = match.params;
 
-	return <Markdown classes="article" src={`/src/pages/${name}.md`} />;
+	return <Markdown classes="article" src={`/pages/${name}.md`} />;
 }

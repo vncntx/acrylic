@@ -23,7 +23,7 @@ export { default as Text } from "./components/typography/Text";
 export { default as Icon } from "./components/typography/Icon";
 
 /**
- * Conrol Components
+ * Control Components
  */
 export { default as Button } from "./components/controls/Button";
 export { default as IconButton } from "./components/controls/IconButton";

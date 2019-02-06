@@ -1,6 +1,6 @@
 ## Title
 
-A Title displays text as a heading with a level of importance from 1 to 6. The default level is also the lowest.
+**Title** displays text as a heading with a level of importance from 1 to 6; the lowest level is also the default.
 
 ```jsx
 render(() => (
@@ -15,7 +15,7 @@ render(() => (
 ))
 ```
 
-A Title can also be inline, bold, italic, or underlined.
+It can also be inline, bold, italic, or underlined.
 
 ```jsx
 render(() => (
@@ -28,6 +28,4 @@ render(() => (
 ```
 
 ###### Documentation
-<ul class="toc">
-	<li><code><a href="/wiki/modules/_components_typography_title_.html">Title</a></code></li>
-</ul>
+- [`Title`](/wiki/modules/_components_typography_title_.html)
