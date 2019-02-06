@@ -30,7 +30,6 @@ render(() => (
 ```
 
 ###### Documentation
-<ul class="toc">
-	<li><code><a href="/wiki/modules/_components_layout_alert_.html">Alert</a></code></li>
-	<li><code><a href="/wiki/modules/_components_variant_.html">Variant</a></code></li>
-</ul>
+
+- [Alert](/wiki/modules/_components_layout_alert_.html)
+- [Variant](/wiki/modules/_components_variant_.html)

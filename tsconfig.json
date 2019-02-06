@@ -3,7 +3,7 @@
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"newLine": "LF",
-		"target": "es2016",
+		"target": "es5",
 		"jsx": "react",
 		"lib": ["es2017", "dom"],
 		"typeRoots": ["typings", "node_modules/@types"],
