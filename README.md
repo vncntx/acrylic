@@ -1,5 +1,5 @@
 <div style="width: 100%; text-align: center;">
-	<img src="https://raw.githubusercontent.com/vincentfiestada/acrylic/master/logo.svg" style="height: auto; width: 128px;" />
+	<img src="https://raw.githubusercontent.com/vincentfiestada/acrylic/master/logo.svg?sanitize=true" style="height: 128px; width: 128px;" />
 	<h1 style="color: #1f6cb4">Acrylic</h1>
 	<p>A React Component Library</p>
 	<section style="width: 100%; display: flex; flex-direction: row; align-content: center; justify-content: center;">
