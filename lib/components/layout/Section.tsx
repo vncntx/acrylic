@@ -7,6 +7,10 @@ export interface ISectionProps extends ILayoutProps {
 	acrylic?: boolean;
 }
 
+/**
+ * A generic container for content
+ * @param props
+ */
 export default function Section(props: ISectionProps) {
 	const { classes, children, elevation, acrylic, ...otherProps } = props;
 

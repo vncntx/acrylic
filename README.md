@@ -1,8 +1,8 @@
-<div align="center" style="width: fit-content; text-align: center;">
-	<img src="https://raw.githubusercontent.com/vincentfiestada/acrylic/master/logo.png" />
-	<h2 style="color: #1f6cb4">Acrylic</h2>
+<div style="width: 100%; text-align: center;">
+	<img src="https://raw.githubusercontent.com/vincentfiestada/acrylic/master/logo.svg" style="height: auto; width: 128px;" />
+	<h1 style="color: #1f6cb4">Acrylic</h1>
 	<p>A React Component Library</p>
-	<section style="display: flex; flex-direction: row; align-items: center;">
+	<section style="width: 100%; display: flex; flex-direction: row; align-content: center; justify-content: center;">
 		<a href="https://vincentofearth.visualstudio.com/Acrylic/_build/latest?definitionId=1?branchName=master" style="padding: 0 5px"><img src="https://vincentofearth.visualstudio.com/Acrylic/_apis/build/status/Acrylic-CI?branchName=master" alt="Build Status" /></a>
 		<a href="https://github.com/vincentfiestada/acrylic/issues" style="padding: 0 5px"><img src="https://img.shields.io/github/issues/vincentfiestada/acrylic.svg?logo=github&logoColor=white" alt="Issues on GitHub" /></a>
 		<a href="https://lgtm.com/projects/g/vincentfiestada/acrylic/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/vincentfiestada/acrylic.svg?logo=lgtm&logoWidth=18"/></a>
@@ -12,7 +12,7 @@
 	</section>
 </div>
 
-### Development
+###### Development
 
 The library and the docs can be built using the [Parcel](https://parceljs.org/) bundler.
 
@@ -28,7 +28,7 @@ Tests are written using [Jest](https://jestjs.io/) and can be run like so:
 yarn test
 ```
 
-### License
+###### License
 
 This project is available under the [MIT License](https://github.com/vincentfiestada/acrylic/blob/master/LICENSE)
 

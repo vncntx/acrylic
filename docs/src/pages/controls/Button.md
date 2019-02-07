@@ -21,9 +21,9 @@ Buttons can also contain **[Icons](/components/typography/Icon)**.
 ```jsx
 render(() => (
 	<div>
-		<Button><Icon src="/src/img/ok.svg" />Okay</Button>
-		<Button><Icon src="/src/img/cancel.svg" />Cancel</Button>
-		<Button><Icon src="/src/img/trash.svg" />Delete</Button>
+		<Button><Icon src="/img/ok.svg" />Okay</Button>
+		<Button><Icon src="/img/cancel.svg" />Cancel</Button>
+		<Button><Icon src="/img/trash.svg" />Delete</Button>
 	</div>
 ))
 ```
@@ -33,16 +33,14 @@ Use an **IconButton** if you don't need to display text.
 ```jsx
 render(() => (
 	<div>
-		<IconButton><Icon src="/src/img/ok.svg" /></IconButton>
-		<IconButton><Icon src="/src/img/cancel.svg" /></IconButton>
-		<IconButton><Icon src="/src/img/trash.svg" /></IconButton>
+		<IconButton><Icon src="/img/ok.svg" /></IconButton>
+		<IconButton><Icon src="/img/cancel.svg" /></IconButton>
+		<IconButton><Icon src="/img/trash.svg" /></IconButton>
 	</div>
 ))
 ```
 
 ###### Documentation
-<ul class="toc">
-	<li><code><a href="/wiki/modules/_components_controls_button_.html">Button</a></code></li>
-	<li><code><a href="/wiki/modules/_components_controls_iconbutton_.html">IconButton</a></code></li>
-	<li><code><a href="/wiki/modules/_components_variant_.html">Variant</a></code></li>
-</ul>
+- [`Button`](/wiki/modules/_components_controls_button_.html)
+- [`IconButton`](/wiki/modules/_components_controls_iconbutton_.html)
+- [`Variant`](/wiki/modules/_components_variant_.html)

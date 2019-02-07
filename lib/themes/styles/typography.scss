@@ -11,7 +11,7 @@
 	color: inherit;
 	stroke: inherit;
 	fill: inherit;
-	cursor: default;
+	cursor: inherit;
 	word-wrap: inherit;
 	overflow-wrap: inherit;
 	text-decoration: none;
@@ -27,9 +27,10 @@ body {
 	color: $color-foreground;
 	stroke: $color-foreground;
 	fill: $color-foreground;
-	cursor: pointer;
+	cursor: default;
 	word-wrap: normal;
 	overflow-wrap: normal;
+	scroll-behavior: smooth;
 }
 %typography {
 	color: inherit;

@@ -9,6 +9,10 @@ export interface IIconProps extends IPureTextProps {
 
 export interface IconComponent extends React.FC<IIconProps> {}
 
+/**
+ * Icon displays a small image that scales with the current font size
+ * @param props
+ */
 const Icon: IconComponent = (props: IIconProps) => {
 	const { src, classes, ...otherProps } = props;
 

@@ -25,6 +25,4 @@ render(() => (
 ```
 
 ###### Documentation
-<ul class="toc">
-	<li><code><a href="/wiki/modules/_components_typography_text_.html">Text</a></code></li>
-</ul>
+- [`Text`](/wiki/modules/_components_typography_text_.html)

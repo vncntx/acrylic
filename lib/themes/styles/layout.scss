@@ -25,7 +25,7 @@ body {
 }
 @mixin elevated($height) {
 	box-shadow: 0 $height * $shadow-width / 2 $height * 6px
-		rgba($color-shadow, 0.6);
+		rgba($color-shadow, 0.4);
 	z-index: $height;
 }
 // Elevation Levels

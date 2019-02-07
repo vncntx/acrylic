@@ -41,6 +41,4 @@ render(() => (
 ```
 
 ###### Documentation
-<ul class="toc">
-	<li><code><a href="/wiki/modules/_components_layout_section_.html">Section</a></code></li>
-</ul>
+- [`Section`](/wiki/modules/_components_layout_section_.html)
