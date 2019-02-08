@@ -1,0 +1,262 @@
+@import "utils";
+
+* {
+	background: none;
+}
+
+body {
+	background: $color-background;
+}
+
+%container {
+	padding: 0;
+	margin: 0;
+}
+
+/**
+ * Section
+ */
+.acr-section {
+	@extend %container;
+	padding: $spacing-unit;
+	margin: $spacing-unit;
+	border: none;
+	background: $color-background;
+}
+@mixin elevated($height) {
+	box-shadow: 0 $height * $shadow-width / 2 $height * 6px
+		rgba($color-shadow, 0.4);
+	z-index: $height;
+}
+// Elevation Levels
+.acr-elevated-1 {
+	@include elevated(1);
+}
+.acr-elevated-2 {
+	@include elevated(2);
+}
+.acr-elevated-3 {
+	@include elevated(3);
+}
+.acr-elevated-4 {
+	@include elevated(4);
+}
+.acr-elevated-5 {
+	@include elevated(5);
+}
+.acr-elevated-6 {
+	@include elevated(6);
+}
+
+/**
+ * Acrylic Effect
+ */
+.acr-acrylic {
+	background: inherit;
+	position: relative;
+	border: {
+		style: solid;
+		color: rgba($color-border, 0.7);
+		width: $border-width;
+	}
+
+	&::after {
+		content: "";
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background: inherit;
+		background-size: cover;
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		filter: blur(5 * $spacing-unit);
+		overflow: hidden;
+	}
+}
+
+/**
+ * Row, Column
+ */
+
+%flexbox {
+	@extend %container;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-items: flex-start;
+	align-items: flex-start;
+}
+.acr-col {
+	@extend %flexbox;
+	flex-direction: column;
+}
+.acr-row {
+	@extend %flexbox;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.acr-col > *,
+.acr-row > * {
+	flex: 1;
+}
+
+/**
+ * Alerts
+ */
+@mixin alert($background, $border-color) {
+	$foreground: contrastingColor($background);
+
+	color: $foreground;
+	background: {
+		color: $background;
+	}
+	padding: $spacing-unit;
+	display: inline-flex;
+	flex: 1 0 auto;
+	margin: 2 * $spacing-unit $spacing-unit;
+	border: {
+		style: solid;
+		width: $border-width $border-width $border-width 10 * $border-width;
+		color: $border-color;
+		radius: 0;
+	}
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+
+	& > *:first-child {
+		flex: 1 0 auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 0 10px;
+		margin: 0;
+	}
+}
+
+$alert-background: darken($color-background, 2);
+.acr-alert {
+	@include alert($alert-background, darken($alert-background, 35));
+}
+// Alert Variants
+// Primary
+.acr-alert.acr-variant-primary {
+	@include alert($color-accent, darken($color-accent, 10));
+}
+// Success
+.acr-alert.acr-variant-success {
+	@include alert($color-success, darken($color-success, 10));
+}
+// Info
+.acr-alert.acr-variant-info {
+	@include alert($color-info, darken($color-info, 10));
+}
+// Warning
+.acr-alert.acr-variant-warning {
+	@include alert($color-warning, darken($color-warning, 10));
+}
+// Danger
+.acr-alert.acr-variant-danger {
+	@include alert($color-danger, darken($color-danger, 10));
+}
+.acr-alert.acr-hidden {
+	display: none;
+}
+
+/**
+ * Control Groups
+ */
+.acr-toolbar {
+	@extend %flexbox;
+	flex-direction: row;
+	overflow: visible;
+	flex-wrap: nowrap;
+	padding: $spacing-unit;
+	align-items: stretch;
+
+	%first-button {
+		border: {
+			width: $border-width $border-width $border-width $border-width;
+			radius: $border-radius 0 0 $border-radius;
+		}
+	}
+	%last-button {
+		border: {
+			width: $border-width $border-width $border-width 0;
+			radius: 0 $border-radius $border-radius 0;
+		}
+	}
+	%only-button {
+		border: {
+			width: $border-width;
+			radius: $border-radius;
+		}
+	}
+
+	& .acr-btn,
+	& .acr-btn[class*="acr-variant-"],
+	& .acr-btn[disabled] {
+		margin: 0;
+		max-width: fit-content;
+		border: {
+			width: $border-width $border-width $border-width 0;
+			radius: 0;
+		}
+		&:first-child {
+			@extend %first-button;
+		}
+		&:last-child {
+			@extend %last-button;
+		}
+		&:only-child {
+			@extend %only-button;
+		}
+	}
+	& > a:any-link {
+		&:first-child > .acr-btn {
+			@extend %first-button;
+		}
+		&:last-child > .acr-btn {
+			@extend %last-button;
+		}
+		&:only-child > .acr-btn {
+			@extend %only-button;
+		}
+	}
+}
+
+.acr-toolbar.acr-vertical {
+	flex-direction: column;
+	width: fit-content;
+	& > .acr-btn,
+	& > .acr-btn[class*="acr-variant-"],
+	& > .acr-btn[disabled] {
+		max-width: 100%;
+		border: {
+			width: 0 $border-width $border-width $border-width;
+		}
+		&:first-child {
+			border: {
+				width: $border-width $border-width $border-width $border-width;
+				radius: $border-radius $border-radius 0 0;
+			}
+		}
+		&:last-child {
+			border: {
+				width: 0 $border-width $border-width $border-width;
+				radius: 0 0 $border-radius $border-radius;
+			}
+		}
+		&:only-child {
+			border: {
+				width: $border-width;
+				radius: $border-radius;
+			}
+		}
+	}
+}

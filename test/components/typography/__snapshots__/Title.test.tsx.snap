@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> Should match the latest snapshots 1`] = `
+Array [
+  <Title
+    level={1}
+  >
+    <h1
+      className="acr-title"
+    >
+      Chapter
+    </h1>
+  </Title>,
+  <Title
+    level={2}
+  >
+    <h2
+      className="acr-title"
+    >
+      Chapter
+    </h2>
+  </Title>,
+  <Title
+    level={3}
+  >
+    <h3
+      className="acr-title"
+    >
+      Chapter
+    </h3>
+  </Title>,
+  <Title
+    level={4}
+  >
+    <h4
+      className="acr-title"
+    >
+      Chapter
+    </h4>
+  </Title>,
+  <Title
+    level={5}
+  >
+    <h5
+      className="acr-title"
+    >
+      Chapter
+    </h5>
+  </Title>,
+  <Title
+    level={6}
+  >
+    <h6
+      className="acr-title"
+    >
+      Chapter
+    </h6>
+  </Title>,
+  <Title
+    inline={true}
+  >
+    <h6
+      className="acr-title acr-inline"
+    >
+      Chapter
+    </h6>
+  </Title>,
+  <Title
+    bold={true}
+  >
+    <h6
+      className="acr-title acr-bold"
+    >
+      Chapter
+    </h6>
+  </Title>,
+  <Title
+    italic={true}
+  >
+    <h6
+      className="acr-title acr-italic"
+    >
+      Chapter
+    </h6>
+  </Title>,
+  <Title
+    underlined={true}
+  >
+    <h6
+      className="acr-title acr-underlined"
+    >
+      Chapter
+    </h6>
+  </Title>,
+]
+`;

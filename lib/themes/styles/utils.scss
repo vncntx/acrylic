@@ -1,0 +1,79 @@
+/**
+ * Utility Functions
+ */
+
+// Returns a number raised to an exponent
+@function power($number, $exponent) {
+	$value: 1;
+	@while $exponent > 0 {
+		@if $exponent >= 1 {
+			$value: $value * $number;
+			$exponent: $exponent - 1;
+		} @else {
+			$value: $value * $exponent * $number;
+			$exponent: 0;
+		}
+	}
+	@return $value;
+}
+
+@function linearChannel($color) {
+	$c: $color / 255;
+	@if $c < 0.03928 {
+		@return $c / 12.92;
+	} @else {
+		@return power(($c + 0.055) / 1.055, 2);
+	}
+}
+
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+@function luminance($color) {
+	$red: linearChannel(red($color));
+	$green: linearChannel(green($color));
+	$blue: linearChannel(blue($color));
+
+	@return 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
+}
+
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+@function contrast($back, $front) {
+	$backLum: luminance($back) + 0.05;
+	$foreLum: luminance($front) + 0.05;
+
+	@return max($backLum, $foreLum) / min($backLum, $foreLum);
+}
+
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns black for dark text and white for light text.
+ */
+@function contrastingColor($color) {
+	$lightContrast: contrast($color, $color-light-contrast);
+	$darkContrast: contrast($color, $color-dark-contrast);
+
+	@if ($lightContrast > $darkContrast) {
+		@return $color-light-contrast;
+	} @else {
+		@return $color-dark-contrast;
+	}
+}
+
+/**
+ * If color is light, return `choiceA`, and return choiceB otherwise
+ */
+@function pickContrastingColor($color, $choiceA, $choiceB) {
+	$lightContrast: contrast($color, $color-light-contrast);
+	$darkContrast: contrast($color, $color-dark-contrast);
+
+	@if ($lightContrast > $darkContrast) {
+		@return $choiceA;
+	} @else {
+		@return $choiceB;
+	}
+}

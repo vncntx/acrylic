@@ -1,0 +1,11 @@
+.vs
+.vscode
+.idea
+.cache
+*.log
+node_modules
+dist
+docs/dist
+junit.xml
+coverage
+.DS_Store

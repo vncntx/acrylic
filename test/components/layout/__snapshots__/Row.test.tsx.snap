@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Row /> Should match the latest snapshots 1`] = `
+<Row>
+  <div
+    className="acr-row"
+  >
+    <div>
+      Column 1
+    </div>
+    <div>
+      Column 2
+    </div>
+    <div>
+      Column 3
+    </div>
+  </div>
+</Row>
+`;

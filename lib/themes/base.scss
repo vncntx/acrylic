@@ -1,0 +1,25 @@
+// Fonts
+$font-stack-standard: "Arial", "Helvetica", sans-serif;
+$font-stack-title: $font-stack-standard;
+$font-stack-monospace: "Consolas", "Droid Sans Mono", "Menlo", monospace;
+$font-size-standard: 14pt;
+$font-size-title: 4.25em;
+$scaling-factor-title: 0.82;
+
+// Colors
+$color-light-contrast: white;
+$color-dark-contrast: black;
+
+// Spacing & Layout
+$spacing-unit: 7.5px;
+
+// Media Query Boundaries
+$width-tablet: 1.2 * $spacing-unit;
+
+// Borders & Shadows
+$border-width: 1px;
+$border-radius: 4px;
+$shadow-width: 4px;
+
+// Animation
+$animation-duration-unit: 150ms;

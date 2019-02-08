@@ -1,0 +1,64 @@
+{
+	"name": "acrylic",
+	"version": "0.1.0",
+	"description": "A React component library",
+	"main": "lib/acrylic.tsx",
+	"repository": "https://github.com/vincentfiestada/acrylic.git",
+	"author": {
+		"name": "Vincent Fiestada",
+		"email": "vincentfiestada@hotmail.com"
+	},
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"format": "prettier --write --use-tabs '**/*.{js,jsx,ts,tsx,json,css,scss}'",
+		"typedoc": "typedoc --excludePrivate lib/***.ts* --out docs/dist/wiki --readme none",
+		"build:dev": "parcel -d docs/dist 'docs/src/*.html' 'docs/src/**/*.{svg,png,jpg,md}'",
+		"build:docs": "parcel build -d docs/dist 'docs/src/*.html' 'docs/src/**/*.{svg,png,jpg,md}'",
+		"build": "ENV=production parcel build -d dist 'docs/src/*.html' 'docs/src/**/*.{svg,png,jpg,md}'",
+		"test": "jest --config jest.config.js --coverage",
+		"test:junit": "yarn test --reporters=default --reporters=jest-junit"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn format",
+			"commit-msg": "npx commitlint -e"
+		}
+	},
+	"dependencies": {
+		"classnames": "^2.2.6",
+		"lodash": "^4.17.11",
+		"normalize.css": "8.0",
+		"parcel-bundler": "1.10.3",
+		"react": "16.7.0-alpha.2",
+		"react-dom": "16.7.0-alpha.2",
+		"react-router-dom": "4.3.1",
+		"sass": "1.15.2",
+		"typescript": "3.2.2"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^7.5.0",
+		"@commitlint/config-conventional": "^7.5.0",
+		"@types/classnames": "^2.2.6",
+		"@types/enzyme": "^3.1.15",
+		"@types/enzyme-adapter-react-16": "^1.0.3",
+		"@types/enzyme-to-json": "1.5.2",
+		"@types/jest": "^23.3.11",
+		"@types/lodash": "^4.14.120",
+		"@types/marked": "^0.6.0",
+		"@types/react": "^16.7.17",
+		"@types/react-dom": "^16.0.11",
+		"@types/react-router-dom": "^4.3.1",
+		"enzyme": "3.8.0",
+		"enzyme-adapter-react-16": "1.7.1",
+		"enzyme-to-json": "3.3.5",
+		"husky": "^1.3.0",
+		"jest": "23.6.0",
+		"jest-junit": "^5.2.0",
+		"marked": "^0.6.0",
+		"prettier": "1.15.3",
+		"react-live": "^1.12.0",
+		"ts-jest": "23.10.5",
+		"typedoc": "^0.14.2"
+	}
+}

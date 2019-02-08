@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"newLine": "LF",
+		"target": "es5",
+		"jsx": "react",
+		"lib": ["es2017", "dom"],
+		"typeRoots": ["typings", "node_modules/@types"],
+		"sourceMap": true,
+		"outDir": "./dist",
+		"noImplicitAny": true
+	},
+	"include": ["./lib/**/*.ts", "./lib/**/*.tsx"],
+	"exclude": ["node_modules"]
+}

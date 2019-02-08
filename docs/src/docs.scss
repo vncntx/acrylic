@@ -1,0 +1,239 @@
+@import "../../lib/themes/light.scss";
+
+// Syntax Highlighting Settings
+$token-color-default: white;
+$token-color-punctuation: #21bfc2;
+$token-color-keyword: #56c2ea;
+$token-color-entity: #14d386;
+$token-color-property: #30aad7;
+$token-color-string: #f9ca99;
+$token-color-constant: #f09483;
+$token-color-comment: #959595;
+
+html,
+body {
+	height: 100%;
+}
+#app {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+}
+#app > main {
+	flex: 1 0 auto;
+	padding: 0;
+	margin: 0;
+}
+
+.title,
+.title + p {
+	text-align: center;
+}
+.title {
+	font-size: 6em;
+}
+
+%clean-links {
+	& a:any-link {
+		text-decoration: none;
+		color: inherit;
+	}
+	& a:hover,
+	& a:focus,
+	& a.selected {
+		color: $color-accent;
+	}
+}
+
+.main {
+	@extend %container;
+	align-items: stretch;
+	height: 100vh;
+}
+
+nav {
+	@extend %clean-links;
+	@include elevated(6);
+	margin: 0;
+	padding: 0 40px;
+	max-width: 100px;
+	text-align: left;
+	font-family: $font-stack-title;
+	& ul {
+		padding: 20px 0;
+		margin: 0;
+		& li {
+			list-style: none;
+			padding: 1vh 0;
+		}
+	}
+	& .logo {
+		& .acr-icon {
+			$size: 48px;
+			width: $size;
+			height: $size;
+		}
+	}
+}
+
+@media (min-height: 400px) {
+	nav ul {
+		position: sticky;
+		top: 0;
+	}
+}
+
+hr {
+	text-align: center;
+	padding: 0;
+	margin: 5px;
+	border: {
+		style: solid;
+		color: $color-foreground;
+		width: $border-width;
+	}
+}
+
+%row-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.alert {
+	margin: 20px;
+	padding: 40px;
+}
+.alert-title {
+	@extend %row-center;
+}
+.error-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.error-page .alert {
+	background-color: lighten(rgb(226, 164, 30), 20);
+	border: solid 2px rgb(194, 51, 51);
+}
+
+.token {
+	background: inherit;
+	color: $token-color-default;
+	font-style: normal;
+}
+
+.token.plain-text {
+	color: $token-color-default;
+}
+
+.token.punctuation {
+	color: $token-color-punctuation;
+}
+
+.token.operator {
+	color: $token-color-keyword;
+}
+.token.keyword {
+	color: $token-color-keyword;
+}
+
+.token.comment {
+	color: $token-color-comment;
+	font-style: italic;
+}
+
+.token.tag {
+	color: $token-color-entity;
+}
+
+.token.attr-name {
+	color: $token-color-property;
+}
+
+.token.string,
+.token.attr-value,
+.token.attr-value > .token.punctuation:not(:first-child) {
+	color: $token-color-string;
+}
+
+.token.number,
+.token.constant {
+	color: $token-color-constant;
+}
+
+.api-link {
+	padding-top: 20px;
+	width: fit-content;
+}
+.api-link button {
+	@extend %row-center;
+}
+
+.article {
+	padding: 4vw;
+	margin: 0;
+	& > * {
+		margin: 30px 0;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	& > pre {
+		align-self: stretch;
+	}
+}
+.home-page {
+	& > *:nth-child(2) {
+		display: block;
+	}
+}
+
+.code-preview {
+	@include elevated(3);
+	border: solid $border-width $color-border;
+	& > * {
+		margin: 0;
+	}
+	& > pre {
+		background: $color-foreground;
+		color: white;
+	}
+	& .live-render {
+		padding: $spacing-unit;
+		display: block;
+		background: $color-background;
+		& img:not(.acr-icon) {
+			max-width: 30%;
+			margin: $spacing-unit;
+			padding: 0;
+			border: {
+				color: $color-foreground;
+				width: $border-width;
+				style: solid;
+			}
+			background: {
+				color: darken($color-background, 20);
+			}
+		}
+		& .demo-squares > .acr-section {
+			flex: 1 0 auto;
+			max-width: 50px;
+			min-width: 50px;
+			height: 50px;
+			margin: 30px 20px;
+		}
+	}
+}
+
+// Special styles for demos
+.demo-acrylic {
+	background-image: url("/img/vercingetorix.jpg");
+	background-position-y: -150px;
+}
+
+.hidden {
+	display: none;
+}

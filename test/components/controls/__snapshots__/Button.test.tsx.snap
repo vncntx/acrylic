@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Should match the latest snapshots 1`] = `
+Array [
+  <Button>
+    <button
+      className="acr-btn"
+    >
+      Button
+    </button>
+  </Button>,
+  <Button
+    variant="primary"
+  >
+    <button
+      className="acr-btn acr-variant-primary"
+    >
+      Primary
+    </button>
+  </Button>,
+  <Button
+    variant="success"
+  >
+    <button
+      className="acr-btn acr-variant-success"
+    >
+      Success
+    </button>
+  </Button>,
+  <Button
+    variant="info"
+  >
+    <button
+      className="acr-btn acr-variant-info"
+    >
+      Info
+    </button>
+  </Button>,
+  <Button
+    variant="warning"
+  >
+    <button
+      className="acr-btn acr-variant-warning"
+    >
+      Warning
+    </button>
+  </Button>,
+  <Button
+    variant="danger"
+  >
+    <button
+      className="acr-btn acr-variant-danger"
+    >
+      Danger
+    </button>
+  </Button>,
+  <Button
+    disabled={true}
+  >
+    <button
+      className="acr-btn"
+      disabled={true}
+    >
+      Disabled
+    </button>
+  </Button>,
+]
+`;

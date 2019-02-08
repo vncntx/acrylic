@@ -1,0 +1,155 @@
+/**
+ * Typography Styles
+ */
+
+@import "utils";
+
+* {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	stroke: inherit;
+	fill: inherit;
+	cursor: inherit;
+	word-wrap: inherit;
+	overflow-wrap: inherit;
+	text-decoration: none;
+}
+*::selection {
+	background-color: rgba($color-accent, 0.8);
+	color: $color-background;
+}
+body {
+	font-size: $font-size-standard;
+	font-family: $font-stack-standard;
+	font-weight: 500;
+	color: $color-foreground;
+	stroke: $color-foreground;
+	fill: $color-foreground;
+	cursor: default;
+	word-wrap: normal;
+	overflow-wrap: normal;
+	scroll-behavior: smooth;
+}
+%typography {
+	color: inherit;
+	padding: 0;
+	margin: 0;
+	line-height: 1em;
+	text-decoration: inherit;
+}
+%heading {
+	@extend %typography;
+	font: {
+		weight: bold;
+		family: $font-stack-title;
+	}
+	line-height: inherit;
+	padding: $spacing-unit 0;
+	&.acr-bold {
+		text-shadow: 1px 0px 0px $color-foreground, 0px 1px 0px $color-foreground,
+			-1px 0px 0px $color-foreground, 0px -1px 0px $color-foreground;
+	}
+}
+.acr-title {
+	@extend %heading;
+}
+
+@mixin title($level) {
+	@extend %heading;
+	font-size: $font-size-title * power($scaling-factor-title, $level - 1);
+	font-weight: 600;
+}
+
+h1 {
+	@include title(1);
+}
+h2 {
+	@include title(2);
+}
+h3 {
+	@include title(3);
+}
+h4 {
+	@include title(4);
+}
+h5 {
+	@include title(5);
+	font-size: 800;
+}
+h6 {
+	@include title(6);
+	font-size: 800;
+}
+
+/**
+ * Code
+ */
+%code {
+	@extend %typography;
+	font-family: $font-stack-monospace;
+	white-space: pre-wrap;
+	overflow: hidden;
+	line-height: 1.25em;
+	tab-size: 2;
+	padding: 2 * $spacing-unit;
+	margin: 4 * $spacing-unit;
+}
+pre {
+	@extend %code;
+	background: darken($color-background, 5);
+	& > code {
+		padding: 0;
+		width: fit-content;
+		background: inherit;
+		color: inherit;
+	}
+}
+code {
+	@extend %code;
+	padding: $spacing-unit / 2 $spacing-unit;
+	background: darken($color-background, 5);
+	color: inherit;
+	margin: 0;
+}
+pre {
+	& > code {
+		padding: 0;
+	}
+}
+
+%bold {
+	font-weight: bold;
+}
+%italic {
+	font-style: italic;
+}
+%underlined {
+	text-decoration: underline;
+}
+.acr-text {
+	@extend %typography;
+	display: block;
+	&:not(.acr-inline) {
+		line-height: 1.5em;
+	}
+}
+.acr-bold {
+	@extend %bold;
+}
+.acr-italic {
+	@extend %italic;
+}
+.acr-underlined {
+	@extend %underlined;
+}
+.acr-inline {
+	display: inline;
+}
+
+a:any-link {
+	cursor: pointer;
+	color: $color-accent;
+	text-decoration: none;
+}

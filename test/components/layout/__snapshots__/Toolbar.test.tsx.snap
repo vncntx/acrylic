@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Toolbar /> Should match the latest snapshots 1`] = `
+Array [
+  <Toolbar>
+    <section
+      className="acr-toolbar"
+    >
+      <Button>
+        <button
+          className="acr-btn"
+        >
+          A
+        </button>
+      </Button>
+      <Button>
+        <button
+          className="acr-btn"
+        >
+          B
+        </button>
+      </Button>
+      <Button>
+        <button
+          className="acr-btn"
+        >
+          C
+        </button>
+      </Button>
+    </section>
+  </Toolbar>,
+  <Toolbar
+    vertical={true}
+  >
+    <section
+      className="acr-toolbar acr-vertical"
+    >
+      <Button>
+        <button
+          className="acr-btn"
+        >
+          A
+        </button>
+      </Button>
+      <Button>
+        <button
+          className="acr-btn"
+        >
+          B
+        </button>
+      </Button>
+      <Button>
+        <button
+          className="acr-btn"
+        >
+          C
+        </button>
+      </Button>
+    </section>
+  </Toolbar>,
+]
+`;

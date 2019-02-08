@@ -1,0 +1,114 @@
+/**
+ * Form and Control styles
+ */
+@import "animation";
+@import "utils";
+
+/**
+ * Buttons
+ */
+@mixin button($background, $border-color) {
+	$btn-foreground: contrastingColor($background);
+
+	@extend %subtle-transition;
+	outline: none;
+	color: $btn-foreground;
+	background-color: $background;
+	padding: $spacing-unit;
+	margin: $spacing-unit;
+	min-width: 7ch;
+	border: {
+		style: solid;
+		width: $border-width;
+		color: $border-color;
+		radius: $border-radius;
+	}
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: default;
+
+	& a:any-link:not(.acr-btn *) {
+		text-decoration: none;
+	}
+
+	&:focus,
+	&:hover {
+		@extend %subtle-transition;
+		outline: none;
+		background-color: darken($background, 3);
+		border-color: darken($border-color, 10);
+		box-shadow: 0 2px 4px rgba($color-shadow, 0.6);
+	}
+
+	&:active {
+		@extend %subtle-transition;
+		background-color: darken($background, 8);
+		border-color: darken($border-color, 20);
+		box-shadow: 0 1px 2px rgba($color-shadow, 0.6);
+	}
+
+	& > .acr-icon {
+		margin-right: 0.25ch;
+	}
+}
+
+$btn-background: darken($color-background, 2);
+.acr-btn {
+	@include button($btn-background, $color-border);
+}
+.acr-btn[disabled] {
+	@include button(darken($color-background, 10), darken($color-background, 20));
+	cursor: not-allowed;
+	box-shadow: none;
+	color: rgba(white, 0);
+	text-shadow: 1px 1px 0px rgba($color-shadow, 0.4);
+
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: none;
+		background: {
+			color: darken($color-background, 10);
+		}
+		border: {
+			color: darken($color-background, 20);
+		}
+	}
+}
+a:any-link > .acr-btn {
+	@extend .acr-btn;
+	text-decoration: none;
+}
+// Button Variants:
+// Primary
+.acr-btn.acr-variant-primary {
+	@include button($color-accent, darken($color-accent, 10));
+}
+// Success
+.acr-btn.acr-variant-success {
+	@include button($color-success, darken($color-success, 10));
+}
+// Info
+.acr-btn.acr-variant-info {
+	@include button($color-info, darken($color-info, 10));
+}
+// Warning
+.acr-btn.acr-variant-warning {
+	@include button($color-warning, darken($color-warning, 10));
+}
+// Danger
+.acr-btn.acr-variant-danger {
+	@include button($color-danger, darken($color-danger, 10));
+}
+
+// Icon Button
+.acr-icon-btn {
+	padding: $spacing-unit / 2;
+	min-width: fit-content;
+	overflow: hidden;
+	& .acr-icon {
+		padding: 0;
+		margin: 0;
+	}
+}

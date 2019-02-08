@@ -1,0 +1,18 @@
+@import "base";
+
+// Colors
+$color-accent: rgb(31, 108, 180);
+$color-foreground: rgb(32, 32, 32);
+$color-background: white;
+$color-success: rgb(6, 133, 80);
+$color-info: rgb(25, 182, 255);
+$color-danger: rgb(194, 51, 51);
+$color-warning: rgb(255, 171, 45);
+
+$color-light-contrast: white;
+$color-dark-contrast: rgb(32, 32, 32);
+
+$color-shadow: rgb(20, 20, 20);
+$color-border: rgb(100, 100, 100);
+
+@import "styles/acrylic";
