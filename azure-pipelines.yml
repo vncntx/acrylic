@@ -42,6 +42,14 @@ jobs:
     displayName: Publish Docs
     condition: and(succeeded('tests'), eq(variables['build.sourceBranch'], 'refs/heads/master'))
     steps:
+      - task: NodeTool@0
+        displayName: Install Node
+        inputs:
+          versionSpec: "10.x"
+
+      - script: yarn install
+        displayName: Install Dependencies
+        
       - script: yarn typedoc
         displayName: Generate Wiki
 
