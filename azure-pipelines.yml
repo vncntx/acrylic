@@ -4,6 +4,8 @@
 jobs:
   - job: tests
     displayName: Run Tests
+    pool:
+      vmImage: 'Ubuntu-16.04'
     steps:
       - checkout: self
         persistCredentials: true
@@ -40,6 +42,8 @@ jobs:
   - job: publishDocs
     dependsOn: tests
     displayName: Publish Docs
+    pool:
+      vmImage: 'Ubuntu-16.04'
     condition: and(succeeded('tests'), eq(variables['build.sourceBranch'], 'refs/heads/master'))
     steps:
       - task: NodeTool@0
