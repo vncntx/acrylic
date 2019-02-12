@@ -6,6 +6,7 @@ import * as React from "react";
 export default interface IProps {
 	classes?: ClassValue;
 	children?: React.ReactNode;
+	style?: React.CSSProperties;
 	id?: string;
 	key?: string | number;
 }

@@ -15,7 +15,11 @@ Sections can have an elevation of up to 6. Use elevation to convey information h
 
 ```jsx
 render(() => (
-	<Row classes="demo-squares">
+	<Row style={{
+		alignItems: "stretch",
+		height: 100,
+		width: 690
+	}}>
 		<Section elevation={0} />
 		<Section elevation={1} />
 		<Section elevation={2} />
@@ -31,7 +35,9 @@ And they can be textured using the "acrylic" material.
 
 ```jsx
 render(() => (
-	<Section classes="demo-acrylic">
+	<Section style={{
+		background: "url('/img/painting.jpg')"
+	}}>
 		<Section elevation={6} acrylic>
 			<Title>Dragon</Title>
 			<Text>A legendary creature.</Text>
