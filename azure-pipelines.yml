@@ -1,61 +1,66 @@
 # Azure Pipelines Configuration
-# Build NodeJS Express app using Azure Pipelines
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript?view=vsts
-pool:
-  vmImage: "ubuntu-16.04"
 
-steps:
-  - checkout: self
-    persistCredentials: true
-    clean: true
+jobs:
+  - job: tests
+    displayName: Run Tests
+    steps:
+      - checkout: self
+        persistCredentials: true
+        clean: true
 
-  - task: NodeTool@0
-    displayName: Install Node
-    inputs:
-      versionSpec: "10.x"
+      - task: NodeTool@0
+        displayName: Install Node
+        inputs:
+          versionSpec: "10.x"
 
-  - script: yarn install
-    displayName: Install Dependencies
+      - script: yarn install
+        displayName: Install Dependencies
 
-  - script: yarn test:junit
-    displayName: Run Unit Tests
+      - script: yarn test:junit
+        displayName: Run Unit Tests
 
-  - script: npx commitlint -f origin/master -t HEAD
-    displayName: Check commit messages
+      - script: npx commitlint -f origin/master -t HEAD
+        displayName: Check commit messages
 
-  - task: PublishTestResults@2
-    displayName: Publish Test Results
-    inputs:
-      testResultsFormat: JUnit
-      testResultsFiles: "junit.xml"
-      testRunTitle: "Results for Unit Tests"
-    condition: succeededOrFailed()
+      - task: PublishTestResults@2
+        displayName: Publish Test Results
+        inputs:
+          testResultsFormat: JUnit
+          testResultsFiles: "junit.xml"
+          testRunTitle: "Results for Unit Tests"
+        condition: succeededOrFailed()
 
-  - task: PublishCodeCoverageResults@1
-    displayName: Publish Code Coverage
-    inputs:
-      codeCoverageTool: "Cobertura"
-      summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/coverage/cobertura-coverage.xml"
+      - task: PublishCodeCoverageResults@1
+        displayName: Publish Code Coverage
+        inputs:
+          codeCoverageTool: "Cobertura"
+          summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/coverage/cobertura-coverage.xml"
 
-  - script: yarn typedoc
-    displayName: Generate Wiki
+  - job: publishDocs
+    dependsOn: tests
+    displayName: Publish Docs
+    condition: and(succeeded('tests'), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+    steps:
+      - script: yarn typedoc
+        displayName: Generate Wiki
 
-  - script: yarn build:docs && cp web.config docs/dist/
-    displayName: Build Docs
+      - script: yarn build:docs && cp web.config docs/dist/
+        displayName: Build Docs
 
-  - task: FtpUpload@1
-    displayName: Upload to Azure
-    inputs:
-      credentialsOption: inputs
-      serverEndpoint:
-      serverUrl: ftps://waws-prod-sg1-029.ftp.azurewebsites.windows.net/site/wwwroot
-      username: 'acrylic\$acrylic'
-      password: $(ftp.password)
-      rootDirectory: docs/dist
-      filePatterns: "**"
-      overwrite: true
-      preservePaths: true
-      remoteDirectory: /site/wwwroot
-      clean: false
-      cleanContents: true
-      trustSSL: false
+      - task: FtpUpload@1
+        displayName: Upload to Azure
+        inputs:
+          credentialsOption: inputs
+          serverEndpoint:
+          serverUrl: ftps://waws-prod-sg1-029.ftp.azurewebsites.windows.net/site/wwwroot
+          username: 'acrylic\$acrylic'
+          password: $(ftp.password)
+          rootDirectory: docs/dist
+          filePatterns: "**"
+          overwrite: true
+          preservePaths: true
+          remoteDirectory: /site/wwwroot
+          clean: false
+          cleanContents: true
+          trustSSL: false

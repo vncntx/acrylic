@@ -86,6 +86,7 @@ function renderToken(
 			);
 		case "list_start":
 			listBuilder.isOrdered = Boolean(token.ordered);
+			listBuilder.items = [];
 			return null;
 		case "list_item_start":
 			listBuilder.isOpen = true;
