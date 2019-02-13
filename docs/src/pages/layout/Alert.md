@@ -8,7 +8,6 @@ render(() => (
 		<Alert>This is an Alert</Alert>
 		<Alert variant="primary">This is a Primary Alert</Alert>
 		<Alert variant="success">This is a Success Alert</Alert>
-		<Alert variant="info">This is an Info Alert</Alert>
 		<Alert variant="warning">This is a Warning Alert</Alert>
 		<Alert variant="danger">This is a Danger Alert</Alert>
 	</div>

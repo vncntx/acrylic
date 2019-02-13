@@ -152,10 +152,6 @@ $alert-background: darken($color-background, 2);
 .acr-alert.acr-variant-success {
 	@include alert($color-success, darken($color-success, 10));
 }
-// Info
-.acr-alert.acr-variant-info {
-	@include alert($color-info, darken($color-info, 10));
-}
 // Warning
 .acr-alert.acr-variant-warning {
 	@include alert($color-warning, darken($color-warning, 10));

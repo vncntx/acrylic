@@ -78,32 +78,6 @@ Array [
     </aside>
   </Alert>,
   <Alert
-    variant="info"
-  >
-    <aside
-      className="acr-alert acr-variant-info"
-    >
-      <Text>
-        <p
-          className="acr-text"
-        >
-          Example
-        </p>
-      </Text>
-      <Button
-        onClick={[Function]}
-        variant="info"
-      >
-        <button
-          className="acr-btn acr-variant-info"
-          onClick={[Function]}
-        >
-          Dismiss
-        </button>
-      </Button>
-    </aside>
-  </Alert>,
-  <Alert
     variant="warning"
   >
     <aside

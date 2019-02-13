@@ -10,7 +10,6 @@ describe("<Alert />", () => {
 					<Alert>Example</Alert>
 					<Alert variant="primary">Example</Alert>
 					<Alert variant="success">Example</Alert>
-					<Alert variant="info">Example</Alert>
 					<Alert variant="warning">Example</Alert>
 					<Alert variant="danger">Example</Alert>
 					<Alert controlComponent={() => <Button>Control</Button>}>

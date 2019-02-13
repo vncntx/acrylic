@@ -5,6 +5,6 @@ export interface IVariantProps {
 	variant?: Variant;
 }
 
-declare type Variant = "primary" | "success" | "info" | "warning" | "danger";
+declare type Variant = "primary" | "success" | "warning" | "danger";
 
 export default Variant;

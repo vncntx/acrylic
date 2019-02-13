@@ -89,10 +89,6 @@ a:any-link > .acr-btn {
 .acr-btn.acr-variant-success {
 	@include button($color-success, darken($color-success, 10));
 }
-// Info
-.acr-btn.acr-variant-info {
-	@include button($color-info, darken($color-info, 10));
-}
 // Warning
 .acr-btn.acr-variant-warning {
 	@include button($color-warning, darken($color-warning, 10));

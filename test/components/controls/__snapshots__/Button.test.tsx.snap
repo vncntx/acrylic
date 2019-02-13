@@ -28,15 +28,6 @@ Array [
     </button>
   </Button>,
   <Button
-    variant="info"
-  >
-    <button
-      className="acr-btn acr-variant-info"
-    >
-      Info
-    </button>
-  </Button>,
-  <Button
     variant="warning"
   >
     <button
