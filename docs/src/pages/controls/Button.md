@@ -23,7 +23,7 @@ render(() => (
 	<div>
 		<Button><Icon src="/img/ok.svg" />Okay</Button>
 		<Button><Icon src="/img/cancel.svg" />Cancel</Button>
-		<Button><Icon src="/img/trash.svg" />Delete</Button>
+		<Button><Icon src="/img/about.svg" />About</Button>
 	</div>
 ))
 ```
@@ -35,7 +35,7 @@ render(() => (
 	<div>
 		<IconButton><Icon src="/img/ok.svg" /></IconButton>
 		<IconButton><Icon src="/img/cancel.svg" /></IconButton>
-		<IconButton><Icon src="/img/trash.svg" /></IconButton>
+		<IconButton><Icon src="/img/about.svg" /></IconButton>
 	</div>
 ))
 ```

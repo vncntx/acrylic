@@ -7,14 +7,16 @@ render(() => (
 	<div>
 		<Text>
 			<Icon src="/img/ok.svg" />
-			<Icon src="/img/info.svg" />
+			<Icon src="/img/about.svg" />
 			<Icon src="/img/cancel.svg" />
+			<Icon src="/img/lock.svg" />
 			<Icon src="/img/trash.svg" />
 		</Text>
 		<Title>
 			<Icon src="/img/ok.svg" />
-			<Icon src="/img/info.svg" />
+			<Icon src="/img/about.svg" />
 			<Icon src="/img/cancel.svg" />
+			<Icon src="/img/lock.svg" />
 			<Icon src="/img/trash.svg" />
 		</Title>
 	</div>
