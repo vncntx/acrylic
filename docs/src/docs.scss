@@ -192,19 +192,17 @@ hr {
 }
 
 .code-preview {
+	@extend .acr-section;
 	@include elevated(3);
-	border: solid $border-width $color-border;
+	padding: 0;
 	& > * {
 		margin: 0;
-	}
-	& > pre {
-		background: $color-foreground;
-		color: white;
 	}
 	& .live-render {
 		padding: $spacing-unit;
 		display: block;
 		background: $color-background;
+		border-radius: $border-radius $border-radius 0 0;
 		& img:not(.acr-icon) {
 			max-width: 30%;
 			margin: $spacing-unit;
@@ -218,6 +216,11 @@ hr {
 				color: darken($color-background, 20);
 			}
 		}
+	}
+	& > pre {
+		background: $color-foreground;
+		color: white;
+		border-radius: 0 0 $border-radius $border-radius;
 	}
 }
 

@@ -20,7 +20,7 @@ body {
 	@extend %container;
 	padding: $spacing-unit;
 	margin: $spacing-unit;
-	border: none;
+	border-radius: $border-radius;
 	background: $color-background;
 }
 @mixin elevated($height) {
@@ -113,15 +113,15 @@ body {
 	background: {
 		color: $background;
 	}
-	padding: $spacing-unit;
+	padding: 0;
 	display: inline-flex;
 	flex: 1 0 auto;
-	margin: 2 * $spacing-unit $spacing-unit;
+	margin: $spacing-unit $spacing-unit;
 	border: {
 		style: solid;
-		width: $border-width $border-width $border-width 10 * $border-width;
+		width: $border-width $border-width $border-width 5 * $border-width;
 		color: $border-color;
-		radius: 0;
+		radius: $border-radius;
 	}
 	display: flex;
 	flex-direction: row;
@@ -129,12 +129,15 @@ body {
 	align-items: center;
 	justify-content: space-evenly;
 
+	& > * {
+		margin: 0;
+	}
 	& > *:first-child {
 		flex: 1 0 auto;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		padding: 0 10px;
+		padding: $spacing-unit;
 		margin: 0;
 	}
 }
@@ -146,11 +149,11 @@ $alert-background: darken($color-background, 2);
 // Alert Variants
 // Primary
 .acr-alert.acr-variant-primary {
-	@include alert($color-accent, darken($color-accent, 10));
+	@include alert($color-accent, darken($color-accent, 5));
 }
 // Success
 .acr-alert.acr-variant-success {
-	@include alert($color-success, darken($color-success, 10));
+	@include alert($color-success, darken($color-success, 5));
 }
 // Warning
 .acr-alert.acr-variant-warning {
@@ -158,7 +161,7 @@ $alert-background: darken($color-background, 2);
 }
 // Danger
 .acr-alert.acr-variant-danger {
-	@include alert($color-danger, darken($color-danger, 10));
+	@include alert($color-danger, darken($color-danger, 5));
 }
 .acr-alert.acr-hidden {
 	display: none;

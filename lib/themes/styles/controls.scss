@@ -37,15 +37,15 @@
 		@extend %subtle-transition;
 		outline: none;
 		background-color: darken($background, 3);
-		border-color: darken($border-color, 10);
-		box-shadow: 0 2px 4px rgba($color-shadow, 0.6);
+		border-color: darken($border-color, 5);
+		box-shadow: 0 2px 4px rgba($border-color, 1);
 	}
 
 	&:active {
 		@extend %subtle-transition;
 		background-color: darken($background, 8);
-		border-color: darken($border-color, 20);
-		box-shadow: 0 1px 2px rgba($color-shadow, 0.6);
+		border-color: darken($border-color, 10);
+		box-shadow: 0 1px 3px rgba($border-color, 1);
 	}
 
 	& > .acr-icon {
@@ -55,10 +55,10 @@
 
 $btn-background: darken($color-background, 2);
 .acr-btn {
-	@include button($btn-background, $color-border);
+	@include button($btn-background, darken($btn-background, 35));
 }
 .acr-btn[disabled] {
-	@include button(darken($color-background, 10), darken($color-background, 20));
+	@include button(darken($color-background, 10), darken($color-background, 10));
 	cursor: not-allowed;
 	box-shadow: none;
 	color: rgba(white, 0);
@@ -72,7 +72,7 @@ $btn-background: darken($color-background, 2);
 			color: darken($color-background, 10);
 		}
 		border: {
-			color: darken($color-background, 20);
+			color: darken($color-background, 10);
 		}
 	}
 }
@@ -83,11 +83,11 @@ a:any-link > .acr-btn {
 // Button Variants:
 // Primary
 .acr-btn.acr-variant-primary {
-	@include button($color-accent, darken($color-accent, 10));
+	@include button($color-accent, darken($color-accent, 5));
 }
 // Success
 .acr-btn.acr-variant-success {
-	@include button($color-success, darken($color-success, 10));
+	@include button($color-success, darken($color-success, 5));
 }
 // Warning
 .acr-btn.acr-variant-warning {
@@ -95,7 +95,7 @@ a:any-link > .acr-btn {
 }
 // Danger
 .acr-btn.acr-variant-danger {
-	@include button($color-danger, darken($color-danger, 10));
+	@include button($color-danger, darken($color-danger, 5));
 }
 
 // Icon Button
