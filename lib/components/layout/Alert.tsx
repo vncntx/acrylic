@@ -2,7 +2,7 @@ import * as React from "react";
 import classNames from "classnames";
 import ILayoutProps from "./ILayoutProps";
 import { IVariantProps } from "../Variant";
-import Button from "../controls/Button";
+import Button, { IButtonProps } from "../controls/Button";
 import Text from "../typography/Text";
 
 const { useState } = React;
@@ -12,7 +12,8 @@ export interface IControlFunc {
 }
 
 export interface IAlertProps extends ILayoutProps, IVariantProps {
-	controlComponent?: IControlFunc;
+	closeButton?: IControlFunc;
+	isDismissed?: boolean;
 }
 
 /**
@@ -20,9 +21,16 @@ export interface IAlertProps extends ILayoutProps, IVariantProps {
  * @param props
  */
 export default function Alert(props: IAlertProps) {
-	const { classes, children, variant, controlComponent, ...otherProps } = props;
+	const {
+		isDismissed,
+		classes,
+		children,
+		variant,
+		closeButton,
+		...otherProps
+	} = props;
 
-	const [isHidden, setHidden] = useState(false);
+	const [isHidden, setHidden] = useState(isDismissed || false);
 
 	const effectiveClasses = classNames(
 		"acr-alert",
@@ -36,13 +44,22 @@ export default function Alert(props: IAlertProps) {
 	return (
 		<aside className={effectiveClasses} {...otherProps}>
 			<Text>{children}</Text>
-			{controlComponent ? (
-				controlComponent(onDismiss)
+			{closeButton ? (
+				closeButton(onDismiss)
 			) : (
-				<Button onClick={onDismiss} variant={variant}>
-					Dismiss
-				</Button>
+				<DismissButton variant={variant} onClick={() => setHidden(true)} />
 			)}
 		</aside>
+	);
+}
+
+// A simple Dismiss Button
+function DismissButton(props: IButtonProps) {
+	const { variant, ...otherProps } = props;
+
+	return (
+		<Button variant={variant} {...otherProps}>
+			Dismiss
+		</Button>
 	);
 }

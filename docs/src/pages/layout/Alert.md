@@ -14,17 +14,20 @@ render(() => (
 ))
 ```
 
-You can also customize the control button at the end
+You can also customize the button, or control it programatically using the `isDismissed` prop.
 
 ```jsx
-const CloseButton = (onDismiss) => (
-	<IconButton onClick={onDismiss}>
+const CloseButton = (dismiss) => (
+	<IconButton onClick={dismiss}>
 		<Icon src="/img/cancel.svg" />
 	</IconButton>
 )
 
 render(() => (
-	<Alert controlComponent={CloseButton}>This one has a custom Button</Alert>
+	<React.Fragment>
+		<Alert closeButton={CloseButton}>This one has a custom Button</Alert>
+		<Alert isDismissed={true}>This one has a custom Button</Alert>
+	</React.Fragment>
 ))
 ```
 

@@ -163,6 +163,10 @@ hr {
 .token.constant {
 	color: $token-color-constant;
 }
+.token.boolean {
+	color: $token-color-constant;
+	font-style: italic;
+}
 
 .api-link {
 	padding-top: 20px;
