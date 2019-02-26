@@ -18,9 +18,7 @@ You can also customize the button, or control it programatically using the `isDi
 
 ```jsx
 const CloseButton = (dismiss) => (
-	<IconButton onClick={dismiss}>
-		<Icon src="/img/cancel.svg" />
-	</IconButton>
+	<IconButton onClick={dismiss} src="/img/cancel.svg" />
 )
 
 render(() => (

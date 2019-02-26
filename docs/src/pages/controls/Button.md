@@ -32,9 +32,9 @@ Use an **IconButton** if you don't need to display text.
 ```jsx
 render(() => (
 	<div>
-		<IconButton><Icon src="/img/ok.svg" /></IconButton>
-		<IconButton><Icon src="/img/cancel.svg" /></IconButton>
-		<IconButton><Icon src="/img/about.svg" /></IconButton>
+		<IconButton src="/img/ok.svg" />
+		<IconButton src="/img/cancel.svg" />
+		<IconButton src="/img/about.svg" />
 	</div>
 ))
 ```

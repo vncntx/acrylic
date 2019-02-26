@@ -1,10 +1,10 @@
 import * as React from "react";
 import classNames from "classnames";
-import { IButtonProps } from "./Button";
-import { IconComponent } from "../typography/Icon";
+import Button, { IButtonProps } from "./Button";
+import Icon, { IIconProps } from "../typography/Icon";
 
-export interface IIconButtonProps extends IButtonProps {
-	children: React.ReactElement<IconComponent>;
+export interface IIconButtonProps extends IButtonProps, IIconProps {
+	children: null | undefined;
 }
 
 export interface IconButtonComponent extends React.FC<IIconButtonProps> {}
@@ -14,19 +14,14 @@ export interface IconButtonComponent extends React.FC<IIconButtonProps> {}
  * @param props component props
  */
 const IconButton: IconButtonComponent = (props: IIconButtonProps) => {
-	const { classes, children, variant, ...otherProps } = props;
+	const { classes, src, variant, ...otherProps } = props;
 
-	const effectiveClasses = classNames(
-		"acr-btn",
-		"acr-icon-btn",
-		classes,
-		variant ? `acr-variant-${variant}` : null
-	);
+	const effectiveClasses = classNames("acr-icon-btn", classes);
 
 	return (
-		<button className={effectiveClasses} {...otherProps}>
-			{children}
-		</button>
+		<Button classes={effectiveClasses} variant={variant} {...otherProps}>
+			<Icon src={src} />
+		</Button>
 	);
 };
 export default IconButton;
