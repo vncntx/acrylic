@@ -1,6 +1,6 @@
 ## Row
 
-A Row lays out its children in a single row.
+A **Row** lays out its children in a single row.
 
 ```jsx
 render(() => (

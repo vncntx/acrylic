@@ -1,6 +1,6 @@
 ## Text
 
-`Text` displays its contents as a generic block of text.
+**Text** displays its contents as a generic block of text. By default, it is rendered as a paragraph.
 
 ```jsx
 render(() => (

@@ -22,6 +22,7 @@ body {
 	margin: $spacing-unit;
 	border-radius: $border-radius;
 	background: $color-background;
+	overflow: hidden;
 }
 @mixin elevated($height) {
 	box-shadow: 0 $height * $shadow-width / 2 $height * 6px
@@ -257,5 +258,25 @@ $alert-background: darken($color-background, 2);
 				radius: $border-radius;
 			}
 		}
+	}
+}
+
+/**
+ * Divider
+ */
+.acr-divider {
+	border: none;
+	margin: none;
+	padding: none;
+	height: $spacing-unit;
+	box-shadow: inset 0 ($shadow-width) ($shadow-width) (-$shadow-width)
+		rgba($color-shadow, 0.4);
+}
+.acr-section > .acr-divider {
+	margin: {
+		top: $spacing-unit;
+		left: -$spacing-unit;
+		right: -$spacing-unit;
+		bottom: $shadow-width;
 	}
 }

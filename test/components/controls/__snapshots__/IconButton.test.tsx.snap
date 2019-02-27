@@ -2,47 +2,65 @@
 
 exports[`<IconButton /> Should match the latest snapshots 1`] = `
 Array [
-  <IconButton>
-    <button
-      className="acr-btn acr-icon-btn"
+  <IconButton
+    src="icon.svg"
+  >
+    <Button
+      classes="acr-icon-btn"
     >
-      <Icon
-        src="icon.svg"
+      <button
+        className="acr-btn acr-icon-btn"
       >
-        <img
-          className="acr-icon"
+        <Icon
           src="icon.svg"
-        />
-      </Icon>
-    </button>
+        >
+          <img
+            className="acr-icon"
+            src="icon.svg"
+          />
+        </Icon>
+      </button>
+    </Button>
   </IconButton>,
-  <IconButton>
-    <button
-      className="acr-btn acr-icon-btn"
+  <IconButton
+    src="icon.svg"
+  >
+    <Button
+      classes="acr-icon-btn"
     >
-      <Icon
-        src="icon.svg"
+      <button
+        className="acr-btn acr-icon-btn"
       >
-        <img
-          className="acr-icon"
+        <Icon
           src="icon.svg"
-        />
-      </Icon>
-    </button>
+        >
+          <img
+            className="acr-icon"
+            src="icon.svg"
+          />
+        </Icon>
+      </button>
+    </Button>
   </IconButton>,
-  <IconButton>
-    <button
-      className="acr-btn acr-icon-btn"
+  <IconButton
+    src="icon.svg"
+  >
+    <Button
+      classes="acr-icon-btn"
     >
-      <Icon
-        src="icon.svg"
+      <button
+        className="acr-btn acr-icon-btn"
       >
-        <img
-          className="acr-icon"
+        <Icon
           src="icon.svg"
-        />
-      </Icon>
-    </button>
+        >
+          <img
+            className="acr-icon"
+            src="icon.svg"
+          />
+        </Icon>
+      </button>
+    </Button>
   </IconButton>,
 ]
 `;

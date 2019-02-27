@@ -4,7 +4,7 @@ import Button, { IButtonProps } from "./Button";
 import Icon, { IIconProps } from "../typography/Icon";
 
 export interface IIconButtonProps extends IButtonProps, IIconProps {
-	children: null | undefined;
+	children?: null | undefined;
 }
 
 export interface IconButtonComponent extends React.FC<IIconButtonProps> {}

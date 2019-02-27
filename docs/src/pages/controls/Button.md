@@ -1,6 +1,6 @@
 ## Button
 
-A Button is a control that allows the user to interact via clicks and taps.
+A **Button** is a basic control that allows the user to interact via clicks and taps.
 
 ```jsx
 render(() => (

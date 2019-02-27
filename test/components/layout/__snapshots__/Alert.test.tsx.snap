@@ -13,16 +13,20 @@ Array [
           Example
         </p>
       </Text>
-      <Button
+      <DismissButton
         onClick={[Function]}
       >
-        <button
-          className="acr-btn"
+        <Button
           onClick={[Function]}
         >
-          Dismiss
-        </button>
-      </Button>
+          <button
+            className="acr-btn"
+            onClick={[Function]}
+          >
+            Dismiss
+          </button>
+        </Button>
+      </DismissButton>
     </aside>
   </Alert>,
   <Alert
@@ -38,17 +42,22 @@ Array [
           Example
         </p>
       </Text>
-      <Button
+      <DismissButton
         onClick={[Function]}
         variant="primary"
       >
-        <button
-          className="acr-btn acr-variant-primary"
+        <Button
           onClick={[Function]}
+          variant="primary"
         >
-          Dismiss
-        </button>
-      </Button>
+          <button
+            className="acr-btn acr-variant-primary"
+            onClick={[Function]}
+          >
+            Dismiss
+          </button>
+        </Button>
+      </DismissButton>
     </aside>
   </Alert>,
   <Alert
@@ -64,17 +73,22 @@ Array [
           Example
         </p>
       </Text>
-      <Button
+      <DismissButton
         onClick={[Function]}
         variant="success"
       >
-        <button
-          className="acr-btn acr-variant-success"
+        <Button
           onClick={[Function]}
+          variant="success"
         >
-          Dismiss
-        </button>
-      </Button>
+          <button
+            className="acr-btn acr-variant-success"
+            onClick={[Function]}
+          >
+            Dismiss
+          </button>
+        </Button>
+      </DismissButton>
     </aside>
   </Alert>,
   <Alert
@@ -90,17 +104,22 @@ Array [
           Example
         </p>
       </Text>
-      <Button
+      <DismissButton
         onClick={[Function]}
         variant="warning"
       >
-        <button
-          className="acr-btn acr-variant-warning"
+        <Button
           onClick={[Function]}
+          variant="warning"
         >
-          Dismiss
-        </button>
-      </Button>
+          <button
+            className="acr-btn acr-variant-warning"
+            onClick={[Function]}
+          >
+            Dismiss
+          </button>
+        </Button>
+      </DismissButton>
     </aside>
   </Alert>,
   <Alert
@@ -116,21 +135,26 @@ Array [
           Example
         </p>
       </Text>
-      <Button
+      <DismissButton
         onClick={[Function]}
         variant="danger"
       >
-        <button
-          className="acr-btn acr-variant-danger"
+        <Button
           onClick={[Function]}
+          variant="danger"
         >
-          Dismiss
-        </button>
-      </Button>
+          <button
+            className="acr-btn acr-variant-danger"
+            onClick={[Function]}
+          >
+            Dismiss
+          </button>
+        </Button>
+      </DismissButton>
     </aside>
   </Alert>,
   <Alert
-    controlComponent={[Function]}
+    closeButton={[Function]}
   >
     <aside
       className="acr-alert"

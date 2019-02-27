@@ -1,6 +1,6 @@
 ## Column
 
-A Column lays out its children in a single column.
+A **Column** lays out its children in a single column.
 
 ```jsx
 render(() => (

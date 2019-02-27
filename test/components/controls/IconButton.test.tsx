@@ -7,26 +7,16 @@ describe("<IconButton />", () => {
 		expect(
 			mount(
 				<React.Fragment>
-					<IconButton>
-						<Icon src="icon.svg" />
-					</IconButton>
-					<IconButton>
-						<Icon src="icon.svg" />
-					</IconButton>
-					<IconButton>
-						<Icon src="icon.svg" />
-					</IconButton>
+					<IconButton src="icon.svg" />
+					<IconButton src="icon.svg" />
+					<IconButton src="icon.svg" />
 				</React.Fragment>
 			)
 		).toMatchSnapshot();
 	});
 	it("Should support the 'click' event", () => {
 		const spy = jest.fn();
-		const btn = mount(
-			<IconButton onClick={spy}>
-				<Icon src="icon.svg" />
-			</IconButton>
-		);
+		const btn = mount(<IconButton onClick={spy} src="icon.svg" />);
 		btn.simulate("click");
 		expect(spy).toBeCalled();
 	});

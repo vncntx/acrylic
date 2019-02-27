@@ -1,6 +1,6 @@
 ## Toolbar
 
-A Toolbar lays out buttons in a single, tightly-packed row.
+A **Toolbar** lays out buttons in a single, tightly-packed row.
 
 ```jsx
 render(() => (
@@ -12,7 +12,7 @@ render(() => (
 ))
 ```
 
-Toolbars can also be vertical.
+They can also be vertical.
 
 ```jsx
 render(() => (

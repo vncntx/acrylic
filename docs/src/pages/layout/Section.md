@@ -1,6 +1,6 @@
 ## Section
 
-A Section is a container for a specific part of an app or page.
+A **Section** is a container for a specific part of an app or page.
 
 ```jsx
 render(() => (
@@ -11,7 +11,7 @@ render(() => (
 ))
 ```
 
-Sections can have an elevation of up to 6. Use elevation to convey information heirarchy and separation; draw the user's attention by using a higher elevation value.
+Sections can have an elevation of up to 6. Use elevation to convey heirarchy and separation; draw the user's attention by using a higher elevation value.
 
 ```jsx
 render(() => (

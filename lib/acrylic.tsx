@@ -13,6 +13,7 @@ export { default as Column } from "./components/layout/Column";
 export { default as Row } from "./components/layout/Row";
 export { default as Alert } from "./components/layout/Alert";
 export { default as Toolbar } from "./components/layout/Toolbar";
+export { default as Divider } from "./components/layout/Divider";
 
 /**
  * Typography Components
