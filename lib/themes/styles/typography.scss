@@ -14,7 +14,6 @@
 	cursor: inherit;
 	word-wrap: inherit;
 	overflow-wrap: inherit;
-	text-decoration: none;
 }
 *::selection {
 	background-color: rgba($color-accent, 0.8);
@@ -37,7 +36,6 @@ body {
 	padding: 0;
 	margin: 0;
 	line-height: 1em;
-	text-decoration: inherit;
 }
 %heading {
 	@extend %typography;
@@ -152,4 +150,9 @@ a:any-link {
 	cursor: pointer;
 	color: $color-accent;
 	text-decoration: none;
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: underline;
+	}
 }

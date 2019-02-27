@@ -28,8 +28,9 @@
 	justify-content: center;
 	cursor: default;
 
-	& a:any-link:not(.acr-btn *) {
+	& a:any-link {
 		text-decoration: none;
+		color: inherit;
 	}
 
 	&:focus,
@@ -48,7 +49,7 @@
 		box-shadow: 0 1px 3px rgba($border-color, 1);
 	}
 
-	& > .acr-icon {
+	& .acr-icon {
 		margin-right: 0.25ch;
 	}
 }
