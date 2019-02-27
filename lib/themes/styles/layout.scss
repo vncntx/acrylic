@@ -56,8 +56,8 @@ body {
 	position: relative;
 	border: {
 		style: solid;
-		color: rgba($color-border, 0.7);
-		width: $border-width;
+		color: rgba($color-border, 0.4);
+		width: $border-width / 2;
 	}
 
 	&::after {
