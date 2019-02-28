@@ -1,5 +1,3 @@
-@import "../../lib/themes/light.scss";
-
 // Syntax Highlighting Settings
 $token-color-default: white;
 $token-color-punctuation: #21bfc2;
@@ -9,6 +7,10 @@ $token-color-property: #30aad7;
 $token-color-string: #f9ca99;
 $token-color-constant: #f09483;
 $token-color-comment: #959595;
+
+$font-stack-standard: "Roboto", sans-serif;
+
+@import "../../lib/themes/light.scss";
 
 html,
 body {

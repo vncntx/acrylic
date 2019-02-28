@@ -1,25 +1,25 @@
 // Fonts
-$font-stack-standard: "Arial", "Helvetica", sans-serif;
-$font-stack-title: $font-stack-standard;
-$font-stack-monospace: "Consolas", "Droid Sans Mono", "Menlo", monospace;
-$font-size-standard: 14pt;
-$font-size-title: 4.25em;
-$scaling-factor-title: 0.82;
+$font-stack-standard: "Helvetica", "Arial", sans-serif !default;
+$font-stack-title: $font-stack-standard !default;
+$font-stack-monospace: "Consolas", "Droid Sans Mono", "Menlo", monospace !default;
+$font-size-standard: 18px !default;
+$font-size-title: 4.25em !default;
+$scaling-factor-title: 0.82 !default;
 
 // Colors
-$color-light-contrast: white;
-$color-dark-contrast: black;
+$color-light-contrast: white !default;
+$color-dark-contrast: black !default;
 
 // Spacing & Layout
-$spacing-unit: 10px;
+$spacing-unit: 10px !default;
 
 // Media Query Boundaries
-$width-tablet: 1.2 * $spacing-unit;
+$width-tablet: 1.2 * $spacing-unit !default;
 
 // Borders & Shadows
-$border-width: 2px;
-$border-radius: 5px;
-$shadow-width: 5px;
+$border-width: 2px !default;
+$border-radius: 5px !default;
+$shadow-width: 5px !default;
 
 // Animation
-$animation-duration-unit: 150ms;
+$animation-duration-unit: 150ms !default;
