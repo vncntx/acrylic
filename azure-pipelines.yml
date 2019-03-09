@@ -63,19 +63,12 @@ jobs:
       - script: cp web.config docs/dist/web.config
         displayName: Copy IIS Configuration
 
-      - task: FtpUpload@1
+      - task: cURLUploader@2
         displayName: Upload to Azure
         inputs:
-          credentialsOption: inputs
-          serverEndpoint:
-          serverUrl: ftps://waws-prod-sg1-029.ftp.azurewebsites.windows.net/site/wwwroot
+          authType: UserAndPass
+          url: ftps://waws-prod-sg1-029.ftp.azurewebsites.windows.net/site/wwwroot
           username: 'acrylic\$acrylic'
           password: $(ftp.password)
-          rootDirectory: docs/dist
-          filePatterns: "**"
-          overwrite: true
-          preservePaths: true
-          remoteDirectory: /site/wwwroot
-          clean: false
-          cleanContents: true
-          trustSSL: false
+          files: "docs/dist/**"
+          remotePath: /site/wwwroot/
