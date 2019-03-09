@@ -14,7 +14,7 @@
 		"format": "node node_modules/prettier/bin-prettier.js --write --use-tabs **/*.{js,jsx,ts,tsx,json,css,scss}",
 		"typedoc": "node node_modules/typedoc/bin/typedoc --excludePrivate lib/acrylic.tsx --out docs/dist/wiki --readme none",
 		"build:dev": "node node_modules/parcel-bundler/bin/cli.js -d docs/dist docs/src/*.html docs/src/**/*.{svg,png,jpg,md}",
-		"build:docs": "node node_modules/parcel-bundler/bin/cli.js build -d docs/dist docs/src/*.html docs/src/**/*.{svg,png,jpg,md}",
+		"build:docs": "node node_modules/parcel-bundler/bin/cli.js build -d docs/dist docs/src/index.html docs/src/**/*.*",
 		"build": "node node_modules/parcel-bundler/bin/cli.js build -d  docs/src/*.html docs/src/**/*.{svg,png,jpg,md}",
 		"test": "node node_modules/jest/bin/jest.js --config jest.config.js --coverage",
 		"test:junit": "yarn test --reporters=default --reporters=jest-junit"

@@ -57,8 +57,11 @@ jobs:
       - script: yarn typedoc
         displayName: Generate Wiki
 
-      - script: yarn build:docs && cp web.config docs/dist/
+      - script: yarn build:docs
         displayName: Build Docs
+
+      - script: cp web.config docs/dist/web.config
+        displayName: Copy IIS Configuration
 
       - task: FtpUpload@1
         displayName: Upload to Azure
