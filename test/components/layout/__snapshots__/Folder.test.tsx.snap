@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Folder /> Should match the latest snapshots 1`] = `
+<Folder>
+  <Section
+    classes={
+      Array [
+        "acr-folder",
+        undefined,
+      ]
+    }
+  >
+    <section
+      className="acr-section acr-folder"
+    >
+      <Row
+        classes="acr-summary"
+      >
+        <div
+          className="acr-row acr-summary"
+        >
+          <Text>
+            <p
+              className="acr-text"
+            >
+              Summary
+            </p>
+          </Text>
+          <Button
+            onClick={[Function]}
+          >
+            <button
+              className="acr-btn"
+              onClick={[Function]}
+            >
+              Expand
+            </button>
+          </Button>
+        </div>
+      </Row>
+      <Divider
+        classes="acr-hidden"
+      >
+        <hr
+          className="acr-divider acr-hidden"
+        />
+      </Divider>
+      <div
+        className="acr-details acr-hidden"
+      >
+        <Text>
+          <p
+            className="acr-text"
+          >
+            Details
+          </p>
+        </Text>
+      </div>
+    </section>
+  </Section>
+</Folder>
+`;

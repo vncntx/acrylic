@@ -27,7 +27,8 @@ export interface IButtonProps
 	disabled?: boolean;
 }
 
-export interface ButtonComponent extends React.FC<IButtonProps> {}
+export interface ButtonComponent
+	extends React.FunctionComponent<IButtonProps> {}
 
 /**
  * Button displays a button with some content

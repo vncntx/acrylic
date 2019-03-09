@@ -14,6 +14,7 @@ export { default as Row } from "./components/layout/Row";
 export { default as Alert } from "./components/layout/Alert";
 export { default as Toolbar } from "./components/layout/Toolbar";
 export { default as Divider } from "./components/layout/Divider";
+export { default as Folder } from "./components/layout/Folder";
 
 /**
  * Typography Components

@@ -164,8 +164,34 @@ $alert-background: darken($color-background, 2);
 .acr-alert.acr-variant-danger {
 	@include alert($color-danger, darken($color-danger, 5));
 }
-.acr-alert.acr-hidden {
+
+/**
+ * Hidden elements
+ */
+.acr-hidden {
 	display: none;
+}
+
+/**
+ * Folder
+ */
+.acr-folder {
+	padding: 0;
+}
+
+.acr-summary {
+	margin: 0;
+	padding: $spacing-unit;
+	align-items: center;
+	& > *:last-child {
+		flex: 0 1 auto;
+		align-self: flex-end;
+	}
+}
+
+.acr-details {
+	margin: 0;
+	padding: $spacing-unit;
 }
 
 /**
