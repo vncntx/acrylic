@@ -6,27 +6,17 @@ Array [
     <aside
       className="acr-alert"
     >
-      <Text>
-        <p
-          className="acr-text"
-        >
-          Example
-        </p>
-      </Text>
-      <DismissButton
+      Example
+      <Button
         onClick={[Function]}
       >
-        <Button
+        <button
+          className="acr-btn"
           onClick={[Function]}
         >
-          <button
-            className="acr-btn"
-            onClick={[Function]}
-          >
-            Dismiss
-          </button>
-        </Button>
-      </DismissButton>
+          Dismiss
+        </button>
+      </Button>
     </aside>
   </Alert>,
   <Alert
@@ -35,29 +25,18 @@ Array [
     <aside
       className="acr-alert acr-variant-primary"
     >
-      <Text>
-        <p
-          className="acr-text"
-        >
-          Example
-        </p>
-      </Text>
-      <DismissButton
+      Example
+      <Button
         onClick={[Function]}
         variant="primary"
       >
-        <Button
+        <button
+          className="acr-btn acr-variant-primary"
           onClick={[Function]}
-          variant="primary"
         >
-          <button
-            className="acr-btn acr-variant-primary"
-            onClick={[Function]}
-          >
-            Dismiss
-          </button>
-        </Button>
-      </DismissButton>
+          Dismiss
+        </button>
+      </Button>
     </aside>
   </Alert>,
   <Alert
@@ -66,29 +45,18 @@ Array [
     <aside
       className="acr-alert acr-variant-success"
     >
-      <Text>
-        <p
-          className="acr-text"
-        >
-          Example
-        </p>
-      </Text>
-      <DismissButton
+      Example
+      <Button
         onClick={[Function]}
         variant="success"
       >
-        <Button
+        <button
+          className="acr-btn acr-variant-success"
           onClick={[Function]}
-          variant="success"
         >
-          <button
-            className="acr-btn acr-variant-success"
-            onClick={[Function]}
-          >
-            Dismiss
-          </button>
-        </Button>
-      </DismissButton>
+          Dismiss
+        </button>
+      </Button>
     </aside>
   </Alert>,
   <Alert
@@ -97,29 +65,18 @@ Array [
     <aside
       className="acr-alert acr-variant-warning"
     >
-      <Text>
-        <p
-          className="acr-text"
-        >
-          Example
-        </p>
-      </Text>
-      <DismissButton
+      Example
+      <Button
         onClick={[Function]}
         variant="warning"
       >
-        <Button
+        <button
+          className="acr-btn acr-variant-warning"
           onClick={[Function]}
-          variant="warning"
         >
-          <button
-            className="acr-btn acr-variant-warning"
-            onClick={[Function]}
-          >
-            Dismiss
-          </button>
-        </Button>
-      </DismissButton>
+          Dismiss
+        </button>
+      </Button>
     </aside>
   </Alert>,
   <Alert
@@ -128,47 +85,31 @@ Array [
     <aside
       className="acr-alert acr-variant-danger"
     >
-      <Text>
-        <p
-          className="acr-text"
-        >
-          Example
-        </p>
-      </Text>
-      <DismissButton
+      Example
+      <Button
         onClick={[Function]}
         variant="danger"
       >
-        <Button
+        <button
+          className="acr-btn acr-variant-danger"
           onClick={[Function]}
-          variant="danger"
         >
-          <button
-            className="acr-btn acr-variant-danger"
-            onClick={[Function]}
-          >
-            Dismiss
-          </button>
-        </Button>
-      </DismissButton>
+          Dismiss
+        </button>
+      </Button>
     </aside>
   </Alert>,
-  <Alert
-    closeButton={[Function]}
-  >
+  <Alert>
     <aside
       className="acr-alert"
     >
-      <Text>
-        <p
-          className="acr-text"
-        >
-          Example
-        </p>
-      </Text>
-      <Button>
+      Example
+      <Button
+        onClick={[Function]}
+      >
         <button
           className="acr-btn"
+          onClick={[Function]}
         >
           Control
         </button>

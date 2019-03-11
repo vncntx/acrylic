@@ -12,7 +12,10 @@ describe("<Alert />", () => {
 					<Alert variant="success">Example</Alert>
 					<Alert variant="warning">Example</Alert>
 					<Alert variant="danger">Example</Alert>
-					<Alert closeButton={() => <Button>Control</Button>}>Example</Alert>
+					<Alert>
+						Example
+						<Button>Control</Button>
+					</Alert>
 				</React.Fragment>
 			)
 		).toMatchSnapshot();
