@@ -15,6 +15,7 @@ export { default as Alert } from "./components/layout/Alert";
 export { default as Toolbar } from "./components/layout/Toolbar";
 export { default as Divider } from "./components/layout/Divider";
 export { default as Folder } from "./components/layout/Folder";
+export { default as Card, CardImage, CardBody } from "./components/layout/Card";
 
 /**
  * Typography Components

@@ -198,19 +198,6 @@ nav {
 		display: block;
 		background: $color-background;
 		border-radius: $border-radius $border-radius 0 0;
-		& img:not(.acr-icon) {
-			max-width: 30%;
-			margin: $spacing-unit;
-			padding: 0;
-			border: {
-				color: $color-foreground;
-				width: $border-width;
-				style: solid;
-			}
-			background: {
-				color: darken($color-background, 20);
-			}
-		}
 	}
 	& > pre {
 		background: $color-foreground;
@@ -219,6 +206,28 @@ nav {
 	}
 }
 
+img.small {
+	max-width: 30%;
+	margin: $spacing-unit;
+	padding: 0;
+	border: {
+		color: $color-foreground;
+		width: $border-width;
+		style: solid;
+	}
+	background: {
+		color: darken($color-background, 20);
+	}
+}
+
 .hidden {
 	display: none;
+}
+
+.square {
+	max-width: 100px;
+	height: 100px;
+}
+.medium {
+	max-width: 300px;
 }

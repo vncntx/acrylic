@@ -5,9 +5,15 @@ A **Row** lays out its children in a single row.
 ```jsx
 render(() => (
 	<Row>
-		<img src="/img/horn.png" />
-		<img src="/img/fighter.png" />
-		<img src="/img/soldier.png" />
+		<Card classes="medium">
+			<CardImage src="/img/art1.webp" />
+		</Card>
+		<Card classes="medium">
+			<CardImage src="/img/art2.webp" />
+		</Card>
+		<Card classes="medium">
+			<CardImage src="/img/art3.webp" />
+		</Card>
 	</Row>
 ))
 ```

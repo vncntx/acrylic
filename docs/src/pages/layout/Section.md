@@ -15,18 +15,13 @@ Sections can have an elevation of up to 6. Use elevation to convey heirarchy and
 
 ```jsx
 render(() => (
-	<Row style={{
-		alignItems: "stretch",
-		height: 120,
-		width: 750,
-		margin: "auto"
-	}}>
-		<Section elevation={1} />
-		<Section elevation={2} />
-		<Section elevation={3} />
-		<Section elevation={4} />
-		<Section elevation={5} />
-		<Section elevation={6} />
+	<Row>
+		<Section classes="square" elevation={1} />
+		<Section classes="square" elevation={2} />
+		<Section classes="square" elevation={3} />
+		<Section classes="square" elevation={4} />
+		<Section classes="square" elevation={5} />
+		<Section classes="square" elevation={6} />
 	</Row>
 ))
 ```

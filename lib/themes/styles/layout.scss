@@ -50,6 +50,29 @@ body {
 }
 
 /**
+ * Card
+ */
+.acr-card {
+	@extend %container;
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	border-radius: $border-radius;
+}
+.acr-section.acr-card {
+	padding: 0;
+}
+.acr-card-img {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.acr-card-body {
+	margin: 0;
+	padding: $spacing-unit;
+}
+
+/**
  * Acrylic Effect
  */
 .acr-acrylic {
@@ -220,7 +243,8 @@ $alert-background: darken($color-background, 2);
 
 	& .acr-btn,
 	& .acr-btn[class*="acr-variant-"],
-	& .acr-btn[disabled] {
+	& .acr-btn[disabled],
+	& .acr-btn + .acr-btn {
 		margin: 0;
 		max-width: fit-content;
 		border: {

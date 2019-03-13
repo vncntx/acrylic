@@ -19,6 +19,7 @@ export default function Nav() {
 					pages={[
 						"layout/Alert",
 						"layout/Section",
+						"layout/Card",
 						"layout/Column",
 						"layout/Row",
 						"layout/Toolbar",
