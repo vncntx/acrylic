@@ -114,10 +114,8 @@ body {
 	background: {
 		color: $background;
 	}
-	padding: 0;
-	display: inline-flex;
-	flex: 1 0 auto;
-	margin: $spacing-unit $spacing-unit;
+	padding: $spacing-unit;
+	margin: $spacing-unit;
 	border: {
 		style: solid;
 		width: $border-width $border-width $border-width 5 * $border-width;
@@ -128,18 +126,13 @@ body {
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-evenly;
-
+	justify-content: space-between;
 	& > * {
-		margin: 0;
-	}
-	& > *:first-child {
 		flex: 1 0 auto;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		padding: $spacing-unit;
-		margin: 0;
+		&:last-child {
+			flex: 0 1 auto;
+			align-self: flex-end;
+		}
 	}
 }
 
@@ -168,7 +161,8 @@ $alert-background: darken($color-background, 2);
 /**
  * Hidden elements
  */
-.acr-hidden {
+.acr-hidden,
+.acr-alert.acr-hidden {
 	display: none;
 }
 
