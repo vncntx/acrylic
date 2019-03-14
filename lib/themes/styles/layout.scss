@@ -1,4 +1,5 @@
 @import "utils";
+@import "animation";
 
 * {
 	background: none;
@@ -216,10 +217,10 @@ $alert-background: darken($color-background, 2);
  */
 .acr-toolbar {
 	@extend %flexbox;
+	padding: 0;
 	flex-direction: row;
 	overflow: visible;
 	flex-wrap: nowrap;
-	padding: $spacing-unit;
 	align-items: stretch;
 
 	%first-button {
@@ -323,4 +324,66 @@ $alert-background: darken($color-background, 2);
 		right: -$spacing-unit;
 		bottom: $shadow-width;
 	}
+}
+
+/**
+ * Menu
+ */
+.acr-menu {
+	@extend .acr-section;
+	@include elevated(3);
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	list-style: none;
+	& > .acr-divider {
+		margin: 0;
+		z-index: 12;
+	}
+}
+.acr-menu-item,
+.acr-submenu-label {
+	@extend %subtle-transition;
+	margin: 0;
+	text-decoration: none;
+	padding: $spacing-unit;
+	&[disabled] {
+		color: rgba($color-foreground, 0.5);
+	}
+	&[role="button"] {
+		cursor: pointer;
+	}
+	&:focus,
+	&:hover,
+	&:active {
+		&:not([disabled]) {
+			background: $color-accent;
+			color: contrastingColor($color-accent);
+		}
+	}
+}
+.acr-submenu {
+	display: flex;
+	flex-direction: column;
+	& > ul {
+		@extend .acr-menu;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		overflow: hidden;
+		background: rgba(darken($color-background, 10), 0.5);
+		& > li {
+			padding: {
+				left: 2 * $spacing-unit;
+			}
+		}
+	}
+	&.acr-closed {
+		& > ul {
+			height: 0;
+		}
+	}
+}
+.acr-submenu-label {
+	@extend %container;
 }

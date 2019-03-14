@@ -23,9 +23,11 @@ export default function Nav() {
 						"layout/Column",
 						"layout/Row",
 						"layout/Toolbar",
+						"layout/Menu",
 						"layout/Divider",
 						"layout/Folder",
 						"controls/Button",
+						"controls/Dropdown",
 						"typography/Text",
 						"typography/Title",
 						"typography/Icon"

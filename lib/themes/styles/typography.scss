@@ -153,6 +153,36 @@ a:any-link {
 	&:hover,
 	&:focus,
 	&:active {
-		text-decoration: underline;
+		& > * {
+			@extend %underlined;
+		}
+	}
+}
+
+// Special overriding cases
+
+/**
+ * Menu Heading
+ */
+.acr-menu-heading {
+	margin: 0;
+	padding: 0;
+	text-shadow: unset;
+	font: {
+		weight: normal;
+		size: $font-size-standard;
+	}
+	&.acr-bold {
+		font-weight: bold;
+	}
+	& > * {
+		width: 100%;
+	}
+}
+a:any-link > * {
+	&.acr-menu-item,
+	&.acr-submenu-label {
+		color: $color-foreground;
+		text-decoration: none;
 	}
 }

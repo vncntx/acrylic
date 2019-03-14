@@ -16,6 +16,12 @@ export { default as Toolbar } from "./components/layout/Toolbar";
 export { default as Divider } from "./components/layout/Divider";
 export { default as Folder } from "./components/layout/Folder";
 export { default as Card, CardImage, CardBody } from "./components/layout/Card";
+export {
+	default as Menu,
+	MenuItem,
+	SubMenu,
+	MenuHeading
+} from "./components/layout/Menu";
 
 /**
  * Typography Components
@@ -30,6 +36,7 @@ export { default as Icon } from "./components/typography/Icon";
  */
 export { default as Button } from "./components/controls/Button";
 export { default as IconButton } from "./components/controls/IconButton";
+export { default as Dropdown } from "./components/controls/Dropdown";
 
 /**
  * Variants
