@@ -226,7 +226,7 @@ img.small {
 
 .square {
 	max-width: 100px;
-	height: 100px;
+	min-height: 100px;
 }
 .medium {
 	max-width: 300px;

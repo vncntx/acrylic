@@ -97,7 +97,7 @@ body {
 		top: 0;
 		left: 0;
 		z-index: -1;
-		filter: blur(5 * $spacing-unit);
+		filter: blur($shadow-width);
 		overflow: hidden;
 	}
 }
