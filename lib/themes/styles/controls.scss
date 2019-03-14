@@ -18,6 +18,7 @@
 	margin: {
 		top: $spacing-unit / 2;
 		bottom: $spacing-unit / 2;
+		right: $spacing-unit / 2;
 	}
 	min-width: 7ch;
 	border: {
@@ -30,10 +31,6 @@
 	align-items: center;
 	justify-content: center;
 	cursor: default;
-
-	& + & {
-		margin: $spacing-unit / 2;
-	}
 
 	& a:any-link {
 		text-decoration: none;
