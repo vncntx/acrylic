@@ -1,20 +1,17 @@
 import * as React from "react";
 import PageLink from "./PageLink";
 import { NavLink } from "react-router-dom";
-import { Icon } from "../../../lib/acrylic";
+import { Icon, MenuItem, Menu, Divider } from "../../../lib/acrylic";
 
 export default function Nav() {
 	return (
-		<nav>
-			<ul>
-				<li className="logo">
-					<Icon src="/img/logo.svg" />
-				</li>
-				<li>
-					<NavLink exact to="/" activeClassName="selected">
-						Overview
-					</NavLink>
-				</li>
+		<nav className="small">
+			<Icon classes="logo" src="/img/logo.svg" />
+			<Divider />
+			<Menu>
+				<NavLink exact to="/" activeClassName="selected">
+					<MenuItem>Overview</MenuItem>
+				</NavLink>
 				<ComponentList
 					pages={[
 						"layout/Alert",
@@ -33,7 +30,7 @@ export default function Nav() {
 						"typography/Icon"
 					]}
 				/>
-			</ul>
+			</Menu>
 		</nav>
 	);
 }
@@ -51,9 +48,9 @@ function ComponentList(props: IComponentListProps) {
 		<React.Fragment>
 			{props.pages.map(page => {
 				return (
-					<li key={page}>
-						<PageLink path={page}>{getTitle(page)}</PageLink>
-					</li>
+					<PageLink to={page} key={page}>
+						<MenuItem>{getTitle(page)}</MenuItem>
+					</PageLink>
 				);
 			})}
 		</React.Fragment>
