@@ -41,4 +41,5 @@ render(() => {
 
 - [`Menu`](/wiki/modules/_components_layout_menu_.html)
 - [`MenuItem`](/wiki/modules/_components_layout_menu_.html#menuitem)
+- [`MenuHeading`](/wiki/modules/_components_layout_menu_.html#menuheading)
 - [`SubMenu`](/wiki/modules/_components_layout_menu_.html#submenu)

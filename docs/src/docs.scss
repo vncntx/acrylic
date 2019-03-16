@@ -42,11 +42,6 @@ body {
 		text-decoration: none;
 		color: inherit;
 	}
-	& a:hover,
-	& a:focus,
-	& a.selected {
-		color: $color-accent;
-	}
 }
 
 .main {
@@ -56,26 +51,28 @@ body {
 }
 
 nav {
-	@extend %clean-links;
-	@include elevated(6);
-	margin: 0;
-	padding: 0 40px;
-	max-width: 100px;
-	text-align: left;
-	font-family: $font-stack-title;
-	& ul {
-		padding: 20px 0;
-		margin: 0;
-		& li {
-			list-style: none;
-			padding: 1vh 0;
-		}
+	@extend %container;
+	margin: {
+		right: $shadow-width * 2;
 	}
+	box-shadow: 0 $shadow-width / 2 $shadow-width * 2 rgba($color-shadow, 0.4);
 	& .logo {
-		& .acr-icon {
-			$size: 48px;
-			width: $size;
-			height: $size;
+		$size: 48px;
+		width: $size;
+		height: $size;
+		margin: $spacing-unit * 2;
+	}
+	& > .acr-menu {
+		box-shadow: none;
+		border-radius: 0;
+		& .selected > * {
+			border: {
+				left: {
+					width: 5px;
+					style: solid;
+					color: $color-accent;
+				}
+			}
 		}
 	}
 }
@@ -176,9 +173,6 @@ nav {
 			margin-top: 0;
 		}
 	}
-	& > pre {
-		align-self: stretch;
-	}
 }
 .home-page {
 	& > *:nth-child(2) {
@@ -230,4 +224,7 @@ img.small {
 }
 .medium {
 	max-width: 300px;
+}
+.small {
+	max-width: 150px;
 }

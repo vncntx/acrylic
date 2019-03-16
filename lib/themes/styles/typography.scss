@@ -88,28 +88,20 @@ h6 {
 	@extend %typography;
 	font-family: $font-stack-monospace;
 	white-space: pre-wrap;
-	overflow: hidden;
-	line-height: 1.25em;
-	tab-size: 2;
-	padding: 2 * $spacing-unit;
-	margin: 4 * $spacing-unit;
+	line-height: 1.5em;
 }
 pre {
 	@extend %code;
+	padding: $spacing-unit;
 	background: darken($color-background, 5);
 	& > code {
-		padding: 0;
-		width: fit-content;
-		background: inherit;
+		background: none;
 		color: inherit;
 	}
 }
 code {
 	@extend %code;
-	padding: $spacing-unit / 2 $spacing-unit;
-	background: darken($color-background, 5);
 	color: inherit;
-	margin: 0;
 }
 pre {
 	& > code {
