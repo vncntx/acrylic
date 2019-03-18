@@ -1,11 +1,11 @@
 import * as React from "react";
 import PageLink from "./PageLink";
 import { NavLink } from "react-router-dom";
-import { Icon, MenuItem, Menu, Divider } from "../../../lib/acrylic";
+import { Nav, Icon, MenuItem, Menu, Divider } from "../../../lib/acrylic";
 
-export default function Nav() {
+export default function Navigation() {
 	return (
-		<nav className="small">
+		<Nav vertical elevation={3} classes="small">
 			<Icon classes="logo" src="/img/logo.svg" />
 			<Divider />
 			<Menu>
@@ -19,6 +19,7 @@ export default function Nav() {
 						"layout/Card",
 						"layout/Column",
 						"layout/Row",
+						"layout/Nav",
 						"layout/Toolbar",
 						"layout/Menu",
 						"layout/Divider",
@@ -31,7 +32,7 @@ export default function Nav() {
 					]}
 				/>
 			</Menu>
-		</nav>
+		</Nav>
 	);
 }
 

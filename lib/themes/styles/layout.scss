@@ -51,6 +51,33 @@ body {
 }
 
 /**
+ * Nav
+ */
+.acr-nav {
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	& li {
+		margin: 0;
+	}
+	&,
+	& ul,
+	& ol {
+		@extend %container;
+		display: flex;
+		list-style: none;
+		flex-direction: row;
+	}
+	&.acr-nav-vertical {
+		&,
+		& ul,
+		& ol {
+			flex-direction: column;
+		}
+	}
+}
+
+/**
  * Card
  */
 .acr-card {

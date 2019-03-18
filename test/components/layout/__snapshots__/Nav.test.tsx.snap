@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav /> Should match the latest snapshots 1`] = `
+<Nav>
+  <nav
+    className="acr-section acr-nav"
+  >
+    <Menu>
+      <ul
+        className="acr-menu"
+      >
+        <MenuItem>
+          <li
+            className="acr-menu-item"
+          >
+            Item
+          </li>
+        </MenuItem>
+        <MenuItem>
+          <li
+            className="acr-menu-item"
+          >
+            Item
+          </li>
+        </MenuItem>
+        <MenuItem>
+          <li
+            className="acr-menu-item"
+          >
+            Item
+          </li>
+        </MenuItem>
+      </ul>
+    </Menu>
+  </nav>
+</Nav>
+`;

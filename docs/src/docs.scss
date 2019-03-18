@@ -37,13 +37,6 @@ body {
 	font-size: 6em;
 }
 
-%clean-links {
-	& a:any-link {
-		text-decoration: none;
-		color: inherit;
-	}
-}
-
 .main {
 	@extend %container;
 	align-items: stretch;

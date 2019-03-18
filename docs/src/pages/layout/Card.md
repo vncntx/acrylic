@@ -20,7 +20,7 @@ Cards have an _elevation_ property, which defaults to 1. Use **CardImage** and *
 ```jsx
 render(() => (
 	<Row>
-		<Card elevation={3} classes="medium">
+		<Card classes="medium">
 			<CardImage src="/img/art2.png" />
 			<CardBody>
 				<Title>Card</Title>
