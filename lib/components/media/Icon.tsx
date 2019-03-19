@@ -1,9 +1,9 @@
 import * as React from "react";
 import classNames from "classnames";
-import { IPureTextProps } from "./ITextProps";
+import IImageProps from "./IImageProps";
 
-export interface IIconProps extends IPureTextProps {
-	src?: string;
+export interface IIconProps extends IImageProps {
+	src: string;
 	children?: null | undefined;
 }
 

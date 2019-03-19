@@ -1,7 +1,5 @@
 import * as React from "react";
-import classNames from "classnames";
 import Section, { ISectionProps } from "./Section";
-import ILayoutProps from "./ILayoutProps";
 import IProps from "../IProps";
 
 /**
@@ -9,11 +7,7 @@ import IProps from "../IProps";
  * @param props
  */
 export default function Card(props: ISectionProps) {
-	let { classes, elevation, ...otherProps } = props;
-
-	if (typeof elevation != "number") {
-		elevation = 1;
-	}
+	const { classes, elevation = 1, ...otherProps } = props;
 
 	return (
 		<Section
@@ -26,17 +20,6 @@ export default function Card(props: ISectionProps) {
 
 export interface ICardImageProps extends IProps {
 	src: string;
-}
-
-/**
- * An image inside a Card
- * @param props
- */
-export function CardImage(props: ICardImageProps) {
-	const { classes, src, ...otherProps } = props;
-	const effectiveClass = classNames(["acr-card-img", classes]);
-
-	return <img src={src} className={effectiveClass} {...otherProps} />;
 }
 
 /**

@@ -28,7 +28,8 @@ export default function Navigation() {
 						"controls/Dropdown",
 						"typography/Text",
 						"typography/Title",
-						"typography/Icon"
+						"media/Image",
+						"media/Icon"
 					]}
 				/>
 			</Menu>

@@ -14,14 +14,24 @@ exports[`<Card /> Should match the latest snapshots 1`] = `
     <section
       className="acr-section acr-elevated-1 acr-card"
     >
-      <CardImage
-        src="image"
+      <Image
+        src="image.webp"
       >
-        <img
-          className="acr-card-img"
-          src="image"
-        />
-      </CardImage>
+        <figure
+          className="acr-img"
+          style={
+            Object {
+              "backgroundImage": "url('image.webp')",
+            }
+          }
+        >
+          <picture>
+            <img
+              src="image.webp"
+            />
+          </picture>
+        </figure>
+      </Image>
       <CardBody>
         <Section
           classes={

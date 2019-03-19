@@ -6,13 +6,13 @@ A **Row** lays out its children in a single row.
 render(() => (
 	<Row>
 		<Card classes="medium">
-			<CardImage src="/img/art1.webp" />
+			<Image src="/img/art1.webp" />
 		</Card>
 		<Card classes="medium">
-			<CardImage src="/img/art2.webp" />
+			<Image src="/img/art2.webp" />
 		</Card>
 		<Card classes="medium">
-			<CardImage src="/img/art3.webp" />
+			<Image src="/img/art3.webp" />
 		</Card>
 	</Row>
 ))

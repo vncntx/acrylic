@@ -1,6 +1,6 @@
 import * as React from "react";
 import { mount } from "enzyme";
-import { Card, CardBody, CardImage, Title, Text } from "../../../lib/acrylic";
+import { Card, CardBody, Image, Title, Text } from "../../../lib/acrylic";
 
 describe("<Card />", () => {
 	it("Should match the latest snapshots", () => {
@@ -8,7 +8,7 @@ describe("<Card />", () => {
 			mount(
 				<React.Fragment>
 					<Card>
-						<CardImage src="image" />
+						<Image src="image.webp" />
 						<CardBody>
 							<Title>Card</Title>
 							<Text>This is a card.</Text>

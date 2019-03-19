@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Image /> Should match the latest snapshots 1`] = `
+<Image
+  src="image.webp"
+>
+  <figure
+    className="acr-img"
+    style={
+      Object {
+        "backgroundImage": "url('image.webp')",
+      }
+    }
+  >
+    <picture>
+      <img
+        src="image.webp"
+      />
+    </picture>
+    <Caption>
+      <figcaption
+        className="acr-section acr-caption acr-bottom"
+      >
+        This is a description.
+      </figcaption>
+    </Caption>
+  </figure>
+</Image>
+`;
