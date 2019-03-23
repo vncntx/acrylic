@@ -58,7 +58,7 @@ body {
 	& > .acr-menu {
 		box-shadow: none;
 		border-radius: 0;
-		& .selected > * {
+		& .selected {
 			border: {
 				left: {
 					width: 5px;
