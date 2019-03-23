@@ -29,7 +29,11 @@ export interface IMenuItemProps extends ILayoutProps, IButtonProps {}
  */
 export function MenuItem(props: IMenuItemProps) {
 	const { classes, children, ...otherProps } = props;
-	const effectiveClass = classNames("acr-menu-item", classes);
+	const effectiveClass = classNames(
+		"acr-menu-item",
+		classes,
+		typeof children === "string" && "acr-li-text-only"
+	);
 
 	if (otherProps.disabled) {
 		delete otherProps.onClick;
@@ -68,7 +72,10 @@ export function SubMenu(props: ISubMenuProps) {
 
 	return (
 		<li className={effectiveClass} {...otherProps}>
-			<div className="acr-submenu-label" onClick={clickHandler}>
+			<div
+				className="acr-submenu-label acr-li-text-only"
+				onClick={clickHandler}
+			>
 				{label}
 			</div>
 			<ul>{items}</ul>

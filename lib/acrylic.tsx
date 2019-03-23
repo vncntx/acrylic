@@ -12,6 +12,7 @@ export { default as Section } from "./components/layout/Section";
 export { default as Column } from "./components/layout/Column";
 export { default as Row } from "./components/layout/Row";
 export { default as Nav } from "./components/layout/Nav";
+export { default as Breadcrumb, Crumb } from "./components/layout/Breadcrumb";
 export { default as Alert } from "./components/layout/Alert";
 export { default as Toolbar } from "./components/layout/Toolbar";
 export { default as Caption } from "./components/layout/Caption";

@@ -15,9 +15,9 @@ render(() => {
 	return (
 		<Row>
 			<Menu classes="medium">
-				<a href="#"><MenuItem>Cut</MenuItem></a>
-				<a href="#"><MenuItem>Copy</MenuItem></a>
-				<a href="#"><MenuItem>Paste</MenuItem></a>
+				<MenuItem><a href="#">Cut</a></MenuItem>
+				<MenuItem><a href="#">Copy</a></MenuItem>
+				<MenuItem><a href="#">Paste</a></MenuItem>
 				<Divider />
 				<MenuItem onClick={undo}>Undo</MenuItem>
 				<MenuItem disabled>Redo</MenuItem>

@@ -127,6 +127,7 @@ a:any-link > * {
 	position: relative;
 	& > * {
 		margin: 0;
+		overflow: auto;
 		&:nth-child(2) {
 			@extend %container;
 			z-index: 50;

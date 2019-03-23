@@ -11,21 +11,21 @@ exports[`<Nav /> Should match the latest snapshots 1`] = `
       >
         <MenuItem>
           <li
-            className="acr-menu-item"
+            className="acr-menu-item acr-li-text-only"
           >
             Item
           </li>
         </MenuItem>
         <MenuItem>
           <li
-            className="acr-menu-item"
+            className="acr-menu-item acr-li-text-only"
           >
             Item
           </li>
         </MenuItem>
         <MenuItem>
           <li
-            className="acr-menu-item"
+            className="acr-menu-item acr-li-text-only"
           >
             Item
           </li>

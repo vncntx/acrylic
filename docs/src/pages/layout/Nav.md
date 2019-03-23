@@ -4,12 +4,12 @@ A **Nav** is a semantic container for navigation.
 
 ```jsx
 render(() => (
-	<Nav classes="medium">
+	<Nav elevation={1} classes="medium">
 		<Menu>
-			<a href="#"><MenuItem>File</MenuItem></a>
-			<a href="#"><MenuItem>Edit</MenuItem></a>
-			<a href="#"><MenuItem>View</MenuItem></a>
-			<a href="#"><MenuItem>Help</MenuItem></a>
+			<MenuItem><a href="#">File</a></MenuItem>
+			<MenuItem><a href="#">Edit</a></MenuItem>
+			<MenuItem><a href="#">View</a></MenuItem>
+			<MenuItem><a href="#">Help</a></MenuItem>
 		</Menu>
 	</Nav>
 ))

@@ -7,14 +7,14 @@ exports[`<Menu /> Should match the latest snapshots 1`] = `
   >
     <MenuItem>
       <li
-        className="acr-menu-item"
+        className="acr-menu-item acr-li-text-only"
       >
         Item
       </li>
     </MenuItem>
     <MenuItem>
       <li
-        className="acr-menu-item"
+        className="acr-menu-item acr-li-text-only"
       >
         Item
       </li>
@@ -23,7 +23,7 @@ exports[`<Menu /> Should match the latest snapshots 1`] = `
       disabled={true}
     >
       <li
-        className="acr-menu-item"
+        className="acr-menu-item acr-li-text-only"
         disabled={true}
       >
         Item
@@ -34,7 +34,7 @@ exports[`<Menu /> Should match the latest snapshots 1`] = `
         className="acr-submenu acr-closed"
       >
         <div
-          className="acr-submenu-label"
+          className="acr-submenu-label acr-li-text-only"
           onClick={[Function]}
         >
           <MenuHeading>
@@ -53,14 +53,14 @@ exports[`<Menu /> Should match the latest snapshots 1`] = `
         <ul>
           <MenuItem>
             <li
-              className="acr-menu-item"
+              className="acr-menu-item acr-li-text-only"
             >
               Item
             </li>
           </MenuItem>
           <MenuItem>
             <li
-              className="acr-menu-item"
+              className="acr-menu-item acr-li-text-only"
             >
               Item
             </li>
@@ -70,7 +70,7 @@ exports[`<Menu /> Should match the latest snapshots 1`] = `
     </SubMenu>
     <MenuItem>
       <li
-        className="acr-menu-item"
+        className="acr-menu-item acr-li-text-only"
       >
         Item
       </li>

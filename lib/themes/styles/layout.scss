@@ -72,6 +72,41 @@ body {
 }
 
 /**
+ * Breadcrumb
+ */
+.acr-breadcrumb {
+	@extend %container;
+	list-style: none;
+	& > ul {
+		@extend %container;
+		padding: $spacing-unit;
+	}
+}
+.acr-crumb {
+	display: inline;
+	margin: {
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: $spacing-unit;
+	}
+	&:first-child {
+		margin: {
+			left: 0;
+		}
+	}
+	&::after {
+		margin: {
+			left: $spacing-unit;
+		}
+		content: "/";
+	}
+	&:last-child::after {
+		content: "";
+	}
+}
+
+/**
  * Card
  */
 .acr-card {
@@ -280,7 +315,7 @@ $alert-background: darken($color-background, 2);
 			@extend %only-button;
 		}
 	}
-	& > a:any-link {
+	& > a {
 		&:first-child > .acr-btn {
 			@extend %first-button;
 		}
@@ -352,7 +387,6 @@ $alert-background: darken($color-background, 2);
 	@include elevated(3);
 	margin: 0;
 	padding: 0;
-	overflow: auto;
 	list-style: none;
 	& > .acr-divider {
 		margin: 0;
@@ -362,14 +396,23 @@ $alert-background: darken($color-background, 2);
 .acr-menu-item,
 .acr-submenu-label {
 	@extend %subtle-transition;
-	margin: 0;
+	padding: 0;
+	display: flex;
 	text-decoration: none;
-	padding: $spacing-unit;
+	cursor: pointer;
 	&[disabled] {
 		color: rgba($color-foreground, 0.5);
 	}
-	&[role="button"] {
-		cursor: pointer;
+	& > * {
+		flex: 1 0 auto;
+		padding: $spacing-unit;
+	}
+	&.acr-menu-item.acr-li-text-only {
+		padding: $spacing-unit;
+	}
+	& > a {
+		color: inherit;
+		text-decoration: none;
 	}
 	&:focus,
 	&:hover,
@@ -381,7 +424,7 @@ $alert-background: darken($color-background, 2);
 	}
 }
 .acr-submenu {
-	display: inline-flex;
+	@extend %container;
 	flex-direction: column;
 	& > ul {
 		@extend .acr-menu;
@@ -391,7 +434,7 @@ $alert-background: darken($color-background, 2);
 		overflow: hidden;
 		box-sizing: border-box;
 		background: rgba(darken($color-background, 10), 0.5);
-		& > li {
+		& > li.acr-menu-item.acr-li-text-only {
 			padding: {
 				left: 2 * $spacing-unit;
 			}

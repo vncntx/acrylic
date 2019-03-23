@@ -5,13 +5,15 @@ import { Nav, Icon, MenuItem, Menu, Divider } from "../../../lib/acrylic";
 
 export default function Navigation() {
 	return (
-		<Nav vertical elevation={3} classes="small">
+		<Nav elevation={3} classes="main-nav small">
 			<Icon classes="logo" src="/img/logo.svg" />
 			<Divider />
 			<Menu>
-				<NavLink exact to="/" activeClassName="selected">
-					<MenuItem>Overview</MenuItem>
-				</NavLink>
+				<MenuItem>
+					<NavLink exact to="/" activeClassName="selected">
+						Overview
+					</NavLink>
+				</MenuItem>
 				<ComponentList
 					pages={[
 						"layout/Alert",
@@ -20,6 +22,7 @@ export default function Navigation() {
 						"layout/Column",
 						"layout/Row",
 						"layout/Nav",
+						"layout/Breadcrumb",
 						"layout/Toolbar",
 						"layout/Menu",
 						"layout/Divider",
@@ -50,9 +53,9 @@ function ComponentList(props: IComponentListProps) {
 		<React.Fragment>
 			{props.pages.map(page => {
 				return (
-					<PageLink to={page} key={page}>
-						<MenuItem>{getTitle(page)}</MenuItem>
-					</PageLink>
+					<MenuItem key={page}>
+						<PageLink to={page}>{getTitle(page)}</PageLink>
+					</MenuItem>
 				);
 			})}
 		</React.Fragment>
