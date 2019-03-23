@@ -120,13 +120,22 @@ a:any-link > * {
  * Dropdown
  */
 .acr-dropdown {
-	& > *:nth-child(2) {
-		@extend %container;
-		position: absolute;
-		z-index: 10;
-		& > * {
-			min-width: 10ch;
-			max-height: 50vh;
+	margin: 0;
+	padding: 0;
+	border: none;
+	display: inline-block;
+	position: relative;
+	& > * {
+		margin: 0;
+		&:nth-child(2) {
+			@extend %container;
+			z-index: 50;
+			position: absolute;
+			margin-top: $shadow-width;
+			& > * {
+				min-width: 10ch;
+				max-height: 50vh;
+			}
 		}
 	}
 }

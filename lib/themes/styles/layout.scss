@@ -67,14 +67,7 @@ body {
 		@extend %container;
 		display: flex;
 		list-style: none;
-		flex-direction: row;
-	}
-	&.acr-nav-vertical {
-		&,
-		& ul,
-		& ol {
-			flex-direction: column;
-		}
+		flex-direction: column;
 	}
 }
 
@@ -388,7 +381,7 @@ $alert-background: darken($color-background, 2);
 	}
 }
 .acr-submenu {
-	display: flex;
+	display: inline-flex;
 	flex-direction: column;
 	& > ul {
 		@extend .acr-menu;
@@ -396,6 +389,7 @@ $alert-background: darken($color-background, 2);
 		border-radius: 0;
 		box-shadow: none;
 		overflow: hidden;
+		box-sizing: border-box;
 		background: rgba(darken($color-background, 10), 0.5);
 		& > li {
 			padding: {

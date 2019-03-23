@@ -42,5 +42,5 @@ render(() => (
 
 ###### Documentation
 - [`Card`](/wiki/modules/_components_layout_card_.html)
-- [`Image`](/wiki/modules/_components_layout_image_.html)
+- [`Image`](/wiki/modules/_components_media_image_.html)
 - [`CardBody`](/wiki/modules/_components_layout_card_.html#cardbody)

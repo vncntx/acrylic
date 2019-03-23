@@ -1,6 +1,6 @@
 ## Dropdown
 
-A **Dropdown** menu is toggled by a Button. It can be controlled using the `isOpen` prop.
+A **Dropdown** is a floating menu toggled by a button. It can be controlled programatically using the `isOpen` prop.
 
 ```jsx
 render(() => (
@@ -21,3 +21,4 @@ render(() => (
 ###### Documentation
 
 - [`Dropdown`](/wiki/modules/_components_controls_dropdown_.html)
+- [`Menu`](/wiki/modules/_components_layout_menu_.html)

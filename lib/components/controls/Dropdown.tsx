@@ -5,7 +5,7 @@ import IProps from "../IProps";
 
 export interface IDropdownProps extends IProps {
 	isOpen?: boolean;
-	children: [React.ReactElement<IButtonProps>, React.ReactElement<any>];
+	children: [React.ReactElement<any>, React.ReactElement<any>];
 }
 
 /**
