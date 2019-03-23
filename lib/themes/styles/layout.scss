@@ -75,15 +75,16 @@ body {
  * Breadcrumb
  */
 .acr-breadcrumb {
-	@extend %container;
+	@extend .acr-section;
 	list-style: none;
+	padding: $spacing-unit 0;
 	& > ul {
 		@extend %container;
-		padding: $spacing-unit;
 	}
 }
 .acr-crumb {
 	display: inline;
+	padding: 0;
 	margin: {
 		top: 0;
 		bottom: 0;
@@ -102,7 +103,17 @@ body {
 		content: "/";
 	}
 	&:last-child::after {
-		content: "";
+		content: none;
+	}
+	& > * {
+		padding: $spacing-unit;
+		&:hover,
+		&:focus {
+			background: rgba(darken($color-background, 10), 0.5);
+		}
+	}
+	&.acr-li-text-only {
+		padding: $spacing-unit;
 	}
 }
 
