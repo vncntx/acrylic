@@ -10,7 +10,7 @@ export default function Navigation() {
 			<Divider />
 			<Menu>
 				<MenuItem>
-					<NavLink exact to="/" activeClassName="selected">
+					<NavLink exact to="/" activeClassName="active">
 						Overview
 					</NavLink>
 				</MenuItem>

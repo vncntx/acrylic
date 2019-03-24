@@ -21,16 +21,19 @@ export default function Menu(props: ILayoutProps) {
 	);
 }
 
-export interface IMenuItemProps extends ILayoutProps, IButtonProps {}
+export interface IMenuItemProps extends ILayoutProps, IButtonProps {
+	active?: boolean;
+}
 
 /**
  * An item in a menu
  * @param props
  */
 export function MenuItem(props: IMenuItemProps) {
-	const { classes, children, ...otherProps } = props;
+	const { classes, children, active = false, ...otherProps } = props;
 	const effectiveClass = classNames(
 		"acr-menu-item",
+		active && "active",
 		classes,
 		typeof children === "string" && "acr-li-text-only"
 	);

@@ -12,7 +12,7 @@ export interface IPageLinkProps {
  */
 export default function PageLink(props: IPageLinkProps) {
 	return (
-		<NavLink to={`/components/${props.to}`} activeClassName="selected">
+		<NavLink to={`/components/${props.to}`} activeClassName="active">
 			{props.children}
 		</NavLink>
 	);

@@ -16,9 +16,11 @@ exports[`<Nav /> Should match the latest snapshots 1`] = `
             Item
           </li>
         </MenuItem>
-        <MenuItem>
+        <MenuItem
+          active={true}
+        >
           <li
-            className="acr-menu-item acr-li-text-only"
+            className="acr-menu-item active acr-li-text-only"
           >
             Item
           </li>

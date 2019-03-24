@@ -9,7 +9,7 @@ describe("<Nav />", () => {
 				<Nav>
 					<Menu>
 						<MenuItem>Item</MenuItem>
-						<MenuItem>Item</MenuItem>
+						<MenuItem active>Item</MenuItem>
 						<MenuItem>Item</MenuItem>
 					</Menu>
 				</Nav>

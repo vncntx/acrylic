@@ -498,6 +498,15 @@ $alert-background: darken($color-background, 2);
 .acr-submenu-label {
 	@extend %container;
 }
+.active {
+	border: {
+		left: {
+			width: 5px;
+			style: solid;
+			color: $color-accent;
+		}
+	}
+}
 
 /**
  * Figures
