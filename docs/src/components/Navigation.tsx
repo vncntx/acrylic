@@ -27,6 +27,7 @@ export default function Navigation() {
 						"layout/Menu",
 						"layout/Divider",
 						"layout/Folder",
+						"layout/Table",
 						"controls/Button",
 						"controls/Dropdown",
 						"typography/Text",

@@ -11,3 +11,8 @@ render(() => (
 	</Breadcrumb>
 ))
 ```
+
+###### Documentation
+
+- [`Breadcrumb`](/wiki/modules/_components_layout_breadcrumb_.html)
+- [`Crumb`](/wiki/modules/_components_layout_breadcrumb_.html#crumb)

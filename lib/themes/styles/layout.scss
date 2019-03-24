@@ -277,6 +277,44 @@ $alert-background: darken($color-background, 2);
 }
 
 /**
+ * Table
+ */
+.acr-table {
+	@extend .acr-section;
+	padding: 0;
+	border: {
+		collapse: collapse;
+	}
+	& > * {
+		@extend %container;
+	}
+	thead,
+	tfoot {
+		box-shadow: 0 $shadow-width -$shadow-width $shadow-width rgba($color-shadow, 0.4);
+	}
+	tr,
+	th,
+	td {
+		margin: 0;
+		z-index: 10;
+		text-align: left;
+		&:hover,
+		&:focus,
+		&:active {
+			background: rgba(darken($color-background, 20), 0.15);
+		}
+	}
+	td,
+	th {
+		padding: $spacing-unit;
+	}
+	th {
+		font-weight: bold;
+		border: none;
+	}
+}
+
+/**
  * Control Groups
  */
 .acr-toolbar {

@@ -18,6 +18,12 @@ export { default as Toolbar } from "./components/layout/Toolbar";
 export { default as Caption } from "./components/layout/Caption";
 export { default as Divider } from "./components/layout/Divider";
 export { default as Folder } from "./components/layout/Folder";
+export {
+	default as Table,
+	TableSection,
+	TableRow,
+	Cell
+} from "./components/layout/Table";
 export { default as Card, CardBody } from "./components/layout/Card";
 export {
 	default as Menu,

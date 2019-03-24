@@ -8,21 +8,21 @@ exports[`<Breadcrumb /> Should match the latest snapshots 1`] = `
     <ul>
       <Crumb>
         <li
-          className="acr-crumb"
+          className="acr-crumb acr-li-text-only"
         >
           Item
         </li>
       </Crumb>
       <Crumb>
         <li
-          className="acr-crumb"
+          className="acr-crumb acr-li-text-only"
         >
           Item
         </li>
       </Crumb>
       <Crumb>
         <li
-          className="acr-crumb"
+          className="acr-crumb acr-li-text-only"
         >
           Item
         </li>
