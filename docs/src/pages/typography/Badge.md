@@ -23,3 +23,8 @@ render(() => (
 	</Section>
 ))
 ```
+
+###### Documentation
+
+- [`Badge`](/wiki/modules/_components_typography_badge_.html)
+- [`Variant`](/wiki/modules/_components_variant_.html)
