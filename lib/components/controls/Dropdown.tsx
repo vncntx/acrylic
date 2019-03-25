@@ -1,6 +1,5 @@
 import * as React from "react";
 import classNames from "classnames";
-import { IButtonProps } from "./Button";
 import IProps from "../IProps";
 
 export interface IDropdownProps extends IProps {

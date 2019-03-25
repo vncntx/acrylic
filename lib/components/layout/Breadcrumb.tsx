@@ -36,5 +36,9 @@ export function Crumb(props: ILayoutProps) {
 		classes
 	);
 
-	return <li className={effectiveClass}>{children}</li>;
+	return (
+		<li className={effectiveClass} {...otherProps}>
+			{children}
+		</li>
+	);
 }

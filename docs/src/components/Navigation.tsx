@@ -22,6 +22,7 @@ export default function Navigation() {
 						"layout/Column",
 						"layout/Row",
 						"layout/Nav",
+						"layout/Tabs",
 						"layout/Breadcrumb",
 						"layout/Toolbar",
 						"layout/Menu",

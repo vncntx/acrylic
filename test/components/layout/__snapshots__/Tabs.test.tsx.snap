@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs /> Should match the latest snapshots 1`] = `
+<Tabs>
+  <nav
+    className="acr-tabs"
+  >
+    <ol>
+      <Tab
+        className="active tab"
+        key=".0"
+        onClick={[Function]}
+      >
+        <li
+          className="active tab"
+          onClick={[Function]}
+        >
+          Tab 1
+        </li>
+      </Tab>
+      <Tab
+        className="tab"
+        key=".1"
+        onClick={[Function]}
+      >
+        <li
+          className="tab"
+          onClick={[Function]}
+        >
+          Tab 2
+        </li>
+      </Tab>
+      <Tab
+        className="tab"
+        key=".2"
+        onClick={[Function]}
+      >
+        <li
+          className="tab"
+          onClick={[Function]}
+        >
+          Tab 3
+        </li>
+      </Tab>
+    </ol>
+  </nav>
+</Tabs>
+`;
