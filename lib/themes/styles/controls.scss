@@ -15,7 +15,11 @@
 	color: $btn-foreground;
 	background-color: $background;
 	padding: $spacing-unit / 2;
-	margin: $spacing-unit / 2;
+	margin: {
+		top: $spacing-unit / 2;
+		bottom: $spacing-unit / 2;
+		right: $spacing-unit / 2;
+	}
 	min-width: 7ch;
 	border: {
 		style: solid;
@@ -77,9 +81,11 @@ $btn-background: darken($color-background, 2);
 		}
 	}
 }
-a:any-link > .acr-btn {
-	@extend .acr-btn;
-	text-decoration: none;
+a:any-link > * {
+	&.acr-btn,
+	&[role="button"] {
+		text-decoration: none;
+	}
 }
 // Button Variants:
 // Primary
@@ -107,5 +113,30 @@ a:any-link > .acr-btn {
 	& .acr-icon {
 		padding: 0;
 		margin: 0;
+	}
+}
+
+/**
+ * Dropdown
+ */
+.acr-dropdown {
+	margin: 0;
+	padding: 0;
+	border: none;
+	display: inline-block;
+	position: relative;
+	& > * {
+		margin: 0;
+		overflow: auto;
+		&:nth-child(2) {
+			@extend %container;
+			z-index: 50;
+			position: absolute;
+			margin-top: $shadow-width;
+			& > * {
+				min-width: 10ch;
+				max-height: 50vh;
+			}
+		}
 	}
 }

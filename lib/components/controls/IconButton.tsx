@@ -1,7 +1,7 @@
 import * as React from "react";
 import classNames from "classnames";
 import Button, { IButtonProps } from "./Button";
-import Icon, { IIconProps } from "../typography/Icon";
+import Icon, { IIconProps } from "../media/Icon";
 
 export interface IIconButtonProps extends IButtonProps, IIconProps {
 	children?: null | undefined;

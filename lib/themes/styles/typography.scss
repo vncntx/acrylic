@@ -14,6 +14,7 @@
 	cursor: inherit;
 	word-wrap: inherit;
 	overflow-wrap: inherit;
+	text-decoration: none;
 }
 *::selection {
 	background-color: rgba($color-accent, 0.8);
@@ -88,34 +89,30 @@ h6 {
 	@extend %typography;
 	font-family: $font-stack-monospace;
 	white-space: pre-wrap;
-	overflow: hidden;
-	line-height: 1.25em;
-	tab-size: 2;
-	padding: 2 * $spacing-unit;
-	margin: 4 * $spacing-unit;
+	line-height: 1.5em;
 }
 pre {
 	@extend %code;
+	padding: $spacing-unit;
 	background: darken($color-background, 5);
 	& > code {
-		padding: 0;
-		width: fit-content;
-		background: inherit;
+		background: none;
 		color: inherit;
 	}
 }
 code {
 	@extend %code;
-	padding: $spacing-unit / 2 $spacing-unit;
-	background: darken($color-background, 5);
 	color: inherit;
-	margin: 0;
 }
 pre {
 	& > code {
 		padding: 0;
 	}
 }
+
+/**
+ * Text
+ */
 
 %bold {
 	font-weight: bold;
@@ -146,13 +143,102 @@ pre {
 	display: inline;
 }
 
-a:any-link {
+a {
+	margin: 0;
+	padding: 0;
 	cursor: pointer;
 	color: $color-accent;
 	text-decoration: none;
 	&:hover,
 	&:focus,
 	&:active {
-		text-decoration: underline;
+		@extend %underlined;
+	}
+}
+
+/**
+ * Badge
+ */
+@mixin badge($background-color) {
+	@extend %typography;
+	top: 0;
+	left: 0;
+	margin: 0;
+	height: 4ch;
+	min-width: 4ch;
+	padding: 0.4em;
+	line-height: 1.5;
+	font-size: 0.75em;
+	border-radius: 2ch;
+	text-align: center;
+	position: relative;
+	flex-direction: row;
+	align-items: center;
+	display: inline-flex;
+	box-sizing: border-box;
+	vertical-align: middle;
+	justify-content: center;
+	background: $background-color;
+	color: contrastingColor($background-color);
+	border: solid $border-width darken($background-color, 10);
+	&.acr-super {
+		z-index: 10;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: unset;
+		transform: translate(50%, -50%);
+		transform-origin: 100% 0;
+	}
+}
+.acr-badge {
+	@include badge(darken($color-background, 10));
+	// Variants:
+	// Primary
+	&.acr-variant-primary {
+		@include badge($color-accent);
+	}
+	// Success
+	&.acr-variant-success {
+		@include badge($color-success);
+	}
+	// Warning
+	&.acr-variant-warning {
+		@include badge($color-warning);
+	}
+	// Danger
+	&.acr-variant-danger {
+		@include badge($color-danger);
+	}
+}
+// Badge container
+.acr-badge-container {
+	margin: 0 $spacing-unit;
+	padding: 0;
+	position: relative;
+	display: inline-block;
+	& > *:first-child {
+		margin: $spacing-unit / 2;
+	}
+}
+
+// Special overriding cases
+
+/**
+ * Menu Heading
+ */
+.acr-menu-heading {
+	margin: 0;
+	padding: 0;
+	text-shadow: unset;
+	font: {
+		weight: normal;
+		size: $font-size-standard;
+	}
+	&.acr-bold {
+		font-weight: bold;
+	}
+	& > * {
+		width: 100%;
 	}
 }

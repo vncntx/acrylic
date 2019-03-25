@@ -15,18 +15,13 @@ Sections can have an elevation of up to 6. Use elevation to convey heirarchy and
 
 ```jsx
 render(() => (
-	<Row style={{
-		alignItems: "stretch",
-		height: 120,
-		width: 750,
-		margin: "auto"
-	}}>
-		<Section elevation={1} />
-		<Section elevation={2} />
-		<Section elevation={3} />
-		<Section elevation={4} />
-		<Section elevation={5} />
-		<Section elevation={6} />
+	<Row>
+		<Section classes="square" elevation={1} />
+		<Section classes="square" elevation={2} />
+		<Section classes="square" elevation={3} />
+		<Section classes="square" elevation={4} />
+		<Section classes="square" elevation={5} />
+		<Section classes="square" elevation={6} />
 	</Row>
 ))
 ```
@@ -35,12 +30,11 @@ And they can be textured using the "acrylic" material.
 
 ```jsx
 render(() => (
-	<Section elevation={4} style={{
-		background: "url('/img/painting.jpg')"
+	<Section elevation={4} classes="medium" style={{
+		background: "url('/img/art3.webp')"
 	}}>
 		<Section elevation={5} acrylic>
-			<Title>Dragon</Title>
-			<Text>A legendary creature.</Text>
+			<Text>A dragon is a large, serpent-like legendary creature that appears in the folklore of many cultures around the world.</Text>
 		</Section>
 	</Section>
 ))

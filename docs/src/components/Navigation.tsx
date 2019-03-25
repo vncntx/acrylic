@@ -1,37 +1,44 @@
 import * as React from "react";
 import PageLink from "./PageLink";
 import { NavLink } from "react-router-dom";
-import { Icon } from "../../../lib/acrylic";
+import { Nav, Icon, MenuItem, Menu, Divider } from "../../../lib/acrylic";
 
-export default function Nav() {
+export default function Navigation() {
 	return (
-		<nav>
-			<ul>
-				<li className="logo">
-					<Icon src="/img/logo.svg" />
-				</li>
-				<li>
-					<NavLink exact to="/" activeClassName="selected">
+		<Nav elevation={3} classes="main-nav small">
+			<Icon classes="logo" src="/img/logo.svg" />
+			<Divider />
+			<Menu>
+				<MenuItem>
+					<NavLink exact to="/" activeClassName="active">
 						Overview
 					</NavLink>
-				</li>
+				</MenuItem>
 				<ComponentList
 					pages={[
 						"layout/Alert",
 						"layout/Section",
+						"layout/Card",
 						"layout/Column",
 						"layout/Row",
+						"layout/Nav",
+						"layout/Breadcrumb",
 						"layout/Toolbar",
+						"layout/Menu",
 						"layout/Divider",
 						"layout/Folder",
+						"layout/Table",
 						"controls/Button",
+						"controls/Dropdown",
 						"typography/Text",
 						"typography/Title",
-						"typography/Icon"
+						"typography/Badge",
+						"media/Image",
+						"media/Icon"
 					]}
 				/>
-			</ul>
-		</nav>
+			</Menu>
+		</Nav>
 	);
 }
 
@@ -48,9 +55,9 @@ function ComponentList(props: IComponentListProps) {
 		<React.Fragment>
 			{props.pages.map(page => {
 				return (
-					<li key={page}>
-						<PageLink path={page}>{getTitle(page)}</PageLink>
-					</li>
+					<MenuItem key={page}>
+						<PageLink to={page}>{getTitle(page)}</PageLink>
+					</MenuItem>
 				);
 			})}
 		</React.Fragment>

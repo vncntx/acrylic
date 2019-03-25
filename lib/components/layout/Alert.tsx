@@ -3,7 +3,6 @@ import classNames from "classnames";
 import ILayoutProps from "./ILayoutProps";
 import { IVariantProps } from "../Variant";
 import Button, { IButtonProps } from "../controls/Button";
-import { isArray } from "util";
 
 const { useState } = React;
 

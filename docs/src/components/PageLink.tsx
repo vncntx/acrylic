@@ -2,8 +2,8 @@ import * as React from "react";
 import { NavLink } from "react-router-dom";
 
 export interface IPageLinkProps {
-	children: string;
-	path: string;
+	children: React.ReactNode;
+	to: string;
 }
 
 /**
@@ -12,7 +12,7 @@ export interface IPageLinkProps {
  */
 export default function PageLink(props: IPageLinkProps) {
 	return (
-		<NavLink to={`/components/${props.path}`} activeClassName="selected">
+		<NavLink to={`/components/${props.to}`} activeClassName="active">
 			{props.children}
 		</NavLink>
 	);

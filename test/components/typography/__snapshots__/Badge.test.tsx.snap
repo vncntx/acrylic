@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Badge /> Should match the latest snapshot 1`] = `
+Array [
+  <Badge
+    content="badge"
+  >
+    <div
+      className="acr-badge-container"
+    >
+      <Text>
+        <p
+          className="acr-text"
+        >
+          Text
+        </p>
+      </Text>
+      <span
+        className="acr-badge acr-super"
+      >
+        badge
+      </span>
+    </div>
+  </Badge>,
+  <Badge
+    content="badge"
+  >
+    <span
+      className="acr-badge"
+    >
+      badge
+    </span>
+  </Badge>,
+]
+`;

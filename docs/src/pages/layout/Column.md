@@ -5,9 +5,15 @@ A **Column** lays out its children in a single column.
 ```jsx
 render(() => (
 	<Column>
-		<img src="/img/horn.png" />
-		<img src="/img/fighter.png" />
-		<img src="/img/soldier.png" />
+		<Card>
+			<Image src="/img/art1.webp" />
+		</Card>
+		<Card>
+			<Image src="/img/art2.webp" />
+		</Card>
+		<Card>
+			<Image src="/img/art3.webp" />
+		</Card>
 	</Column>
 ))
 ```

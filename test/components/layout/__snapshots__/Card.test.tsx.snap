@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> Should match the latest snapshots 1`] = `
+<Card>
+  <Section
+    classes={
+      Array [
+        "acr-card",
+        undefined,
+      ]
+    }
+    elevation={1}
+  >
+    <section
+      className="acr-section acr-elevated-1 acr-card"
+    >
+      <Image
+        src="image.webp"
+      >
+        <figure
+          className="acr-img"
+          style={
+            Object {
+              "backgroundImage": "url('image.webp')",
+            }
+          }
+        >
+          <picture>
+            <img
+              src="image.webp"
+            />
+          </picture>
+        </figure>
+      </Image>
+      <CardBody>
+        <Section
+          classes={
+            Array [
+              "acr-card-body",
+              undefined,
+            ]
+          }
+        >
+          <section
+            className="acr-section acr-card-body"
+          >
+            <Title>
+              <h6
+                className="acr-title"
+              >
+                Card
+              </h6>
+            </Title>
+            <Text>
+              <p
+                className="acr-text"
+              >
+                This is a card.
+              </p>
+            </Text>
+          </section>
+        </Section>
+      </CardBody>
+    </section>
+  </Section>
+</Card>
+`;

@@ -9,6 +9,7 @@ export default interface IProps {
 	style?: React.CSSProperties;
 	id?: string;
 	key?: string | number;
+	role?: string;
 }
 
 declare type ClassValue = string | ClassDictionary | ClassArray | null | false;

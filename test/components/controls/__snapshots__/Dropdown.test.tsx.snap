@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> Should match the latest snapshots 1`] = `
+<Dropdown>
+  <div
+    className="acr-dropdown"
+    onClick={[Function]}
+  >
+    <Button
+      onClick={[Function]}
+    >
+      <button
+        className="acr-btn"
+        onClick={[Function]}
+      >
+        Dropdown
+      </button>
+    </Button>
+    <div
+      className="acr-hidden"
+    >
+      <Menu>
+        <ul
+          className="acr-menu"
+        >
+          <MenuItem>
+            <li
+              className="acr-menu-item acr-li-text-only"
+            >
+              Cut
+            </li>
+          </MenuItem>
+          <MenuItem>
+            <li
+              className="acr-menu-item acr-li-text-only"
+            >
+              Copy
+            </li>
+          </MenuItem>
+          <MenuItem>
+            <li
+              className="acr-menu-item acr-li-text-only"
+            >
+              Paste
+            </li>
+          </MenuItem>
+          <MenuItem>
+            <li
+              className="acr-menu-item acr-li-text-only"
+            >
+              Undo
+            </li>
+          </MenuItem>
+          <MenuItem
+            disabled={true}
+          >
+            <li
+              className="acr-menu-item acr-li-text-only"
+              disabled={true}
+            >
+              Redo
+            </li>
+          </MenuItem>
+        </ul>
+      </Menu>
+    </div>
+  </div>
+</Dropdown>
+`;
