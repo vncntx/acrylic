@@ -32,6 +32,7 @@ export default function Navigation() {
 						"controls/Dropdown",
 						"typography/Text",
 						"typography/Title",
+						"typography/Badge",
 						"media/Image",
 						"media/Icon"
 					]}

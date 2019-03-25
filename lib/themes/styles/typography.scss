@@ -110,6 +110,10 @@ pre {
 	}
 }
 
+/**
+ * Text
+ */
+
 %bold {
 	font-weight: bold;
 }
@@ -149,6 +153,72 @@ a {
 	&:focus,
 	&:active {
 		@extend %underlined;
+	}
+}
+
+/**
+ * Badge
+ */
+@mixin badge($background-color) {
+	@extend %typography;
+	top: 0;
+	left: 0;
+	margin: 0;
+	height: 4ch;
+	min-width: 4ch;
+	padding: 0.4em;
+	line-height: 1.5;
+	font-size: 0.75em;
+	border-radius: 2ch;
+	text-align: center;
+	position: relative;
+	flex-direction: row;
+	align-items: center;
+	display: inline-flex;
+	box-sizing: border-box;
+	vertical-align: middle;
+	justify-content: center;
+	background: $background-color;
+	color: contrastingColor($background-color);
+	border: solid $border-width darken($background-color, 10);
+	&.acr-super {
+		z-index: 10;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: unset;
+		transform: translate(50%, -50%);
+		transform-origin: 100% 0;
+	}
+}
+.acr-badge {
+	@include badge(darken($color-background, 10));
+	// Variants:
+	// Primary
+	&.acr-variant-primary {
+		@include badge($color-accent);
+	}
+	// Success
+	&.acr-variant-success {
+		@include badge($color-success);
+	}
+	// Warning
+	&.acr-variant-warning {
+		@include badge($color-warning);
+	}
+	// Danger
+	&.acr-variant-danger {
+		@include badge($color-danger);
+	}
+}
+// Badge container
+.acr-badge-container {
+	margin: 0 $spacing-unit;
+	padding: 0;
+	position: relative;
+	display: inline-block;
+	& > *:first-child {
+		margin: $spacing-unit / 2;
 	}
 }
 

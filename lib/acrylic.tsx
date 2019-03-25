@@ -44,6 +44,7 @@ export { default as Icon } from "./components/media/Icon";
 export { default as ITextProps } from "./components/typography/ITextProps";
 export { default as Title } from "./components/typography/Title";
 export { default as Text } from "./components/typography/Text";
+export { default as Badge } from "./components/typography/Badge";
 
 /**
  * Control Components
