@@ -1,6 +1,6 @@
 import * as React from "react";
 import { mount } from "enzyme";
-import { IconButton, Icon } from "../../../lib/acrylic";
+import { IconButton } from "../../../lib/acrylic";
 
 describe("<IconButton />", () => {
 	it("Should match the latest snapshots", () => {

@@ -34,10 +34,10 @@ export {
 } from "./components/layout/Menu";
 
 /**
- * Media Components
+ * Display Components
  */
-export { default as Image } from "./components/media/Image";
-export { default as Icon } from "./components/media/Icon";
+export { default as Image } from "./components/display/Image";
+export { default as Icon } from "./components/display/Icon";
 
 /**
  * Typography Components
