@@ -76,6 +76,8 @@ body {
  */
 .acr-tabs {
 	@extend %container;
+	$invisible: rgba($color-border, 0);
+	$subtle: rgba($color-border, 0.3);
 	border-radius: $border-radius $border-radius 0 0;
 	overflow: hidden;
 	ul,
@@ -83,12 +85,6 @@ body {
 		@extend %container;
 		display: flex;
 		flex-direction: row;
-		padding: {
-			top: $spacing-unit;
-			right: $spacing-unit;
-			left: $spacing-unit;
-			bottom: 0;
-		}
 		overflow: auto;
 		list-style-type: none;
 		background: darken($color-background, 5);
@@ -100,13 +96,35 @@ body {
 		max-width: 15ch;
 		cursor: pointer;
 		padding: $spacing-unit;
-		border-radius: $border-radius $border-radius 0 0;
+		border: {
+			style: solid;
+			width: 0 1px;
+			color: $invisible;
+		}
+		border-left: {
+			color: $subtle;
+		}
+		&:first-child:not(.active) {
+			border-left: {
+				color: $invisible;
+			}
+		}
+		&:last-child:not(.active) {
+			border-right: {
+				color: $subtle;
+			}
+		}
 	}
 	.active {
 		@include elevated(2);
-		border: none;
+		border-color: $invisible;
 		position: relative;
 		background: $color-background;
+		& + .tab {
+			border-left: {
+				color: $invisible;
+			}
+		}
 	}
 	& + .acr-section {
 		margin: 0;
