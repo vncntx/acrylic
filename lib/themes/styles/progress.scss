@@ -1,0 +1,55 @@
+@mixin progress($color) {
+	padding: 0;
+	width: 100%;
+	border: none;
+	display: block;
+	overflow: hidden;
+	height: $spacing-unit;
+	margin: $spacing-unit 0;
+	background: darken($color-background, 5);
+	border-radius: $border-radius;
+	.bar {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background: $color;
+		box-shadow: $shadow-width 0 6px rgba($color, 0.4),
+			-$shadow-width 0 6px rgba($color, 0.4);
+	}
+	&.indeterminate {
+		@keyframes loading {
+			from {
+				width: 50%;
+				right: 100%;
+				left: -100%;
+			}
+			to {
+				width: 20%;
+				right: 0%;
+				left: 100%;
+			}
+		}
+		.bar {
+			width: 50%;
+			position: relative;
+			will-change: left right width;
+			animation: loading 2.1s ease-in-out infinite;
+		}
+	}
+}
+
+.acr-progress {
+	@include progress($color-foreground);
+	&.acr-variant-primary {
+		@include progress($color-accent);
+	}
+	&.acr-variant-success {
+		@include progress($color-success);
+	}
+	&.acr-variant-warning {
+		@include progress($color-warning);
+	}
+	&.acr-variant-danger {
+		@include progress($color-danger);
+	}
+}

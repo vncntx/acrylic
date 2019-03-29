@@ -38,6 +38,7 @@ export {
  */
 export { default as Image } from "./components/display/Image";
 export { default as Icon } from "./components/display/Icon";
+export { default as Progress } from "./components/display/Progress";
 
 /**
  * Typography Components
