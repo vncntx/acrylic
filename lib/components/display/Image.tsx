@@ -37,8 +37,8 @@ export default function Image(props: IImageProps) {
 			{...otherProps}
 		>
 			<picture>
-				{Object.keys(sourceSets).map(media => (
-					<source media={media} srcSet={sourceSets[media]} />
+				{Object.keys(sourceSets).map((media, index) => (
+					<source key={index} media={media} srcSet={sourceSets[media]} />
 				))}
 				<img src={defaultSrc} alt={alt} />
 			</picture>

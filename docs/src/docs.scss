@@ -45,6 +45,7 @@ body {
 
 .main-nav {
 	@extend %container;
+	align-self: stretch;
 	margin: {
 		right: $shadow-width * 2;
 	}

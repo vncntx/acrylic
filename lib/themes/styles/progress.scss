@@ -102,6 +102,7 @@
 		border-radius: 50%;
 		box-sizing: border-box;
 		animation: ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+		box-shadow: 0 $shadow-width 6px rgba($color-shadow, 0.4);
 	}
 	*:nth-child(2) {
 		animation-delay: -0.5s;
