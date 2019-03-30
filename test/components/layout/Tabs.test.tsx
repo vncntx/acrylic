@@ -6,7 +6,7 @@ describe("<Tabs />", () => {
 	it("Should match the latest snapshots", () => {
 		expect(
 			mount(
-				<Tabs>
+				<Tabs elevation={1}>
 					<Tab>Tab 1</Tab>
 					<Tab>Tab 2</Tab>
 					<Tab>Tab 3</Tab>

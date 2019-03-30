@@ -1,12 +1,13 @@
 import * as React from "react";
 import classNames from "classnames";
 import ILayoutProps from "./ILayoutProps";
+import { ISectionProps } from "./Section";
 
 export interface NumberFunc {
 	(x: number): any;
 }
 
-export interface ITabsProps extends ILayoutProps {
+export interface ITabsProps extends ISectionProps {
 	selected?: number;
 	onTabChange?: NumberFunc;
 }
@@ -16,11 +17,22 @@ export interface ITabsProps extends ILayoutProps {
  * @param props
  */
 export default function Tabs(props: ITabsProps) {
-	const { children, classes, selected = 0, onTabChange, ...otherProps } = props;
+	const {
+		children,
+		classes,
+		elevation,
+		selected = 0,
+		onTabChange,
+		...otherProps
+	} = props;
 
 	const [selectedTab, setSelected] = React.useState(selected);
 
-	const effectiveClass = classNames("acr-tabs", classes);
+	const effectiveClass = classNames(
+		"acr-tabs",
+		elevation && `acr-elevated-${elevation}`,
+		classes
+	);
 
 	const selectHandler = (index: number) => () => {
 		setSelected(index);

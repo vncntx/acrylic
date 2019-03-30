@@ -8,7 +8,7 @@ render(() => {
 
 	return (
 		<>
-			<Tabs selected={currentTab} onTabChange={setCurrent}>
+			<Tabs elevation={1} selected={currentTab} onTabChange={setCurrent}>
 				<Tab>Tab</Tab>
 				<Tab>Tab</Tab>
 				<Tab>Tab</Tab>

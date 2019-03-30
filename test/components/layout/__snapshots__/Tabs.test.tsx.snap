@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tabs /> Should match the latest snapshots 1`] = `
-<Tabs>
+<Tabs
+  elevation={1}
+>
   <nav
-    className="acr-tabs"
+    className="acr-tabs acr-elevated-1"
   >
     <ol>
       <Tab
