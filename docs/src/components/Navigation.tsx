@@ -36,7 +36,8 @@ export default function Navigation() {
 						"typography/Badge",
 						"display/Image",
 						"display/Icon",
-						"display/Progress"
+						"display/Progress",
+						"display/Loader"
 					]}
 				/>
 			</Menu>

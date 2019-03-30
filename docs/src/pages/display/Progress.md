@@ -21,3 +21,7 @@ render(() => (
 	</Section>
 ))
 ```
+
+###### Documentation
+
+- [`Progress`](/wiki/modules/_components_display_progress_.html)

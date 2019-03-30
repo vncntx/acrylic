@@ -13,7 +13,7 @@ import {
 	ITransitionEventProps
 } from "../IEventProps";
 
-export interface IProgressProps
+export interface ISpinnerProps
 	extends IProps,
 		IVariantProps,
 		ICompositionEventProps,
@@ -25,40 +25,25 @@ export interface IProgressProps
 		IAnimationEventProps,
 		ITransitionEventProps {
 	children?: null | undefined;
-	value?: number;
-	max?: number;
-	indeterminate?: boolean;
 }
 
 /**
- * A progress bar that either has a value or is indeterminate
+ * A spinner indicates an open-ended task in progress
  * @param props
  */
-export default function Progress(props: IProgressProps) {
-	const {
-		classes,
-		value = 0,
-		max = 1,
-		variant,
-		indeterminate,
-		...otherProps
-	} = props;
+export default function Spinner(props: ISpinnerProps) {
+	const { classes, variant, ...otherProps } = props;
 
 	const effectiveClass = classNames(
-		"acr-progress",
+		"acr-spinner",
 		variant && `acr-variant-${variant}`,
-		indeterminate && "indeterminate",
 		classes
 	);
 
 	return (
-		<div role="progress" className={effectiveClass} {...otherProps}>
-			<div
-				className="bar"
-				style={{
-					width: !indeterminate && `${(value / max) * 100}%`
-				}}
-			/>
+		<div className={effectiveClass} {...otherProps}>
+			<div />
+			<div />
 		</div>
 	);
 }
