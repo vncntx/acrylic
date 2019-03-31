@@ -4,7 +4,7 @@ The **Progress** component represents the current status of an ongoing task or a
 
 ```jsx
 render(() => (
-	<Section elevation={1}>
+	<Section elevation={1} classes="padded">
 		<Text>Progress</Text>
 		<Progress value={20} max={100} />
 		<Text>Primary</Text>

@@ -14,7 +14,7 @@ render(() => {
 				<Tab>Tab</Tab>
 				<Tab>Tab</Tab>
 			</Tabs>
-			<Section elevation={1}>
+			<Section elevation={1} classes="padded">
 				<Text>Tab { currentTab } is currently selected.</Text>
 			</Section>
 		</>

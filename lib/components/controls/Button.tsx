@@ -25,6 +25,7 @@ export interface IButtonProps
 		ITransitionEventProps,
 		IVariantProps {
 	disabled?: boolean;
+	type?: "button" | "submit" | "reset";
 }
 
 export interface ButtonComponent

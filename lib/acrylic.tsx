@@ -57,6 +57,11 @@ export { default as IconButton } from "./components/controls/IconButton";
 export { default as Dropdown } from "./components/controls/Dropdown";
 
 /**
+ * Input Components
+ */
+export { default as TextField } from "./components/input/TextField";
+
+/**
  * Variants
  */
 export { default as Variant } from "./components/Variant";

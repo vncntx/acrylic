@@ -12,14 +12,10 @@
 
 	@extend %subtle-transition;
 	outline: none;
+	margin: $spacing-unit;
 	color: $btn-foreground;
-	background-color: $background;
 	padding: $spacing-unit / 2;
-	margin: {
-		top: $spacing-unit / 2;
-		bottom: $spacing-unit / 2;
-		right: $spacing-unit / 2;
-	}
+	background-color: $background;
 	min-width: 7ch;
 	border: {
 		style: solid;
@@ -62,7 +58,7 @@ $btn-background: darken($color-background, 2);
 .acr-btn {
 	@include button($btn-background, darken($btn-background, 35));
 }
-.acr-btn[disabled] {
+.acr-btn:disabled {
 	@include button(darken($color-background, 10), darken($color-background, 10));
 	cursor: not-allowed;
 	box-shadow: none;

@@ -19,7 +19,6 @@ body {
  */
 .acr-section {
 	@extend %container;
-	padding: $spacing-unit;
 	margin: $spacing-unit;
 	border-radius: $border-radius;
 	background: $color-background;
@@ -30,6 +29,9 @@ body {
 	box-shadow: 0 $height * $shadow-width / 2 $height * 6px
 		rgba($color-shadow, 0.4);
 	z-index: 1 + $height;
+}
+.padded {
+	padding: $spacing-unit;
 }
 // Elevation Levels
 .acr-elevated-1 {
