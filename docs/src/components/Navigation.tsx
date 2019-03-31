@@ -1,7 +1,14 @@
 import * as React from "react";
 import PageLink from "./PageLink";
 import { NavLink } from "react-router-dom";
-import { Nav, Icon, MenuItem, Menu, Divider } from "../../../lib/acrylic";
+import {
+	Nav,
+	Icon,
+	MenuItem,
+	Menu,
+	Divider,
+	TextField
+} from "../../../lib/acrylic";
 
 export default function Navigation() {
 	return (
@@ -22,6 +29,7 @@ export default function Navigation() {
 						"layout/Column",
 						"layout/Row",
 						"layout/Nav",
+						"layout/Tabs",
 						"layout/Breadcrumb",
 						"layout/Toolbar",
 						"layout/Menu",
@@ -33,8 +41,11 @@ export default function Navigation() {
 						"typography/Text",
 						"typography/Title",
 						"typography/Badge",
-						"media/Image",
-						"media/Icon"
+						"input/TextField",
+						"display/Image",
+						"display/Icon",
+						"display/Progress",
+						"display/Loader"
 					]}
 				/>
 			</Menu>

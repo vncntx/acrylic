@@ -1,7 +1,15 @@
 import * as React from "react";
 import marked from "marked";
 import { Redirect } from "react-router-dom";
-import { IProps, Section, Title } from "../../../lib/acrylic";
+import {
+	IProps,
+	Section,
+	Title,
+	Table,
+	TableSection,
+	TableRow,
+	Cell
+} from "../../../lib/acrylic";
 import CodePreview from "./CodePreview";
 
 const { useState, useEffect } = React;
@@ -123,6 +131,29 @@ function renderToken(
 						</pre>
 					);
 			}
+		case "table":
+			return (
+				<Table key={key} elevation={1}>
+					<TableSection part="header">
+						<TableRow>
+							{token.header.map((header: string, index: number) => (
+								<Cell key={index} heading>
+									{header}
+								</Cell>
+							))}
+						</TableRow>
+					</TableSection>
+					<TableSection part="body">
+						{token.cells.map((row: Array<string>, index: number) => (
+							<TableRow key={index}>
+								{row.map((cell: any, index: number) => (
+									<Cell key={index}>{cell}</Cell>
+								))}
+							</TableRow>
+						))}
+					</TableSection>
+				</Table>
+			);
 		case "paragraph":
 		case "html":
 			return React.createElement(listBuilder.isOpen ? "span" : "p", {

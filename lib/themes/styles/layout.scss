@@ -19,7 +19,6 @@ body {
  */
 .acr-section {
 	@extend %container;
-	padding: $spacing-unit;
 	margin: $spacing-unit;
 	border-radius: $border-radius;
 	background: $color-background;
@@ -30,6 +29,9 @@ body {
 	box-shadow: 0 $height * $shadow-width / 2 $height * 6px
 		rgba($color-shadow, 0.4);
 	z-index: 1 + $height;
+}
+.padded {
+	padding: $spacing-unit;
 }
 // Elevation Levels
 .acr-elevated-1 {
@@ -68,6 +70,67 @@ body {
 		display: flex;
 		list-style: none;
 		flex-direction: column;
+	}
+}
+
+/**
+ * Tabs
+ */
+.acr-tabs {
+	@extend %container;
+	$invisible: rgba($color-border, 0);
+	$subtle: rgba($color-border, 0.3);
+	border-radius: $border-radius $border-radius 0 0;
+	overflow: hidden;
+	ul,
+	ol {
+		@extend %container;
+		display: flex;
+		flex-direction: row;
+		overflow: auto;
+		list-style-type: none;
+		background: darken($color-background, 5);
+	}
+	.tab {
+		margin: 0;
+		flex: 1 0 auto;
+		min-width: 5ch;
+		max-width: 15ch;
+		cursor: pointer;
+		padding: $spacing-unit;
+		border: {
+			style: solid;
+			width: 0 1px;
+			color: $invisible;
+		}
+		border-left: {
+			color: $subtle;
+		}
+		&:first-child:not(.active) {
+			border-left: {
+				color: $invisible;
+			}
+		}
+		&:last-child:not(.active) {
+			border-right: {
+				color: $subtle;
+			}
+		}
+	}
+	.active {
+		@include elevated(2);
+		border-color: $invisible;
+		position: relative;
+		background: $color-background;
+		& + .tab {
+			border-left: {
+				color: $invisible;
+			}
+		}
+	}
+	& + .acr-section {
+		margin: 0;
+		border-radius: 0 0 $border-radius $border-radius;
 	}
 }
 
@@ -175,17 +238,102 @@ body {
 	@extend %container;
 	display: flex;
 	flex-wrap: nowrap;
-	justify-items: flex-start;
-	align-items: flex-start;
+	justify-items: start;
+	align-items: start;
+	&.inline {
+		display: inline-flex;
+	}
+	// Content alignment
+	&.content-start {
+		align-content: start;
+	}
+	&.content-end {
+		align-content: end;
+	}
+	&.content-stretch {
+		align-content: stretch;
+	}
+	&.content-center {
+		align-content: center;
+	}
+	&.content-between {
+		align-content: space-between;
+	}
+	&.content-around {
+		align-content: space-around;
+	}
+	&.content-even {
+		align-content: space-evenly;
+	}
+	// Item alignment
+	&.items-start {
+		align-items: start;
+	}
+	&.items-end {
+		align-items: end;
+	}
+	&.items-stretch {
+		align-items: stretch;
+	}
+	&.items-center {
+		align-items: center;
+	}
+	&.items-baseline {
+		align-items: baseline;
+	}
+	// Self alignment
+	&.self-start {
+		align-self: start;
+	}
+	&.self-end {
+		align-self: end;
+	}
+	&.self-stretch {
+		align-self: stretch;
+	}
+	&.self-center {
+		align-self: center;
+	}
+	&.self-baseline {
+		align-self: baseline;
+	}
+	// Content justification
+	&.justify-start {
+		justify-content: start;
+	}
+	&.justify-end {
+		justify-content: end;
+	}
+	&.justify-stretch {
+		justify-content: stretch;
+	}
+	&.justify-center {
+		justify-content: center;
+	}
+	&.justify-between {
+		justify-content: space-between;
+	}
+	&.justify-around {
+		justify-content: space-around;
+	}
+	&.justify-even {
+		justify-content: space-evenly;
+	}
 }
 .acr-col {
 	@extend %flexbox;
 	flex-direction: column;
+	&.reverse {
+		flex-direction: column-reverse;
+	}
 }
 .acr-row {
 	@extend %flexbox;
 	flex-direction: row;
 	flex-wrap: wrap;
+	&.reverse {
+		flex-direction: row-reverse;
+	}
 }
 .acr-col > *,
 .acr-row > * {

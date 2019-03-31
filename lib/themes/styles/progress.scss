@@ -1,0 +1,126 @@
+/**
+ * Progress Bar
+ */
+@mixin progress($color) {
+	padding: 0;
+	width: 100%;
+	border: none;
+	display: block;
+	overflow: hidden;
+	height: $spacing-unit;
+	margin: $spacing-unit 0;
+	background: darken($color-background, 5);
+	border-radius: $border-radius;
+	.bar {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background: $color;
+		box-shadow: $shadow-width 0 6px rgba($color, 0.4),
+			-$shadow-width 0 6px rgba($color, 0.4);
+	}
+	&.indeterminate {
+		@keyframes loading {
+			from {
+				width: 50%;
+				right: 100%;
+				left: -100%;
+			}
+			to {
+				width: 20%;
+				right: 0%;
+				left: 100%;
+			}
+		}
+		.bar {
+			width: 50%;
+			position: relative;
+			will-change: left right width;
+			animation: loading 2.1s ease-in-out infinite;
+		}
+	}
+}
+
+.acr-progress {
+	@include progress($color-foreground);
+	&.acr-variant-primary {
+		@include progress($color-accent);
+	}
+	&.acr-variant-success {
+		@include progress($color-success);
+	}
+	&.acr-variant-warning {
+		@include progress($color-warning);
+	}
+	&.acr-variant-danger {
+		@include progress($color-danger);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/**
+ * Spinner
+ */
+@mixin spinner($color) {
+	$size: 50px;
+	padding: 0;
+	width: $size;
+	height: $size;
+	position: relative;
+	margin: $spacing-unit;
+	display: inline-block;
+	@keyframes ripple {
+		0% {
+			width: 0;
+			height: 0;
+			opacity: 1;
+			left: $size / 2;
+			top: $size / 2;
+		}
+		100% {
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+		}
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		opacity: 1;
+		position: absolute;
+		background: $color;
+		border-radius: 50%;
+		box-sizing: border-box;
+		animation: ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+		box-shadow: 0 $shadow-width 6px rgba($color-shadow, 0.4);
+	}
+	*:nth-child(2) {
+		animation-delay: -0.5s;
+	}
+}
+
+.acr-spinner {
+	@include spinner($color-foreground);
+	&.acr-variant-primary {
+		@include spinner($color-accent);
+	}
+	&.acr-variant-success {
+		@include spinner($color-success);
+	}
+	&.acr-variant-warning {
+		@include spinner($color-warning);
+	}
+	&.acr-variant-danger {
+		@include spinner($color-danger);
+	}
+}

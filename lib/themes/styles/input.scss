@@ -1,0 +1,115 @@
+@import "animation";
+@import "utils";
+
+@mixin highlight($color) {
+	border-color: $color;
+	box-shadow: 0 $shadow-width / 2 $shadow-width rgba($color, 0.4);
+}
+
+@mixin invalid {
+	@include highlight($color-danger);
+	& + .comment {
+		@include highlight($color-danger);
+		background: $color-danger;
+		color: contrastingColor($color-danger);
+	}
+}
+
+@mixin text-field($color1, $color2) {
+	display: inline-flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: stretch;
+	padding: 0;
+	margin: $spacing-unit;
+	label {
+		padding: 0;
+		font-size: 0.9em;
+		margin: 0 0 $spacing-unit / 2 0;
+	}
+	input {
+		@extend %subtle-transition;
+		cursor: text;
+		outline: none;
+		min-width: 10ch;
+		padding: $spacing-unit;
+		color: $color-foreground;
+		border: solid 1px $color1;
+		background: $color-background;
+		&:focus:not(:read-only) {
+			@include highlight($color2);
+			& + .comment {
+				@include highlight($color2);
+				background: $color2;
+				color: contrastingColor($color2);
+			}
+		}
+		&:invalid {
+			@include invalid();
+		}
+		&:disabled {
+			border: dotted 1px lighten($color1, 30);
+			&:hover {
+				cursor: not-allowed;
+			}
+		}
+		&::placeholder {
+			color: rgba($color-foreground, 0.5);
+		}
+	}
+	.comment {
+		@extend %subtle-transition;
+		margin: 0;
+		font-size: 0.85em;
+		background: $color1;
+		padding: $spacing-unit;
+		color: contrastingColor($color1);
+	}
+	&.required {
+		label:after {
+			content: "*";
+			color: $color-danger;
+			margin: 0 0.5ch;
+		}
+	}
+	&.read-only {
+		input {
+			border: unset;
+			cursor: unset;
+			box-shadow: unset;
+			background: unset;
+			padding: $spacing-unit / 2 0;
+		}
+		.comment {
+			color: $color1;
+			border: unset;
+			background: unset;
+			box-shadow: unset;
+			padding: $spacing-unit / 2 0;
+		}
+	}
+	&.invalid {
+		input:not(:read-only) {
+			@include invalid();
+		}
+		.comment {
+			color: $color-danger;
+		}
+	}
+}
+
+.acr-text-field {
+	@include text-field($color-border, $color-accent);
+	&.acr-variant-primary {
+		@include text-field($color-accent, $color-accent);
+	}
+	&.acr-variant-success {
+		@include text-field($color-success, $color-success);
+	}
+	&.acr-variant-warning {
+		@include text-field($color-warning, $color-warning);
+	}
+	&.acr-variant-danger {
+		@include text-field($color-danger, $color-danger);
+	}
+}

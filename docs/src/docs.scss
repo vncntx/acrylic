@@ -45,6 +45,7 @@ body {
 
 .main-nav {
 	@extend %container;
+	align-self: stretch;
 	margin: {
 		right: $shadow-width * 2;
 	}
@@ -204,7 +205,4 @@ img.small {
 }
 .small {
 	max-width: 150px;
-}
-.padded {
-	padding: 25px;
 }
