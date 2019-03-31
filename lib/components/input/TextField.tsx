@@ -2,6 +2,8 @@ import * as React from "react";
 import classNames from "classnames";
 import IFieldProps from "./IFieldProps";
 import { IVariantProps } from "../Variant";
+import Text from "../typography/Text";
+import Label from "../typography/Label";
 
 export interface IMaskFunc {
 	(value: string): string;
@@ -41,7 +43,7 @@ export default function TextField(props: ITextFieldProps) {
 
 	return (
 		<div className={effectiveClass}>
-			{label && <label>{label}</label>}
+			{label && <Label>{label}</Label>}
 			<input
 				type={type}
 				value={value}
@@ -51,7 +53,7 @@ export default function TextField(props: ITextFieldProps) {
 				autoComplete={autoComplete ? "on" : "off"}
 				{...otherProps}
 			/>
-			{comment && <span className="comment">{comment}</span>}
+			{comment && <Text classes="comment">{comment}</Text>}
 		</div>
 	);
 }

@@ -35,7 +35,7 @@ export default interface IFieldProps
 	autoComplete?: boolean;
 	autoFocus?: boolean;
 	invalid?: boolean;
-	label?: string;
+	label?: React.ReactNode;
 	comment?: string;
 	readOnly?: boolean;
 }
