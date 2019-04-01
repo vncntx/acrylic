@@ -41,6 +41,7 @@ export default function Navigation() {
 						"typography/Text",
 						"typography/Title",
 						"typography/Badge",
+						"typography/Link",
 						"input/TextField",
 						"display/Image",
 						"display/Icon",

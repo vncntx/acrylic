@@ -143,16 +143,31 @@ pre {
 	display: inline;
 }
 
-a {
+@mixin link($color) {
 	margin: 0;
 	padding: 0;
+	display: inline;
 	cursor: pointer;
-	color: $color-accent;
+	color: $color;
 	text-decoration: none;
 	&:hover,
 	&:focus,
 	&:active {
 		@extend %underlined;
+	}
+}
+
+a,
+.acr-link {
+	@include link($color-accent);
+	&.acr-variant-success {
+		@include link($color-success);
+	}
+	&.acr-variant-warning {
+		@include link($color-warning);
+	}
+	&.acr-variant-danger {
+		@include link($color-danger);
 	}
 }
 
