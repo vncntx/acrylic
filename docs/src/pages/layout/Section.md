@@ -30,10 +30,10 @@ And they can be textured using the "acrylic" material.
 
 ```jsx
 render(() => (
-	<Section elevation={4} classes="medium" style={{
+	<Section elevation={4} classes={["medium", "padded"]} style={{
 		background: "url('/img/art3.webp')"
 	}}>
-		<Section elevation={5} acrylic>
+		<Section elevation={5} acrylic classes="padded">
 			<Text>A dragon is a large, serpent-like legendary creature that appears in the folklore of many cultures around the world.</Text>
 		</Section>
 	</Section>

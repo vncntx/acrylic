@@ -8,6 +8,9 @@
 
 @mixin invalid {
 	@include highlight($color-danger);
+	&:focus {
+		@include highlight($color-danger);
+	}
 	& + .comment {
 		@include highlight($color-danger);
 		background: $color-danger;

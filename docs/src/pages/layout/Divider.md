@@ -4,7 +4,7 @@ Use a **Divider** to separate different but structurally related parts of an app
 
 ```jsx
 render(() => (
-	<Section elevation={4}>
+	<Section elevation={4} classes="padded">
 		<Title>Dragon</Title>
 		<Text>A legendary creature that appears in the folklore of many cultures around the world. Beliefs about dragons vary drastically by region, but dragons in western cultures since the High Middle Ages have often been depicted as winged, horned, four-legged, and capable of breathing fire. Dragons in eastern cultures are usually depicted as wingless, four-legged, serpentine creatures with above-average intelligence.</Text>
 		<Divider />

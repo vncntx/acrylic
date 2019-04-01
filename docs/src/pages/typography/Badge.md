@@ -4,7 +4,7 @@ A **Badge** is a short piece of text designed to grab the user's attention and p
 
 ```jsx
 render(() => (
-	<Section classes="padded">
+	<Section classes="padded-xl">
 		<Badge content={25}>
 			<Button>Button</Button>
 		</Badge>
