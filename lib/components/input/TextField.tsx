@@ -5,10 +5,6 @@ import { IVariantProps } from "../Variant";
 import Text from "../typography/Text";
 import Label from "../typography/Label";
 
-export interface IMaskFunc {
-	(value: string): string;
-}
-
 export interface ITextFieldProps extends IFieldProps, IVariantProps {
 	children?: null | undefined;
 	value?: string;
