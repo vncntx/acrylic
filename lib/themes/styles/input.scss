@@ -18,23 +18,26 @@
 	}
 }
 
+%text-smaller {
+	font-size: 0.9em;
+}
+
 @mixin text-field($color1, $color2) {
-	display: inline-flex;
-	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: stretch;
+	min-width: 20ch;
 	padding: 0;
 	margin: $spacing-unit;
 	label {
+		@extend %text-smaller;
 		padding: 0;
-		font-size: 0.9em;
 		margin: 0 0 $spacing-unit / 2 0;
 	}
-	input {
+	.input {
 		@extend %subtle-transition;
+		resize: none;
 		cursor: text;
 		outline: none;
-		min-width: 10ch;
 		padding: $spacing-unit;
 		color: $color-foreground;
 		border: solid 1px $color1;
@@ -42,6 +45,7 @@
 		&:focus:not(:read-only) {
 			@include highlight($color2);
 			& + .comment {
+				@extend %text-smaller;
 				@include highlight($color2);
 				background: $color2;
 				color: contrastingColor($color2);
@@ -62,8 +66,8 @@
 	}
 	.comment {
 		@extend %subtle-transition;
+		@extend %text-smaller;
 		margin: 0;
-		font-size: 0.85em;
 		background: $color1;
 		padding: $spacing-unit;
 		color: contrastingColor($color1);
@@ -76,7 +80,7 @@
 		}
 	}
 	&.read-only {
-		input {
+		.input {
 			border: unset;
 			cursor: unset;
 			box-shadow: unset;
@@ -92,7 +96,7 @@
 		}
 	}
 	&.invalid {
-		input:not(:read-only) {
+		.input:not(:read-only) {
 			@include invalid();
 		}
 		.comment {
@@ -101,7 +105,7 @@
 	}
 }
 
-.acr-text-field {
+%text-field {
 	@include text-field($color-border, $color-accent);
 	&.acr-variant-primary {
 		@include text-field($color-accent, $color-accent);
@@ -114,5 +118,20 @@
 	}
 	&.acr-variant-danger {
 		@include text-field($color-danger, $color-danger);
+	}
+}
+
+.acr-text-field {
+	@extend %text-field;
+	display: inline-flex;
+}
+.acr-text-area {
+	@extend %text-field;
+	display: flex;
+	.input {
+		height: 3.5em;
+		&:read-only {
+			height: fit-content;
+		}
 	}
 }

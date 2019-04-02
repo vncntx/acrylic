@@ -6,14 +6,14 @@ A **TextField** is an input element for text and has several variants. Its defau
 render(() => (
 	<Section>
 		<TextField label="TextField" />
+		<TextField label="Required" required />
+		<TextField label="Disabled" disabled />
 		<TextField label="Email" type="email" />
 		<TextField label="Password" type="password" />
-		<TextField label="Required" required />
 		<TextField label="Primary" variant="primary" />
 		<TextField label="Success" variant="success" />
 		<TextField label="Warning" variant="warning" />
 		<TextField label="Danger" variant="danger" />
-		<TextField label="Disabled" disabled />
 		<TextField label="TextField" placeholder="Placeholder" />
 		<TextField label="Invalid" invalid comment="This field has an error" />
 		<TextField label="Comment" variant="success" comment="This field is correct" />

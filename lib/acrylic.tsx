@@ -62,6 +62,7 @@ export { default as Dropdown } from "./components/controls/Dropdown";
  * Input Components
  */
 export { default as TextField } from "./components/input/TextField";
+export { default as TextArea } from "./components/input/TextArea";
 
 /**
  * Variants
