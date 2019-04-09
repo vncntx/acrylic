@@ -143,6 +143,10 @@ pre {
 	display: inline;
 }
 
+.acr-label {
+	@extend .acr-text;
+}
+
 @mixin link($color) {
 	margin: 0;
 	padding: 0;

@@ -44,6 +44,7 @@ export default function Navigation() {
 						"typography/Link",
 						"input/TextField",
 						"input/TextArea",
+						"input/Checkbox",
 						"display/Image",
 						"display/Icon",
 						"display/Progress",

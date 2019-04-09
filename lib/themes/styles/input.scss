@@ -55,10 +55,8 @@
 			@include invalid();
 		}
 		&:disabled {
-			border: dotted 1px lighten($color1, 30);
-			&:hover {
-				cursor: not-allowed;
-			}
+			border: dotted 1px lighten($color-border, 20);
+			cursor: not-allowed;
 		}
 		&::placeholder {
 			color: rgba($color-foreground, 0.5);
@@ -134,4 +132,163 @@
 			height: fit-content;
 		}
 	}
+}
+
+@mixin checkbox($color1, $color2) {
+	$size: 1.5em;
+	$checkmark-fill: contrastingColor($color2);
+	padding: 0;
+	min-width: 20ch;
+	margin: $spacing-unit;
+	* {
+		padding: 0;
+		margin: 0;
+		flex: 0 1 auto;
+	}
+	label {
+		padding: 0;
+		margin: 0 0 0 $spacing-unit / 2;
+	}
+	.input {
+		opacity: 0;
+		border: none;
+		width: $size;
+		height: $size;
+		outline: none;
+		cursor: pointer;
+	}
+	.input + .checkbox {
+		@extend %subtle-transition;
+		width: 0.9 * $size;
+		height: 0.9 * $size;
+		display: inline-flex;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: stretch;
+		padding: 0;
+		margin: 0;
+		margin-left: -$size;
+		border: solid 1px $color1;
+		background: $color-background;
+		.checkmark {
+			@extend %subtle-transition;
+			flex: 1;
+			margin: 0;
+			width: $size;
+			height: $size;
+			display: none;
+			padding: 0.1 * $size;
+			align-self: center;
+			justify-self: center;
+			stroke-width: 1px;
+			stroke: $checkmark-fill;
+			fill: $checkmark-fill;
+		}
+	}
+	.input:checked + .checkbox {
+		background: $color2;
+		border-color: $color2;
+		.checkmark {
+			display: inline-block;
+		}
+	}
+	.input:disabled {
+		cursor: not-allowed;
+		& + .checkbox {
+			border: dotted 1px lighten($color-border, 20);
+			cursor: not-allowed;
+		}
+		&:checked + .checkbox {
+			$bg: darken($color-background, 20);
+			$checkmark-fill: contrastingColor($bg);
+			background: $bg;
+			.checkmark {
+				fill: $checkmark-fill;
+				stroke: $checkmark-fill;
+			}
+		}
+	}
+	&:not(.read-only) .input:hover:not(:disabled) + .checkbox {
+		@include highlight($color2);
+	}
+	.comment {
+		@extend %subtle-transition;
+		@extend %text-smaller;
+		background: $color1;
+		padding: $spacing-unit;
+		margin: $spacing-unit 0 0 0;
+		color: contrastingColor($color1);
+	}
+	&.required {
+		label:after {
+			content: "*";
+			color: $color-danger;
+			margin: 0 0.5ch;
+		}
+	}
+	&.invalid:not(.read-only) {
+		.input {
+			& + .checkbox {
+				@include invalid();
+				$checkmark-fill: contrastingColor($color-danger);
+				.checkmark {
+					fill: $checkmark-fill;
+					stroke: $checkmark-fill;
+				}
+			}
+			&:checked + .checkbox {
+				background: $color-danger;
+			}
+			&:hover:not(:disabled) + .checkbox {
+				@include highlight($color-danger);
+			}
+		}
+	}
+	&.invalid .comment {
+		background: $color-danger;
+		@include highlight($color-danger);
+	}
+	&.read-only {
+		.input {
+			cursor: unset;
+		}
+		.input + .checkbox {
+			background: $color-background;
+			border-color: $color1;
+			.checkmark {
+				fill: $color1;
+				stroke: $color1;
+			}
+		}
+		&.invalid {
+			.input + .checkbox {
+				@include invalid();
+				.checkmark {
+					fill: $color-danger;
+					stroke: $color-danger;
+				}
+			}
+		}
+	}
+}
+
+%checkbox {
+	@include checkbox($color-border, $color-accent);
+	&.acr-variant-primary {
+		@include checkbox($color-accent, $color-accent);
+	}
+	&.acr-variant-success {
+		@include checkbox($color-success, $color-success);
+	}
+	&.acr-variant-warning {
+		@include checkbox($color-warning, $color-warning);
+	}
+	&.acr-variant-danger {
+		@include checkbox($color-danger, $color-danger);
+	}
+}
+
+.acr-checkbox {
+	@extend %checkbox;
+	display: inline-flex;
 }
