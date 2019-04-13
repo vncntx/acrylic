@@ -28,7 +28,6 @@ export default interface IFieldProps
 		ITouchEventProps,
 		IAnimationEventProps,
 		ITransitionEventProps {
-	value?: any;
 	name?: string;
 	required?: boolean;
 	disabled?: boolean;

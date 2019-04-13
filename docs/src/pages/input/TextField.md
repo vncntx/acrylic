@@ -26,7 +26,7 @@ If the field is read-only, it is rendered without borders and shadows.
 ```jsx
 render(() => (
 	<Section>
-		<TextField readOnly label="Label" value="Value" />
+		<TextField readOnly label="TextField" value="Value" />
 		<TextField readOnly label="Invalid" value="Value" invalid comment="This field has errors" />
 		<TextField readOnly label="Correct" value="Value" variant="success" comment="This field is correct" />
 	</Section>

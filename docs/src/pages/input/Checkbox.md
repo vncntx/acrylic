@@ -8,7 +8,7 @@ render(() => (
 	<Section>
 		<Checkbox label="Checkbox" />
 		<Checkbox label="Required" required />
-		<Checkbox label="Disabled" disabled value={true} />
+		<Checkbox label="Disabled" disabled checked />
 		<Checkbox label="Primary" variant="primary" />
 		<Checkbox label="Success" variant="success" />
 		<Checkbox label="Warning" variant="warning" />
@@ -24,9 +24,9 @@ They can also be `readOnly`.
 ```jsx
 render(() => (
 	<Section>
-		<Checkbox readOnly label="Label" value={true} />
-		<Checkbox readOnly label="Invalid" value={true} invalid comment="This field has errors" />
-		<Checkbox readOnly label="Correct" value={true} variant="success" comment="This field is correct" />
+		<Checkbox readOnly label="Checkbox" checked />
+		<Checkbox readOnly label="Invalid" checked invalid comment="This field has errors" />
+		<Checkbox readOnly label="Correct" checked variant="success" comment="This field is correct" />
 	</Section>
 ))
 ```

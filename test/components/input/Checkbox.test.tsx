@@ -8,7 +8,7 @@ describe("<Checkbox />", () => {
 			mount(
 				<>
 					<Checkbox label="Checkbox" />
-					<Checkbox label="Checkbox" value={true} />
+					<Checkbox label="Checkbox" checked />
 					<Checkbox label="Required" required />
 					<Checkbox label="Disabled" disabled />
 					<Checkbox label="Invalid" invalid />

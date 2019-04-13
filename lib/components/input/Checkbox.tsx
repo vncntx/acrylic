@@ -1,15 +1,14 @@
 import * as React from "react";
-import classNames from "classnames";
 import IFieldProps from "./IFieldProps";
 import Text from "../typography/Text";
 import Label from "../typography/Label";
 import { IVariantProps } from "../Variant";
 import Row from "../layout/Row";
-import { Column } from "../../acrylic";
+import Column from "../layout/Column";
 
 export interface ICheckboxProps extends IFieldProps, IVariantProps {
 	children?: null | undefined;
-	value?: boolean;
+	checked?: boolean;
 }
 
 /**
@@ -19,7 +18,7 @@ export default function Checkbox(props: ICheckboxProps) {
 	const {
 		classes,
 		label,
-		value,
+		checked,
 		comment,
 		variant,
 		readOnly,
@@ -50,7 +49,7 @@ export default function Checkbox(props: ICheckboxProps) {
 				<input
 					className="input"
 					type="checkbox"
-					checked={value}
+					checked={checked}
 					required={required}
 					disabled={disabled}
 					readOnly={readOnly}

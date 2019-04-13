@@ -26,7 +26,7 @@ const lorem = "A legendary creature that appears in the folklore of many culture
 
 render(() => (
 	<Section>
-		<TextArea readOnly label="Label" value={lorem} />
+		<TextArea readOnly label="TextArea" value={lorem} />
 		<TextArea readOnly label="Invalid" value={lorem} invalid comment="This field has errors" />
 		<TextArea readOnly label="Correct" value={lorem} variant="success" comment="This field is correct" />
 	</Section>
