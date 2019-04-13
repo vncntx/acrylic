@@ -117,7 +117,7 @@ body {
 			}
 		}
 	}
-	.active {
+	[data-is-active="true"] {
 		@include elevated(2);
 		border-color: $invisible;
 		position: relative;
