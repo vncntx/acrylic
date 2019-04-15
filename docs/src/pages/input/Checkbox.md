@@ -30,3 +30,7 @@ render(() => (
 	</Section>
 ))
 ```
+
+###### Documentation
+
+- [`Checkbox`](/wiki/modules/_components_input_checkbox_.html)

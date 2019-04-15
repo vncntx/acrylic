@@ -1,12 +1,12 @@
 import * as React from "react";
 import IFieldProps from "./IFieldProps";
+import IFieldEventProps from "./IFieldEventProps";
 import Text from "../typography/Text";
 import Label from "../typography/Label";
-import { IVariantProps } from "../Variant";
 import Row from "../layout/Row";
 import Column from "../layout/Column";
 
-export interface ICheckboxProps extends IFieldProps, IVariantProps {
+export interface ICheckboxProps extends IFieldProps, IFieldEventProps {
 	children?: null | undefined;
 	checked?: boolean;
 }
@@ -22,6 +22,7 @@ export default function Checkbox(props: ICheckboxProps) {
 		comment,
 		variant,
 		readOnly,
+		onChange = () => {},
 		required = false,
 		disabled = false,
 		invalid = false,
@@ -53,6 +54,7 @@ export default function Checkbox(props: ICheckboxProps) {
 					required={required}
 					disabled={disabled}
 					readOnly={readOnly}
+					onChange={onChange}
 					autoComplete={autoComplete ? "on" : "off"}
 					{...otherProps}
 				/>

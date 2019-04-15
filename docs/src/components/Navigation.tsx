@@ -45,6 +45,7 @@ export default function Navigation() {
 						"input/TextField",
 						"input/TextArea",
 						"input/Checkbox",
+						"input/Options",
 						"display/Image",
 						"display/Icon",
 						"display/Progress",

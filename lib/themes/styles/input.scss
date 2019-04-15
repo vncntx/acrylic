@@ -18,6 +18,22 @@
 	}
 }
 
+@mixin disabled {
+	background: unset;
+	cursor: not-allowed;
+	border: dotted $border-width lighten($color-foreground, 20);
+}
+
+@mixin comment($color) {
+	@extend %subtle-transition;
+	@extend %text-smaller;
+	background: $color;
+	padding: $spacing-unit;
+	margin: $spacing-unit 0 0 0;
+	color: contrastingColor($color);
+	border-radius: $border-radius;
+}
+
 %text-smaller {
 	font-size: 0.9em;
 }
@@ -40,8 +56,16 @@
 		outline: none;
 		padding: $spacing-unit;
 		color: $color-foreground;
-		border: solid 1px $color1;
 		background: $color-background;
+		border: solid $border-width $color1;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		&:last-child {
+			border-bottom-left-radius: $border-radius;
+			border-bottom-right-radius: $border-radius;
+		}
 		&:focus:not(:read-only) {
 			@include highlight($color2);
 			& + .comment {
@@ -55,20 +79,17 @@
 			@include invalid();
 		}
 		&:disabled {
-			border: dotted 1px lighten($color-border, 20);
-			cursor: not-allowed;
+			@include disabled();
 		}
 		&::placeholder {
 			color: rgba($color-foreground, 0.5);
 		}
 	}
 	.comment {
-		@extend %subtle-transition;
-		@extend %text-smaller;
+		@include comment($color1);
 		margin: 0;
-		background: $color1;
-		padding: $spacing-unit;
-		color: contrastingColor($color1);
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 	}
 	&.required {
 		label:after {
@@ -168,7 +189,12 @@
 		padding: 0;
 		margin: 0;
 		margin-left: -$size;
-		border: solid 1px $color1;
+		border: {
+			width: $border-width;
+			style: solid;
+			color: $color1;
+			radius: $border-radius;
+		}
 		background: $color-background;
 		.checkmark {
 			@extend %subtle-transition;
@@ -180,7 +206,7 @@
 			padding: 0.1 * $size;
 			align-self: center;
 			justify-self: center;
-			stroke-width: 1px;
+			stroke-width: $border-width;
 			stroke: $checkmark-fill;
 			fill: $checkmark-fill;
 		}
@@ -195,13 +221,10 @@
 	.input:disabled {
 		cursor: not-allowed;
 		& + .checkbox {
-			border: dotted 1px lighten($color-border, 20);
-			cursor: not-allowed;
+			@include disabled();
 		}
 		&:checked + .checkbox {
-			$bg: darken($color-background, 20);
-			$checkmark-fill: contrastingColor($bg);
-			background: $bg;
+			$checkmark-fill: contrastingColor(darken($color-background, 20));
 			.checkmark {
 				fill: $checkmark-fill;
 				stroke: $checkmark-fill;
@@ -212,12 +235,7 @@
 		@include highlight($color2);
 	}
 	.comment {
-		@extend %subtle-transition;
-		@extend %text-smaller;
-		background: $color1;
-		padding: $spacing-unit;
-		margin: $spacing-unit 0 0 0;
-		color: contrastingColor($color1);
+		@include comment($color1);
 	}
 	&.required {
 		label:after {
@@ -260,6 +278,13 @@
 				stroke: $color1;
 			}
 		}
+		.comment {
+			border: unset;
+			color: $color1;
+			background: unset;
+			box-shadow: unset;
+			padding: $spacing-unit / 2 0;
+		}
 		&.invalid {
 			.input + .checkbox {
 				@include invalid();
@@ -267,6 +292,9 @@
 					fill: $color-danger;
 					stroke: $color-danger;
 				}
+			}
+			.comment {
+				color: $color-danger;
 			}
 		}
 	}
@@ -291,4 +319,175 @@
 .acr-checkbox {
 	@extend %checkbox;
 	display: inline-flex;
+}
+
+@mixin option($color1, $color2) {
+	$size: 1.5em;
+	$shade-fill: $color2;
+	display: inline-flex;
+	margin: $spacing-unit / 2 0;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	* {
+		padding: 0;
+		margin: 0;
+		flex: 0 1 auto;
+	}
+	.input {
+		opacity: 0;
+		width: $size;
+		height: $size;
+		outline: none;
+		cursor: pointer;
+		border-radius: 50%;
+	}
+	.circle {
+		@extend %subtle-transition;
+		width: $size;
+		height: $size;
+		display: inline-flex;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: stretch;
+		margin-left: -$size;
+		border: {
+			width: $border-width;
+			style: solid;
+			color: $color1;
+			radius: 50%;
+		}
+		background: $color-background;
+		& + label {
+			padding: 0;
+			margin: 0 0 0 $spacing-unit / 2;
+		}
+	}
+	.shade {
+		@extend %subtle-transition;
+		width: $size;
+		height: $size;
+		display: inline-flex;
+		box-sizing: border-box;
+		align-self: center;
+		justify-self: center;
+		border: {
+			radius: 50%;
+			style: solid;
+			width: 0.2 * $size;
+			color: $color-background;
+		}
+	}
+	.input:checked + .circle {
+		border-color: $color2;
+		.shade {
+			background: $color2;
+		}
+	}
+	.input:hover:not(:disabled) + .circle {
+		@include highlight($color2);
+	}
+	.input:disabled {
+		cursor: not-allowed;
+		& + .circle {
+			@include disabled();
+		}
+		&:checked + .circle {
+			.shade {
+				background: contrastingColor(darken($color-background, 20));
+			}
+		}
+	}
+	&.invalid .comment {
+		background: $color-danger;
+		@include highlight($color-danger);
+	}
+}
+
+@mixin options($color1, $color2) {
+	padding: 0;
+	min-width: 20ch;
+	margin: $spacing-unit;
+	.option {
+		@include option($color1, $color2);
+		&.acr-variant-primary {
+			@include option($color-accent, $color-accent);
+		}
+		&.acr-variant-success {
+			@include option($color-success, $color-success);
+		}
+		&.acr-variant-warning {
+			@include option($color-warning, $color-warning);
+		}
+		&.acr-variant-danger {
+			@include option($color-danger, $color-danger);
+		}
+	}
+	.comment {
+		@include comment($color1);
+	}
+	& > label {
+		@extend %text-smaller;
+	}
+	&.required > label:after {
+		content: "*";
+		color: $color-danger;
+		margin: 0 0.5ch;
+	}
+	&.invalid:not(.read-only) {
+		.option {
+			@include option($color-danger, $color-danger);
+			.circle {
+				@include invalid();
+				border-color: $color-danger;
+			}
+		}
+		.comment {
+			@include invalid();
+			background: $color-danger;
+			color: contrastingColor($color-danger);
+		}
+	}
+	&.read-only {
+		.input {
+			display: none;
+			& + .circle {
+				display: none;
+				& + label {
+					margin: 0;
+				}
+			}
+		}
+		.comment {
+			margin: 0;
+			border: unset;
+			color: $color1;
+			background: unset;
+			box-shadow: unset;
+			padding: $spacing-unit / 2 0;
+		}
+		&.invalid .comment {
+			color: $color-danger;
+		}
+	}
+}
+
+%options {
+	@include options($color-border, $color-accent);
+	&.acr-variant-primary {
+		@include options($color-accent, $color-accent);
+	}
+	&.acr-variant-success {
+		@include options($color-success, $color-success);
+	}
+	&.acr-variant-warning {
+		@include options($color-warning, $color-warning);
+	}
+	&.acr-variant-danger {
+		@include options($color-danger, $color-danger);
+	}
+}
+
+.acr-options {
+	@extend %options;
 }

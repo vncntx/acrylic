@@ -1,11 +1,11 @@
 import * as React from "react";
 import classNames from "classnames";
 import IFieldProps from "./IFieldProps";
-import { IVariantProps } from "../Variant";
+import IFieldEventProps from "./IFieldEventProps";
 import Text from "../typography/Text";
 import Label from "../typography/Label";
 
-export interface ITextFieldProps extends IFieldProps, IVariantProps {
+export interface ITextFieldProps extends IFieldProps, IFieldEventProps {
 	children?: null | undefined;
 	value?: string;
 	placeholder?: string;
