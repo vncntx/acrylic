@@ -32,14 +32,14 @@ describe("<Dropdown />", () => {
 				.parent()
 				.hasClass("acr-hidden")
 		).toBe(true);
-		dropdown.find(Button).simulate("click");
+		dropdown.find(Button).simulate("focus");
 		expect(
 			dropdown
 				.find(Menu)
 				.parent()
 				.hasClass("acr-hidden")
 		).toBe(false);
-		dropdown.find(Button).simulate("click");
+		dropdown.find(Button).simulate("focus");
 		expect(
 			dropdown
 				.find(Menu)

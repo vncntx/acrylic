@@ -9,6 +9,7 @@ export { default as IEventProps } from "./components/IEventProps";
  */
 export { default as ILayoutProps } from "./components/layout/ILayoutProps";
 export { default as Section } from "./components/layout/Section";
+export { default as Form } from "./components/layout/Form";
 export { default as Column } from "./components/layout/Column";
 export { default as Row } from "./components/layout/Row";
 export { default as Nav } from "./components/layout/Nav";
@@ -49,6 +50,7 @@ export { default as Title } from "./components/typography/Title";
 export { default as Text } from "./components/typography/Text";
 export { default as Badge } from "./components/typography/Badge";
 export { default as Label } from "./components/typography/Label";
+export { default as Link } from "./components/typography/Link";
 
 /**
  * Control Components
@@ -61,6 +63,11 @@ export { default as Dropdown } from "./components/controls/Dropdown";
  * Input Components
  */
 export { default as TextField } from "./components/input/TextField";
+export { default as TextArea } from "./components/input/TextArea";
+export { default as Checkbox } from "./components/input/Checkbox";
+export { default as Option } from "./components/input/Option";
+export { default as Options } from "./components/input/Options";
+export { default as Select } from "./components/input/Select";
 
 /**
  * Variants

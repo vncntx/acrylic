@@ -14,9 +14,12 @@
 	outline: none;
 	margin: $spacing-unit;
 	color: $btn-foreground;
-	padding: $spacing-unit / 2;
+	padding: $spacing-unit / 2 $spacing-unit;
 	background-color: $background;
 	min-width: 7ch;
+	height: 4.4 * $spacing-unit;
+	line-height: 1;
+	vertical-align: middle;
 	border: {
 		style: solid;
 		width: $border-width;
@@ -26,7 +29,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	cursor: default;
+	cursor: pointer;
 
 	& a:any-link {
 		text-decoration: none;
@@ -49,8 +52,8 @@
 		box-shadow: 0 1px 3px rgba($border-color, 1);
 	}
 
-	& .acr-icon {
-		margin-right: 0.25ch;
+	.acr-icon {
+		margin-right: 0.5 * $spacing-unit;
 	}
 }
 
@@ -104,7 +107,7 @@ a:any-link > * {
 // Icon Button
 .acr-icon-btn {
 	padding: $spacing-unit / 2;
-	min-width: fit-content;
+	min-width: 4.5 * $spacing-unit;
 	overflow: hidden;
 	& .acr-icon {
 		padding: 0;
@@ -124,11 +127,14 @@ a:any-link > * {
 	& > * {
 		margin: 0;
 		overflow: auto;
+		&:first-child {
+			margin: 0;
+		}
 		&:nth-child(2) {
 			@extend %container;
 			z-index: 50;
 			position: absolute;
-			margin-top: $shadow-width;
+			left: -$shadow-width;
 			& > * {
 				min-width: 10ch;
 				max-height: 50vh;

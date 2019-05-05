@@ -37,7 +37,7 @@ describe("<TextField />", () => {
 	it("Should support the 'change' event", () => {
 		const spy = jest.fn();
 		const textField = mount(<TextField onChange={spy} />);
-		textField.find("input").simulate("change");
+		textField.find(".input").simulate("change");
 		expect(spy).toBeCalled();
 	});
 });

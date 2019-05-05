@@ -4,14 +4,15 @@ exports[`<Dropdown /> Should match the latest snapshots 1`] = `
 <Dropdown>
   <div
     className="acr-dropdown"
-    onClick={[Function]}
   >
     <Button
-      onClick={[Function]}
+      onBlur={[Function]}
+      onFocus={[Function]}
     >
       <button
         className="acr-btn"
-        onClick={[Function]}
+        onBlur={[Function]}
+        onFocus={[Function]}
       >
         Dropdown
       </button>

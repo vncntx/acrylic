@@ -6,7 +6,7 @@ import ITextProps, { IPureTextProps, getEffectiveClass } from "./ITextProps";
  * @param props
  */
 export default function Label(props: ITextProps) {
-	const [pureProps, effectiveClass] = getEffectiveClass(props, "acr-text") as [
+	const [pureProps, effectiveClass] = getEffectiveClass(props, "acr-label") as [
 		IPureTextProps,
 		string
 	];

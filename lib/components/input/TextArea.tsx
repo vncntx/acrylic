@@ -5,14 +5,16 @@ import IFieldEventProps from "./IFieldEventProps";
 import Text from "../typography/Text";
 import Label from "../typography/Label";
 
-export interface ITextFieldProps extends IFieldProps, IFieldEventProps {
+export interface ITextAreaProps extends IFieldProps, IFieldEventProps {
 	children?: null | undefined;
 	value?: string;
 	placeholder?: string;
-	type?: "text" | "email" | "password";
 }
 
-export default function TextField(props: ITextFieldProps) {
+/**
+ * An input element for multi-line text
+ */
+export default function TextArea(props: ITextAreaProps) {
 	const {
 		classes,
 		label,
@@ -20,7 +22,6 @@ export default function TextField(props: ITextFieldProps) {
 		comment,
 		variant,
 		readOnly,
-		type = "text",
 		required = false,
 		disabled = false,
 		invalid = false,
@@ -29,7 +30,7 @@ export default function TextField(props: ITextFieldProps) {
 	} = props;
 
 	const effectiveClass = classNames(
-		"acr-text-field",
+		"acr-text-area",
 		variant && `acr-variant-${variant}`,
 		invalid && "invalid",
 		required && "required",
@@ -40,16 +41,20 @@ export default function TextField(props: ITextFieldProps) {
 	return (
 		<div className={effectiveClass}>
 			{label && <Label>{label}</Label>}
-			<input
-				type={type}
-				value={value}
-				className="input"
-				required={required}
-				disabled={disabled}
-				readOnly={readOnly}
-				autoComplete={autoComplete ? "on" : "off"}
-				{...otherProps}
-			/>
+			{readOnly ? (
+				<Text classes="input">{value}</Text>
+			) : (
+				<textarea
+					className="input"
+					required={required}
+					disabled={disabled}
+					readOnly={readOnly}
+					autoComplete={autoComplete ? "on" : "off"}
+					{...otherProps}
+				>
+					{value}
+				</textarea>
+			)}
 			{comment && <Text classes="comment">{comment}</Text>}
 		</div>
 	);

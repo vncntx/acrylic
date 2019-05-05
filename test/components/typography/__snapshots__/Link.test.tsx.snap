@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link /> Should match the latest snapshot 1`] = `
+Array [
+  <Link
+    to="#"
+  >
+    <a
+      className="acr-link"
+      href="#"
+    >
+      item
+    </a>
+  </Link>,
+  <Link
+    to="#"
+    variant="primary"
+  >
+    <a
+      className="acr-link acr-variant-primary"
+      href="#"
+    >
+      item
+    </a>
+  </Link>,
+  <Link
+    to="#"
+    variant="success"
+  >
+    <a
+      className="acr-link acr-variant-success"
+      href="#"
+    >
+      item
+    </a>
+  </Link>,
+  <Link
+    to="#"
+    variant="warning"
+  >
+    <a
+      className="acr-link acr-variant-warning"
+      href="#"
+    >
+      item
+    </a>
+  </Link>,
+  <Link
+    to="#"
+    variant="danger"
+  >
+    <a
+      className="acr-link acr-variant-danger"
+      href="#"
+    >
+      item
+    </a>
+  </Link>,
+]
+`;

@@ -9,36 +9,39 @@ exports[`<Tabs /> Should match the latest snapshots 1`] = `
   >
     <ol>
       <Tab
-        className="active tab"
+        data-is-active={true}
         key=".0"
         onClick={[Function]}
       >
         <li
-          className="active tab"
+          className="tab"
+          data-is-active={true}
           onClick={[Function]}
         >
           Tab 1
         </li>
       </Tab>
       <Tab
-        className="tab"
+        data-is-active={false}
         key=".1"
         onClick={[Function]}
       >
         <li
           className="tab"
+          data-is-active={false}
           onClick={[Function]}
         >
           Tab 2
         </li>
       </Tab>
       <Tab
-        className="tab"
+        data-is-active={false}
         key=".2"
         onClick={[Function]}
       >
         <li
           className="tab"
+          data-is-active={false}
           onClick={[Function]}
         >
           Tab 3

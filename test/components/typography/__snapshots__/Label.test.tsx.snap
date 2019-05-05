@@ -2,7 +2,7 @@
 
 exports[`<Label /> Should match the latest snapshots 1`] = `
 <label
-  className="acr-text"
+  className="acr-label"
 >
   Label
 </label>

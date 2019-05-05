@@ -51,7 +51,7 @@ export default function Tabs(props: ITabsProps) {
 
 					return React.cloneElement(child, {
 						...child.props,
-						className: classNames(index === selectedTab && "active", "tab"),
+						"data-is-active": index === selectedTab,
 						onClick: selectHandler(index)
 					});
 				})}
