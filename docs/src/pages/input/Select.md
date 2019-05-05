@@ -79,3 +79,38 @@ render(() => (
 	</>
 ))
 ```
+
+If the field is read-only, only the label of the selected value is rendered.
+
+```jsx
+render(() => (
+	<>
+		<Select readOnly selection={1} label="Select">
+			<Option value={1} label="Acamar" />
+			<Option value={2} label="Acubens" />
+			<Option value={3} label="Polaris" />
+			<Option value={4} label="Pollux" />
+			<Option value={5} label="Sirius" />
+		</Select>
+		<Select readOnly selection={2} label="Invalid" invalid comment="This field has an error">
+			<Option value={1} label="Acamar" />
+			<Option value={2} label="Acubens" />
+			<Option value={3} label="Polaris" />
+			<Option value={4} label="Pollux" />
+			<Option value={5} label="Sirius" />
+		</Select>
+		<Select readOnly selection={3} label="Success" variant="success" comment="This field is correct">
+			<Option value={1} label="Acamar" />
+			<Option value={2} label="Acubens" />
+			<Option value={3} label="Polaris" />
+			<Option value={4} label="Pollux" />
+			<Option value={5} label="Sirius" />
+		</Select>
+	</>
+))
+```
+
+###### Documentation
+
+- [`Select`](/wiki/modules/_components_input_select_.html)
+- [`Option`](/wiki/modules/_components_input_option_.html)

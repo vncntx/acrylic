@@ -73,6 +73,7 @@ export default function Select(props: ISelectProps) {
 		invalid && "invalid",
 		required && "required",
 		disabled && "disabled",
+		readOnly && "read-only",
 		variant && `acr-variant-${variant}`,
 		classes
 	];
@@ -93,26 +94,28 @@ export default function Select(props: ISelectProps) {
 				</Section>
 				{comment && <Text classes="comment">{comment}</Text>}
 			</Column>
-			<Column alignSelf="end">
-				<Menu
-					classes={{
-						menu: true,
-						"acr-hidden": isClosed
-					}}
-				>
-					{React.Children.map(children, child => {
-						if (typeof child !== "object") {
-							return null;
-						}
-						return menuItemFromOption({
-							...child.props,
-							onMouseDown: child.props.disabled
-								? null
-								: selectHandler(child.props.value)
-						});
-					})}
-				</Menu>
-			</Column>
+			{readOnly ? null : (
+				<Column alignSelf="end">
+					<Menu
+						classes={{
+							menu: true,
+							"acr-hidden": isClosed
+						}}
+					>
+						{React.Children.map(children, child => {
+							if (typeof child !== "object") {
+								return null;
+							}
+							return menuItemFromOption({
+								...child.props,
+								onMouseDown: child.props.disabled
+									? null
+									: selectHandler(child.props.value)
+							});
+						})}
+					</Menu>
+				</Column>
+			)}
 		</Column>
 	);
 }

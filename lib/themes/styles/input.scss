@@ -560,12 +560,12 @@
 			@include highlight($color-danger);
 		}
 	}
-	&.disabled {
+	&.disabled:not(.read-only) {
 		.input {
 			@include disabled();
 		}
 	}
-	&.invalid {
+	&.invalid:not(.read-only) {
 		.input {
 			@include invalid();
 		}
@@ -588,6 +588,11 @@
 			background: unset;
 			box-shadow: unset;
 			padding: $spacing-unit / 2 0;
+		}
+		&.invalid {
+			.comment {
+				color: $color-danger;
+			}
 		}
 	}
 	.menu {
