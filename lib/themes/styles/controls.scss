@@ -12,9 +12,9 @@
 
 	@extend %subtle-transition;
 	outline: none;
-	margin: $shadow-width;
+	margin: $spacing-unit;
 	color: $btn-foreground;
-	padding: $spacing-unit / 2;
+	padding: $spacing-unit / 2 $spacing-unit;
 	background-color: $background;
 	min-width: 7ch;
 	height: 4.4 * $spacing-unit;

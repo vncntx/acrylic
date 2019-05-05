@@ -57,7 +57,6 @@ export default function Select(props: ISelectProps) {
 
 	const selectHandler = (val: any) => () => {
 		const previous = value;
-		console.log("Select:", val);
 		setValue(val);
 		onSelect(previous, val);
 	};

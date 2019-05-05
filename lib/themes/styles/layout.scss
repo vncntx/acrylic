@@ -732,3 +732,24 @@ $alert-background: darken($color-background, 2);
 		}
 	}
 }
+
+/**
+ * Forms
+ */
+%form {
+	display: flex;
+	flex-direction: column;
+	&.inline {
+		display: inline-flex;
+	}
+	& > .acr-text-field {
+		width: unset;
+	}
+	& > .acr-btn {
+		align-self: flex-start;
+	}
+}
+
+.acr-form {
+	@extend %form;
+}

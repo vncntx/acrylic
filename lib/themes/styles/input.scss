@@ -165,15 +165,11 @@
 	@extend %text-field;
 	display: inline-flex;
 	width: 20 * $spacing-unit;
-	.input {
-		justify-self: stretch;
-	}
 }
 .acr-text-area {
 	@extend %text-field;
 	display: flex;
 	.input {
-		width: unset;
 		height: 3.5em;
 		align-self: stretch;
 		&:read-only {
