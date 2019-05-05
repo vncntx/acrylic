@@ -201,10 +201,10 @@
 		outline: none;
 		cursor: pointer;
 	}
-	.input + .checkbox {
+	.checkbox {
 		@extend %subtle-transition;
-		width: 0.9 * $size;
-		height: 0.9 * $size;
+		width: $size;
+		height: $size;
 		display: inline-flex;
 		flex-direction: row;
 		align-items: stretch;
@@ -218,6 +218,7 @@
 			color: $color1;
 			radius: $border-radius;
 		}
+		box-sizing: border-box;
 		background: $color-background;
 		.checkmark {
 			@extend %subtle-transition;
