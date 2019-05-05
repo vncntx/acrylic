@@ -1,5 +1,7 @@
 ## Options
 
+An **Options Group** lets the user pick from a few available choices.
+
 ```jsx
 render(() => (
 	<Row>

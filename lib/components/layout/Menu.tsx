@@ -25,17 +25,20 @@ export interface IMenuItemProps extends ILayoutProps, IButtonProps {
 	active?: boolean;
 }
 
+export interface MenuItemComponent extends React.Component<IMenuItemProps> {}
+
 /**
  * An item in a menu
  * @param props
  */
 export function MenuItem(props: IMenuItemProps) {
-	const { classes, children, active = false, ...otherProps } = props;
+	const { classes, children, variant, active = false, ...otherProps } = props;
 	const effectiveClass = classNames(
 		"acr-menu-item",
 		active && "active",
-		classes,
-		typeof children === "string" && "acr-li-text-only"
+		variant && `acr-variant-${variant}`,
+		typeof children === "string" && "acr-li-text-only",
+		classes
 	);
 
 	if (otherProps.disabled) {

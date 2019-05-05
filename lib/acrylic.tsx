@@ -64,7 +64,9 @@ export { default as Dropdown } from "./components/controls/Dropdown";
 export { default as TextField } from "./components/input/TextField";
 export { default as TextArea } from "./components/input/TextArea";
 export { default as Checkbox } from "./components/input/Checkbox";
-export { default as Options, Option } from "./components/input/Options";
+export { default as Option } from "./components/input/Option";
+export { default as Options } from "./components/input/Options";
+export { default as Select } from "./components/input/Select";
 
 /**
  * Variants

@@ -21,9 +21,10 @@ export default function Dropdown(props: IDropdownProps) {
 	const onFocusHandler = () => setClosed(!isClosed);
 
 	return (
-		<div className={effectiveClass} {...otherProps} onClick={onFocusHandler}>
+		<div className={effectiveClass} {...otherProps}>
 			{React.createElement(toggle.type, {
-				onClick: onFocusHandler,
+				onFocus: onFocusHandler,
+				onBlur: onFocusHandler,
 				...toggle.props
 			})}
 			<div className={classNames(isClosed && "acr-hidden")}>{menu}</div>

@@ -5,6 +5,11 @@
 	background: none;
 }
 
+*:focus,
+*:active {
+	outline: none;
+}
+
 body {
 	background: $color-background;
 }
@@ -584,17 +589,17 @@ $alert-background: darken($color-background, 2);
  */
 .acr-menu {
 	@extend .acr-section;
-	@include elevated(3);
-	margin: 0;
+	@include elevated(1);
 	padding: 0;
+	margin: $shadow-width;
 	list-style: none;
 	& > .acr-divider {
 		margin: 0;
-		z-index: 12;
+		z-index: 20;
 	}
 }
-.acr-menu-item,
-.acr-submenu-label {
+
+@mixin menu-item($highlight) {
 	@extend %subtle-transition;
 	padding: 0;
 	display: flex;
@@ -618,10 +623,31 @@ $alert-background: darken($color-background, 2);
 	&:hover,
 	&:active {
 		&:not([disabled]) {
-			background: $color-accent;
-			color: contrastingColor($color-accent);
+			background: $highlight;
+			color: contrastingColor($highlight);
 		}
 	}
+}
+
+%menu-item {
+	@include menu-item($color-accent);
+	&.acr-variant-primary {
+		@include menu-item($color-accent);
+	}
+	&.acr-variant-success {
+		@include menu-item($color-success);
+	}
+	&.acr-variant-warning {
+		@include menu-item($color-warning);
+	}
+	&.acr-variant-danger {
+		@include menu-item($color-danger);
+	}
+}
+
+.acr-menu-item,
+.acr-submenu-label {
+	@extend %menu-item;
 }
 .acr-submenu {
 	@extend %container;

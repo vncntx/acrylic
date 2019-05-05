@@ -1,21 +1,8 @@
 import * as React from "react";
-import IProps from "../IProps";
 import IFieldProps from "./IFieldProps";
-import IFieldEventProps from "./IFieldEventProps";
 import Text from "../typography/Text";
 import Label from "../typography/Label";
-import Row from "../layout/Row";
 import Column from "../layout/Column";
-import { IVariantProps } from "../Variant";
-
-export interface IOptionProps extends IProps, IFieldEventProps, IVariantProps {
-	onChange?: null | undefined;
-	label?: React.ReactNode;
-	value?: any;
-	disabled?: boolean;
-	selected?: boolean;
-	children?: undefined | null;
-}
 
 export interface OnSelectHandler {
 	(previous: any, selection: any): any;
@@ -27,7 +14,7 @@ export interface IOptionsProps extends IFieldProps {
 }
 
 /**
- * A Radio Button
+ * A Radio Button group
  */
 export default function Options(props: IOptionsProps) {
 	const {
@@ -97,43 +84,5 @@ export default function Options(props: IOptionsProps) {
 			})}
 			{comment && <Text classes="comment">{comment}</Text>}
 		</Column>
-	);
-}
-
-export function Option(props: IOptionProps) {
-	const {
-		classes,
-		label,
-		variant,
-		disabled = false,
-		selected = false,
-		...otherProps
-	} = props;
-
-	const effectiveClass = [
-		"option",
-		variant && `acr-variant-${variant}`,
-		classes
-	];
-
-	return (
-		<Row
-			alignItems="center"
-			alignContent="center"
-			justify="start"
-			classes={effectiveClass}
-		>
-			<input
-				className="input"
-				type="radio"
-				checked={selected}
-				disabled={disabled}
-				{...otherProps}
-			/>
-			<div className="circle">
-				<div className="shade" />
-			</div>
-			{label && <Label>{label}</Label>}
-		</Row>
 	);
 }

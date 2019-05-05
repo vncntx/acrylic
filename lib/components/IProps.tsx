@@ -10,6 +10,8 @@ export default interface IProps {
 	id?: string;
 	key?: string | number;
 	role?: string;
+	contentEditable?: boolean;
+	tabIndex?: number;
 }
 
 declare type ClassValue = string | ClassDictionary | ClassArray | null | false;

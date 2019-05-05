@@ -8,6 +8,7 @@
 
 @mixin invalid {
 	@include highlight($color-danger);
+	&:active,
 	&:focus {
 		@include highlight($color-danger);
 	}
@@ -19,9 +20,15 @@
 }
 
 @mixin disabled {
+	outline: none;
 	background: unset;
 	cursor: not-allowed;
-	border: dotted $border-width lighten($color-foreground, 20);
+	border: dotted $border-width lighten($color-border, 20);
+	&:active,
+	&:focus {
+		border: dotted $border-width lighten($color-border, 20);
+		box-shadow: none;
+	}
 }
 
 @mixin comment($color) {
@@ -38,35 +45,37 @@
 	font-size: 0.9em;
 }
 
-@mixin text-field($color1, $color2) {
-	flex-direction: column;
-	justify-content: stretch;
-	min-width: 20ch;
+%placeholder {
+	color: rgba($color-foreground, 0.5);
+}
+
+%field-label {
+	@extend %text-smaller;
 	padding: 0;
-	margin: $spacing-unit;
-	label {
-		@extend %text-smaller;
-		padding: 0;
-		margin: 0 0 $spacing-unit / 2 0;
+	margin: 0 0 $spacing-unit / 2 0;
+}
+
+@mixin text-box($color1, $color2) {
+	@extend %subtle-transition;
+	margin: 0;
+	resize: none;
+	cursor: text;
+	outline: none;
+	padding: $spacing-unit;
+	color: $color-foreground;
+	background: $color-background;
+	border: solid $border-width $color1;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	&:last-child {
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
 	}
-	.input {
-		@extend %subtle-transition;
-		resize: none;
-		cursor: text;
-		outline: none;
-		padding: $spacing-unit;
-		color: $color-foreground;
-		background: $color-background;
-		border: solid $border-width $color1;
-		border-top-left-radius: $border-radius;
-		border-top-right-radius: $border-radius;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-		&:last-child {
-			border-bottom-left-radius: $border-radius;
-			border-bottom-right-radius: $border-radius;
-		}
-		&:focus:not(:read-only) {
+	&:not(:read-only) {
+		&:active,
+		&:focus {
 			@include highlight($color2);
 			& + .comment {
 				@extend %text-smaller;
@@ -75,15 +84,27 @@
 				color: contrastingColor($color2);
 			}
 		}
-		&:invalid {
-			@include invalid();
-		}
-		&:disabled {
-			@include disabled();
-		}
-		&::placeholder {
-			color: rgba($color-foreground, 0.5);
-		}
+	}
+	&:invalid {
+		@include invalid();
+	}
+	&:disabled {
+		@include disabled();
+	}
+	&::placeholder {
+		@extend %placeholder;
+	}
+}
+
+@mixin text-field($color1, $color2) {
+	padding: 0;
+	margin: $spacing-unit;
+	flex-direction: column;
+	label {
+		@extend %field-label;
+	}
+	.input {
+		@include text-box($color1, $color2);
 	}
 	.comment {
 		@include comment($color1);
@@ -143,12 +164,18 @@
 .acr-text-field {
 	@extend %text-field;
 	display: inline-flex;
+	width: 20 * $spacing-unit;
+	.input {
+		justify-self: stretch;
+	}
 }
 .acr-text-area {
 	@extend %text-field;
 	display: flex;
 	.input {
+		width: unset;
 		height: 3.5em;
+		align-self: stretch;
 		&:read-only {
 			height: fit-content;
 		}
@@ -427,7 +454,7 @@
 		@include comment($color1);
 	}
 	& > label {
-		@extend %text-smaller;
+		@extend %field-label;
 	}
 	&.required > label:after {
 		content: "*";
@@ -490,4 +517,111 @@
 
 .acr-options {
 	@extend %options;
+}
+
+@mixin select($color1, $color2) {
+	padding: 0;
+	position: relative;
+	margin: $spacing-unit;
+	label {
+		@extend %field-label;
+	}
+	.input {
+		@include text-box($color1, $color2);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		cursor: pointer;
+		align-self: stretch;
+		box-sizing: border-box;
+		min-width: 20 * $spacing-unit;
+		&:active,
+		&:focus {
+			@include highlight($color2);
+		}
+	}
+	.placeholder {
+		@extend %placeholder;
+	}
+	.comment {
+		@include comment($color1);
+		margin: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		align-self: stretch;
+	}
+	.toggle-btn {
+		margin: 0;
+		align-self: end;
+	}
+	&.required {
+		label:after {
+			content: "*";
+			color: $color-danger;
+			margin: 0 0.5ch;
+		}
+		.input {
+			@include highlight($color-danger);
+		}
+	}
+	&.disabled {
+		.input {
+			@include disabled();
+		}
+	}
+	&.invalid {
+		.input {
+			@include invalid();
+		}
+		.comment {
+			background: $color-danger;
+			color: contrastingColor($color-danger);
+		}
+	}
+	&.read-only {
+		.input {
+			border: unset;
+			cursor: unset;
+			box-shadow: unset;
+			background: unset;
+			padding: $spacing-unit / 2 0;
+		}
+		.comment {
+			color: $color1;
+			border: unset;
+			background: unset;
+			box-shadow: unset;
+			padding: $spacing-unit / 2 0;
+		}
+	}
+	.menu {
+		z-index: 50;
+		position: absolute;
+		margin: {
+			top: $shadow-width;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+}
+
+%select {
+	@include select($color-border, $color-accent);
+	&.acr-variant-primary {
+		@include select($color-accent, $color-accent);
+	}
+	&.acr-variant-success {
+		@include select($color-success, $color-success);
+	}
+	&.acr-variant-warning {
+		@include select($color-warning, $color-warning);
+	}
+	&.acr-variant-danger {
+		@include select($color-danger, $color-danger);
+	}
+}
+
+.acr-select {
+	@extend %select;
 }
