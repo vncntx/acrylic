@@ -145,6 +145,7 @@ pre {
 
 .acr-label {
 	@extend .acr-text;
+	line-height: 1;
 }
 
 @mixin link($color) {
