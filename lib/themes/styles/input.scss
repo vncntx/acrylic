@@ -348,23 +348,25 @@
 @mixin option($color1, $color2) {
 	$size: 1.5em;
 	$shade-fill: $color2;
-	display: inline-flex;
-	margin: $spacing-unit / 2 0;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
+	padding: 0;
+	margin: $spacing-unit 0;
+	min-width: 20 * $spacing-unit;
 	* {
 		padding: 0;
 		margin: 0;
 		flex: 0 1 auto;
 	}
+	label {
+		padding: 0;
+		margin: 0 0 0 $spacing-unit / 2;
+	}
 	.input {
 		opacity: 0;
+		border: none;
 		width: $size;
 		height: $size;
 		outline: none;
 		cursor: pointer;
-		border-radius: 50%;
 	}
 	.circle {
 		@extend %subtle-transition;
@@ -374,6 +376,8 @@
 		flex-direction: row;
 		align-items: stretch;
 		justify-content: stretch;
+		padding: $border-width;
+		margin: 0;
 		margin-left: -$size;
 		border: {
 			width: $border-width;
@@ -381,58 +385,47 @@
 			color: $color1;
 			radius: 50%;
 		}
-		background: $color-background;
-		& + label {
-			padding: 0;
-			margin: 0 0 0 $spacing-unit / 2;
-		}
-	}
-	.shade {
-		@extend %subtle-transition;
-		width: $size;
-		height: $size;
-		display: inline-flex;
 		box-sizing: border-box;
-		align-self: center;
-		justify-self: center;
-		border: {
-			radius: 50%;
-			style: solid;
-			width: 0.2 * $size;
-			color: $color-background;
+		background: $color-background;
+		.shade {
+			@extend %subtle-transition;
+			flex: 1;
+			padding: 0;
+			display: none;
+			border: solid $border-width white;
+			border-radius: 50%;
 		}
 	}
 	.input:checked + .circle {
 		border-color: $color2;
 		.shade {
-			background: $color2;
+			display: inline-block;
+			background: $shade-fill;
 		}
-	}
-	.input:hover:not(:disabled) + .circle {
-		@include highlight($color2);
 	}
 	.input:disabled {
 		cursor: not-allowed;
 		& + .circle {
 			@include disabled();
 		}
-		&:checked + .circle {
-			.shade {
-				background: contrastingColor(darken($color-background, 20));
-			}
+		&:checked + .circle .shade {
+			background: contrastingColor(darken($color-background, 20));
 		}
 	}
-	&.invalid .comment {
-		background: $color-danger;
-		@include highlight($color-danger);
+	&:not(.read-only) .input:hover:not(:disabled) + .circle {
+		@include highlight($color2);
 	}
 }
 
-@mixin options($color1, $color2) {
+@mixin options-group($color1, $color2) {
 	padding: 0;
-	min-width: 20ch;
+	position: relative;
 	margin: $spacing-unit;
-	.option {
+	min-width: 20 * $spacing-unit;
+	& > label {
+		@extend %field-label;
+	}
+	.acr-option {
 		@include option($color1, $color2);
 		&.acr-variant-primary {
 			@include option($color-accent, $color-accent);
@@ -450,38 +443,24 @@
 	.comment {
 		@include comment($color1);
 	}
-	& > label {
-		@extend %field-label;
-	}
 	&.required > label:after {
 		content: "*";
 		color: $color-danger;
 		margin: 0 0.5ch;
 	}
-	&.invalid:not(.read-only) {
-		.option {
+	&:not(.read-only).invalid {
+		.acr-option {
 			@include option($color-danger, $color-danger);
 			.circle {
-				@include invalid();
-				border-color: $color-danger;
+				@include highlight($color-danger);
 			}
 		}
 		.comment {
-			@include invalid();
-			background: $color-danger;
-			color: contrastingColor($color-danger);
+			@include comment($color-danger);
+			@include highlight($color-danger);
 		}
 	}
 	&.read-only {
-		.input {
-			display: none;
-			& + .circle {
-				display: none;
-				& + label {
-					margin: 0;
-				}
-			}
-		}
 		.comment {
 			margin: 0;
 			border: unset;
@@ -496,24 +475,24 @@
 	}
 }
 
-%options {
-	@include options($color-border, $color-accent);
+%options-group {
+	@include options-group($color-border, $color-accent);
 	&.acr-variant-primary {
-		@include options($color-accent, $color-accent);
+		@include options-group($color-accent, $color-accent);
 	}
 	&.acr-variant-success {
-		@include options($color-success, $color-success);
+		@include options-group($color-success, $color-success);
 	}
 	&.acr-variant-warning {
-		@include options($color-warning, $color-warning);
+		@include options-group($color-warning, $color-warning);
 	}
 	&.acr-variant-danger {
-		@include options($color-danger, $color-danger);
+		@include options-group($color-danger, $color-danger);
 	}
 }
 
-.acr-options {
-	@extend %options;
+.acr-options-group {
+	@extend %options-group;
 }
 
 @mixin select($color1, $color2) {

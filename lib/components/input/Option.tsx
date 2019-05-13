@@ -1,52 +1,61 @@
 import * as React from "react";
-import IProps from "../IProps";
-import Row from "../layout/Row";
-import Label from "../typography/Label";
+import classNames from "classnames";
+import IFieldProps from "./IFieldProps";
 import IFieldEventProps from "./IFieldEventProps";
-import { IVariantProps } from "../Variant";
+import Label from "../typography/Label";
+import Row from "../layout/Row";
 
-export interface IOptionProps extends IProps, IFieldEventProps, IVariantProps {
+export interface IOptionProps extends IFieldProps, IFieldEventProps {
 	onChange?: null | undefined;
-	label?: React.ReactNode;
-	value?: any;
-	disabled?: boolean;
+	children?: null | undefined;
+	required?: null | undefined;
+	readOnly?: null | undefined;
 	selected?: boolean;
-	children?: undefined | null;
+	value?: any;
 }
 
-export interface OptionComponent extends React.Component<IOptionProps> {}
+export type OptionComponent = React.ReactElement<IOptionProps>;
 
+/**
+ * An Option button
+ */
 export default function Option(props: IOptionProps) {
 	const {
-		classes,
 		label,
-		variant,
 		value,
+		selected,
+		comment,
+		variant,
+		classes,
+		required = false,
 		disabled = false,
-		selected = false,
+		invalid = false,
+		autoComplete = true,
 		...otherProps
 	} = props;
 
-	const effectiveClass = [
-		"option",
+	const effectiveClass = classNames(
+		"acr-option",
 		variant && `acr-variant-${variant}`,
+		invalid && "invalid",
+		required && "required",
 		classes
-	];
+	);
 
 	return (
 		<Row
-			alignItems="center"
-			alignContent="center"
-			justify="start"
 			classes={effectiveClass}
+			alignItems="center"
+			alignContent="start"
+			justify="start"
 		>
 			<input
 				className="input"
 				type="radio"
 				value={value}
-				checked={selected}
+				required={required}
 				disabled={disabled}
-				data-value={value}
+				autoComplete={autoComplete ? "on" : "off"}
 				{...otherProps}
 			/>
 			<div className="circle">
