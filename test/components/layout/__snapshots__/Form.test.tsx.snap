@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> Should match the latest snapshots 1`] = `
+Array [
+  <Form>
+    <form
+      className="acr-form acr-section"
+    >
+      <TextField
+        label="Field"
+      >
+        <div
+          className="acr-text-field"
+        >
+          <Label>
+            <label
+              className="acr-label"
+            >
+              Field
+            </label>
+          </Label>
+          <input
+            autoComplete="on"
+            className="input"
+            disabled={false}
+            required={false}
+            type="text"
+          />
+        </div>
+      </TextField>
+    </form>
+  </Form>,
+  <Form
+    elevation={1}
+  >
+    <form
+      className="acr-form acr-section acr-elevated-1"
+    >
+      <TextField
+        label="Field"
+      >
+        <div
+          className="acr-text-field"
+        >
+          <Label>
+            <label
+              className="acr-label"
+            >
+              Field
+            </label>
+          </Label>
+          <input
+            autoComplete="on"
+            className="input"
+            disabled={false}
+            required={false}
+            type="text"
+          />
+        </div>
+      </TextField>
+    </form>
+  </Form>,
+  <Form
+    acrylic={true}
+    elevation={2}
+  >
+    <form
+      className="acr-form acr-section acr-elevated-2 acr-acrylic"
+    >
+      <TextField
+        label="Field"
+      >
+        <div
+          className="acr-text-field"
+        >
+          <Label>
+            <label
+              className="acr-label"
+            >
+              Field
+            </label>
+          </Label>
+          <input
+            autoComplete="on"
+            className="input"
+            disabled={false}
+            required={false}
+            type="text"
+          />
+        </div>
+      </TextField>
+    </form>
+  </Form>,
+]
+`;

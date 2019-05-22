@@ -14,7 +14,7 @@ export interface IOptionsProps extends IFieldProps {
 }
 
 /**
- * A Radio Button group
+ * A group of Option Buttons
  */
 export default function Options(props: IOptionsProps) {
 	const {
@@ -35,15 +35,31 @@ export default function Options(props: IOptionsProps) {
 	} = props;
 
 	const [value, setValue] = React.useState(selection);
+	const [valueLabel, setValueLabel] = React.useState<React.ReactNode>("");
 
-	const changeHandler = (newValue: any) => () => {
-		onSelect(value, newValue);
+	React.useEffect(
+		() => {
+			React.Children.forEach(children, child => {
+				if (typeof child !== "object") {
+					return true;
+				}
+				if (child.props.value === value) {
+					setValueLabel(child.props.label);
+					return false;
+				}
+			});
+		},
+		[value]
+	);
 
-		setValue(newValue);
+	const selectHandler = (val: any) => () => {
+		const previous = value;
+		setValue(val);
+		onSelect(previous, val);
 	};
 
 	const effectiveClass = [
-		"acr-options",
+		"acr-options-group",
 		variant && `acr-variant-${variant}`,
 		invalid && "invalid",
 		required && "required",
@@ -51,37 +67,29 @@ export default function Options(props: IOptionsProps) {
 		classes
 	];
 
-	let choices = children;
-
-	if (readOnly) {
-		choices = React.Children.toArray(children).find(child => {
-			if (typeof child !== "object") {
-				return false;
-			}
-
-			return child.props.value === value;
-		});
-	}
-
 	return (
 		<Column inline classes={effectiveClass} {...otherProps}>
 			{label && <Label>{label}</Label>}
-			{React.Children.map(choices, child => {
-				if (typeof child !== "object") {
-					return null;
-				}
+			{readOnly ? (
+				<Text>{valueLabel}</Text>
+			) : (
+				React.Children.map(children, child => {
+					if (typeof child !== "object") {
+						return null;
+					}
 
-				return React.cloneElement(child, {
-					...otherProps,
-					...child.props,
-					name: name,
-					required: required,
-					readOnly: readOnly,
-					disabled: child.props.disabled || disabled,
-					checked: child.props.value === value,
-					onChange: changeHandler(child.props.value)
-				});
-			})}
+					return React.cloneElement(child, {
+						...otherProps,
+						...child.props,
+						name: name,
+						required: required,
+						readOnly: readOnly,
+						disabled: child.props.disabled || disabled,
+						checked: child.props.value === value,
+						onChange: selectHandler(child.props.value)
+					});
+				})
+			)}
 			{comment && <Text classes="comment">{comment}</Text>}
 		</Column>
 	);

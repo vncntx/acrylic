@@ -41,6 +41,4 @@ yarn test
 #### License
 
 This project is available under the [MIT License](https://github.com/vincentfiestada/acrylic/blob/master/LICENSE.md).
-
-- [Icons8 Icons](https://icons8.com/) are licensed under [CC BY-ND 3.0](https://creativecommons.org/licenses/by-nd/3.0/legalcode)
-- [ArcMage ArtWork](https://arcmage.org/artwork/) are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+The documentation may also contain work by [third parties](./NOTICE.md)

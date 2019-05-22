@@ -1,8 +1,8 @@
 {
-	"name": "acrylic",
-	"version": "0.1.0",
+	"name": "@acrylic/acrylic",
+	"version": "0.1.2",
 	"description": "A React component library",
-	"main": "lib/acrylic.tsx",
+	"main": "dist/acrylic.js",
 	"repository": "https://github.com/vincentfiestada/acrylic.git",
 	"author": {
 		"name": "Vincent Fiestada",
@@ -11,14 +11,26 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"format": "node node_modules/prettier/bin-prettier.js --write --use-tabs **/*.{js,jsx,ts,tsx,json,css,scss}",
+		"format": "node node_modules/prettier/bin-prettier.js --write **/*.{js,jsx,ts,tsx,json,css,scss}",
+		"lint": "node node_modules/prettier/bin-prettier.js --list-different **/*.{js,jsx,ts,tsx,json,css,scss}",
 		"typedoc": "node node_modules/typedoc/bin/typedoc --excludePrivate lib/acrylic.tsx --out docs/dist/wiki --readme none",
 		"build:dev": "node node_modules/parcel-bundler/bin/cli.js -d docs/dist docs/src/*.html docs/src/**/*.{svg,png,webp,jpg,md}",
 		"build:docs": "node node_modules/parcel-bundler/bin/cli.js build -d docs/dist docs/src/*.html docs/src/**/*.{svg,png,webp,jpg,md}",
-		"build": "node node_modules/parcel-bundler/bin/cli.js build -d  docs/src/*.html docs/src/**/*.{svg,png,jpg,md}",
+		"build": "node node_modules/typescript/bin/tsc -p tsconfig.json && node node_modules/parcel-bundler/bin/cli.js build -d dist/themes lib/themes/*.scss",
 		"test": "node node_modules/jest/bin/jest.js --config jest.config.js --coverage",
-		"test:junit": "yarn test --reporters=default --reporters=jest-junit"
+		"test:junit": "yarn test --reporters=default --reporters=jest-junit",
+		"prepare": "yarn build",
+		"prepublishOnly": "yarn test && yarn lint"
 	},
+	"files": [
+		"dist",
+		"lib",
+		"package.json",
+		"tsconfig.json",
+		"LICENSE",
+		"README.md",
+		"NOTICE.md"
+	],
 	"husky": {
 		"hooks": {
 			"pre-commit": "yarn format",

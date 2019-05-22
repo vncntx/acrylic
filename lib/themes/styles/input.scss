@@ -23,10 +23,10 @@
 	outline: none;
 	background: unset;
 	cursor: not-allowed;
-	border: dotted $border-width lighten($color-border, 20);
+	border: dotted $border-width $color-border;
 	&:active,
 	&:focus {
-		border: dotted $border-width lighten($color-border, 20);
+		border: dotted $border-width $color-border;
 		box-shadow: none;
 	}
 }
@@ -345,26 +345,175 @@
 	display: inline-flex;
 }
 
+@mixin switch($color) {
+	$size: 1.5em;
+	padding: 0;
+	margin: $spacing-unit;
+	label {
+		padding: 0;
+		margin: 0 0 0 $spacing-unit / 2;
+	}
+	.input {
+		display: none;
+	}
+	.comment {
+		@include comment($color);
+	}
+	.pane {
+		@extend %subtle-transition;
+		width: 2 * $size;
+		height: $size;
+		padding: 0;
+		margin: 0;
+		border: {
+			width: $border-width;
+			style: solid;
+			color: $color;
+			radius: $border-radius;
+		}
+		background: $color-background;
+		overflow: hidden;
+		box-sizing: border-box;
+		cursor: pointer;
+		&:hover,
+		&:focus {
+			@include highlight($color);
+		}
+	}
+	.slider {
+		@extend %subtle-transition;
+		margin: 0;
+		padding: 0;
+		width: 50%;
+		height: 100%;
+		background: $color;
+		box-sizing: border-box;
+		border-radius: $border-radius;
+		border: solid $border-width $color-background;
+	}
+	&.required {
+		label:after {
+			content: "*";
+			color: $color-danger;
+			margin: 0 0.5ch;
+		}
+	}
+	&.checked {
+		.pane {
+			background: $color;
+			border-color: $color;
+		}
+		.slider {
+			border-color: $color;
+			transform: translateX(100%);
+			background: contrastingColor($color);
+		}
+	}
+	&.disabled {
+		.pane {
+			@include disabled();
+			cursor: not-allowed;
+			&:hover,
+			&:focus {
+				box-shadow: none;
+			}
+		}
+		.slider {
+			border-color: $color-background;
+			background: $color;
+		}
+	}
+	&.read-only {
+		.pane {
+			cursor: unset;
+			&:hover,
+			&:focus {
+				box-shadow: none;
+			}
+		}
+		.comment {
+			border: unset;
+			color: $color;
+			background: unset;
+			box-shadow: unset;
+			padding: $spacing-unit / 2 0;
+		}
+	}
+	&.invalid {
+		.pane {
+			@include highlight($color-danger);
+			border-color: $color-danger;
+		}
+		.slider {
+			background: $color-danger;
+		}
+		.comment {
+			@include comment($color-danger);
+			@include highlight($color-danger);
+		}
+		&.checked {
+			.pane {
+				background: $color-danger;
+			}
+			.slider {
+				border-color: $color-danger;
+				background: contrastingColor($color-danger);
+			}
+		}
+		&.read-only {
+			.comment {
+				border: unset;
+				background: unset;
+				box-shadow: unset;
+				color: $color-danger;
+				padding: $spacing-unit / 2 0;
+			}
+		}
+	}
+}
+
+%switch {
+	@include switch($color-border);
+	&.acr-variant-primary {
+		@include switch($color-accent);
+	}
+	&.acr-variant-success {
+		@include switch($color-success);
+	}
+	&.acr-variant-warning {
+		@include switch($color-warning);
+	}
+	&.acr-variant-danger {
+		@include switch($color-danger);
+	}
+}
+
+.acr-switch {
+	@extend %switch;
+}
+
 @mixin option($color1, $color2) {
 	$size: 1.5em;
 	$shade-fill: $color2;
-	display: inline-flex;
-	margin: $spacing-unit / 2 0;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
+	padding: 0;
+	margin: $spacing-unit 0;
+	min-width: 20 * $spacing-unit;
 	* {
 		padding: 0;
 		margin: 0;
 		flex: 0 1 auto;
 	}
+	label {
+		padding: 0;
+		margin: 0 0 0 $spacing-unit / 2;
+	}
 	.input {
 		opacity: 0;
+		border: none;
 		width: $size;
 		height: $size;
 		outline: none;
 		cursor: pointer;
-		border-radius: 50%;
 	}
 	.circle {
 		@extend %subtle-transition;
@@ -374,6 +523,8 @@
 		flex-direction: row;
 		align-items: stretch;
 		justify-content: stretch;
+		padding: $border-width;
+		margin: 0;
 		margin-left: -$size;
 		border: {
 			width: $border-width;
@@ -381,58 +532,47 @@
 			color: $color1;
 			radius: 50%;
 		}
-		background: $color-background;
-		& + label {
-			padding: 0;
-			margin: 0 0 0 $spacing-unit / 2;
-		}
-	}
-	.shade {
-		@extend %subtle-transition;
-		width: $size;
-		height: $size;
-		display: inline-flex;
 		box-sizing: border-box;
-		align-self: center;
-		justify-self: center;
-		border: {
-			radius: 50%;
-			style: solid;
-			width: 0.2 * $size;
-			color: $color-background;
+		background: $color-background;
+		.shade {
+			@extend %subtle-transition;
+			flex: 1;
+			padding: 0;
+			display: none;
+			border: solid $border-width white;
+			border-radius: 50%;
 		}
 	}
 	.input:checked + .circle {
 		border-color: $color2;
 		.shade {
-			background: $color2;
+			display: inline-block;
+			background: $shade-fill;
 		}
-	}
-	.input:hover:not(:disabled) + .circle {
-		@include highlight($color2);
 	}
 	.input:disabled {
 		cursor: not-allowed;
 		& + .circle {
 			@include disabled();
 		}
-		&:checked + .circle {
-			.shade {
-				background: contrastingColor(darken($color-background, 20));
-			}
+		&:checked + .circle .shade {
+			background: contrastingColor(darken($color-background, 20));
 		}
 	}
-	&.invalid .comment {
-		background: $color-danger;
-		@include highlight($color-danger);
+	&:not(.read-only) .input:hover:not(:disabled) + .circle {
+		@include highlight($color2);
 	}
 }
 
-@mixin options($color1, $color2) {
+@mixin options-group($color1, $color2) {
 	padding: 0;
-	min-width: 20ch;
+	position: relative;
 	margin: $spacing-unit;
-	.option {
+	min-width: 20 * $spacing-unit;
+	& > label {
+		@extend %field-label;
+	}
+	.acr-option {
 		@include option($color1, $color2);
 		&.acr-variant-primary {
 			@include option($color-accent, $color-accent);
@@ -450,38 +590,24 @@
 	.comment {
 		@include comment($color1);
 	}
-	& > label {
-		@extend %field-label;
-	}
 	&.required > label:after {
 		content: "*";
 		color: $color-danger;
 		margin: 0 0.5ch;
 	}
-	&.invalid:not(.read-only) {
-		.option {
+	&.invalid {
+		.acr-option {
 			@include option($color-danger, $color-danger);
 			.circle {
-				@include invalid();
-				border-color: $color-danger;
+				@include highlight($color-danger);
 			}
 		}
 		.comment {
-			@include invalid();
-			background: $color-danger;
-			color: contrastingColor($color-danger);
+			@include comment($color-danger);
+			@include highlight($color-danger);
 		}
 	}
 	&.read-only {
-		.input {
-			display: none;
-			& + .circle {
-				display: none;
-				& + label {
-					margin: 0;
-				}
-			}
-		}
 		.comment {
 			margin: 0;
 			border: unset;
@@ -496,24 +622,24 @@
 	}
 }
 
-%options {
-	@include options($color-border, $color-accent);
+%options-group {
+	@include options-group($color-border, $color-accent);
 	&.acr-variant-primary {
-		@include options($color-accent, $color-accent);
+		@include options-group($color-accent, $color-accent);
 	}
 	&.acr-variant-success {
-		@include options($color-success, $color-success);
+		@include options-group($color-success, $color-success);
 	}
 	&.acr-variant-warning {
-		@include options($color-warning, $color-warning);
+		@include options-group($color-warning, $color-warning);
 	}
 	&.acr-variant-danger {
-		@include options($color-danger, $color-danger);
+		@include options-group($color-danger, $color-danger);
 	}
 }
 
-.acr-options {
-	@extend %options;
+.acr-options-group {
+	@extend %options-group;
 }
 
 @mixin select($color1, $color2) {

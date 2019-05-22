@@ -38,10 +38,19 @@ export interface IPureTextProps
 		IAnimationEventProps,
 		ITransitionEventProps {}
 
-export function getEffectiveClass<T extends ITextProps>(
-	props: T,
+export function getEffectiveClass(
+	props: ITextProps,
 	baseClass: string
-): [object, string] {
+): [
+	Pick<
+		ITextProps,
+		Exclude<
+			keyof ITextProps,
+			"classes" | "inline" | "bold" | "italic" | "underlined"
+		>
+	>,
+	string
+] {
 	const { classes, inline, bold, italic, underlined, ...others } = props;
 	const effectiveClass = classNames(baseClass, classes, {
 		"acr-inline": inline,
