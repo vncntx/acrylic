@@ -10,8 +10,8 @@ export interface IFolderProps extends ISectionProps {
 	children: [
 		React.ReactElement<any>,
 		React.ReactElement<any>,
-		React.ReactElement<IButtonProps>?,
-		React.ReactElement<IButtonProps>?
+		React.ReactElement<IButtonProps> | undefined,
+		React.ReactElement<IButtonProps> | undefined
 	];
 }
 

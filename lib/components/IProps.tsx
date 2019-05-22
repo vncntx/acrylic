@@ -14,10 +14,10 @@ export default interface IProps {
 	tabIndex?: number;
 }
 
-declare type ClassValue = string | ClassDictionary | ClassArray | null | false;
+declare type ClassValue = string | ClassDictionary | ClassArray;
 
 interface ClassDictionary {
-	[name: string]: boolean | null;
+	[name: string]: boolean;
 }
 
 interface ClassArray extends Array<ClassValue> {}
