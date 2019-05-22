@@ -1,6 +1,6 @@
 {
 	"name": "@acrylic/acrylic",
-	"version": "0.1.0",
+	"version": "0.1.2",
 	"description": "A React component library",
 	"main": "dist/acrylic.js",
 	"repository": "https://github.com/vincentfiestada/acrylic.git",
@@ -19,9 +19,18 @@
 		"build": "node node_modules/typescript/bin/tsc -p tsconfig.json && node node_modules/parcel-bundler/bin/cli.js build -d dist/themes lib/themes/*.scss",
 		"test": "node node_modules/jest/bin/jest.js --config jest.config.js --coverage",
 		"test:junit": "yarn test --reporters=default --reporters=jest-junit",
-		"postinstall": "yarn build",
+		"prepare": "yarn build",
 		"prepublishOnly": "yarn test && yarn lint"
 	},
+	"files": [
+		"dist",
+		"lib",
+		"package.json",
+		"tsconfig.json",
+		"LICENSE",
+		"README.md",
+		"NOTICE.md"
+	],
 	"husky": {
 		"hooks": {
 			"pre-commit": "yarn format",
