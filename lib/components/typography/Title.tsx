@@ -16,7 +16,7 @@ export default function Title(props: ITitleProps) {
 		IPureTitleProps,
 		string
 	];
-	const { level, children, ...otherProps } = pureProps;
+	const { level, children, classes, ...otherProps } = pureProps;
 	return React.createElement(
 		`h${level || 6}`,
 		{

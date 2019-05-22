@@ -9,8 +9,9 @@
 		"typeRoots": ["typings", "node_modules/@types"],
 		"sourceMap": true,
 		"outDir": "./dist",
-		"noImplicitAny": true
+		"noImplicitAny": true,
+		"declaration": true
 	},
-	"include": ["./lib/**/*.ts", "./lib/**/*.tsx"],
+	"include": ["./lib/acrylic.tsx"],
 	"exclude": ["node_modules"]
 }

@@ -14,7 +14,7 @@ export interface IAlertProps extends ILayoutProps, IVariantProps {
 	isDismissed?: boolean;
 	children:
 		| React.ReactNode
-		| [React.ReactElement<any>?, React.ReactElement<IButtonProps>?];
+		| [React.Component, React.ReactElement<IButtonProps>];
 }
 
 /**
