@@ -1,5 +1,5 @@
 {
-	"name": "acrylic",
+	"name": "@acrylic/acrylic",
 	"version": "0.1.0",
 	"description": "A React component library",
 	"main": "lib/acrylic.tsx",
